@@ -1,0 +1,8 @@
+#Define all the file types that we want git to ignore (i.e. not be synchronized with the central repository)
+
+#C++ object files folder
+obj/
+
+#build files
+*.o
+
