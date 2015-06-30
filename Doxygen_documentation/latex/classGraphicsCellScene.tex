@@ -1,0 +1,274 @@
+\section{GraphicsCellScene Class Reference}
+\label{classGraphicsCellScene}\index{GraphicsCellScene@{GraphicsCellScene}}
+Graphics scene of the cell colony in the Qt Graphics framework.  
+
+
+{\tt \#include $<$GraphicsCellScene.h$>$}
+
+Inheritance diagram for GraphicsCellScene::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classGraphicsCellScene}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{CompactItemize}
+\item 
+void {\bf on\_\-cellGainedFocus} ({\bf GraphicsCell} $\ast$cell)
+\item 
+void {\bf on\_\-cellLostFocus} ({\bf GraphicsCell} $\ast$cell)
+\end{CompactItemize}
+\subsection*{Signals}
+\begin{CompactItemize}
+\item 
+void {\bf cellGainedFocus} ({\bf GraphicsCell} $\ast$cell)
+\item 
+void {\bf cellLostFocus} ({\bf GraphicsCell} $\ast$cell)
+\item 
+void {\bf newCellPositionAndAngleFromODE} ()
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+const {\bf GraphicsCell} $\ast$ {\bf operator[$\,$]} (int i) const 
+\item 
+{\bf GraphicsCell} $\ast$ {\bf operator[$\,$]} (int i)
+\item 
+{\bf GraphicsCellScene} (QObject $\ast$parent=0)
+\item 
+{\bf $\sim$GraphicsCellScene} ()
+\item 
+void {\bf init} ({\bf MainWindow} $\ast$mainWindow)
+\item 
+void {\bf setColonySize} (double colonySize)
+\item 
+void {\bf setCellLength0} (double cellLength0)
+\item 
+TinyVector$<$ double, 2 $>$ {\bf fromNormalToSim} (double x, double y) const 
+\begin{CompactList}\small\item\em Converts normal coordinates to simulation coordinates. \item\end{CompactList}\item 
+TinyVector$<$ double, 2 $>$ {\bf fromSimToNormal} (double x, double y) const 
+\begin{CompactList}\small\item\em Converts simulation coordinates to normal coordinates. \item\end{CompactList}\item 
+void {\bf setCellPosition} (int cellIndex, double x, double y)
+\begin{CompactList}\small\item\em Set the position of cell with index cellIndex. \item\end{CompactList}\item 
+{\bf GraphicsCellGroup} $\ast$ {\bf getCellGroup} () const 
+\item 
+double {\bf getColonySize} () const 
+\item 
+int {\bf getNCells} () const 
+\item 
+QList$<$ {\bf GraphicsCell} $\ast$ $>$ {\bf getCellsList} () const 
+\item 
+virtual {\bf GraphicsCell} $\ast$ {\bf addOneCell} (int cellIndex)
+\begin{CompactList}\small\item\em Add a new cell to the colony scene. \item\end{CompactList}\item 
+virtual void {\bf duplicateCell} (int motherCellIndex)
+\begin{CompactList}\small\item\em Duplicate cell. \item\end{CompactList}\item 
+virtual void {\bf deleteOneCell} (int cellIndex)
+\item 
+void {\bf removeCellGroup} ()
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf GraphicsCellGroup} $\ast$ {\bf cellGroup\_\-}
+\begin{CompactList}\small\item\em GraphicsItem group of all the cells. \item\end{CompactList}\item 
+int {\bf nCells\_\-}
+\begin{CompactList}\small\item\em Number of cells in the list of \doxyref{GraphicsCell}{p.}{classGraphicsCell} objects. \item\end{CompactList}\item 
+QList$<$ {\bf GraphicsCell} $\ast$ $>$ {\bf cellsList\_\-}
+\begin{CompactList}\small\item\em List of pointers to the cells in the colony scene. \item\end{CompactList}\item 
+double {\bf colonySize\_\-}
+\begin{CompactList}\small\item\em Size of the coordinate system for cell position. \item\end{CompactList}\item 
+double {\bf cellLength0\_\-}
+\item 
+{\bf MainWindow} $\ast$ {\bf mainWindow\_\-}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Graphics scene of the cell colony in the Qt Graphics framework. 
+
+Contains the list of pointers to the \doxyref{GraphicsCell}{p.}{classGraphicsCell} objects, defines method to add and remove cells, defines access to a cell through the [] operator. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GraphicsCellScene@{GraphicsCellScene}!GraphicsCellScene@{GraphicsCellScene}}
+\index{GraphicsCellScene@{GraphicsCellScene}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphicsCellScene::GraphicsCellScene (QObject $\ast$ {\em parent} = {\tt 0})}\label{classGraphicsCellScene_15201f0370ec77fc48b53fe66778b477}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!$\sim$GraphicsCellScene@{$\sim$GraphicsCellScene}}
+\index{$\sim$GraphicsCellScene@{$\sim$GraphicsCellScene}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphicsCellScene::$\sim$GraphicsCellScene ()}\label{classGraphicsCellScene_1b5f286d112391b37d25a87bb49f775d}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{GraphicsCellScene@{GraphicsCellScene}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf GraphicsCell} $\ast$ GraphicsCellScene::operator[$\,$] (int {\em i}) const}\label{classGraphicsCellScene_da1c455a2d2ea4c278b178dc666b23b2}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphicsCell} $\ast$ GraphicsCellScene::operator[$\,$] (int {\em i})}\label{classGraphicsCellScene_b41653e790f900b0e8d18b137b120c12}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!init@{init}}
+\index{init@{init}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::init ({\bf MainWindow} $\ast$ {\em mainWindow})}\label{classGraphicsCellScene_8d3f32be16a6526d86b6d73812465317}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!setColonySize@{setColonySize}}
+\index{setColonySize@{setColonySize}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::setColonySize (double {\em colonySize})}\label{classGraphicsCellScene_034c2d23806ee8895e36aaba3a90bf7d}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!setCellLength0@{setCellLength0}}
+\index{setCellLength0@{setCellLength0}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::setCellLength0 (double {\em cellLength0})}\label{classGraphicsCellScene_1ea464b8a17f4aaa78a814db5723020d}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!fromNormalToSim@{fromNormalToSim}}
+\index{fromNormalToSim@{fromNormalToSim}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}TinyVector$<$ double, 2 $>$ GraphicsCellScene::fromNormalToSim (double {\em x}, \/  double {\em y}) const}\label{classGraphicsCellScene_f4c44958a142a737591e048b04b72088}
+
+
+Converts normal coordinates to simulation coordinates. 
+
+\index{GraphicsCellScene@{GraphicsCellScene}!fromSimToNormal@{fromSimToNormal}}
+\index{fromSimToNormal@{fromSimToNormal}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}TinyVector$<$ double, 2 $>$ GraphicsCellScene::fromSimToNormal (double {\em x}, \/  double {\em y}) const}\label{classGraphicsCellScene_6c7c804479c226bc72ecc7a8dd7f65cf}
+
+
+Converts simulation coordinates to normal coordinates. 
+
+\index{GraphicsCellScene@{GraphicsCellScene}!setCellPosition@{setCellPosition}}
+\index{setCellPosition@{setCellPosition}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::setCellPosition (int {\em cellIndex}, \/  double {\em x}, \/  double {\em y})}\label{classGraphicsCellScene_9fa130e014df9626a7ff6bb36b51006d}
+
+
+Set the position of cell with index cellIndex. 
+
+\doxyref{Input}{p.}{classInput} coordinates are in the simulation coordinates system with range [0,1] and conversion to Graphics coordinate is automatically done. 
+
+Reimplemented in {\bf GraphicsCellSceneODE} \doxyref{}{p.}{classGraphicsCellSceneODE_c2d1365626ed2d7492c8a78e0098efd5}.\index{GraphicsCellScene@{GraphicsCellScene}!getCellGroup@{getCellGroup}}
+\index{getCellGroup@{getCellGroup}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphicsCellGroup} $\ast$ GraphicsCellScene::getCellGroup () const}\label{classGraphicsCellScene_68286e46f2b6ca6cb41166473062f41e}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!getColonySize@{getColonySize}}
+\index{getColonySize@{getColonySize}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double GraphicsCellScene::getColonySize () const}\label{classGraphicsCellScene_db20ff4261ccb5abd4e090e4ad130b16}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!getNCells@{getNCells}}
+\index{getNCells@{getNCells}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int GraphicsCellScene::getNCells () const}\label{classGraphicsCellScene_b6f7707957ce3e606577a54208bd92eb}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!getCellsList@{getCellsList}}
+\index{getCellsList@{getCellsList}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}QList$<$ {\bf GraphicsCell} $\ast$ $>$ GraphicsCellScene::getCellsList () const}\label{classGraphicsCellScene_a537c3ae888b01cea2a37553d0605918}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!addOneCell@{addOneCell}}
+\index{addOneCell@{addOneCell}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphicsCell} $\ast$ GraphicsCellScene::addOneCell (int {\em cellIndex})\hspace{0.3cm}{\tt  [virtual]}}\label{classGraphicsCellScene_7ad9a111c6db7a19204d582b9f06b221}
+
+
+Add a new cell to the colony scene. 
+
+
+
+Reimplemented in {\bf GraphicsCellSceneODE} \doxyref{}{p.}{classGraphicsCellSceneODE_77f0a529438123786cca3050eec57719}.\index{GraphicsCellScene@{GraphicsCellScene}!duplicateCell@{duplicateCell}}
+\index{duplicateCell@{duplicateCell}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::duplicateCell (int {\em motherCellIndex})\hspace{0.3cm}{\tt  [virtual]}}\label{classGraphicsCellScene_9e7c958e622bd1581f8700912868e35b}
+
+
+Duplicate cell. 
+
+
+
+Reimplemented in {\bf GraphicsCellSceneODE} \doxyref{}{p.}{classGraphicsCellSceneODE_e66f4605023f6b82360b2ade0496d098}.\index{GraphicsCellScene@{GraphicsCellScene}!deleteOneCell@{deleteOneCell}}
+\index{deleteOneCell@{deleteOneCell}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::deleteOneCell (int {\em cellIndex})\hspace{0.3cm}{\tt  [virtual]}}\label{classGraphicsCellScene_53ce81a17fe9e91880c3a41e525700c1}
+
+
+
+
+Reimplemented in {\bf GraphicsCellSceneODE} \doxyref{}{p.}{classGraphicsCellSceneODE_1d7fdc85e9cba222a530e473751aed21}.\index{GraphicsCellScene@{GraphicsCellScene}!removeCellGroup@{removeCellGroup}}
+\index{removeCellGroup@{removeCellGroup}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::removeCellGroup ()}\label{classGraphicsCellScene_19d107a2ae43005dd78cc13ec13c3581}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!cellGainedFocus@{cellGainedFocus}}
+\index{cellGainedFocus@{cellGainedFocus}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::cellGainedFocus ({\bf GraphicsCell} $\ast$ {\em cell})\hspace{0.3cm}{\tt  [signal]}}\label{classGraphicsCellScene_06d09e37482ae2d04d44e5c70406d29a}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!cellLostFocus@{cellLostFocus}}
+\index{cellLostFocus@{cellLostFocus}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::cellLostFocus ({\bf GraphicsCell} $\ast$ {\em cell})\hspace{0.3cm}{\tt  [signal]}}\label{classGraphicsCellScene_f7db794162808b617bd22d02f9d24428}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!newCellPositionAndAngleFromODE@{newCellPositionAndAngleFromODE}}
+\index{newCellPositionAndAngleFromODE@{newCellPositionAndAngleFromODE}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::newCellPositionAndAngleFromODE ()\hspace{0.3cm}{\tt  [signal]}}\label{classGraphicsCellScene_a4b4fb34e1f0f53ef20f86ce1dcb2169}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!on\_\-cellGainedFocus@{on\_\-cellGainedFocus}}
+\index{on\_\-cellGainedFocus@{on\_\-cellGainedFocus}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::on\_\-cellGainedFocus ({\bf GraphicsCell} $\ast$ {\em cell})\hspace{0.3cm}{\tt  [slot]}}\label{classGraphicsCellScene_b2045463688455b3294827edfbed50dd}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!on\_\-cellLostFocus@{on\_\-cellLostFocus}}
+\index{on\_\-cellLostFocus@{on\_\-cellLostFocus}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GraphicsCellScene::on\_\-cellLostFocus ({\bf GraphicsCell} $\ast$ {\em cell})\hspace{0.3cm}{\tt  [slot]}}\label{classGraphicsCellScene_33a010d05d4a9e33f508e80deba520b6}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{GraphicsCellScene@{GraphicsCellScene}!cellGroup\_\-@{cellGroup\_\-}}
+\index{cellGroup\_\-@{cellGroup\_\-}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphicsCellGroup}$\ast$ {\bf GraphicsCellScene::cellGroup\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classGraphicsCellScene_96f4e1097bbc83df2777911e333b3370}
+
+
+GraphicsItem group of all the cells. 
+
+\index{GraphicsCellScene@{GraphicsCellScene}!nCells\_\-@{nCells\_\-}}
+\index{nCells\_\-@{nCells\_\-}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf GraphicsCellScene::nCells\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classGraphicsCellScene_fb4b600955e114edd43f0cb0cfb2c46c}
+
+
+Number of cells in the list of \doxyref{GraphicsCell}{p.}{classGraphicsCell} objects. 
+
+\index{GraphicsCellScene@{GraphicsCellScene}!cellsList\_\-@{cellsList\_\-}}
+\index{cellsList\_\-@{cellsList\_\-}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}QList$<${\bf GraphicsCell}$\ast$$>$ {\bf GraphicsCellScene::cellsList\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classGraphicsCellScene_d1ae4b9f4f80a38e5930c8c13d082698}
+
+
+List of pointers to the cells in the colony scene. 
+
+This list should never be deleted because the ODE simulation needs it. \index{GraphicsCellScene@{GraphicsCellScene}!colonySize\_\-@{colonySize\_\-}}
+\index{colonySize\_\-@{colonySize\_\-}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf GraphicsCellScene::colonySize\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classGraphicsCellScene_6b0ad961bb7be039a410692a2e1809fd}
+
+
+Size of the coordinate system for cell position. 
+
+It defines the area of coordinate system for the cell position in the graphic scene. Coordinates are transformed from [0,1] (simulator\_\- coordinates) to [-colonySize\_\-/2, colonySize/2] (graphic scene coordinates). \index{GraphicsCellScene@{GraphicsCellScene}!cellLength0\_\-@{cellLength0\_\-}}
+\index{cellLength0\_\-@{cellLength0\_\-}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf GraphicsCellScene::cellLength0\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classGraphicsCellScene_7e1c801d36f8512586ae28e8df025e1c}
+
+
+\index{GraphicsCellScene@{GraphicsCellScene}!mainWindow\_\-@{mainWindow\_\-}}
+\index{mainWindow\_\-@{mainWindow\_\-}!GraphicsCellScene@{GraphicsCellScene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MainWindow}$\ast$ {\bf GraphicsCellScene::mainWindow\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classGraphicsCellScene_5da706453f82d8dc6146df2b787f3469}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf GraphicsCellScene.h}\item 
+DATA/PROGS/COLONY/{\bf GraphicsCellScene.cpp}\end{CompactItemize}

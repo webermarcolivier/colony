@@ -1,0 +1,256 @@
+\section{CellMilieuChemicalSystem Class Reference}
+\label{classCellMilieuChemicalSystem}\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+This Class defines the cell-milieu reactions like diffusion, signalling, etc.  
+
+
+{\tt \#include $<$CellMilieuChemicalSystem.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf CellMilieuChemicalSystem} ()
+\item 
+virtual {\bf $\sim$CellMilieuChemicalSystem} ()
+\item 
+void {\bf initialize} (const {\bf CellMilieuChemicalSystemInitParam} \&p)
+\item 
+{\bf CellMilieuChemicalSystem} \& {\bf operator=} (const {\bf CellMilieuChemicalSystem} \&b)
+\begin{CompactList}\small\item\em Assignment operator. \item\end{CompactList}\item 
+int {\bf getNChannels} () const 
+\item 
+Array$<$ double, 1 $>$ \& {\bf getPropensities} ()
+\item 
+void {\bf setReferencePropensities} (Array$<$ double, 1 $>$ refArray)
+\begin{CompactList}\small\item\em Set the propensities array propensities\_\- to be a reference to another array. \item\end{CompactList}\item 
+void {\bf computePropensities} ()
+\begin{CompactList}\small\item\em Compute the propensities of cell-milieu reaction channels. \item\end{CompactList}\item 
+void {\bf computePropensities} (const double time)
+\begin{CompactList}\small\item\em Compute the propensities of cell-milieu reaction channels, some of them having time-dependent reaction rates. \item\end{CompactList}\item 
+void {\bf applyReaction} (int mu)
+\begin{CompactList}\small\item\em Apply the reaction given by the channel number. \item\end{CompactList}\item 
+void {\bf checkPositivity} () const 
+\begin{CompactList}\small\item\em Check that the number of molecules in state vector x is positive. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf CellMilieuChemicalSystem} (const {\bf CellMilieuChemicalSystem} \&c2)
+\begin{CompactList}\small\item\em Preventing copy constructor use. \item\end{CompactList}\item 
+void {\bf copy} (const {\bf CellMilieuChemicalSystem} \&b)
+\begin{CompactList}\small\item\em Copy method used in the assigment operator and the copy constructor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Milieu} $\ast$ {\bf milieuPtr\_\-}
+\begin{CompactList}\small\item\em Pointer to the milieu \doxyref{Cell}{p.}{classCell} object. \item\end{CompactList}\item 
+{\bf Cell} $\ast$ {\bf cellPtr\_\-}
+\begin{CompactList}\small\item\em Pointer to the cell \doxyref{Cell}{p.}{classCell} object. \item\end{CompactList}\item 
+int {\bf nTotalSpecies\_\-}
+\begin{CompactList}\small\item\em nSpeciesCell + nSpeciesMilieu. \item\end{CompactList}\item 
+int {\bf nSpeciesCell\_\-}
+\item 
+int {\bf nSpeciesMilieu\_\-}
+\item 
+int {\bf nChannels\_\-}
+\begin{CompactList}\small\item\em Number of number of cell-milieu reaction channels. \item\end{CompactList}\item 
+Array$<$ int, 2 $>$ {\bf stoichMatrix\_\-}
+\begin{CompactList}\small\item\em Stoichiometric matrix of the cell-milieu reactions. \item\end{CompactList}\item 
+void($\ast$ {\bf computePropensitiesInterCellularPtr\_\-} )(const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double volume1, const double volume2, Array$<$ double, 1 $>$ \&propensities)
+\begin{CompactList}\small\item\em Pointer to the function that computes the propensities of the different reaction channels. \item\end{CompactList}\item 
+void($\ast$ {\bf computeTimeDependentPropensitiesInterCellularPtr\_\-} )(const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double V0, const double Vext, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)
+\begin{CompactList}\small\item\em Pointer to the function that computes the propensities of the different reaction channels. \item\end{CompactList}\item 
+Array$<$ double, 1 $>$ {\bf propensities\_\-}
+\begin{CompactList}\small\item\em This propensities array is just a reference to a part of the total array of the \doxyref{Cell}{p.}{classCell} object: totalPropensities\_\-( nChannels , nTotalChannels-1 ). \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf Cell}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This Class defines the cell-milieu reactions like diffusion, signalling, etc. 
+
+It is contained in a \doxyref{Cell}{p.}{classCell} object and has a pointer to the milieu \doxyref{Cell}{p.}{classCell} object of the colony. The definition of the reactions are given by the chemicalSystemCellMilieu\_\- attribute. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellMilieuChemicalSystem::CellMilieuChemicalSystem ()}\label{classCellMilieuChemicalSystem_20667ede1c1a03e7a6d04dd978f93e22}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!$\sim$CellMilieuChemicalSystem@{$\sim$CellMilieuChemicalSystem}}
+\index{$\sim$CellMilieuChemicalSystem@{$\sim$CellMilieuChemicalSystem}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellMilieuChemicalSystem::$\sim$CellMilieuChemicalSystem ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCellMilieuChemicalSystem_0676c76da776a7ecd5dd3e704781f70e}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellMilieuChemicalSystem::CellMilieuChemicalSystem (const {\bf CellMilieuChemicalSystem} \& {\em c2})\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_1f21fc274cea6eac0bf5e52605746d72}
+
+
+Preventing copy constructor use. 
+
+
+
+\subsection{Member Function Documentation}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!initialize@{initialize}}
+\index{initialize@{initialize}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::initialize (const {\bf CellMilieuChemicalSystemInitParam} \& {\em p})}\label{classCellMilieuChemicalSystem_3e57a149e8123c5288c89c07a4db2020}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!operator=@{operator=}}
+\index{operator=@{operator=}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CellMilieuChemicalSystem} \& CellMilieuChemicalSystem::operator= (const {\bf CellMilieuChemicalSystem} \& {\em b})}\label{classCellMilieuChemicalSystem_45665aaee6778f80fa8e3ac79c506de7}
+
+
+Assignment operator. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!getNChannels@{getNChannels}}
+\index{getNChannels@{getNChannels}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CellMilieuChemicalSystem::getNChannels () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellMilieuChemicalSystem_9e907b6598deb45746f2b90bf159ea76}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!getPropensities@{getPropensities}}
+\index{getPropensities@{getPropensities}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ \& CellMilieuChemicalSystem::getPropensities ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellMilieuChemicalSystem_2c423b1b87acb6e1b16ed126710a3208}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!setReferencePropensities@{setReferencePropensities}}
+\index{setReferencePropensities@{setReferencePropensities}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::setReferencePropensities (Array$<$ double, 1 $>$ {\em refArray})}\label{classCellMilieuChemicalSystem_fdd69e7fcb9abc24f5348e1fb8c80bbd}
+
+
+Set the propensities array propensities\_\- to be a reference to another array. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!computePropensities@{computePropensities}}
+\index{computePropensities@{computePropensities}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::computePropensities ()}\label{classCellMilieuChemicalSystem_32eded6123fa863a3a7a155a33a39ba1}
+
+
+Compute the propensities of cell-milieu reaction channels. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!computePropensities@{computePropensities}}
+\index{computePropensities@{computePropensities}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::computePropensities (const double {\em time})}\label{classCellMilieuChemicalSystem_b272efa8d5aa1814094164fcee4279c1}
+
+
+Compute the propensities of cell-milieu reaction channels, some of them having time-dependent reaction rates. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!applyReaction@{applyReaction}}
+\index{applyReaction@{applyReaction}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::applyReaction (int {\em mu})}\label{classCellMilieuChemicalSystem_e35e3b1da179628c159ee5776a8b3174}
+
+
+Apply the reaction given by the channel number. 
+
+Change the state of the cell and the milieu based on the stoichiometric matrix. \index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!checkPositivity@{checkPositivity}}
+\index{checkPositivity@{checkPositivity}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::checkPositivity () const}\label{classCellMilieuChemicalSystem_0c51c7c9aa3054ce99e4995f3c1c794b}
+
+
+Check that the number of molecules in state vector x is positive. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!copy@{copy}}
+\index{copy@{copy}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellMilieuChemicalSystem::copy (const {\bf CellMilieuChemicalSystem} \& {\em b})\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_c58ddd6357c82ae0154feee392ea6a7b}
+
+
+Copy method used in the assigment operator and the copy constructor. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!Cell@{Cell}}
+\index{Cell@{Cell}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Cell}\hspace{0.3cm}{\tt  [friend]}}\label{classCellMilieuChemicalSystem_4ceaaf9d661d54f6ed2b18cf0d8830a6}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!milieuPtr\_\-@{milieuPtr\_\-}}
+\index{milieuPtr\_\-@{milieuPtr\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Milieu}$\ast$ {\bf CellMilieuChemicalSystem::milieuPtr\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_9fc16d66bb7a18e7f00750562f3b37c4}
+
+
+Pointer to the milieu \doxyref{Cell}{p.}{classCell} object. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!cellPtr\_\-@{cellPtr\_\-}}
+\index{cellPtr\_\-@{cellPtr\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell}$\ast$ {\bf CellMilieuChemicalSystem::cellPtr\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_d34bfb98b303d6626234c3c94c2cce2d}
+
+
+Pointer to the cell \doxyref{Cell}{p.}{classCell} object. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!nTotalSpecies\_\-@{nTotalSpecies\_\-}}
+\index{nTotalSpecies\_\-@{nTotalSpecies\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellMilieuChemicalSystem::nTotalSpecies\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_d8eeec101c040b53a300ca52597d8288}
+
+
+nSpeciesCell + nSpeciesMilieu. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!nSpeciesCell\_\-@{nSpeciesCell\_\-}}
+\index{nSpeciesCell\_\-@{nSpeciesCell\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellMilieuChemicalSystem::nSpeciesCell\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_9b00f26e73024a4157e9ecf03a5e976c}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!nSpeciesMilieu\_\-@{nSpeciesMilieu\_\-}}
+\index{nSpeciesMilieu\_\-@{nSpeciesMilieu\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellMilieuChemicalSystem::nSpeciesMilieu\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_a6ab8562c59808c32ae5d9b24dd900bf}
+
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!nChannels\_\-@{nChannels\_\-}}
+\index{nChannels\_\-@{nChannels\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellMilieuChemicalSystem::nChannels\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_f622c9b5c923191db8d9098838147472}
+
+
+Number of number of cell-milieu reaction channels. 
+
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!stoichMatrix\_\-@{stoichMatrix\_\-}}
+\index{stoichMatrix\_\-@{stoichMatrix\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$int,2$>$ {\bf CellMilieuChemicalSystem::stoichMatrix\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_b52446495937ed1a9c0cfdba53ad55bf}
+
+
+Stoichiometric matrix of the cell-milieu reactions. 
+
+Its dimension should be nChannels x (nSpeciesCell+nSpeciesMilieu) The first 'nSpeciesCell' columns refer to the species in the cell, the following 'nSpeciesMilieu' columns refer to the species in the milieu. \index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!computePropensitiesInterCellularPtr\_\-@{computePropensitiesInterCellularPtr\_\-}}
+\index{computePropensitiesInterCellularPtr\_\-@{computePropensitiesInterCellularPtr\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf CellMilieuChemicalSystem::computePropensitiesInterCellularPtr\_\-})(const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double volume1, const double volume2, Array$<$ double, 1 $>$ \&propensities)\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_589689034ed9381d0a43ba5a4c0c6e7d}
+
+
+Pointer to the function that computes the propensities of the different reaction channels. 
+
+The function is meant to be written by an external program. Otherwise, it can be directly included in the \doxyref{ChemicalSystem}{p.}{classChemicalSystem} class. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em x1}][in] vector of size \doxyref{nSpeciesCell\_\-}{p.}{classCellMilieuChemicalSystem_9b00f26e73024a4157e9ecf03a5e976c} that contains the number of molecules of the species in the cell. \item[{\em x2}][in] vector of size \doxyref{nSpeciesMilieu\_\-}{p.}{classCellMilieuChemicalSystem_a6ab8562c59808c32ae5d9b24dd900bf} that contains the number of molecules of the species in the milieu. \item[{\em volume1}][in] volume of the cell. This is needed for computing the diffusion rate. \item[{\em volume2}][in] volume of the milieu. This is needed for computing the diffusion rate. \item[{\em propensities}][in,out] vector of size \doxyref{nChannels\_\-}{p.}{classCellMilieuChemicalSystem_f622c9b5c923191db8d9098838147472} that contains the computed propensities. \end{description}
+\end{Desc}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!computeTimeDependentPropensitiesInterCellularPtr\_\-@{computeTimeDependentPropensitiesInterCellularPtr\_\-}}
+\index{computeTimeDependentPropensitiesInterCellularPtr\_\-@{computeTimeDependentPropensitiesInterCellularPtr\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf CellMilieuChemicalSystem::computeTimeDependentPropensitiesInterCellularPtr\_\-})(const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double V0, const double Vext, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_00924ac180598a4dff114bdfd100765a}
+
+
+Pointer to the function that computes the propensities of the different reaction channels. 
+
+The function is meant to be written by an external program. Otherwise, it can be directly included in the \doxyref{ChemicalSystem}{p.}{classChemicalSystem} class.
+
+\begin{Desc}
+\item[See also:]\doxyref{computePropensitiesTimeDependentDiffusion()}{p.}{computePropensitiesFunctions_8cpp_8678014f8ffc58d7835b8db6b8ad76d0}\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em tc}][in] The duration of the cell cycle. \item[{\em x1}][in] State vector of the cell. \item[{\em x2}][in] State vector of the milieu. \item[{\em V0}][in] Volume of the cell at the beginning of the cell cycle (constant). \item[{\em Vext}][in] Volume of the external milieu at time t. \item[{\em t}][in] Time t of the evaluation of the propensities. \item[{\em t0}][in] Time of the previous cell division (time of cell's birth). \item[{\em tc}][in] Duration of the cell cycle. \item[{\em a}][out] Array of the computed propensities. \end{description}
+\end{Desc}
+\index{CellMilieuChemicalSystem@{CellMilieuChemicalSystem}!propensities\_\-@{propensities\_\-}}
+\index{propensities\_\-@{propensities\_\-}!CellMilieuChemicalSystem@{CellMilieuChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$double,1$>$ {\bf CellMilieuChemicalSystem::propensities\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellMilieuChemicalSystem_7c385a75c5c213ebe8231536005104ed}
+
+
+This propensities array is just a reference to a part of the total array of the \doxyref{Cell}{p.}{classCell} object: totalPropensities\_\-( nChannels , nTotalChannels-1 ). 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf CellMilieuChemicalSystem.h}\item 
+DATA/PROGS/COLONY/{\bf CellMilieuChemicalSystem.cpp}\end{CompactItemize}

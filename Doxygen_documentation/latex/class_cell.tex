@@ -1,0 +1,458 @@
+\hypertarget{class_cell}{\section{\-Cell \-Class \-Reference}
+\label{class_cell}\index{\-Cell@{\-Cell}}
+}
+
+
+{\ttfamily \#include $<$\-Cell.\-h$>$}
+
+\-Inheritance diagram for \-Cell\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_cell}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cell_a394510643e8664cf12b5efaf5cb99f71}{\-Cell} ()
+\item 
+virtual \hyperlink{class_cell_a9fa559f7a28e2b4336c6879ca09304d8}{$\sim$\-Cell} ()
+\item 
+\hyperlink{class_cell_aa0fda2bd78b5e4620e237cb7415bb62a}{\-Cell} (const \hyperlink{class_cell}{\-Cell} \&c2)
+\item 
+void \hyperlink{class_cell_a1762ba87b6cd232fb4d5ca9513600214}{initialize} (\-Cell\-Init\-Param \&p)
+\item 
+\hyperlink{class_cell}{\-Cell} \& \hyperlink{class_cell_a30910c960819ab01b80c4268a22b1579}{operator=} (const \hyperlink{class_cell}{\-Cell} \&c2)
+\item 
+double \hyperlink{class_cell_a4f4950f9901d2e52218da8421d11a78f}{get\-Time\-Dependent\-Volume} (const double time) const 
+\item 
+int \hyperlink{class_cell_a98b05ad9c5ba1a0bb719df105eb1b56f}{get\-N\-Channels} () const 
+\item 
+\-Array$<$ double, 1 $>$ \& \hyperlink{class_cell_abed1503a45db1ec72fe2f9721bb8dd7d}{get\-Propensities} ()
+\item 
+\-Array$<$ double, 1 $>$ \& \hyperlink{class_cell_a001e74a518b87008ab0235095b802677}{get\-Propensities\-Cell} ()
+\item 
+\-Array$<$ double, 1 $>$ \& \hyperlink{class_cell_aa277030af60d6cf9b0698e49a907996e}{get\-Propensities\-Cell\-Milieu} ()
+\item 
+double \hyperlink{class_cell_aaf492522ce24129fcac85bafb5dcc8f2}{get\-Angle} () const 
+\item 
+bool \hyperlink{class_cell_a15cfab0157a0180d1f409ed8afc5c14b}{is\-Reaction\-Internal} (int mu) const 
+\item 
+void \hyperlink{class_cell_a1eb2a609160163f5768e5708cd55a8e2}{set\-Reference\-Propensities} (\-Array$<$ double, 1 $>$ ref\-Array)
+\item 
+void \hyperlink{class_cell_a0559f4ae5b505afcd98a04ab259bc489}{apply\-Reaction} (int mu)
+\item 
+void \hyperlink{class_cell_ad872f4f01c39feb953ee27a9d37963af}{compute\-Propensities} ()
+\item 
+void \hyperlink{class_cell_a91e4b4765817d5287c69d21ff70906c9}{compute\-Propensities} (double time)
+\item 
+void \hyperlink{class_cell_ada072ae0aa05f43fda6daa196c8342d3}{compute\-Propensities\-Cell} ()
+\item 
+void \hyperlink{class_cell_a3502b355df87e09a247e4387b6dd4217}{compute\-Propensities\-Cell} (const double time)
+\item 
+void \hyperlink{class_cell_a8c5abd4f4386f83a8d3fc02ece00a5ef}{compute\-Propensities\-Cell\-Milieu} ()
+\item 
+void \hyperlink{class_cell_a0fe39496c6ca627b2930ce5923b3cb1c}{compute\-Propensities\-Cell\-Milieu} (const double time)
+\item 
+\hyperlink{class_cell}{\-Cell} \hyperlink{class_cell_a23acbe45a58bbed665c46528ec0717cd}{duplicate} ()
+\item 
+void \hyperlink{class_cell_a8fa3d31ea4774884a1dd0ce488f14123}{set\-Cell\-Index} (int i)
+\item 
+void \hyperlink{class_cell_a91d52e997836d430d05e5c810f553ce9}{set\-Angle} (double angle)
+\item 
+virtual void \hyperlink{class_cell_a7546388567cca19b27af68236161e91b}{set\-Position} (\-Tiny\-Vector$<$ double, 3 $>$ position)
+\item 
+void \hyperlink{class_cell_afea44081620717505850e33262a70472}{update\-Graphics\-Cell} (const double time)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_cell_ae2dfe08ecb85bc573d847bc992380e4a}{get\-N\-Cell\-Objects} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_cell_ab7519ad9f97e822bc4c886ea1e85c29f}{operator$<$$<$} (ostream \&out, const \hyperlink{class_cell}{\-Cell} \&c)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Cell able to divide and communicate with the milieu.
+
+\-This class is derived from \hyperlink{class_cell_base}{\-Cell\-Base} and defines the cells able to live in a milieu and divide.
+
+\-Remark\-: it has a propensities array of size n\-Total\-Channels that contains the propensities of intracellular reactions and cell-\/milieu reactions. 
+
+\-Definition at line 56 of file \-Cell.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_cell_a394510643e8664cf12b5efaf5cb99f71}{\index{\-Cell@{\-Cell}!\-Cell@{\-Cell}}
+\index{\-Cell@{\-Cell}!Cell@{\-Cell}}
+\subsubsection[{\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell\-::\-Cell} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a394510643e8664cf12b5efaf5cb99f71}
+
+
+\-Definition at line 30 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a9fa559f7a28e2b4336c6879ca09304d8}{\index{\-Cell@{\-Cell}!$\sim$\-Cell@{$\sim$\-Cell}}
+\index{$\sim$\-Cell@{$\sim$\-Cell}!Cell@{\-Cell}}
+\subsubsection[{$\sim$\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell\-::$\sim$\-Cell} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_cell_a9fa559f7a28e2b4336c6879ca09304d8}
+
+
+\-Definition at line 43 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_aa0fda2bd78b5e4620e237cb7415bb62a}{\index{\-Cell@{\-Cell}!\-Cell@{\-Cell}}
+\index{\-Cell@{\-Cell}!Cell@{\-Cell}}
+\subsubsection[{\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell\-::\-Cell} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Cell} \&}]{c2}
+\end{DoxyParamCaption}
+)}}\label{class_cell_aa0fda2bd78b5e4620e237cb7415bb62a}
+\-Copy constructor. \-We need the copy constructor in order to use a \-Blitz++ array of \hyperlink{class_cell}{\-Cell} objects (unkown details of the implementation of the \-Blitz++ library). \-It is also used in the \hyperlink{class_cell_a23acbe45a58bbed665c46528ec0717cd}{duplicate()} method to return by value a copy of a \hyperlink{class_cell}{\-Cell} object. 
+
+\-Definition at line 145 of file \-Cell.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_cell_a0559f4ae5b505afcd98a04ab259bc489}{\index{\-Cell@{\-Cell}!apply\-Reaction@{apply\-Reaction}}
+\index{apply\-Reaction@{apply\-Reaction}!Cell@{\-Cell}}
+\subsubsection[{apply\-Reaction}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::apply\-Reaction} (
+\begin{DoxyParamCaption}
+\item[{int}]{mu}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a0559f4ae5b505afcd98a04ab259bc489}
+\-Apply the reaction given by the channel number. \-Change the state of the cell based on the stoichiometric matrix. \-There are two cases depending on the channel number\-: it can concern an internal reaction (\hyperlink{class_cell_base_ae24860242d26c1eff241af04daaf06a0}{\-Cell\-Base\-::apply\-Reaction()}) or a cell-\/milieu reaction (cell\-Milieu\-Chemical\-System\-\_\-.\-apply\-Reaction()). 
+\begin{DoxyParams}{\-Parameters}
+{\em mu} & \mbox{[}in\mbox{]} channel number. \\
+\hline
+\end{DoxyParams}
+
+
+\-Reimplemented from \hyperlink{class_cell_base_ae24860242d26c1eff241af04daaf06a0}{\-Cell\-Base}.
+
+
+
+\-Definition at line 249 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_ad872f4f01c39feb953ee27a9d37963af}{\index{\-Cell@{\-Cell}!compute\-Propensities@{compute\-Propensities}}
+\index{compute\-Propensities@{compute\-Propensities}!Cell@{\-Cell}}
+\subsubsection[{compute\-Propensities}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::compute\-Propensities} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_cell_ad872f4f01c39feb953ee27a9d37963af}
+\-Compute the propensities of all reaction channels, including the internal and cell-\/milieu reactions. 
+
+\-Reimplemented from \hyperlink{class_cell_base_a36d16b84e0291e317fcf2425bbd6a953}{\-Cell\-Base}.
+
+
+
+\-Definition at line 270 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a91e4b4765817d5287c69d21ff70906c9}{\index{\-Cell@{\-Cell}!compute\-Propensities@{compute\-Propensities}}
+\index{compute\-Propensities@{compute\-Propensities}!Cell@{\-Cell}}
+\subsubsection[{compute\-Propensities}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::compute\-Propensities} (
+\begin{DoxyParamCaption}
+\item[{double}]{time}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a91e4b4765817d5287c69d21ff70906c9}
+\-Compute the propensities of all reaction channels, including the internal and cell-\/milieu reactions, some of them having time-\/dependent reaction rates. 
+
+\-Reimplemented from \hyperlink{class_cell_base_a17dcaf6ab4ce71d41640de772822ea79}{\-Cell\-Base}.
+
+
+
+\-Definition at line 278 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_ada072ae0aa05f43fda6daa196c8342d3}{\index{\-Cell@{\-Cell}!compute\-Propensities\-Cell@{compute\-Propensities\-Cell}}
+\index{compute\-Propensities\-Cell@{compute\-Propensities\-Cell}!Cell@{\-Cell}}
+\subsubsection[{compute\-Propensities\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::compute\-Propensities\-Cell} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_cell_ada072ae0aa05f43fda6daa196c8342d3}
+\-Compute the propensities {\bfseries only} of the intracellular reaction channels. 
+
+\-Definition at line 292 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a3502b355df87e09a247e4387b6dd4217}{\index{\-Cell@{\-Cell}!compute\-Propensities\-Cell@{compute\-Propensities\-Cell}}
+\index{compute\-Propensities\-Cell@{compute\-Propensities\-Cell}!Cell@{\-Cell}}
+\subsubsection[{compute\-Propensities\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::compute\-Propensities\-Cell} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a3502b355df87e09a247e4387b6dd4217}
+
+
+\-Definition at line 299 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a8c5abd4f4386f83a8d3fc02ece00a5ef}{\index{\-Cell@{\-Cell}!compute\-Propensities\-Cell\-Milieu@{compute\-Propensities\-Cell\-Milieu}}
+\index{compute\-Propensities\-Cell\-Milieu@{compute\-Propensities\-Cell\-Milieu}!Cell@{\-Cell}}
+\subsubsection[{compute\-Propensities\-Cell\-Milieu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::compute\-Propensities\-Cell\-Milieu} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a8c5abd4f4386f83a8d3fc02ece00a5ef}
+\-Compute the propensities {\bfseries only} of the cell-\/milieu reaction channels. 
+
+\-Definition at line 306 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a0fe39496c6ca627b2930ce5923b3cb1c}{\index{\-Cell@{\-Cell}!compute\-Propensities\-Cell\-Milieu@{compute\-Propensities\-Cell\-Milieu}}
+\index{compute\-Propensities\-Cell\-Milieu@{compute\-Propensities\-Cell\-Milieu}!Cell@{\-Cell}}
+\subsubsection[{compute\-Propensities\-Cell\-Milieu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::compute\-Propensities\-Cell\-Milieu} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a0fe39496c6ca627b2930ce5923b3cb1c}
+
+
+\-Definition at line 313 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a23acbe45a58bbed665c46528ec0717cd}{\index{\-Cell@{\-Cell}!duplicate@{duplicate}}
+\index{duplicate@{duplicate}!Cell@{\-Cell}}
+\subsubsection[{duplicate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell} {\bf \-Cell\-::duplicate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a23acbe45a58bbed665c46528ec0717cd}
+\-Duplicate the cell and returns by value the daughter cell.
+\begin{DoxyItemize}
+\item \-Detach proteins from \-D\-N\-A.
+\item \-Make a copy of the cell.
+\item \-Distribute proteins between the two cells.
+\item \-Set the time of next division for both cells.
+\item \-Return by value the new daughter cell (needs \hyperlink{class_cell}{\-Cell} copy constructor). 
+\end{DoxyItemize}
+
+\-Definition at line 348 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_aaf492522ce24129fcac85bafb5dcc8f2}{\index{\-Cell@{\-Cell}!get\-Angle@{get\-Angle}}
+\index{get\-Angle@{get\-Angle}!Cell@{\-Cell}}
+\subsubsection[{get\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Cell\-::get\-Angle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_cell_aaf492522ce24129fcac85bafb5dcc8f2}
+
+
+\-Reimplemented from \hyperlink{class_cell_base_a3fb7f0f49934e83a0ed1cd2d82fba99e}{\-Cell\-Base}.
+
+
+
+\-Definition at line 228 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_ae2dfe08ecb85bc573d847bc992380e4a}{\index{\-Cell@{\-Cell}!get\-N\-Cell\-Objects@{get\-N\-Cell\-Objects}}
+\index{get\-N\-Cell\-Objects@{get\-N\-Cell\-Objects}!Cell@{\-Cell}}
+\subsubsection[{get\-N\-Cell\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}static int {\bf \-Cell\-::get\-N\-Cell\-Objects} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{class_cell_ae2dfe08ecb85bc573d847bc992380e4a}
+\-Get the total number of \hyperlink{class_cell}{\-Cell} objects. 
+
+\-Definition at line 110 of file \-Cell.\-h.
+
+\hypertarget{class_cell_a98b05ad9c5ba1a0bb719df105eb1b56f}{\index{\-Cell@{\-Cell}!get\-N\-Channels@{get\-N\-Channels}}
+\index{get\-N\-Channels@{get\-N\-Channels}!Cell@{\-Cell}}
+\subsubsection[{get\-N\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Cell\-::get\-N\-Channels} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_cell_a98b05ad9c5ba1a0bb719df105eb1b56f}
+\-Returns the total number of channels (internal + cell-\/milieu). 
+
+\-Reimplemented from \hyperlink{class_cell_base_ac63ef2dae0215b9fb430dcc40378f2ce}{\-Cell\-Base}.
+
+
+
+\-Definition at line 313 of file \-Cell.\-h.
+
+\hypertarget{class_cell_abed1503a45db1ec72fe2f9721bb8dd7d}{\index{\-Cell@{\-Cell}!get\-Propensities@{get\-Propensities}}
+\index{get\-Propensities@{get\-Propensities}!Cell@{\-Cell}}
+\subsubsection[{get\-Propensities}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ double, 1 $>$ \& {\bf \-Cell\-::get\-Propensities} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_cell_abed1503a45db1ec72fe2f9721bb8dd7d}
+\-Returns the total array of propensities (internal + cell-\/milieu). 
+
+\-Reimplemented from \hyperlink{class_cell_base_ad176550eea24417e8972346acb4c0640}{\-Cell\-Base}.
+
+
+
+\-Definition at line 316 of file \-Cell.\-h.
+
+\hypertarget{class_cell_a001e74a518b87008ab0235095b802677}{\index{\-Cell@{\-Cell}!get\-Propensities\-Cell@{get\-Propensities\-Cell}}
+\index{get\-Propensities\-Cell@{get\-Propensities\-Cell}!Cell@{\-Cell}}
+\subsubsection[{get\-Propensities\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ double, 1 $>$ \& {\bf \-Cell\-::get\-Propensities\-Cell} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_cell_a001e74a518b87008ab0235095b802677}
+\-Returns the array of propensities of the cell reactions. 
+
+\-Definition at line 319 of file \-Cell.\-h.
+
+\hypertarget{class_cell_aa277030af60d6cf9b0698e49a907996e}{\index{\-Cell@{\-Cell}!get\-Propensities\-Cell\-Milieu@{get\-Propensities\-Cell\-Milieu}}
+\index{get\-Propensities\-Cell\-Milieu@{get\-Propensities\-Cell\-Milieu}!Cell@{\-Cell}}
+\subsubsection[{get\-Propensities\-Cell\-Milieu}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ double, 1 $>$ \& {\bf \-Cell\-::get\-Propensities\-Cell\-Milieu} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_cell_aa277030af60d6cf9b0698e49a907996e}
+\-Returns the array of propensities of the cell-\/milieu reactions. 
+
+\-Definition at line 322 of file \-Cell.\-h.
+
+\hypertarget{class_cell_a4f4950f9901d2e52218da8421d11a78f}{\index{\-Cell@{\-Cell}!get\-Time\-Dependent\-Volume@{get\-Time\-Dependent\-Volume}}
+\index{get\-Time\-Dependent\-Volume@{get\-Time\-Dependent\-Volume}!Cell@{\-Cell}}
+\subsubsection[{get\-Time\-Dependent\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Cell\-::get\-Time\-Dependent\-Volume} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_cell_a4f4950f9901d2e52218da8421d11a78f}
+
+
+\-Implements \hyperlink{class_cell_base_a7b69eec41c172b719e7f2ea6cb277ce9}{\-Cell\-Base}.
+
+
+
+\-Definition at line 418 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a1762ba87b6cd232fb4d5ca9513600214}{\index{\-Cell@{\-Cell}!initialize@{initialize}}
+\index{initialize@{initialize}!Cell@{\-Cell}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::initialize} (
+\begin{DoxyParamCaption}
+\item[{\-Cell\-Init\-Param \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a1762ba87b6cd232fb4d5ca9513600214}
+\-Initialize and define a \hyperlink{class_cell}{\-Cell} object, including dna\-Species array and cell-\/milieu reactions.
+
+\-The propensities array will have the size n\-Channels + n\-Channels\-Milieu. \-The propensities array for internal reactions (from \hyperlink{class_cell_base}{\-Cell\-Base} class) is referenced to the subarray \#total\-Propensities\-\_\-(0,n\-Channels-\/1) and the prop. array for cell-\/milieu reactions is referenced to the subarray \#total\-Propensities\-\_\-(n\-Channels,n\-Total\-Channels). 
+
+\-Definition at line 52 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a15cfab0157a0180d1f409ed8afc5c14b}{\index{\-Cell@{\-Cell}!is\-Reaction\-Internal@{is\-Reaction\-Internal}}
+\index{is\-Reaction\-Internal@{is\-Reaction\-Internal}!Cell@{\-Cell}}
+\subsubsection[{is\-Reaction\-Internal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Cell\-::is\-Reaction\-Internal} (
+\begin{DoxyParamCaption}
+\item[{int}]{mu}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_cell_a15cfab0157a0180d1f409ed8afc5c14b}
+
+
+\-Definition at line 325 of file \-Cell.\-h.
+
+\hypertarget{class_cell_a30910c960819ab01b80c4268a22b1579}{\index{\-Cell@{\-Cell}!operator=@{operator=}}
+\index{operator=@{operator=}!Cell@{\-Cell}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell} \& \-Cell\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Cell} \&}]{c2}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a30910c960819ab01b80c4268a22b1579}
+\-Assignment operator. 
+
+\-Definition at line 160 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a91d52e997836d430d05e5c810f553ce9}{\index{\-Cell@{\-Cell}!set\-Angle@{set\-Angle}}
+\index{set\-Angle@{set\-Angle}!Cell@{\-Cell}}
+\subsubsection[{set\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::set\-Angle} (
+\begin{DoxyParamCaption}
+\item[{double}]{angle}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a91d52e997836d430d05e5c810f553ce9}
+\-Change the angle of the cell. 
+
+\-Reimplemented from \hyperlink{class_cell_base_a8ab82721972f41f1d233ab17a841580c}{\-Cell\-Base}.
+
+
+
+\-Definition at line 220 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a8fa3d31ea4774884a1dd0ce488f14123}{\index{\-Cell@{\-Cell}!set\-Cell\-Index@{set\-Cell\-Index}}
+\index{set\-Cell\-Index@{set\-Cell\-Index}!Cell@{\-Cell}}
+\subsubsection[{set\-Cell\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::set\-Cell\-Index} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a8fa3d31ea4774884a1dd0ce488f14123}
+\-Set the cell index in the \hyperlink{class_graphics_cell_composite}{\-Graphics\-Cell\-Composite} class. \-The cell index should be directly used in the \hyperlink{class_cell}{\-Cell} class, it is just used by the graphical interface to know which cell it is when interacting with it. 
+
+\-Reimplemented from \hyperlink{class_graphics_cell_base_a1bd5925a454cd3926652de53ce584f68}{\-Graphics\-Cell\-Base}.
+
+
+
+\-Definition at line 189 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a7546388567cca19b27af68236161e91b}{\index{\-Cell@{\-Cell}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!Cell@{\-Cell}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::set\-Position} (
+\begin{DoxyParamCaption}
+\item[{\-Tiny\-Vector$<$ double, 3 $>$}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_cell_a7546388567cca19b27af68236161e91b}
+\-Set the position of the cell, both in \hyperlink{class_cell_base}{\-Cell\-Base} and \hyperlink{class_graphics_cell_composite}{\-Graphics\-Cell\-Composite} classes. 
+
+\-Reimplemented from \hyperlink{class_cell_base_a913046f5a53f8960f5c17252df6056df}{\-Cell\-Base}.
+
+
+
+\-Definition at line 212 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_a1eb2a609160163f5768e5708cd55a8e2}{\index{\-Cell@{\-Cell}!set\-Reference\-Propensities@{set\-Reference\-Propensities}}
+\index{set\-Reference\-Propensities@{set\-Reference\-Propensities}!Cell@{\-Cell}}
+\subsubsection[{set\-Reference\-Propensities}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::set\-Reference\-Propensities} (
+\begin{DoxyParamCaption}
+\item[{\-Array$<$ double, 1 $>$}]{ref\-Array}
+\end{DoxyParamCaption}
+)}}\label{class_cell_a1eb2a609160163f5768e5708cd55a8e2}
+\-Set the propensities array to be a reference to another array. \-This method set the \#total\-Propensities\-\_\- array to be a reference to another array and it also set the reference of the sub arrays in the \hyperlink{class_cell_base}{\-Cell\-Base} class \-Cell\-Base\-::state\-\_\-.\-propensities\-\_\- and in the \hyperlink{class_cell_milieu_chemical_system}{\-Cell\-Milieu\-Chemical\-System} class \#cell\-Milieu\-Chemical\-System\-\_\-.\-propensities\-\_\- . 
+
+\-Reimplemented from \hyperlink{class_cell_base_afd447b811d2bacc971aba82447a8123e}{\-Cell\-Base}.
+
+
+
+\-Definition at line 196 of file \-Cell.\-cpp.
+
+\hypertarget{class_cell_afea44081620717505850e33262a70472}{\index{\-Cell@{\-Cell}!update\-Graphics\-Cell@{update\-Graphics\-Cell}}
+\index{update\-Graphics\-Cell@{update\-Graphics\-Cell}!Cell@{\-Cell}}
+\subsubsection[{update\-Graphics\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cell\-::update\-Graphics\-Cell} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+)}}\label{class_cell_afea44081620717505850e33262a70472}
+\-Copy the cell dimensions and position from the \hyperlink{class_cell_base_a966e4298cabc00986bb03ce92dfad1f5}{\-Cell\-Base\-::state\-\_\-} to the \hyperlink{class_graphics_cell_composite}{\-Graphics\-Cell\-Composite} class. 
+
+\-Definition at line 237 of file \-Cell.\-cpp.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{class_cell_ab7519ad9f97e822bc4c886ea1e85c29f}{\index{\-Cell@{\-Cell}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Cell@{\-Cell}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf \-Cell} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{class_cell_ab7519ad9f97e822bc4c886ea1e85c29f}
+\-Operator that outputs the content of a \hyperlink{class_cell}{\-Cell} state. \-Remark\-: it is declared as a friend operator, so that it has access to the private part of the \hyperlink{class_cell}{\-Cell} class. \-Overloading the $<$$<$ operator of class \hyperlink{class_cell_base}{\-Cell\-Base}. 
+
+\-Definition at line 176 of file \-Cell.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_cell_8h}{\-Cell.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_cell_8cpp}{\-Cell.\-cpp}\end{DoxyCompactItemize}

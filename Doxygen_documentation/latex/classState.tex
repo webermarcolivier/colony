@@ -1,0 +1,184 @@
+\section{State Class Reference}
+\label{classState}\index{State@{State}}
+State of a cell.  
+
+
+{\tt \#include $<$State.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf State} ()
+\item 
+{\bf $\sim$State} ()
+\item 
+void {\bf initialize} (const {\bf StateInitParam} \&p)
+\begin{CompactList}\small\item\em Remark: The timePreviousDivision\_\- and cellCycleDuration\_\- variables are not initialized by this function. \item\end{CompactList}\item 
+{\bf State} \& {\bf operator=} (const {\bf State} \&s2)
+\begin{CompactList}\small\item\em Assignment operator. \item\end{CompactList}\item 
+double {\bf getTimeDependentVolume} (const double time) const 
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+Array$<$ int, 1 $>$ {\bf x\_\-}
+\begin{CompactList}\small\item\em Vector containing the number of molecules of each chemical species. \item\end{CompactList}\item 
+vector$<$ string $>$ {\bf listSpeciesName\_\-}
+\begin{CompactList}\small\item\em List of the species names. \item\end{CompactList}\item 
+Array$<$ double, 1 $>$ {\bf propensities\_\-}
+\begin{CompactList}\small\item\em Vector containing the propensities of each reaction channels, depends on the chemical system. \item\end{CompactList}\item 
+double {\bf volume0\_\-}
+\begin{CompactList}\small\item\em Volume of the cell at the beginning of the cell cycle. \item\end{CompactList}\item 
+TinyVector$<$ double, 2 $>$ {\bf position\_\-}
+\begin{CompactList}\small\item\em Position of the cell. \item\end{CompactList}\item 
+double {\bf angle\_\-}
+\begin{CompactList}\small\item\em Angle of the cell in radians. \item\end{CompactList}\item 
+double {\bf timePreviousDivision\_\-}
+\begin{CompactList}\small\item\em Absolute time of the previous division event (birth of the cell). \item\end{CompactList}\item 
+double {\bf cellCycleDuration\_\-}
+\begin{CompactList}\small\item\em Duration of the current cell cycle. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf State} (const {\bf State} \&state2)
+\begin{CompactList}\small\item\em Preventing copy constructor use. \item\end{CompactList}\item 
+void {\bf copy} (const {\bf State} \&s2)
+\begin{CompactList}\small\item\em Copy method used in the assigment operator and the copy constructor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&out, const {\bf State} \&s)
+\begin{CompactList}\small\item\em Operator that outputs the content of a \doxyref{Cell}{p.}{classCell} state. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+State of a cell. 
+
+This class defines all the variables for the state of a cell.
+
+Remark 1: These variables will be accessed and updated frequently by the integrator algorithm.
+
+Remark 2: All the variable are public. Since this class is intended to be used as a data structure for another class, it is easier to make the attributes public. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::State ()}\label{classState_b91bb1dd5aa6260ab2a456581daf9ec2}
+
+
+\index{State@{State}!$\sim$State@{$\sim$State}}
+\index{$\sim$State@{$\sim$State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::$\sim$State ()}\label{classState_fab438d92b90dc18d194dbd9c9c8bab3}
+
+
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}State::State (const {\bf State} \& {\em state2})\hspace{0.3cm}{\tt  [private]}}\label{classState_5c25d437404ddec1fb5e799171591529}
+
+
+Preventing copy constructor use. 
+
+
+
+\subsection{Member Function Documentation}
+\index{State@{State}!initialize@{initialize}}
+\index{initialize@{initialize}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void State::initialize (const {\bf StateInitParam} \& {\em p})}\label{classState_1871bc0d9a775f3cb322293bd375708d}
+
+
+Remark: The timePreviousDivision\_\- and cellCycleDuration\_\- variables are not initialized by this function. 
+
+There initial values are set to -infinity and +infinity respectively, and can be changed when initializing an object of the \doxyref{Cell}{p.}{classCell} class (they cannot be changed from \doxyref{CellBase}{p.}{classCellBase}). \index{State@{State}!operator=@{operator=}}
+\index{operator=@{operator=}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf State} \& State::operator= (const {\bf State} \& {\em s2})}\label{classState_5c60ecb4c9602877fb2336d931bd2220}
+
+
+Assignment operator. 
+
+\index{State@{State}!getTimeDependentVolume@{getTimeDependentVolume}}
+\index{getTimeDependentVolume@{getTimeDependentVolume}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double State::getTimeDependentVolume (const double {\em time}) const}\label{classState_1c4adb7d612f35c6bf289be5b90617ac}
+
+
+\index{State@{State}!copy@{copy}}
+\index{copy@{copy}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void State::copy (const {\bf State} \& {\em s2})\hspace{0.3cm}{\tt  [private]}}\label{classState_d40b5bf92920ebb944d986cf0cefcf92}
+
+
+Copy method used in the assigment operator and the copy constructor. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{State@{State}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em out}, \/  const {\bf State} \& {\em s})\hspace{0.3cm}{\tt  [friend]}}\label{classState_5f265ea7c747fb68c3551d8034c1ee17}
+
+
+Operator that outputs the content of a \doxyref{Cell}{p.}{classCell} state. 
+
+Remark: it is declared as a friend operator, so that it has access to the private part of the \doxyref{State}{p.}{classState} class. 
+
+\subsection{Member Data Documentation}
+\index{State@{State}!x\_\-@{x\_\-}}
+\index{x\_\-@{x\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$int,1$>$ {\bf State::x\_\-}}\label{classState_283b1ba6e0c44e73351cfbc23c5f6208}
+
+
+Vector containing the number of molecules of each chemical species. 
+
+\index{State@{State}!listSpeciesName\_\-@{listSpeciesName\_\-}}
+\index{listSpeciesName\_\-@{listSpeciesName\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ {\bf State::listSpeciesName\_\-}}\label{classState_4f25db3d6595db7531c406b3bab9b2ea}
+
+
+List of the species names. 
+
+\index{State@{State}!propensities\_\-@{propensities\_\-}}
+\index{propensities\_\-@{propensities\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$double,1$>$ {\bf State::propensities\_\-}}\label{classState_5e1c561cb95ed83f9a91dd3faa19f7bb}
+
+
+Vector containing the propensities of each reaction channels, depends on the chemical system. 
+
+\index{State@{State}!volume0\_\-@{volume0\_\-}}
+\index{volume0\_\-@{volume0\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf State::volume0\_\-}}\label{classState_739a1bde3383dc8e4df12bb82423e8ef}
+
+
+Volume of the cell at the beginning of the cell cycle. 
+
+\index{State@{State}!position\_\-@{position\_\-}}
+\index{position\_\-@{position\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}TinyVector$<$double,2$>$ {\bf State::position\_\-}}\label{classState_7b9b6f36ea708cb0a7948ca40bcd7b4c}
+
+
+Position of the cell. 
+
+\index{State@{State}!angle\_\-@{angle\_\-}}
+\index{angle\_\-@{angle\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf State::angle\_\-}}\label{classState_5fed656957b2140ae358da6c835f66f2}
+
+
+Angle of the cell in radians. 
+
+\index{State@{State}!timePreviousDivision\_\-@{timePreviousDivision\_\-}}
+\index{timePreviousDivision\_\-@{timePreviousDivision\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf State::timePreviousDivision\_\-}}\label{classState_ccaf47f10a98b8f358865c227cf7ee81}
+
+
+Absolute time of the previous division event (birth of the cell). 
+
+\index{State@{State}!cellCycleDuration\_\-@{cellCycleDuration\_\-}}
+\index{cellCycleDuration\_\-@{cellCycleDuration\_\-}!State@{State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf State::cellCycleDuration\_\-}}\label{classState_c8cc11c0aa1e35e7dcef4a8bd4582a2b}
+
+
+Duration of the current cell cycle. 
+
+The cell cycle can vary from on cycle to another, thus this variable is updated after the cell divison. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf State.h}\item 
+DATA/PROGS/COLONY/{\bf State.cpp}\end{CompactItemize}

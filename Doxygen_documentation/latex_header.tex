@@ -1,0 +1,35 @@
+% NEW COMMANDS
+\newcommand{\sstitre}[1]{\noindent\textbf{#1}}	% write a subtitle for a section
+\newcommand{\super}[1]{\textsuperscript{#1}}	% text superscript
+\newcommand{\sub}[1]{\textsubscript{#1}}	% text subscript
+
+\newcommand{\field}[1]{\mathbb#1}	% write ensembles (R,C,Z,N) with a special font
+\newcommand{\f}{\frac}
+\newcommand{\abs}[1]{\lvert#1\rvert}		% absolute value
+\newcommand{\norm}[1]{\lVert#1\rVert}		% norm
+\newcommand{\vv}[1]{\vec#1}			% vector
+\newcommand{\m}[1]{\mathbf#1}			% matrix
+\newcommand{\op}[1]{\mathbf{\widehat{#1}}}	% operator
+\newcommand{\ket}[1]{\left|#1\right.\rangle}	% quantum mechanics ket
+\newcommand{\bra}[1]{\langle\left.#1\right|}	% quantum mechanics bra
+\newcommand{\braket}[2]{\langle\left.#1\right| #2 \rangle}	% quantum mechanics braket product
+\DeclareMathOperator{\grad}{\overrightarrow{\textrm{grad}}}     % gradient
+\DeclareMathOperator{\erf}{\textrm{erf}}	% error function
+\DeclareMathOperator{\Var}{\textrm{Var}}	% variance
+
+\newcommand{\degree}{\degres}			% celsius degrees !\degres needs french package!
+\newcommand{\ee}[2]{\cdot 10^{#1}\ \text{#2}}	% to write the 10 exponent after a numerical results + units in textstyle. For example, 2x10^6 m/s
+\newcommand{\eval}[2]{\left.#1\right|_{#2}}	% right vertical bar to indicate `evaluate f(t) at t=0'
+\newcommand{\avg}[1]{\langle#1\rangle}		% statistical average < >  (look better than < and > characters)
+\newcommand{\eps}{\varepsilon}			% common epsilon greek letter
+\newcommand{\s}[2]{#1_{\text{#2}}}		% write textstyle subscript in math mode (use it if more than one character in the subscript)
+
+% commands for derivatives and partial derivatives
+%\newcommand{\dd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}		% textstyle 'd' (no italic) version
+%\newcommand{\ddd}[2]{\frac{\mathrm{d}^2#1}{\mathrm{d}#2^2}}    % textstyle 'd' (no italic) version
+\newcommand{\dd}[2]{\frac{d#1}{d#2}}				% first derivative
+\newcommand{\ddd}[2]{\frac{d^2#1}{d#2^2}}			% second derivative
+\newcommand{\ddp}[2]{\frac{\partial#1}{\partial #2}}		% first partial derivative
+\newcommand{\dddp}[2]{\frac{\partial^2#1}{\partial #2^2}}	% second partial derivative
+\newcommand{\dx}[1]{\text{d}#1}					% differential element dx, dA, ds with 'd' textstyle (no italic)
+\newcommand{\dt}[1]{\overset{\textstyle{.}}{#1}}		% dot style time derivative

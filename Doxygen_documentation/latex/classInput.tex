@@ -1,0 +1,137 @@
+\section{Input Class Reference}
+\label{classInput}\index{Input@{Input}}
+Input parameters read from files \char`\"{}input.dat\char`\"{} and \char`\"{}input\_\-simulation.dat\char`\"{} in executable's directory.  
+
+
+{\tt \#include $<$Input.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Input} ()
+\begin{CompactList}\small\item\em The default constructor reads the input from file \char`\"{}input.dat\char`\"{} and \char`\"{}input\_\-simulation.dat\char`\"{}. \item\end{CompactList}\item 
+{\bf $\sim$Input} ()
+\item 
+void {\bf setGlobalParameter} (const double time)
+\item 
+void {\bf setIndexParameterSet} (const int i)
+\item 
+int {\bf getNParameterSet} () const 
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf seed}
+\item 
+CellCollectionParam {\bf p}
+\item 
+SimulatorParam {\bf sim}
+\item 
+OutputParam {\bf out}
+\end{CompactItemize}
+\subsection*{Static Public Attributes}
+\begin{CompactItemize}
+\item 
+static Array$<$ double, 1 $>$ {\bf globalParameter}
+\item 
+static vector$<$ string $>$ {\bf listGlobalParametersName}
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+Array$<$ double, 1 $>$ {\bf simTimePoints\_\-}
+\item 
+Array$<$ double, 3 $>$ {\bf globalParameterTimePoints\_\-}
+\item 
+int {\bf indexParameterSet\_\-}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Input parameters read from files \char`\"{}input.dat\char`\"{} and \char`\"{}input\_\-simulation.dat\char`\"{} in executable's directory. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Input@{Input}!Input@{Input}}
+\index{Input@{Input}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Input::Input ()}\label{classInput_bae3f379d3f157cf42dc857309832dba}
+
+
+The default constructor reads the input from file \char`\"{}input.dat\char`\"{} and \char`\"{}input\_\-simulation.dat\char`\"{}. 
+
+\index{Input@{Input}!$\sim$Input@{$\sim$Input}}
+\index{$\sim$Input@{$\sim$Input}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Input::$\sim$Input ()}\label{classInput_f2db35ba67c8a8ccd23bef6a482fc291}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Input@{Input}!setGlobalParameter@{setGlobalParameter}}
+\index{setGlobalParameter@{setGlobalParameter}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Input::setGlobalParameter (const double {\em time})}\label{classInput_a208108461c7017b929db50cec33175d}
+
+
+\index{Input@{Input}!setIndexParameterSet@{setIndexParameterSet}}
+\index{setIndexParameterSet@{setIndexParameterSet}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Input::setIndexParameterSet (const int {\em i})}\label{classInput_8f085cfd1e929ffeb6493d52265f69d9}
+
+
+\index{Input@{Input}!getNParameterSet@{getNParameterSet}}
+\index{getNParameterSet@{getNParameterSet}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Input::getNParameterSet () const}\label{classInput_abbb875892aef9fb2e3855f85f742c85}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Input@{Input}!seed@{seed}}
+\index{seed@{seed}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Input::seed}}\label{classInput_9ba0dddeba07d5be04e894c6ceecd6d9}
+
+
+\index{Input@{Input}!p@{p}}
+\index{p@{p}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellCollectionParam {\bf Input::p}}\label{classInput_2d15599a9c23b27330ae868928d2997d}
+
+
+\index{Input@{Input}!sim@{sim}}
+\index{sim@{sim}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SimulatorParam {\bf Input::sim}}\label{classInput_cc3f4f428e3a7e40eec817496ad85deb}
+
+
+\index{Input@{Input}!out@{out}}
+\index{out@{out}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}OutputParam {\bf Input::out}}\label{classInput_4efa8e11da83057d1a7a7b828033438d}
+
+
+\index{Input@{Input}!globalParameter@{globalParameter}}
+\index{globalParameter@{globalParameter}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ {\bf Input::globalParameter}\hspace{0.3cm}{\tt  [static]}}\label{classInput_7d05df10573a8036c8a403b2d4c73ac9}
+
+
+\index{Input@{Input}!listGlobalParametersName@{listGlobalParametersName}}
+\index{listGlobalParametersName@{listGlobalParametersName}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ {\bf Input::listGlobalParametersName}\hspace{0.3cm}{\tt  [static]}}\label{classInput_b6ad759b315761a306fd95353b31c1a4}
+
+
+\index{Input@{Input}!simTimePoints\_\-@{simTimePoints\_\-}}
+\index{simTimePoints\_\-@{simTimePoints\_\-}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$double,1$>$ {\bf Input::simTimePoints\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classInput_9cbd8adf825d8160c877e3367686ef77}
+
+
+\index{Input@{Input}!globalParameterTimePoints\_\-@{globalParameterTimePoints\_\-}}
+\index{globalParameterTimePoints\_\-@{globalParameterTimePoints\_\-}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$double,3$>$ {\bf Input::globalParameterTimePoints\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classInput_e671de79cc80a7f49911954d02d556b9}
+
+
+\index{Input@{Input}!indexParameterSet\_\-@{indexParameterSet\_\-}}
+\index{indexParameterSet\_\-@{indexParameterSet\_\-}!Input@{Input}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf Input::indexParameterSet\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classInput_3239043866ce445c4742c0f3585dd682}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf Input.h}\item 
+DATA/PROGS/COLONY/{\bf Input.cpp}\end{CompactItemize}

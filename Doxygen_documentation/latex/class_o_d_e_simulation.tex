@@ -1,0 +1,204 @@
+\hypertarget{class_o_d_e_simulation}{\section{\-O\-D\-E\-Simulation \-Class \-Reference}
+\label{class_o_d_e_simulation}\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}}
+}
+
+
+{\ttfamily \#include $<$\-O\-D\-E\-Simulation.\-h$>$}
+
+\-Inheritance diagram for \-O\-D\-E\-Simulation\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_d_e_simulation}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_d_e_simulation_ae594151b85a5528b8c9cc44e268c7256}{\-O\-D\-E\-Simulation} ()
+\item 
+\hyperlink{class_o_d_e_simulation_abaa90d10deb102d150497ca5db7f1af4}{$\sim$\-O\-D\-E\-Simulation} ()
+\item 
+d\-World\-I\-D \hyperlink{class_o_d_e_simulation_a9320cdf91a7e002119eb0cb0bba9c7b0}{get\-World} () const 
+\item 
+void \hyperlink{class_o_d_e_simulation_a83fbf3e98bab325948da3e4d1b3f3848}{init} ()
+\item 
+void \hyperlink{class_o_d_e_simulation_a5a72dab563d6c80d6643c1f940bb3349}{handle\-Collision\-Between} (d\-Geom\-I\-D o0, d\-Geom\-I\-D o1)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_o_d_e_simulation_ac5ca4e063d5021dfbb6fd1b3d8004a8a}{compute\-Step} (float time\-Step, \-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$cells\-List, double colony\-Size, bool equilibration, double average\-Cell\-Length, double cell\-Height)
+\item 
+void \hyperlink{class_o_d_e_simulation_a55e70b91c52db2998b169148c6e4b853}{compute\-Step\-With\-Aligning\-Force} (float time\-Step, \-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$cells\-List, double colony\-Size)
+\item 
+void \hyperlink{class_o_d_e_simulation_a5e50af215ed7e46ec872d1fc7dc2cc7b}{compute\-Forces} (\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$cells\-List, double colony\-Size, bool low\-Friction)
+\item 
+void \hyperlink{class_o_d_e_simulation_a25eefbb4cafc5a920837f3469dcee977}{compute\-Aligning\-Forces} (\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$cells\-List, double colony\-Size)
+\item 
+double \hyperlink{class_o_d_e_simulation_a1a69251dfb38f5be8b7bc1947ea06f98}{compute\-Colony\-Radius} (\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$cells\-List, double colony\-Size)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+d\-World\-I\-D \hyperlink{class_o_d_e_simulation_ab01265ac8b2ec870b00c35e017d9cd48}{world\-\_\-}
+\item 
+d\-Space\-I\-D \hyperlink{class_o_d_e_simulation_afe195e9dc824b0311b2959e8bd058c19}{space\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Open \-Dynamics \-Engine (\-O\-D\-E) simulation. \-Contains and defines the \-O\-D\-E world and the basics and the \-O\-D\-E simulation\-: simulation step method, computes forces between objects, handle collision method. 
+
+\-Definition at line 39 of file \-O\-D\-E\-Simulation.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_o_d_e_simulation_ae594151b85a5528b8c9cc44e268c7256}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}}
+\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{\-O\-D\-E\-Simulation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-O\-D\-E\-Simulation\-::\-O\-D\-E\-Simulation} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_o_d_e_simulation_ae594151b85a5528b8c9cc44e268c7256}
+
+
+\-Definition at line 30 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_abaa90d10deb102d150497ca5db7f1af4}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!$\sim$\-O\-D\-E\-Simulation@{$\sim$\-O\-D\-E\-Simulation}}
+\index{$\sim$\-O\-D\-E\-Simulation@{$\sim$\-O\-D\-E\-Simulation}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{$\sim$\-O\-D\-E\-Simulation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-O\-D\-E\-Simulation\-::$\sim$\-O\-D\-E\-Simulation} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_o_d_e_simulation_abaa90d10deb102d150497ca5db7f1af4}
+
+
+\-Definition at line 80 of file \-O\-D\-E\-Simulation.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_o_d_e_simulation_a25eefbb4cafc5a920837f3469dcee977}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!compute\-Aligning\-Forces@{compute\-Aligning\-Forces}}
+\index{compute\-Aligning\-Forces@{compute\-Aligning\-Forces}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{compute\-Aligning\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-O\-D\-E\-Simulation\-::compute\-Aligning\-Forces} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$}]{cells\-List, }
+\item[{double}]{colony\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_o_d_e_simulation_a25eefbb4cafc5a920837f3469dcee977}
+
+
+\-Definition at line 338 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_a1a69251dfb38f5be8b7bc1947ea06f98}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!compute\-Colony\-Radius@{compute\-Colony\-Radius}}
+\index{compute\-Colony\-Radius@{compute\-Colony\-Radius}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{compute\-Colony\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-O\-D\-E\-Simulation\-::compute\-Colony\-Radius} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$}]{cells\-List, }
+\item[{double}]{colony\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_o_d_e_simulation_a1a69251dfb38f5be8b7bc1947ea06f98}
+
+
+\-Definition at line 402 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_a5e50af215ed7e46ec872d1fc7dc2cc7b}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!compute\-Forces@{compute\-Forces}}
+\index{compute\-Forces@{compute\-Forces}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{compute\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-O\-D\-E\-Simulation\-::compute\-Forces} (
+\begin{DoxyParamCaption}
+\item[{\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$}]{cells\-List, }
+\item[{double}]{colony\-Size, }
+\item[{bool}]{low\-Friction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_o_d_e_simulation_a5e50af215ed7e46ec872d1fc7dc2cc7b}
+
+
+\-Definition at line 237 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_ac5ca4e063d5021dfbb6fd1b3d8004a8a}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!compute\-Step@{compute\-Step}}
+\index{compute\-Step@{compute\-Step}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{compute\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-O\-D\-E\-Simulation\-::compute\-Step} (
+\begin{DoxyParamCaption}
+\item[{float}]{time\-Step, }
+\item[{\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$}]{cells\-List, }
+\item[{double}]{colony\-Size, }
+\item[{bool}]{equilibration, }
+\item[{double}]{average\-Cell\-Length, }
+\item[{double}]{cell\-Height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{class_o_d_e_simulation_ac5ca4e063d5021dfbb6fd1b3d8004a8a}
+
+
+\-Definition at line 96 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_a55e70b91c52db2998b169148c6e4b853}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!compute\-Step\-With\-Aligning\-Force@{compute\-Step\-With\-Aligning\-Force}}
+\index{compute\-Step\-With\-Aligning\-Force@{compute\-Step\-With\-Aligning\-Force}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{compute\-Step\-With\-Aligning\-Force}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-O\-D\-E\-Simulation\-::compute\-Step\-With\-Aligning\-Force} (
+\begin{DoxyParamCaption}
+\item[{float}]{time\-Step, }
+\item[{\-Q\-List$<$ \-Graphics\-Cell $\ast$ $>$ $\ast$}]{cells\-List, }
+\item[{double}]{colony\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_o_d_e_simulation_a55e70b91c52db2998b169148c6e4b853}
+
+
+\-Definition at line 157 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_a9320cdf91a7e002119eb0cb0bba9c7b0}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!get\-World@{get\-World}}
+\index{get\-World@{get\-World}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{get\-World}]{\setlength{\rightskip}{0pt plus 5cm}d\-World\-I\-D {\bf \-O\-D\-E\-Simulation\-::get\-World} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_o_d_e_simulation_a9320cdf91a7e002119eb0cb0bba9c7b0}
+
+
+\-Definition at line 89 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_a5a72dab563d6c80d6643c1f940bb3349}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!handle\-Collision\-Between@{handle\-Collision\-Between}}
+\index{handle\-Collision\-Between@{handle\-Collision\-Between}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{handle\-Collision\-Between}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-O\-D\-E\-Simulation\-::handle\-Collision\-Between} (
+\begin{DoxyParamCaption}
+\item[{d\-Geom\-I\-D}]{o0, }
+\item[{d\-Geom\-I\-D}]{o1}
+\end{DoxyParamCaption}
+)}}\label{class_o_d_e_simulation_a5a72dab563d6c80d6643c1f940bb3349}
+
+
+\-Definition at line 189 of file \-O\-D\-E\-Simulation.\-cpp.
+
+\hypertarget{class_o_d_e_simulation_a83fbf3e98bab325948da3e4d1b3f3848}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!init@{init}}
+\index{init@{init}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-O\-D\-E\-Simulation\-::init} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_o_d_e_simulation_a83fbf3e98bab325948da3e4d1b3f3848}
+
+
+\-Definition at line 74 of file \-O\-D\-E\-Simulation.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_o_d_e_simulation_afe195e9dc824b0311b2959e8bd058c19}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!space\-\_\-@{space\-\_\-}}
+\index{space\-\_\-@{space\-\_\-}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{space\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}d\-Space\-I\-D {\bf \-O\-D\-E\-Simulation\-::space\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_o_d_e_simulation_afe195e9dc824b0311b2959e8bd058c19}
+
+
+\-Definition at line 54 of file \-O\-D\-E\-Simulation.\-h.
+
+\hypertarget{class_o_d_e_simulation_ab01265ac8b2ec870b00c35e017d9cd48}{\index{\-O\-D\-E\-Simulation@{\-O\-D\-E\-Simulation}!world\-\_\-@{world\-\_\-}}
+\index{world\-\_\-@{world\-\_\-}!ODESimulation@{\-O\-D\-E\-Simulation}}
+\subsubsection[{world\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}d\-World\-I\-D {\bf \-O\-D\-E\-Simulation\-::world\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_o_d_e_simulation_ab01265ac8b2ec870b00c35e017d9cd48}
+
+
+\-Definition at line 53 of file \-O\-D\-E\-Simulation.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_o_d_e_simulation_8h}{\-O\-D\-E\-Simulation.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_o_d_e_simulation_8cpp}{\-O\-D\-E\-Simulation.\-cpp}\end{DoxyCompactItemize}

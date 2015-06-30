@@ -1,0 +1,29 @@
+\form#0:$ V(t_0+t_c) = 2V_0 $
+\form#1:$ V_0 $
+\form#2:$ t_0 $
+\form#3:\[ V(t) = V_0 2^{\frac{t-t_0}{tc}} \]
+\form#4:$ \Sigma(t) $
+\form#5:\[ \Sigma(t) = \Sigma_0 \theta(t) \]
+\form#6:\[ \theta(t) = 1 + \frac{L_0}{L_0+a}\left( 2^{\frac{t-t_0}{tc}}-1 \right) \]
+\form#7:$ L_0 $
+\form#8:$ a $
+\form#9:\[ k_{out}(t) = D_x \theta(t) \]
+\form#10:\[ k_{in}(t) = D_x \theta(t) \frac{V(t)}{V_{ext}} \]
+\form#11:$ \Sigma_0 $
+\form#12:$ D_x $
+\form#13:$ \tau $
+\form#14:$ t+ \tau $
+\form#15:$t_c$
+\form#16:\[ t_c = \gamma t_{det} + (1-\gamma)t_{sto} \]
+\form#17:$t_{det}$
+\form#18:$t_{sto}$
+\form#19:$\gamma\in [0,1]$
+\form#20:$\gamma t_{det}$
+\form#21:\[ \rho(t_{sto}) = \frac{1}{t_{det}} e^{-\frac{t_{sto}}{t_{det}}} \]
+\form#22:\[ <\tau> = t_{det} \]
+\form#23:\[ \sigma_{\tau} = (1-\gamma) t_{det} \]
+\form#24:\[ \theta(t) = 1 + \frac{L_0}{L_0+r_0}\left( 2^{\frac{t-t_0}{tc}}-1 \right) \]
+\form#25:$ r_0 $
+\form#26:\[ \theta(t) = V(t)/V_1 \]
+\form#27:$V_1$
+\form#28:$ V1 = V_0/ln(2) $

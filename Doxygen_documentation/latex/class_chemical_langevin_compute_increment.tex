@@ -1,0 +1,84 @@
+\hypertarget{class_chemical_langevin_compute_increment}{\section{\-Chemical\-Langevin\-Compute\-Increment \-Class \-Reference}
+\label{class_chemical_langevin_compute_increment}\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}}
+}
+
+
+{\ttfamily \#include $<$chemical\-Langevin\-Compute\-Increment.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_chemical_langevin_compute_increment_ae4679c9ad8ad9953805d66e4871e9361}{\-Chemical\-Langevin\-Compute\-Increment} ()
+\item 
+\hyperlink{class_chemical_langevin_compute_increment_a1ac92e6c10f34590984441b1df412cf6}{$\sim$\-Chemical\-Langevin\-Compute\-Increment} ()
+\item 
+void \hyperlink{class_chemical_langevin_compute_increment_a13e57a5e40806aba48ed89727d533736}{chemical\-Langevin\-Compute\-Increment} (\-Array$<$ double, 1 $>$ \&x\-Conc\-Cells, \-Array$<$ double, 1 $>$ \&x\-Conc\-Milieu, const int n\-Cells, const double volume\-Cell, const double volume\-Ext, const double chemical\-Langevin\-Time\-Step)
+\item 
+void \hyperlink{class_chemical_langevin_compute_increment_ae3578fa7650221fecd5145cee45c0b00}{set\-Fixed\-N\-Cells} (int n\-Cells)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_chemical_langevin_compute_increment_aebc8634943805505fba3d5a5dac51945}{proportion\-Negative\-Steps}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Algorithm of \-Euler for the chemical \-Langevin equation. \-This class is written by the mathematica notebook. 
+
+\-Definition at line 44 of file chemical\-Langevin\-Compute\-Increment.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_chemical_langevin_compute_increment_ae4679c9ad8ad9953805d66e4871e9361}{\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}!\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}}
+\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}!ChemicalLangevinComputeIncrement@{\-Chemical\-Langevin\-Compute\-Increment}}
+\subsubsection[{\-Chemical\-Langevin\-Compute\-Increment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Chemical\-Langevin\-Compute\-Increment\-::\-Chemical\-Langevin\-Compute\-Increment} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_chemical_langevin_compute_increment_ae4679c9ad8ad9953805d66e4871e9361}
+\hypertarget{class_chemical_langevin_compute_increment_a1ac92e6c10f34590984441b1df412cf6}{\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}!$\sim$\-Chemical\-Langevin\-Compute\-Increment@{$\sim$\-Chemical\-Langevin\-Compute\-Increment}}
+\index{$\sim$\-Chemical\-Langevin\-Compute\-Increment@{$\sim$\-Chemical\-Langevin\-Compute\-Increment}!ChemicalLangevinComputeIncrement@{\-Chemical\-Langevin\-Compute\-Increment}}
+\subsubsection[{$\sim$\-Chemical\-Langevin\-Compute\-Increment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Chemical\-Langevin\-Compute\-Increment\-::$\sim$\-Chemical\-Langevin\-Compute\-Increment} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_chemical_langevin_compute_increment_a1ac92e6c10f34590984441b1df412cf6}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_chemical_langevin_compute_increment_a13e57a5e40806aba48ed89727d533736}{\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}!chemical\-Langevin\-Compute\-Increment@{chemical\-Langevin\-Compute\-Increment}}
+\index{chemical\-Langevin\-Compute\-Increment@{chemical\-Langevin\-Compute\-Increment}!ChemicalLangevinComputeIncrement@{\-Chemical\-Langevin\-Compute\-Increment}}
+\subsubsection[{chemical\-Langevin\-Compute\-Increment}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Chemical\-Langevin\-Compute\-Increment\-::chemical\-Langevin\-Compute\-Increment} (
+\begin{DoxyParamCaption}
+\item[{\-Array$<$ double, 1 $>$ \&}]{x\-Conc\-Cells, }
+\item[{\-Array$<$ double, 1 $>$ \&}]{x\-Conc\-Milieu, }
+\item[{const int}]{n\-Cells, }
+\item[{const double}]{volume\-Cell, }
+\item[{const double}]{volume\-Ext, }
+\item[{const double}]{chemical\-Langevin\-Time\-Step}
+\end{DoxyParamCaption}
+)}}\label{class_chemical_langevin_compute_increment_a13e57a5e40806aba48ed89727d533736}
+\hypertarget{class_chemical_langevin_compute_increment_ae3578fa7650221fecd5145cee45c0b00}{\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}!set\-Fixed\-N\-Cells@{set\-Fixed\-N\-Cells}}
+\index{set\-Fixed\-N\-Cells@{set\-Fixed\-N\-Cells}!ChemicalLangevinComputeIncrement@{\-Chemical\-Langevin\-Compute\-Increment}}
+\subsubsection[{set\-Fixed\-N\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Chemical\-Langevin\-Compute\-Increment\-::set\-Fixed\-N\-Cells} (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Cells}
+\end{DoxyParamCaption}
+)}}\label{class_chemical_langevin_compute_increment_ae3578fa7650221fecd5145cee45c0b00}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_chemical_langevin_compute_increment_aebc8634943805505fba3d5a5dac51945}{\index{\-Chemical\-Langevin\-Compute\-Increment@{\-Chemical\-Langevin\-Compute\-Increment}!proportion\-Negative\-Steps@{proportion\-Negative\-Steps}}
+\index{proportion\-Negative\-Steps@{proportion\-Negative\-Steps}!ChemicalLangevinComputeIncrement@{\-Chemical\-Langevin\-Compute\-Increment}}
+\subsubsection[{proportion\-Negative\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Chemical\-Langevin\-Compute\-Increment\-::proportion\-Negative\-Steps}}}\label{class_chemical_langevin_compute_increment_aebc8634943805505fba3d5a5dac51945}
+
+
+\-Definition at line 63 of file chemical\-Langevin\-Compute\-Increment.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{chemical_langevin_compute_increment_8h}{chemical\-Langevin\-Compute\-Increment.\-h}\end{DoxyCompactItemize}

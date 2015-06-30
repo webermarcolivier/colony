@@ -1,0 +1,139 @@
+\hypertarget{class_integrator_gillespie_modified}{\section{\-Integrator\-Gillespie\-Modified \-Class \-Reference}
+\label{class_integrator_gillespie_modified}\index{\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}}
+}
+
+
+{\ttfamily \#include $<$\-Integrator\-Gillespie\-Modified.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_integrator_gillespie_modified_a8ec41219d1684aef6d71bc0972de10b8}{\-Integrator\-Gillespie\-Modified} (\hyperlink{class_simulator}{\-Simulator} $\ast$simulator\-Ptr)
+\item 
+\hyperlink{class_integrator_gillespie_modified_ab73be5c9be0f4f94711187022a67dcc1}{$\sim$\-Integrator\-Gillespie\-Modified} ()
+\item 
+void \hyperlink{class_integrator_gillespie_modified_a055f49148993f45f1b646690c88d705b}{integrate\-One\-Step} ()
+\item 
+void \hyperlink{class_integrator_gillespie_modified_ad21da74d0858adfe4eed851bd0b84c21}{integrate\-One\-Step} (double time\-Step)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Algorithm of \-Gillespie modified for time-\/dependent diffusion process.
+
+\-The algorithm is using the approximate method that consists of taking the time till next reaction ( $ \tau $) distribution of the normal \-Gillespie algorithm to compute $ \tau $ and picking the reaction channel based on the recalculated propensities at time $ t+ \tau $. 
+
+\-Definition at line 55 of file \-Integrator\-Gillespie\-Modified.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_integrator_gillespie_modified_a8ec41219d1684aef6d71bc0972de10b8}{\index{\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}!\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}}
+\index{\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}!IntegratorGillespieModified@{\-Integrator\-Gillespie\-Modified}}
+\subsubsection[{\-Integrator\-Gillespie\-Modified}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Integrator\-Gillespie\-Modified\-::\-Integrator\-Gillespie\-Modified} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Simulator} $\ast$}]{simulator\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{class_integrator_gillespie_modified_a8ec41219d1684aef6d71bc0972de10b8}
+\-Initiate the \hyperlink{class_integrator_context}{\-Integrator\-Context} with the pointer to the \hyperlink{class_simulator}{\-Simulator} object as argument. 
+
+\-Definition at line 20 of file \-Integrator\-Gillespie\-Modified.\-cpp.
+
+\hypertarget{class_integrator_gillespie_modified_ab73be5c9be0f4f94711187022a67dcc1}{\index{\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}!$\sim$\-Integrator\-Gillespie\-Modified@{$\sim$\-Integrator\-Gillespie\-Modified}}
+\index{$\sim$\-Integrator\-Gillespie\-Modified@{$\sim$\-Integrator\-Gillespie\-Modified}!IntegratorGillespieModified@{\-Integrator\-Gillespie\-Modified}}
+\subsubsection[{$\sim$\-Integrator\-Gillespie\-Modified}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Integrator\-Gillespie\-Modified\-::$\sim$\-Integrator\-Gillespie\-Modified} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_integrator_gillespie_modified_ab73be5c9be0f4f94711187022a67dcc1}
+
+
+\-Definition at line 27 of file \-Integrator\-Gillespie\-Modified.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_integrator_gillespie_modified_a055f49148993f45f1b646690c88d705b}{\index{\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}!integrate\-One\-Step@{integrate\-One\-Step}}
+\index{integrate\-One\-Step@{integrate\-One\-Step}!IntegratorGillespieModified@{\-Integrator\-Gillespie\-Modified}}
+\subsubsection[{integrate\-One\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Integrator\-Gillespie\-Modified\-::integrate\-One\-Step} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_integrator_gillespie_modified_a055f49148993f45f1b646690c88d705b}
+\-Integrate one step in the \-Gillespie algorithm. 
+\begin{DoxyItemize}
+\item \-Instantiate a local reference to the array of propensities.
+\begin{DoxyItemize}
+\item \-Compute all propensities.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Compute the total sum of all channels propensities at time t.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Pick up 2 uniform random numbers in \mbox{[}0,1), 'r1' and 'r2'.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Compute the time till next reaction, 'tau'.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Recompute the propensities of time-\/dependent channels at time t + tau.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-This is just to costly to do. \-Let the propensities like they are.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Compute the total sum of all channels propensities at time t + tau.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Find the channel of the next reaction, 'mu'. \-Choose channel between all the reactions available according to the weights given by the propensities.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Get the time of the following division event in the whole cell collection. \-The next division event will happen at time 't1'.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-If the time of next reaction is smaller than the time of next division event 't1', then
+\begin{DoxyItemize}
+\item \-Apply reaction 'mu' in cell 'k' and update simulation time.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\-If not, update simulation time to the time of next division event 't1' and divide the cell(s).
+
+\-Definition at line 32 of file \-Integrator\-Gillespie\-Modified.\-cpp.
+
+\hypertarget{class_integrator_gillespie_modified_ad21da74d0858adfe4eed851bd0b84c21}{\index{\-Integrator\-Gillespie\-Modified@{\-Integrator\-Gillespie\-Modified}!integrate\-One\-Step@{integrate\-One\-Step}}
+\index{integrate\-One\-Step@{integrate\-One\-Step}!IntegratorGillespieModified@{\-Integrator\-Gillespie\-Modified}}
+\subsubsection[{integrate\-One\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Integrator\-Gillespie\-Modified\-::integrate\-One\-Step} (
+\begin{DoxyParamCaption}
+\item[{double}]{time\-Step}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_integrator_gillespie_modified_ad21da74d0858adfe4eed851bd0b84c21}
+\-This method is not used in this integrator class. 
+
+\-Definition at line 75 of file \-Integrator\-Gillespie\-Modified.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_integrator_gillespie_modified_8h}{\-Integrator\-Gillespie\-Modified.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_integrator_gillespie_modified_8cpp}{\-Integrator\-Gillespie\-Modified.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Colony" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/colony.x" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-Wall" />
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-DBZ_DEBUG" />
+					<Add option="-DBUILD_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg" />
+				</Linker>
+			</Target>
+			<Target title="Intel64">
+				<Option output="bin/Release/colony_Intel64.x" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=nocona" />
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+			</Target>
+			<Target title="Athlon64">
+				<Option output="bin/Release/colony_Athlon64.x" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=athlon64" />
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Linker>
+			<Add library="/usr/lib/libgsl.a" />
+			<Add library="/usr/lib/libgslcblas.a" />
+			<Add library="/usr/lib/libblitz.a" />
+			<Add library="/usr/lib/libboost_filesystem.a" />
+		</Linker>
+		<Unit filename="Cell.cpp" />
+		<Unit filename="Cell.h" />
+		<Unit filename="CellBase.cpp" />
+		<Unit filename="CellBase.h" />
+		<Unit filename="CellCollection.cpp" />
+		<Unit filename="CellCollection.h" />
+		<Unit filename="CellLineageGeneration.cpp" />
+		<Unit filename="CellLineageGeneration.h" />
+		<Unit filename="CellMilieuChemicalSystem.cpp" />
+		<Unit filename="CellMilieuChemicalSystem.h" />
+		<Unit filename="ChemicalSystem.cpp" />
+		<Unit filename="ChemicalSystem.h" />
+		<Unit filename="GlobalArray.cpp" />
+		<Unit filename="GlobalArray.h" />
+		<Unit filename="GlobalArrayInterface.cpp" />
+		<Unit filename="GlobalArrayInterface.h" />
+		<Unit filename="Input.cpp" />
+		<Unit filename="Input.h" />
+		<Unit filename="IntegratorContext.cpp" />
+		<Unit filename="IntegratorContext.h" />
+		<Unit filename="IntegratorGillespie.cpp" />
+		<Unit filename="IntegratorGillespie.h" />
+		<Unit filename="IntegratorGillespieModified.cpp" />
+		<Unit filename="IntegratorGillespieModified.h" />
+		<Unit filename="Milieu.cpp" />
+		<Unit filename="Milieu.h" />
+		<Unit filename="Output.cpp" />
+		<Unit filename="Output.h" />
+		<Unit filename="Param/CellCollectionParam.h" />
+		<Unit filename="Param/OutputParam.h" />
+		<Unit filename="Param/SimulatorParam.h" />
+		<Unit filename="RandomNumberGenerator.cpp" />
+		<Unit filename="RandomNumberGenerator.h" />
+		<Unit filename="Simulator.cpp" />
+		<Unit filename="Simulator.h" />
+		<Unit filename="State.cpp" />
+		<Unit filename="State.h" />
+		<Unit filename="TimeSlice.cpp" />
+		<Unit filename="TimeSlice.h" />
+		<Unit filename="TimeSliceCellsAvg.cpp" />
+		<Unit filename="TimeSliceCellsAvg.h" />
+		<Unit filename="app.cpp" />
+		<Unit filename="apptest.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="debug.h" />
+		<Unit filename="doxygen_documentation.h" />
+		<Unit filename="iotools.cpp" />
+		<Unit filename="iotools.h" />
+		<Unit filename="../computePropensitiesFunctions.cpp" />
+		<Unit filename="../computePropensitiesFunctions.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

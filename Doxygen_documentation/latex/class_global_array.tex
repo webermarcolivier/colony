@@ -1,0 +1,168 @@
+\hypertarget{class_global_array}{\section{\-Global\-Array$<$ \-T $>$ \-Class \-Template \-Reference}
+\label{class_global_array}\index{\-Global\-Array$<$ T $>$@{\-Global\-Array$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Global\-Array.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_global_array_a96570937786aa847350cadcf2a2deb6e}{\-Global\-Array} ()
+\item 
+\hyperlink{class_global_array_a41c47e855bdaa6ebd2b00541f1b9e5fe}{$\sim$\-Global\-Array} ()
+\item 
+void \hyperlink{class_global_array_a785072abe434f74ea777044b5d16d4bd}{build} (list$<$ \hyperlink{class_local_array_target}{\-Local\-Array\-Target}$<$ \-T $>$ $>$ \&local\-Array\-List)
+\item 
+list$<$ \-Array$<$ \-T, 1 $>$ $>$ \hyperlink{class_global_array_ac81fd0b504d70fc51ab9df89707b523a}{build\-Global\-Array\-Ranges\-List} (list$<$ \hyperlink{class_local_array_target}{\-Local\-Array\-Target}$<$ \-T $>$ $>$ \&local\-Array\-List)
+\item 
+\-Array$<$ \-T, 1 $>$ \& \hyperlink{class_global_array_a78ce4aa9d6bbd062f92dc233c368b1a7}{get\-Global\-Array} ()
+\item 
+\-Array$<$ \-T, 1 $>$ \hyperlink{class_global_array_a63db21859b40c12c5c9e4221d3db66b5}{get\-Node} (int k)
+\item 
+pair$<$ int, int $>$ \hyperlink{class_global_array_ad8f1ca4e0051ed951708caeb9adb4463}{get\-Local\-Indices\-From\-Global} (int i) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class \-T$>$class Global\-Array$<$ T $>$}
+
+\-This class defines a global array of type \-T which stores consecutively a series of local arrays, called nodes. \-Each node is itself a smaller array of type \-T, and can have an arbitrary size. 
+
+\-Definition at line 65 of file \-Global\-Array.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_global_array_a96570937786aa847350cadcf2a2deb6e}{\index{\-Global\-Array@{\-Global\-Array}!\-Global\-Array@{\-Global\-Array}}
+\index{\-Global\-Array@{\-Global\-Array}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{\-Global\-Array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf \-Global\-Array}$<$ \-T $>$\-::{\bf \-Global\-Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_global_array_a96570937786aa847350cadcf2a2deb6e}
+
+
+\-Definition at line 21 of file \-Global\-Array.\-cpp.
+
+\hypertarget{class_global_array_a41c47e855bdaa6ebd2b00541f1b9e5fe}{\index{\-Global\-Array@{\-Global\-Array}!$\sim$\-Global\-Array@{$\sim$\-Global\-Array}}
+\index{$\sim$\-Global\-Array@{$\sim$\-Global\-Array}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{$\sim$\-Global\-Array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf \-Global\-Array}$<$ \-T $>$\-::$\sim${\bf \-Global\-Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_global_array_a41c47e855bdaa6ebd2b00541f1b9e5fe}
+
+
+\-Definition at line 29 of file \-Global\-Array.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_global_array_a785072abe434f74ea777044b5d16d4bd}{\index{\-Global\-Array@{\-Global\-Array}!build@{build}}
+\index{build@{build}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{build}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ void {\bf \-Global\-Array}$<$ \-T $>$\-::{\bf build} (
+\begin{DoxyParamCaption}
+\item[{list$<$ {\bf \-Local\-Array\-Target}$<$ \-T $>$ $>$ \&}]{local\-Array\-List}
+\end{DoxyParamCaption}
+)}}\label{class_global_array_a785072abe434f74ea777044b5d16d4bd}
+\-Construct/\-Reconstruct the global array based on the local arrays information. \-The method goes like this\-:
+\begin{DoxyItemize}
+\item \-Set n\-Nodes.
+\item \-Loop over local array list\-:
+\begin{DoxyItemize}
+\item \-Calculate the node table and the total size of the global array.
+\end{DoxyItemize}
+\item \-Resize global array.
+\item \-Loop over local array list\-:
+\begin{DoxyItemize}
+\item \-Make a copy of local array.
+\item \-Reference local array to corresponding part of the global array.
+\item \-Copy back values into local array.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em local\-Arrays\-List} & list of the local arrays. \-Each element of the list is a \-Local\-Array\-Target$<$\-T$>$ containing a {\bfseries pointer} to the array and its size. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 37 of file \-Global\-Array.\-cpp.
+
+\hypertarget{class_global_array_ac81fd0b504d70fc51ab9df89707b523a}{\index{\-Global\-Array@{\-Global\-Array}!build\-Global\-Array\-Ranges\-List@{build\-Global\-Array\-Ranges\-List}}
+\index{build\-Global\-Array\-Ranges\-List@{build\-Global\-Array\-Ranges\-List}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{build\-Global\-Array\-Ranges\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ list$<$ \-Array$<$ \-T, 1 $>$ $>$ {\bf \-Global\-Array}$<$ \-T $>$\-::{\bf build\-Global\-Array\-Ranges\-List} (
+\begin{DoxyParamCaption}
+\item[{list$<$ {\bf \-Local\-Array\-Target}$<$ \-T $>$ $>$ \&}]{local\-Array\-List}
+\end{DoxyParamCaption}
+)}}\label{class_global_array_ac81fd0b504d70fc51ab9df89707b523a}
+\-Construct/\-Reconstruct the global array based on the local arrays information, let the responsability of local array referencing to the interface. \-The method goes like this\-:
+\begin{DoxyItemize}
+\item \-Set n\-Nodes.
+\item \-Loop over local array list\-:
+\begin{DoxyItemize}
+\item \-Calculate the node table and the total size of the global array.
+\end{DoxyItemize}
+\item \-Resize global array.
+\item \-Return a list of global array parts corresponding to the local arrays. \-This list can be used as a reference targets list for referencing the local arrays.
+\end{DoxyItemize}
+
+\-Remark 1\-: \-The advantage of letting the responsability of the referencing to the interface class is that the referencing method called in the concerned objects (e.\-g. \hyperlink{class_cell}{\-Cell} objects) can control the referencing. \-If the local array is depending on other members, if it is itself sharing reference to other arrays, then the method in the object can resolve the local references and dependencies. \-In the \hyperlink{class_global_array_a785072abe434f74ea777044b5d16d4bd}{build()} method, we change the reference directly by dereferencing the pointer to the local array. \-This is dangerous since we are changing directly the local array in an object.
+
+\-Remark 2\-: \-This method only needs to know the size of the local arrays, because the referencing method is let to the \hyperlink{class_global_array_interface}{\-Global\-Array\-Interface} class. \-However, it takes as input a \hyperlink{class_local_array_target}{\-Local\-Array\-Target} list containing the pointers to the local arrays. \-This is just for sake of generality\-: this way, we only need to define one method to get the list of local arrays in the interface class.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em local\-Arrays\-List} & list of the local arrays. \-Each element of the list is a \-Local\-Array\-Target$<$\-T$>$ containing a {\bfseries pointer} to the array and its size. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 88 of file \-Global\-Array.\-cpp.
+
+\hypertarget{class_global_array_a78ce4aa9d6bbd062f92dc233c368b1a7}{\index{\-Global\-Array@{\-Global\-Array}!get\-Global\-Array@{get\-Global\-Array}}
+\index{get\-Global\-Array@{get\-Global\-Array}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{get\-Global\-Array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-T$>$ \-Array$<$\-T,1$>$\& {\bf \-Global\-Array}$<$ \-T $>$\-::{\bf get\-Global\-Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_global_array_a78ce4aa9d6bbd062f92dc233c368b1a7}
+\-Get the global array (by reference). 
+
+\-Definition at line 140 of file \-Global\-Array.\-h.
+
+\hypertarget{class_global_array_ad8f1ca4e0051ed951708caeb9adb4463}{\index{\-Global\-Array@{\-Global\-Array}!get\-Local\-Indices\-From\-Global@{get\-Local\-Indices\-From\-Global}}
+\index{get\-Local\-Indices\-From\-Global@{get\-Local\-Indices\-From\-Global}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{get\-Local\-Indices\-From\-Global}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ pair$<$ int, int $>$ {\bf \-Global\-Array}$<$ \-T $>$\-::{\bf get\-Local\-Indices\-From\-Global} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}}\label{class_global_array_ad8f1ca4e0051ed951708caeb9adb4463}
+\-Get the local indices (node number {\ttfamily k}, position inside the node {\ttfamily j}) from the global index {\ttfamily i}. 
+
+\-Definition at line 176 of file \-Global\-Array.\-cpp.
+
+\hypertarget{class_global_array_a63db21859b40c12c5c9e4221d3db66b5}{\index{\-Global\-Array@{\-Global\-Array}!get\-Node@{get\-Node}}
+\index{get\-Node@{get\-Node}!GlobalArray@{\-Global\-Array}}
+\subsubsection[{get\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ \-Array$<$ \-T, 1 $>$ {\bf \-Global\-Array}$<$ \-T $>$\-::{\bf get\-Node} (
+\begin{DoxyParamCaption}
+\item[{int}]{k}
+\end{DoxyParamCaption}
+)}}\label{class_global_array_a63db21859b40c12c5c9e4221d3db66b5}
+\-Returns the array corresponding to node {\ttfamily k}. \-Remark\-: the size of the returned array can vary.\par
+ \-Remark\-: 
+\begin{DoxyCode}
+ 0 <= k <= nNodes_ - 1 
+\end{DoxyCode}
+ 
+
+\-Definition at line 148 of file \-Global\-Array.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_global_array_8h}{\-Global\-Array.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_global_array_8cpp}{\-Global\-Array.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\section{DATA/PROGS/COLONY/computePropensitiesFunctions.cpp File Reference}
+\label{computePropensitiesFunctions_8cpp}\index{DATA/PROGS/COLONY/computePropensitiesFunctions.cpp@{DATA/PROGS/COLONY/computePropensitiesFunctions.cpp}}
+Project: Colony. 
+
+{\tt \#include \char`\"{}computePropensitiesFunctions.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf computePropensitiesCell} (const Array$<$ int, 1 $>$ \&x, Array$<$ double, 1 $>$ \&a)
+\item 
+void {\bf computePropensitiesMilieu} (const Array$<$ int, 1 $>$ \&x, Array$<$ double, 1 $>$ \&a)
+\item 
+void {\bf computePropensitiesCellTimeDependent} (const Array$<$ int, 1 $>$ \&x, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)
+\item 
+void {\bf computePropensitiesMilieuTimeDependent} (const Array$<$ int, 1 $>$ \&x, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)
+\item 
+void {\bf computePropensitiesCellMilieu} (const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double volume1, const double volume2, Array$<$ double, 1 $>$ \&a)
+\item 
+void {\bf computePropensitiesTimeDependentDiffusion} (const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double V0, const double Vext, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Project: Colony. 
+
+\begin{Desc}
+\item[Author:]Marc Weber\par
+ The Si.M.Bio.Sys. Group (CosmoLab)\par
+ Parc Cienti­fic de Barcelona\par
+ Barcelona, Spain.\par
+ {\tt http://thesimbiosys.isgreat.org} \end{Desc}
+\begin{Desc}
+\item[Version:]0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]03/2009\end{Desc}
+\doxyref{Output}{p.}{classOutput} file from Mathematica.\par
+ Copyright 2009 by Marc Weber 
+
+\subsection{Function Documentation}
+\index{computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}!computePropensitiesCell@{computePropensitiesCell}}
+\index{computePropensitiesCell@{computePropensitiesCell}!computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void computePropensitiesCell (const Array$<$ int, 1 $>$ \& {\em x}, \/  Array$<$ double, 1 $>$ \& {\em a})}\label{computePropensitiesFunctions_8cpp_ed7409d8d05de7ebc370c34e6f3f3fd8}
+
+
+\index{computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}!computePropensitiesCellMilieu@{computePropensitiesCellMilieu}}
+\index{computePropensitiesCellMilieu@{computePropensitiesCellMilieu}!computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void computePropensitiesCellMilieu (const Array$<$ int, 1 $>$ \& {\em x1}, \/  const Array$<$ int, 1 $>$ \& {\em x2}, \/  const double {\em volume1}, \/  const double {\em volume2}, \/  Array$<$ double, 1 $>$ \& {\em a})}\label{computePropensitiesFunctions_8cpp_e036ec58e5d38564c413bd63e6f314b4}
+
+
+\index{computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}!computePropensitiesCellTimeDependent@{computePropensitiesCellTimeDependent}}
+\index{computePropensitiesCellTimeDependent@{computePropensitiesCellTimeDependent}!computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void computePropensitiesCellTimeDependent (const Array$<$ int, 1 $>$ \& {\em x}, \/  const double {\em t}, \/  const double {\em t0}, \/  const double {\em tc}, \/  Array$<$ double, 1 $>$ \& {\em a})}\label{computePropensitiesFunctions_8cpp_1574732ac5b5fcb35dd5d42800f3fcca}
+
+
+
+
+Time dependent propensities for second-order reactions. \index{computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}!computePropensitiesMilieu@{computePropensitiesMilieu}}
+\index{computePropensitiesMilieu@{computePropensitiesMilieu}!computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void computePropensitiesMilieu (const Array$<$ int, 1 $>$ \& {\em x}, \/  Array$<$ double, 1 $>$ \& {\em a})}\label{computePropensitiesFunctions_8cpp_3d99210824584c9375237c1f3d34e644}
+
+
+\index{computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}!computePropensitiesMilieuTimeDependent@{computePropensitiesMilieuTimeDependent}}
+\index{computePropensitiesMilieuTimeDependent@{computePropensitiesMilieuTimeDependent}!computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void computePropensitiesMilieuTimeDependent (const Array$<$ int, 1 $>$ \& {\em x}, \/  const double {\em t}, \/  const double {\em t0}, \/  const double {\em tc}, \/  Array$<$ double, 1 $>$ \& {\em a})}\label{computePropensitiesFunctions_8cpp_67540eca7cf3d2a4328a3556cb6fabd8}
+
+
+
+
+Time dependent propensities for second-order reactions. \index{computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}!computePropensitiesTimeDependentDiffusion@{computePropensitiesTimeDependentDiffusion}}
+\index{computePropensitiesTimeDependentDiffusion@{computePropensitiesTimeDependentDiffusion}!computePropensitiesFunctions.cpp@{computePropensitiesFunctions.cpp}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void computePropensitiesTimeDependentDiffusion (const Array$<$ int, 1 $>$ \& {\em x1}, \/  const Array$<$ int, 1 $>$ \& {\em x2}, \/  const double {\em V0}, \/  const double {\em Vext}, \/  const double {\em t}, \/  const double {\em t0}, \/  const double {\em tc}, \/  Array$<$ double, 1 $>$ \& {\em a})}\label{computePropensitiesFunctions_8cpp_8678014f8ffc58d7835b8db6b8ad76d0}
+
+
+
+
+Time dependent propensities of diffusion reaction processes.
+
+We assume the cell to be a cylinder whose volume is growing exponentially, with its radius constant. The volume at the end of the cell cycle, $ V(t_0+t_c) = 2V_0 $, where $ V_0 $ is the initial volume at the beginning of the cell cycle and $ t_0 $ the time of the previous division event. The time evolution of the volume writes \[ V(t) = V_0 2^{\frac{t-t_0}{tc}} \]
+
+We can calculate the evolution of the cell's surface area $ \Sigma(t) $, \[ \Sigma(t) = \Sigma_0 \theta(t) \] with \[ \theta(t) = 1 + \frac{L_0}{L_0+r_0}\left( 2^{\frac{t-t_0}{tc}}-1 \right) \] where $ L_0 $ is the initial length of the cylinder and $ r_0 $ the radius of the cylinder.
+
+The expression of the rates of reaction for the diffusion processes in and out the cell, are given by \[ k_{out}(t) = D_x \theta(t) \] \[ k_{in}(t) = D_x \theta(t) \frac{V(t)}{V_{ext}} \] where we included $ \Sigma_0 $ in the diffusion coefficient $ D_x $.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em tc}][in] The duration of the cell cycle. \item[{\em x1}][in] State vector of the cell. \item[{\em x2}][in] State vector of the milieu. \item[{\em V0}][in] Volume of the cell at the beginning of the cell cycle (constant). \item[{\em Vext}][in] Volume of the external milieu at time t. \item[{\em t}][in] Time t of the evaluation of the propensities. \item[{\em t0}][in] Time of the previous cell division (time of cell's birth). \item[{\em tc}][in] Duration of the cell cycle. \item[{\em a}][out] Array of the computed propensities. \end{description}
+\end{Desc}

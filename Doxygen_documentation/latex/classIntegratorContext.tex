@@ -1,0 +1,65 @@
+\section{IntegratorContext$<$ IntegratorType $>$ Class Template Reference}
+\label{classIntegratorContext}\index{IntegratorContext@{IntegratorContext}}
+Template class that defines the context for the integrator.  
+
+
+{\tt \#include $<$IntegratorContext.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf IntegratorContext} ({\bf Simulator} $\ast$simulatorPtr)
+\begin{CompactList}\small\item\em Initiate the \doxyref{IntegratorContext}{p.}{classIntegratorContext} with the pointer to the \doxyref{Simulator}{p.}{classSimulator} object as argument. \item\end{CompactList}\item 
+{\bf $\sim$IntegratorContext} ()
+\item 
+void {\bf integrateOneStep} ()
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+IntegratorType {\bf integrator\_\-}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class IntegratorType$>$ class IntegratorContext$<$ IntegratorType $>$}
+
+Template class that defines the context for the integrator. 
+
+The \doxyref{IntegratorContext}{p.}{classIntegratorContext} class is a template class with template type defining the type of integrator (Gillespie, modified Gillespie, etc). It contains an IntegratorType object and uses its \doxyref{integrateOneStep()}{p.}{classIntegratorContext_72b6def867485fd2710fb55b4602194e} function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{IntegratorContext@{IntegratorContext}!IntegratorContext@{IntegratorContext}}
+\index{IntegratorContext@{IntegratorContext}!IntegratorContext@{IntegratorContext}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class IntegratorType$>$ {\bf IntegratorContext}$<$ IntegratorType $>$::{\bf IntegratorContext} ({\bf Simulator} $\ast$ {\em simulatorPtr})\hspace{0.3cm}{\tt  [inline]}}\label{classIntegratorContext_020c17d49d7cee23c24a850213c75d15}
+
+
+Initiate the \doxyref{IntegratorContext}{p.}{classIntegratorContext} with the pointer to the \doxyref{Simulator}{p.}{classSimulator} object as argument. 
+
+\index{IntegratorContext@{IntegratorContext}!$\sim$IntegratorContext@{$\sim$IntegratorContext}}
+\index{$\sim$IntegratorContext@{$\sim$IntegratorContext}!IntegratorContext@{IntegratorContext}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class IntegratorType$>$ {\bf IntegratorContext}$<$ IntegratorType $>$::$\sim${\bf IntegratorContext} ()\hspace{0.3cm}{\tt  [inline]}}\label{classIntegratorContext_0c2a801de04ed8799d51448cc68ef513}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{IntegratorContext@{IntegratorContext}!integrateOneStep@{integrateOneStep}}
+\index{integrateOneStep@{integrateOneStep}!IntegratorContext@{IntegratorContext}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class IntegratorType$>$ void {\bf IntegratorContext}$<$ IntegratorType $>$::integrateOneStep ()\hspace{0.3cm}{\tt  [inline]}}\label{classIntegratorContext_72b6def867485fd2710fb55b4602194e}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{IntegratorContext@{IntegratorContext}!integrator\_\-@{integrator\_\-}}
+\index{integrator\_\-@{integrator\_\-}!IntegratorContext@{IntegratorContext}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class IntegratorType$>$ IntegratorType {\bf IntegratorContext}$<$ IntegratorType $>$::{\bf integrator\_\-}}\label{classIntegratorContext_16de83daa9438581f2c1c42540bb9299}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf IntegratorContext.h}\item 
+DATA/PROGS/COLONY/{\bf IntegratorContext.cpp}\end{CompactItemize}

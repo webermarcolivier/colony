@@ -1,0 +1,64 @@
+\hypertarget{class_milieu}{\section{\-Milieu \-Class \-Reference}
+\label{class_milieu}\index{\-Milieu@{\-Milieu}}
+}
+
+
+{\ttfamily \#include $<$\-Milieu.\-h$>$}
+
+\-Inheritance diagram for \-Milieu\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_milieu}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_milieu_ad48c676f6943018da4d7dcab5c04a450}{get\-Time\-Dependent\-Volume} (const double time) const 
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_milieu_add3fc66df8f106caf4eab9804b7e1210}{milieu\-Volume\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A special cell that represents the environment in which the colony of cells live. \-It can contain chemical species and reactions, like a normal \hyperlink{class_cell_base}{\-Cell\-Base} object and cannot divide. 
+
+\-Definition at line 42 of file \-Milieu.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_milieu_ad48c676f6943018da4d7dcab5c04a450}{\index{\-Milieu@{\-Milieu}!get\-Time\-Dependent\-Volume@{get\-Time\-Dependent\-Volume}}
+\index{get\-Time\-Dependent\-Volume@{get\-Time\-Dependent\-Volume}!Milieu@{\-Milieu}}
+\subsubsection[{get\-Time\-Dependent\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Milieu\-::get\-Time\-Dependent\-Volume} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_milieu_ad48c676f6943018da4d7dcab5c04a450}
+\-We reimplement the method in order to return a value of the milieu volume independent of time and dependent only on the number of cells (volume0). \-This is an approximation since we should take into account the volume of all the other cells in order to calculate the volume of the milieu. \-However, as the volume of the milieu is much larger than the volume of one cell, there is not much difference. \-U\-P\-D\-A\-T\-E 2013.\-10.\-17\-: change this method in order to take into account the volume of \-A\-L\-L the cells and to compute exactly the volume of the milieu. \-Managed by \hyperlink{class_cell_collection}{\-Cell\-Collection} (this is easier since we have to know the volume of \-A\-L\-L the cells). \-We use a variable milieu\-Volume\-\_\- that we will only update at each time slice, trade-\/off between accuracy and computation time. \-Also, volume0 is now constant for the milieu and refers to the inital volume. 
+
+\-Implements \hyperlink{class_cell_base_a7b69eec41c172b719e7f2ea6cb277ce9}{\-Cell\-Base}.
+
+
+
+\-Definition at line 20 of file \-Milieu.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_milieu_add3fc66df8f106caf4eab9804b7e1210}{\index{\-Milieu@{\-Milieu}!milieu\-Volume\-\_\-@{milieu\-Volume\-\_\-}}
+\index{milieu\-Volume\-\_\-@{milieu\-Volume\-\_\-}!Milieu@{\-Milieu}}
+\subsubsection[{milieu\-Volume\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Milieu\-::milieu\-Volume\-\_\-}}}\label{class_milieu_add3fc66df8f106caf4eab9804b7e1210}
+
+
+\-Definition at line 62 of file \-Milieu.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_milieu_8h}{\-Milieu.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_milieu_8cpp}{\-Milieu.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,129 @@
+\section{ChemicalSystem Class Reference}
+\label{classChemicalSystem}\index{ChemicalSystem@{ChemicalSystem}}
+Chemical system of the cell (reactions).  
+
+
+{\tt \#include $<$ChemicalSystem.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf ChemicalSystem} ()
+\item 
+{\bf $\sim$ChemicalSystem} ()
+\item 
+void {\bf initialize} (const {\bf ChemicalSystemInitParam} \&p)
+\item 
+{\bf ChemicalSystem} \& {\bf operator=} (const {\bf ChemicalSystem} \&c2)
+\begin{CompactList}\small\item\em Assignment operator. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf nSpecies\_\-}
+\begin{CompactList}\small\item\em Number of chemical species. \item\end{CompactList}\item 
+int {\bf nChannels\_\-}
+\begin{CompactList}\small\item\em Number of reaction channels. \item\end{CompactList}\item 
+Array$<$ int, 2 $>$ {\bf stoichMatrix\_\-}
+\begin{CompactList}\small\item\em Stoichiometric matrix of the chemical reactions. \item\end{CompactList}\item 
+void($\ast$ {\bf computePropensitiesPtr\_\-} )(const Array$<$ int, 1 $>$ \&x, Array$<$ double, 1 $>$ \&propensities)
+\begin{CompactList}\small\item\em Pointer to the function that computes the propensities of the different reaction channels. \item\end{CompactList}\item 
+void($\ast$ {\bf computePropensitiesTimeDependentPtr\_\-} )(const Array$<$ int, 1 $>$ \&x, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&propensities)
+\begin{CompactList}\small\item\em Pointer to the function that computes the propensities of the different reaction channels. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf ChemicalSystem} (const {\bf ChemicalSystem} \&c2)
+\begin{CompactList}\small\item\em Preventing copy constructor use. \item\end{CompactList}\item 
+void {\bf copy} (const {\bf ChemicalSystem} \&c2)
+\begin{CompactList}\small\item\em Copy method used in the assigment operator and the copy constructor. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Chemical system of the cell (reactions). 
+
+This class defines the chemical system of a cell. It defines all the reaction channels through the stoichiometric matrix, and the function computing the propensities of reaction channels. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ChemicalSystem@{ChemicalSystem}!ChemicalSystem@{ChemicalSystem}}
+\index{ChemicalSystem@{ChemicalSystem}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ChemicalSystem::ChemicalSystem ()}\label{classChemicalSystem_7106e98e261b3c4a51c6b0fd21d6301e}
+
+
+\index{ChemicalSystem@{ChemicalSystem}!$\sim$ChemicalSystem@{$\sim$ChemicalSystem}}
+\index{$\sim$ChemicalSystem@{$\sim$ChemicalSystem}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ChemicalSystem::$\sim$ChemicalSystem ()}\label{classChemicalSystem_b056d2da25c858768b3a51cbca17a0b4}
+
+
+\index{ChemicalSystem@{ChemicalSystem}!ChemicalSystem@{ChemicalSystem}}
+\index{ChemicalSystem@{ChemicalSystem}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ChemicalSystem::ChemicalSystem (const {\bf ChemicalSystem} \& {\em c2})\hspace{0.3cm}{\tt  [private]}}\label{classChemicalSystem_6991a64e9e99b3357dce1934232b6434}
+
+
+Preventing copy constructor use. 
+
+
+
+\subsection{Member Function Documentation}
+\index{ChemicalSystem@{ChemicalSystem}!initialize@{initialize}}
+\index{initialize@{initialize}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ChemicalSystem::initialize (const {\bf ChemicalSystemInitParam} \& {\em p})}\label{classChemicalSystem_067774d7960a8ade62ee90b9df952cdb}
+
+
+\index{ChemicalSystem@{ChemicalSystem}!operator=@{operator=}}
+\index{operator=@{operator=}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ChemicalSystem} \& ChemicalSystem::operator= (const {\bf ChemicalSystem} \& {\em c2})}\label{classChemicalSystem_4da5a7a81afbf8ead8ece35089f6abc8}
+
+
+Assignment operator. 
+
+\index{ChemicalSystem@{ChemicalSystem}!copy@{copy}}
+\index{copy@{copy}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ChemicalSystem::copy (const {\bf ChemicalSystem} \& {\em c2})\hspace{0.3cm}{\tt  [private]}}\label{classChemicalSystem_2a7b9b5010f4c5c11019b2e66e8aca38}
+
+
+Copy method used in the assigment operator and the copy constructor. 
+
+
+
+\subsection{Member Data Documentation}
+\index{ChemicalSystem@{ChemicalSystem}!nSpecies\_\-@{nSpecies\_\-}}
+\index{nSpecies\_\-@{nSpecies\_\-}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf ChemicalSystem::nSpecies\_\-}}\label{classChemicalSystem_fcd6d3452b7a6badf31d85a54eab1168}
+
+
+Number of chemical species. 
+
+\index{ChemicalSystem@{ChemicalSystem}!nChannels\_\-@{nChannels\_\-}}
+\index{nChannels\_\-@{nChannels\_\-}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf ChemicalSystem::nChannels\_\-}}\label{classChemicalSystem_3fc8beba6ac2e8ae92b5dfa30b1742c1}
+
+
+Number of reaction channels. 
+
+\index{ChemicalSystem@{ChemicalSystem}!stoichMatrix\_\-@{stoichMatrix\_\-}}
+\index{stoichMatrix\_\-@{stoichMatrix\_\-}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$int,2$>$ {\bf ChemicalSystem::stoichMatrix\_\-}}\label{classChemicalSystem_df3ff92439692f9b4fff0200bce7b1ef}
+
+
+Stoichiometric matrix of the chemical reactions. 
+
+Its dimension should be nChannels x nSpecies. \index{ChemicalSystem@{ChemicalSystem}!computePropensitiesPtr\_\-@{computePropensitiesPtr\_\-}}
+\index{computePropensitiesPtr\_\-@{computePropensitiesPtr\_\-}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf ChemicalSystem::computePropensitiesPtr\_\-})(const Array$<$ int, 1 $>$ \&x, Array$<$ double, 1 $>$ \&propensities)}\label{classChemicalSystem_d9e0ad31cedef0acd02f28b24905cb62}
+
+
+Pointer to the function that computes the propensities of the different reaction channels. 
+
+The function is meant to be written by an external program. Otherwise, it can be directly included in the \doxyref{ChemicalSystem}{p.}{classChemicalSystem} class. \index{ChemicalSystem@{ChemicalSystem}!computePropensitiesTimeDependentPtr\_\-@{computePropensitiesTimeDependentPtr\_\-}}
+\index{computePropensitiesTimeDependentPtr\_\-@{computePropensitiesTimeDependentPtr\_\-}!ChemicalSystem@{ChemicalSystem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf ChemicalSystem::computePropensitiesTimeDependentPtr\_\-})(const Array$<$ int, 1 $>$ \&x, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&propensities)}\label{classChemicalSystem_4e0fb9ab7f47cc23c4933a515a4d12c9}
+
+
+Pointer to the function that computes the propensities of the different reaction channels. 
+
+The function is meant to be written by an external program. Otherwise, it can be directly included in the \doxyref{ChemicalSystem}{p.}{classChemicalSystem} class. Time-dependent version. For example, for a variable volume with second-order reactions. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf ChemicalSystem.h}\item 
+DATA/PROGS/COLONY/{\bf ChemicalSystem.cpp}\end{CompactItemize}

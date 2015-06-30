@@ -1,0 +1,330 @@
+\section{CellBase Class Reference}
+\label{classCellBase}\index{CellBase@{CellBase}}
+Base class for cell.  
+
+
+{\tt \#include $<$CellBase.h$>$}
+
+Inheritance diagram for CellBase::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCellBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+virtual {\bf $\sim$CellBase} ()
+\item 
+void {\bf initialize} ({\bf CellBaseInitParam} \&p)
+\begin{CompactList}\small\item\em Initialize the cell and define all its members. \item\end{CompactList}\item 
+int {\bf getNChannels} () const 
+\item 
+int {\bf getNSpecies} () const 
+\item 
+double {\bf getVolume0} () const 
+\item 
+virtual double {\bf getTimeDependentVolume} (const double time) const =0
+\item 
+Array$<$ int, 1 $>$ \& {\bf getX} ()
+\item 
+Array$<$ double, 1 $>$ {\bf getXconc} (const double time) const 
+\item 
+Array$<$ double, 1 $>$ \& {\bf getPropensities} ()
+\item 
+double {\bf getTimeNextDivision} () const 
+\item 
+double {\bf getTimePreviousDivision} () const 
+\item 
+double {\bf getCellCycleDuration} () const 
+\item 
+double {\bf getCellCyclePhase} (double time) const 
+\item 
+double {\bf getAngle} () const 
+\item 
+TinyVector$<$ double, 2 $>$ {\bf getPosition} () const 
+\item 
+vector$<$ string $>$ {\bf getListSpeciesName} () const 
+\item 
+void {\bf changeVolume0By} (double volume0Change)
+\item 
+void {\bf applyReaction} (int mu)
+\begin{CompactList}\small\item\em Apply the reaction given by the channel number. \item\end{CompactList}\item 
+void {\bf applyInterCellularReaction} (Array$<$ int, 1 $>$ stoichVector)
+\begin{CompactList}\small\item\em Apply a chemical reaction that is defined outside the \doxyref{Cell}{p.}{classCell} class. \item\end{CompactList}\item 
+void {\bf computePropensities} ()
+\begin{CompactList}\small\item\em Compute the propensities of all reaction channels. \item\end{CompactList}\item 
+void {\bf computePropensities} (const double time)
+\begin{CompactList}\small\item\em Compute the propensities of all reaction channels, some of them having time-dependent reaction rates. \item\end{CompactList}\item 
+void {\bf computePropensitiesTimeDependentReactions} (const double time)
+\begin{CompactList}\small\item\em Compute the propensities ONLY of the time-dependent reaction channels. \item\end{CompactList}\item 
+void {\bf setReferenceX} (Array$<$ int, 1 $>$ \&refArray)
+\begin{CompactList}\small\item\em Set the state array x\_\- to be a reference to another array. \item\end{CompactList}\item 
+void {\bf setReferencePropensities} (Array$<$ double, 1 $>$ refArray)
+\begin{CompactList}\small\item\em Set the propensities array propensities\_\- to be a reference to another array. \item\end{CompactList}\item 
+void {\bf checkPositivity} () const 
+\begin{CompactList}\small\item\em Check that the number of molecules in state vector x is positive. \item\end{CompactList}\item 
+void {\bf setAngle} (double angle)
+\begin{CompactList}\small\item\em Change the angle of the cell. \item\end{CompactList}\item 
+void {\bf setPosition} (TinyVector$<$ double, 2 $>$ position)
+\begin{CompactList}\small\item\em Change the position of the cell. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf CellBase} ()
+\begin{CompactList}\small\item\em Default constructor is protected. \item\end{CompactList}\item 
+void {\bf copy} (const {\bf CellBase} \&c2)
+\begin{CompactList}\small\item\em Copy method used in the assigment operator and the copy constructor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf State} {\bf state\_\-}
+\begin{CompactList}\small\item\em Internal state of the cell. \item\end{CompactList}\item 
+{\bf ChemicalSystem} {\bf chemicalSystem\_\-}
+\begin{CompactList}\small\item\em Chemical system of the cell. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf CellBase} (const {\bf CellBase} \&c2)
+\begin{CompactList}\small\item\em Preventing copy constructor use. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&out, const {\bf CellBase} \&c)
+\begin{CompactList}\small\item\em Operator that outputs the content of a \doxyref{Cell}{p.}{classCell} state. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for cell. 
+
+This class defines the basic \doxyref{Cell}{p.}{classCell} objects. They contains an internal state and a chemical system, as well as methods to compute the propensities and apply a reaction. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CellBase@{CellBase}!CellBase@{CellBase}}
+\index{CellBase@{CellBase}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellBase::CellBase ()\hspace{0.3cm}{\tt  [protected]}}\label{classCellBase_c5cbc18d3f767bb91d9e052a3eb778b5}
+
+
+Default constructor is protected. 
+
+\doxyref{CellBase}{p.}{classCellBase} objects cannot be instantiated directly by the user. The protected access assures that only the subclasses can instanciate. \index{CellBase@{CellBase}!$\sim$CellBase@{$\sim$CellBase}}
+\index{$\sim$CellBase@{$\sim$CellBase}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellBase::$\sim$CellBase ()\hspace{0.3cm}{\tt  [virtual]}}\label{classCellBase_91df7ce6090723939914fc08ae5dd25e}
+
+
+\index{CellBase@{CellBase}!CellBase@{CellBase}}
+\index{CellBase@{CellBase}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellBase::CellBase (const {\bf CellBase} \& {\em c2})\hspace{0.3cm}{\tt  [private]}}\label{classCellBase_8494512608df5af0a029fbffb14eb309}
+
+
+Preventing copy constructor use. 
+
+
+
+\subsection{Member Function Documentation}
+\index{CellBase@{CellBase}!initialize@{initialize}}
+\index{initialize@{initialize}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::initialize ({\bf CellBaseInitParam} \& {\em p})}\label{classCellBase_442489e1986f767c2a0530c01a134057}
+
+
+Initialize the cell and define all its members. 
+
+\index{CellBase@{CellBase}!getNChannels@{getNChannels}}
+\index{getNChannels@{getNChannels}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CellBase::getNChannels () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_c63ef2dae0215b9fb430dcc40378f2ce}
+
+
+
+
+Reimplemented in {\bf Cell} \doxyref{}{p.}{classCell_98b05ad9c5ba1a0bb719df105eb1b56f}.\index{CellBase@{CellBase}!getNSpecies@{getNSpecies}}
+\index{getNSpecies@{getNSpecies}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CellBase::getNSpecies () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_870a19609d2b3910a4893be9d29799be}
+
+
+\index{CellBase@{CellBase}!getVolume0@{getVolume0}}
+\index{getVolume0@{getVolume0}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellBase::getVolume0 () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_4ef31e07bbd457ce98bd354ffca1154e}
+
+
+\index{CellBase@{CellBase}!getTimeDependentVolume@{getTimeDependentVolume}}
+\index{getTimeDependentVolume@{getTimeDependentVolume}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual double CellBase::getTimeDependentVolume (const double {\em time}) const\hspace{0.3cm}{\tt  [pure virtual]}}\label{classCellBase_7b69eec41c172b719e7f2ea6cb277ce9}
+
+
+
+
+Implemented in {\bf Cell} \doxyref{}{p.}{classCell_4f4950f9901d2e52218da8421d11a78f}, and {\bf Milieu} \doxyref{}{p.}{classMilieu_d48c676f6943018da4d7dcab5c04a450}.\index{CellBase@{CellBase}!getX@{getX}}
+\index{getX@{getX}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ int, 1 $>$ \& CellBase::getX ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_72403c587aa2e64ba662a1f0c5ad5283}
+
+
+\index{CellBase@{CellBase}!getXconc@{getXconc}}
+\index{getXconc@{getXconc}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ CellBase::getXconc (const double {\em time}) const}\label{classCellBase_1e0fbdf9180c81c682b318d0f280ae3b}
+
+
+\index{CellBase@{CellBase}!getPropensities@{getPropensities}}
+\index{getPropensities@{getPropensities}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ \& CellBase::getPropensities ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_d176550eea24417e8972346acb4c0640}
+
+
+
+
+Reimplemented in {\bf Cell} \doxyref{}{p.}{classCell_bed1503a45db1ec72fe2f9721bb8dd7d}.\index{CellBase@{CellBase}!getTimeNextDivision@{getTimeNextDivision}}
+\index{getTimeNextDivision@{getTimeNextDivision}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellBase::getTimeNextDivision () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_9fe443b9b862fdafde0c05bb47b34c0a}
+
+
+\index{CellBase@{CellBase}!getTimePreviousDivision@{getTimePreviousDivision}}
+\index{getTimePreviousDivision@{getTimePreviousDivision}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellBase::getTimePreviousDivision () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_9e8640e5d32e13570bb41ef527bb66de}
+
+
+\index{CellBase@{CellBase}!getCellCycleDuration@{getCellCycleDuration}}
+\index{getCellCycleDuration@{getCellCycleDuration}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellBase::getCellCycleDuration () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_ebfee0ab9fcf545450f015019ed228ce}
+
+
+\index{CellBase@{CellBase}!getCellCyclePhase@{getCellCyclePhase}}
+\index{getCellCyclePhase@{getCellCyclePhase}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellBase::getCellCyclePhase (double {\em time}) const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_a37b1fc8ce2ca9cea42d647e7b320508}
+
+
+\index{CellBase@{CellBase}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellBase::getAngle () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_3fb7f0f49934e83a0ed1cd2d82fba99e}
+
+
+\index{CellBase@{CellBase}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}TinyVector$<$ double, 2 $>$ CellBase::getPosition () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellBase_e58553141dbbcad0f7db77af5514e3cf}
+
+
+\index{CellBase@{CellBase}!getListSpeciesName@{getListSpeciesName}}
+\index{getListSpeciesName@{getListSpeciesName}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ CellBase::getListSpeciesName () const}\label{classCellBase_e8abd7753ef0e29bc858a35574554085}
+
+
+\index{CellBase@{CellBase}!changeVolume0By@{changeVolume0By}}
+\index{changeVolume0By@{changeVolume0By}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::changeVolume0By (double {\em volume0Change})}\label{classCellBase_d67a9e2a335b88e788a6fb59fb1ee93a}
+
+
+\index{CellBase@{CellBase}!applyReaction@{applyReaction}}
+\index{applyReaction@{applyReaction}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::applyReaction (int {\em mu})}\label{classCellBase_e24860242d26c1eff241af04daaf06a0}
+
+
+Apply the reaction given by the channel number. 
+
+Change the state of the cell based on the stoichiometric matrix. 
+
+Reimplemented in {\bf Cell} \doxyref{}{p.}{classCell_0559f4ae5b505afcd98a04ab259bc489}.\index{CellBase@{CellBase}!applyInterCellularReaction@{applyInterCellularReaction}}
+\index{applyInterCellularReaction@{applyInterCellularReaction}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::applyInterCellularReaction (Array$<$ int, 1 $>$ {\em stoichVector})}\label{classCellBase_64655783b5cffb637ae4dd41403942e3}
+
+
+Apply a chemical reaction that is defined outside the \doxyref{Cell}{p.}{classCell} class. 
+
+This function takes as input the stoichVector of the reaction and apply it to the state of the cell. \index{CellBase@{CellBase}!computePropensities@{computePropensities}}
+\index{computePropensities@{computePropensities}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::computePropensities ()}\label{classCellBase_36d16b84e0291e317fcf2425bbd6a953}
+
+
+Compute the propensities of all reaction channels. 
+
+
+
+Reimplemented in {\bf Cell} \doxyref{}{p.}{classCell_d872f4f01c39feb953ee27a9d37963af}.\index{CellBase@{CellBase}!computePropensities@{computePropensities}}
+\index{computePropensities@{computePropensities}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::computePropensities (const double {\em time})}\label{classCellBase_17dcaf6ab4ce71d41640de772822ea79}
+
+
+Compute the propensities of all reaction channels, some of them having time-dependent reaction rates. 
+
+
+
+Reimplemented in {\bf Cell} \doxyref{}{p.}{classCell_91e4b4765817d5287c69d21ff70906c9}.\index{CellBase@{CellBase}!computePropensitiesTimeDependentReactions@{computePropensitiesTimeDependentReactions}}
+\index{computePropensitiesTimeDependentReactions@{computePropensitiesTimeDependentReactions}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::computePropensitiesTimeDependentReactions (const double {\em time})}\label{classCellBase_00a0fa8efa67c71ca357458f7f29a8c8}
+
+
+Compute the propensities ONLY of the time-dependent reaction channels. 
+
+\index{CellBase@{CellBase}!setReferenceX@{setReferenceX}}
+\index{setReferenceX@{setReferenceX}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::setReferenceX (Array$<$ int, 1 $>$ \& {\em refArray})}\label{classCellBase_ee22c1932b129c07afaf7f6ecac79d9b}
+
+
+Set the state array x\_\- to be a reference to another array. 
+
+\index{CellBase@{CellBase}!setReferencePropensities@{setReferencePropensities}}
+\index{setReferencePropensities@{setReferencePropensities}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::setReferencePropensities (Array$<$ double, 1 $>$ {\em refArray})}\label{classCellBase_fd447b811d2bacc971aba82447a8123e}
+
+
+Set the propensities array propensities\_\- to be a reference to another array. 
+
+
+
+Reimplemented in {\bf Cell} \doxyref{}{p.}{classCell_1eb2a609160163f5768e5708cd55a8e2}.\index{CellBase@{CellBase}!checkPositivity@{checkPositivity}}
+\index{checkPositivity@{checkPositivity}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::checkPositivity () const}\label{classCellBase_3d2b95cda02a4fd4b2b33dd38e1e9817}
+
+
+Check that the number of molecules in state vector x is positive. 
+
+\index{CellBase@{CellBase}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::setAngle (double {\em angle})}\label{classCellBase_8ab82721972f41f1d233ab17a841580c}
+
+
+Change the angle of the cell. 
+
+\index{CellBase@{CellBase}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::setPosition (TinyVector$<$ double, 2 $>$ {\em position})}\label{classCellBase_ae85244c65bffc4ea0c9d666d08643fc}
+
+
+Change the position of the cell. 
+
+\index{CellBase@{CellBase}!copy@{copy}}
+\index{copy@{copy}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellBase::copy (const {\bf CellBase} \& {\em c2})\hspace{0.3cm}{\tt  [protected]}}\label{classCellBase_614fb1ef7fdd9ff936bfb941736a2fb8}
+
+
+Copy method used in the assigment operator and the copy constructor. 
+
+This \doxyref{copy()}{p.}{classCellBase_614fb1ef7fdd9ff936bfb941736a2fb8} method is not used directly in the \doxyref{CellBase}{p.}{classCellBase} class but it is called in its derived class \doxyref{Cell}{p.}{classCell}. 
+
+\subsection{Friends And Related Function Documentation}
+\index{CellBase@{CellBase}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em out}, \/  const {\bf CellBase} \& {\em c})\hspace{0.3cm}{\tt  [friend]}}\label{classCellBase_d3061d9b136ee7884ff7c255a977fd78}
+
+
+Operator that outputs the content of a \doxyref{Cell}{p.}{classCell} state. 
+
+Remark: it is declared as a friend operator, so that it has access to the private part of the \doxyref{CellBase}{p.}{classCellBase} class. 
+
+\subsection{Member Data Documentation}
+\index{CellBase@{CellBase}!state\_\-@{state\_\-}}
+\index{state\_\-@{state\_\-}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf State} {\bf CellBase::state\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classCellBase_966e4298cabc00986bb03ce92dfad1f5}
+
+
+Internal state of the cell. 
+
+Remark: derived classes have access to this attribute. \index{CellBase@{CellBase}!chemicalSystem\_\-@{chemicalSystem\_\-}}
+\index{chemicalSystem\_\-@{chemicalSystem\_\-}!CellBase@{CellBase}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ChemicalSystem} {\bf CellBase::chemicalSystem\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classCellBase_d40c4890431f5857c449a6470f80d15c}
+
+
+Chemical system of the cell. 
+
+Remark: derived classes have access to this attribute. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf CellBase.h}\item 
+DATA/PROGS/COLONY/{\bf CellBase.cpp}\end{CompactItemize}

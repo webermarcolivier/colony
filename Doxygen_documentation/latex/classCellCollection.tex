@@ -1,0 +1,479 @@
+\section{CellCollection Class Reference}
+\label{classCellCollection}\index{CellCollection@{CellCollection}}
+A collection of cells.  
+
+
+{\tt \#include $<$CellCollection.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf CellCollection} ()
+\item 
+{\bf $\sim$CellCollection} ()
+\item 
+void {\bf initializeHomogeneousCellCollection} (CellCollectionParam \&p)
+\begin{CompactList}\small\item\em Initialize a homogeneous collection of cells. \item\end{CompactList}\item 
+void {\bf initializeHomogeneousCellCollection} ({\bf Input} \&input)
+\begin{CompactList}\small\item\em Initialize a homogeneous collection of cells. \item\end{CompactList}\item 
+const {\bf Cell} \& {\bf operator[$\,$]} (int i) const 
+\begin{CompactList}\small\item\em Random access to the cells. \item\end{CompactList}\item 
+{\bf Cell} \& {\bf operator[$\,$]} (int i)
+\item 
+{\bf Milieu} \& {\bf getMilieu} ()
+\begin{CompactList}\small\item\em Non-constant access to the milieu. \item\end{CompactList}\item 
+int {\bf getNCells} () const 
+\begin{CompactList}\small\item\em Get the number of cells. \item\end{CompactList}\item 
+Array$<$ double, 1 $>$ {\bf getTimeDependentVolumes} (const double time) const 
+\item 
+Array$<$ double, 1 $>$ \& {\bf getGlobalPropensities} ()
+\begin{CompactList}\small\item\em Get the global array of propensities. \item\end{CompactList}\item 
+Array$<$ int, 1 $>$ \& {\bf getGlobalX} ()
+\item 
+Array$<$ double, 1 $>$ {\bf getXConc} (const double time)
+\begin{CompactList}\small\item\em Remark: XConc is not a global array, it is constructed from the concentration arrays of the cells. \item\end{CompactList}\item 
+double {\bf getSumPropensities} () const 
+\item 
+int {\bf getCellIndexFromGlobalChannelIndex} (int mu)
+\item 
+double {\bf getTimeNextDivision} ()
+\item 
+Array$<$ double, 1 $>$ {\bf getCellCyclePhases} (const double time) const 
+\item 
+list$<$ {\bf CellLineageGeneration} $>$ {\bf getCellLineage} () const 
+\item 
+Array$<$ double, 1 $>$ {\bf getCellsAngle} () const 
+\item 
+Array$<$ TinyVector$<$ double, 2 $>$, 1 $>$ {\bf getCellsPosition} () const 
+\item 
+vector$<$ string $>$ {\bf getListSpeciesName} () const 
+\item 
+void {\bf setCellsAngle} (Array$<$ double, 1 $>$ cellsAngleArray)
+\item 
+void {\bf setCellsPosition} (Array$<$ TinyVector$<$ double, 2 $>$, 1 $>$ cellsPositionArray)
+\item 
+Array$<$ double, 1 $>$ \& {\bf computeAllCellsAndGetPropensities} ()
+\begin{CompactList}\small\item\em Compute and get propensities of all reaction channels (including intercellular or cell-milieu reactions). \item\end{CompactList}\item 
+Array$<$ double, 1 $>$ \& {\bf computeAndGetPropensities} ()
+\begin{CompactList}\small\item\em Compute and get propensities of all reaction channels (including intercellular or cell-milieu reactions). \item\end{CompactList}\item 
+Array$<$ double, 1 $>$ \& {\bf computeAndGetPropensitiesModified} (const double time)
+\item 
+void {\bf computeTimeDependentPropensities} (const double time)
+\item 
+void {\bf computePropensitiesAllInternalTimeDependentReactions} (const double time)
+\item 
+double {\bf getSumPropensitiesAllInternalTimeDependentReactions} ()
+\item 
+void {\bf initializeSumPropensities} ()
+\begin{CompactList}\small\item\em Initialize the sum of propensities. \item\end{CompactList}\item 
+void {\bf initializeSumPropensities} (const double time)
+\item 
+void {\bf applyNextDivisionEvent} ()
+\begin{CompactList}\small\item\em Divide the cell(s) that are next in the division events list. \item\end{CompactList}\item 
+void {\bf deleteCell} (int i, const double time)
+\begin{CompactList}\small\item\em Delete cell {\tt i}. \item\end{CompactList}\item 
+void {\bf buildListDivisionEvents} ()
+\begin{CompactList}\small\item\em Build the list of upcoming division events. \item\end{CompactList}\item 
+void {\bf applyReaction} (int mu)
+\begin{CompactList}\small\item\em Apply a reaction corresponding to reaction channel {\tt mu} (global index). \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf duplicateCell} (int i)
+\begin{CompactList}\small\item\em Duplicate cell {\tt i}. \item\end{CompactList}\item 
+double {\bf getSumPropensitiesAllCellsMilieuReactions} ()
+\begin{CompactList}\small\item\em Compute the sum of the propensities of the cell-milieu reactions of all cells. \item\end{CompactList}\item 
+void {\bf computePropensitiesCellMilieuAllCells} ()
+\begin{CompactList}\small\item\em Compute the propensities of the cell-milieu reactions of all cells. \item\end{CompactList}\item 
+void {\bf computePropensitiesCellMilieuAllCells} (const double time)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf nCells\_\-}
+\begin{CompactList}\small\item\em Number of cells in the cell collection. \item\end{CompactList}\item 
+Array$<$ {\bf Cell}, 1 $>$ {\bf cells\_\-}
+\begin{CompactList}\small\item\em The collection of cell objects is contained in a Blitz++ array. \item\end{CompactList}\item 
+{\bf Milieu} {\bf milieu\_\-}
+\begin{CompactList}\small\item\em \doxyref{Milieu}{p.}{classMilieu} cell object that represents the milieu / environment where the cells are living. \item\end{CompactList}\item 
+{\bf GlobalArrayInterface} {\bf globalArrayInterface\_\-}
+\begin{CompactList}\small\item\em The \doxyref{GlobalArrayInterface}{p.}{classGlobalArrayInterface} class defines the interface to the class that handle global arrays. \item\end{CompactList}\item 
+multimap$<$ double, int $>$ {\bf listDivisionEvents\_\-}
+\begin{CompactList}\small\item\em List of the upcoming cell division events. \item\end{CompactList}\item 
+list$<$ {\bf CellLineageGeneration} $>$ {\bf cellLineage\_\-}
+\begin{CompactList}\small\item\em List that contains information about the cell lineage. \item\end{CompactList}\item 
+int {\bf lastReactionCellIndex\_\-}
+\begin{CompactList}\small\item\em Temporary variable: index of the cell in which the reaction of previous integration step happened. \item\end{CompactList}\item 
+bool {\bf isLastReactionInternal\_\-}
+\begin{CompactList}\small\item\em Temporary variable: indicates if the reaction that happened at the previous integration step was an internal (cell) reaction or an external (cell-milieu) reaction. \item\end{CompactList}\item 
+double {\bf sumPropensities\_\-}
+\begin{CompactList}\small\item\em Temporary variable: true if the last reaction was an intracellular and false if it was a cell-milieu reaction. \item\end{CompactList}\item 
+bool {\bf constantCellDensity\_\-}
+\begin{CompactList}\small\item\em If true the cell density is kept constant by automatically killing the cells (at random) when cells duplicate. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&out, const {\bf CellCollection} \&cellCollection)
+\begin{CompactList}\small\item\em Operator that outputs the content of all cells. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of cells. 
+
+\doxyref{CellCollection}{p.}{classCellCollection} contains a collection of cells and constitute the framework for interacting with it and handling it. It defines the methods to initialize a collection, access a particular cell by its index, delete and duplicate one cell.
+
+It also defines an operation to compute the propensities of all reaction channels in the collection and an operation to apply a reaction event. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CellCollection@{CellCollection}!CellCollection@{CellCollection}}
+\index{CellCollection@{CellCollection}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellCollection::CellCollection ()}\label{classCellCollection_827aba3bcb4e7cad6d6d7a516a311582}
+
+
+\index{CellCollection@{CellCollection}!$\sim$CellCollection@{$\sim$CellCollection}}
+\index{$\sim$CellCollection@{$\sim$CellCollection}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellCollection::$\sim$CellCollection ()}\label{classCellCollection_6fff17151933d645fac4888fe2e442b9}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{CellCollection@{CellCollection}!initializeHomogeneousCellCollection@{initializeHomogeneousCellCollection}}
+\index{initializeHomogeneousCellCollection@{initializeHomogeneousCellCollection}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::initializeHomogeneousCellCollection (CellCollectionParam \& {\em p})}\label{classCellCollection_2c99c219e98f83efa5c4f4a8526bfe98}
+
+
+Initialize a homogeneous collection of cells. 
+
+Each cell is initialized with the same parameters. The milieu is also initialized. \index{CellCollection@{CellCollection}!initializeHomogeneousCellCollection@{initializeHomogeneousCellCollection}}
+\index{initializeHomogeneousCellCollection@{initializeHomogeneousCellCollection}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::initializeHomogeneousCellCollection ({\bf Input} \& {\em input})}\label{classCellCollection_b931d338749814ce3208261a162c202c}
+
+
+Initialize a homogeneous collection of cells. 
+
+Each cell is initialized with the same parameters. The milieu is also initialized. This version of the method takes as argument an \doxyref{Input}{p.}{classInput} object that contains the parameters. \index{CellCollection@{CellCollection}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf Cell} \& CellCollection::operator[$\,$] (int {\em i}) const}\label{classCellCollection_3599c6632ae194366f8823d98fe4ac2e}
+
+
+Random access to the cells. 
+
+\index{CellCollection@{CellCollection}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell} \& CellCollection::operator[$\,$] (int {\em i})}\label{classCellCollection_3f4df67dc0c0810e56910c7c2c61eee0}
+
+
+\index{CellCollection@{CellCollection}!getMilieu@{getMilieu}}
+\index{getMilieu@{getMilieu}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Milieu} \& CellCollection::getMilieu ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_1a05ae2b39fa7d1975fd915ac782b55f}
+
+
+Non-constant access to the milieu. 
+
+\index{CellCollection@{CellCollection}!getNCells@{getNCells}}
+\index{getNCells@{getNCells}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CellCollection::getNCells () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_7e7033870c2939e540e384a4e73943be}
+
+
+Get the number of cells. 
+
+\index{CellCollection@{CellCollection}!getTimeDependentVolumes@{getTimeDependentVolumes}}
+\index{getTimeDependentVolumes@{getTimeDependentVolumes}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ CellCollection::getTimeDependentVolumes (const double {\em time}) const}\label{classCellCollection_0c5d702860a478ba49d95ab1315bbc3b}
+
+
+\index{CellCollection@{CellCollection}!getGlobalPropensities@{getGlobalPropensities}}
+\index{getGlobalPropensities@{getGlobalPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ \& CellCollection::getGlobalPropensities ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_955d5ddfbedf013e30e6b525a7ddcfa1}
+
+
+Get the global array of propensities. 
+
+Get the global array of propensities of the whole cell collection, including the cell-milieu reaction channels. \index{CellCollection@{CellCollection}!getGlobalX@{getGlobalX}}
+\index{getGlobalX@{getGlobalX}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ int, 1 $>$ \& CellCollection::getGlobalX ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_025a9257c4f04866076cfa34efcef753}
+
+
+\index{CellCollection@{CellCollection}!getXConc@{getXConc}}
+\index{getXConc@{getXConc}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ CellCollection::getXConc (const double {\em time})}\label{classCellCollection_fd9e296d8bcec397103ce8e821e1f14f}
+
+
+Remark: XConc is not a global array, it is constructed from the concentration arrays of the cells. 
+
+\index{CellCollection@{CellCollection}!getSumPropensities@{getSumPropensities}}
+\index{getSumPropensities@{getSumPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellCollection::getSumPropensities () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_994fcfe5ce2b2bbf1095ef2e5d464919}
+
+
+\index{CellCollection@{CellCollection}!getCellIndexFromGlobalChannelIndex@{getCellIndexFromGlobalChannelIndex}}
+\index{getCellIndexFromGlobalChannelIndex@{getCellIndexFromGlobalChannelIndex}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int CellCollection::getCellIndexFromGlobalChannelIndex (int {\em mu})}\label{classCellCollection_68908bf5abda3a9ccdfcf2091e806f24}
+
+
+\index{CellCollection@{CellCollection}!getTimeNextDivision@{getTimeNextDivision}}
+\index{getTimeNextDivision@{getTimeNextDivision}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellCollection::getTimeNextDivision ()\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_654fd71e9f104982f1453c5aafbc6fda}
+
+
+\index{CellCollection@{CellCollection}!getCellCyclePhases@{getCellCyclePhases}}
+\index{getCellCyclePhases@{getCellCyclePhases}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ CellCollection::getCellCyclePhases (const double {\em time}) const}\label{classCellCollection_8100eb42a76f3695e7a4aeabc6d13650}
+
+
+\index{CellCollection@{CellCollection}!getCellLineage@{getCellLineage}}
+\index{getCellLineage@{getCellLineage}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf CellLineageGeneration} $>$ CellCollection::getCellLineage () const\hspace{0.3cm}{\tt  [inline]}}\label{classCellCollection_f142c6b0baeeeb2ec63a4c75d0170ad3}
+
+
+\index{CellCollection@{CellCollection}!getCellsAngle@{getCellsAngle}}
+\index{getCellsAngle@{getCellsAngle}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ CellCollection::getCellsAngle () const}\label{classCellCollection_09289829176cd533054d316240a53ebf}
+
+
+\index{CellCollection@{CellCollection}!getCellsPosition@{getCellsPosition}}
+\index{getCellsPosition@{getCellsPosition}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ TinyVector$<$ double, 2 $>$, 1 $>$ CellCollection::getCellsPosition () const}\label{classCellCollection_d589b7b2fc5c7f95fe01d61ede3d49f1}
+
+
+\index{CellCollection@{CellCollection}!getListSpeciesName@{getListSpeciesName}}
+\index{getListSpeciesName@{getListSpeciesName}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ CellCollection::getListSpeciesName () const}\label{classCellCollection_dd9fd6b9bbc126e0e407dd16b0d6f9ba}
+
+
+\index{CellCollection@{CellCollection}!setCellsAngle@{setCellsAngle}}
+\index{setCellsAngle@{setCellsAngle}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::setCellsAngle (Array$<$ double, 1 $>$ {\em cellsAngleArray})}\label{classCellCollection_75dc07332a3f267bc702554e4aa4e6cd}
+
+
+\index{CellCollection@{CellCollection}!setCellsPosition@{setCellsPosition}}
+\index{setCellsPosition@{setCellsPosition}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::setCellsPosition (Array$<$ TinyVector$<$ double, 2 $>$, 1 $>$ {\em cellsPositionArray})}\label{classCellCollection_93c97175010bfda00477602405be27f4}
+
+
+\index{CellCollection@{CellCollection}!computeAllCellsAndGetPropensities@{computeAllCellsAndGetPropensities}}
+\index{computeAllCellsAndGetPropensities@{computeAllCellsAndGetPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$double,1$>$\& CellCollection::computeAllCellsAndGetPropensities ()}\label{classCellCollection_4b73332003358f0f06a0def79002417b}
+
+
+Compute and get propensities of all reaction channels (including intercellular or cell-milieu reactions). 
+
+\index{CellCollection@{CellCollection}!computeAndGetPropensities@{computeAndGetPropensities}}
+\index{computeAndGetPropensities@{computeAndGetPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ \& CellCollection::computeAndGetPropensities ()}\label{classCellCollection_4882ea6a3f20a950723b21ec9e152b33}
+
+
+Compute and get propensities of all reaction channels (including intercellular or cell-milieu reactions). 
+
+This method is optimized by using the \doxyref{lastReactionCellIndex\_\-}{p.}{classCellCollection_e5e5b72f8289729a05ad9a99261aae3c}. Compute propensities ONLY in cell i: at each step, we keep track of the cell index \doxyref{lastReactionCellIndex\_\-}{p.}{classCellCollection_e5e5b72f8289729a05ad9a99261aae3c} where the reaction happens, and at next step, we compute the propensities only in this cell and the milieu (because only in these cells the internal state has changed). \index{CellCollection@{CellCollection}!computeAndGetPropensitiesModified@{computeAndGetPropensitiesModified}}
+\index{computeAndGetPropensitiesModified@{computeAndGetPropensitiesModified}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ \& CellCollection::computeAndGetPropensitiesModified (const double {\em time})}\label{classCellCollection_eb934fdf5a82b1c4406fc93da6a09c04}
+
+
+\index{CellCollection@{CellCollection}!computeTimeDependentPropensities@{computeTimeDependentPropensities}}
+\index{computeTimeDependentPropensities@{computeTimeDependentPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::computeTimeDependentPropensities (const double {\em time})}\label{classCellCollection_5ba177ec9cdbd54e973f518ec5aa1c15}
+
+
+\index{CellCollection@{CellCollection}!computePropensitiesAllInternalTimeDependentReactions@{computePropensitiesAllInternalTimeDependentReactions}}
+\index{computePropensitiesAllInternalTimeDependentReactions@{computePropensitiesAllInternalTimeDependentReactions}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::computePropensitiesAllInternalTimeDependentReactions (const double {\em time})}\label{classCellCollection_fd23a12746264399da0d7b92636fbcec}
+
+
+\index{CellCollection@{CellCollection}!getSumPropensitiesAllInternalTimeDependentReactions@{getSumPropensitiesAllInternalTimeDependentReactions}}
+\index{getSumPropensitiesAllInternalTimeDependentReactions@{getSumPropensitiesAllInternalTimeDependentReactions}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellCollection::getSumPropensitiesAllInternalTimeDependentReactions ()}\label{classCellCollection_33f98ed9d986282595770bd99f3dca98}
+
+
+\index{CellCollection@{CellCollection}!initializeSumPropensities@{initializeSumPropensities}}
+\index{initializeSumPropensities@{initializeSumPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::initializeSumPropensities ()}\label{classCellCollection_4776a24572a3deadac395807a04ae358}
+
+
+Initialize the sum of propensities. 
+
+We substract the sum of propensities from the milieu and set artificially the lastReactionCellIndex to -1 (corresponding to the milieu), in order to ensure the good initialization of the optimized sum of the propensities. This initialization has to be applied after dividing or deleting a cell. \index{CellCollection@{CellCollection}!initializeSumPropensities@{initializeSumPropensities}}
+\index{initializeSumPropensities@{initializeSumPropensities}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::initializeSumPropensities (const double {\em time})}\label{classCellCollection_aaa508931fe5f373554336817f47c0f1}
+
+
+\index{CellCollection@{CellCollection}!duplicateCell@{duplicateCell}}
+\index{duplicateCell@{duplicateCell}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::duplicateCell (int {\em i})\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_ca94da1997cf9f225b83cab9d55657dc}
+
+
+Duplicate cell {\tt i}. 
+
+The cell is duplicated and proteins are distributed between mother and daughter cells with binomial probability.\begin{itemize}
+\item Substract the volume of the cell V0 to the volume of the milieu. (Remark: The dynamic variation of cells volume is not taken into account for keeping the milieu's volume constant.).\item Increase the size of the cells array with the resizeAndPreserve method.\item Call the duplicate method of cell {\tt i} and copy the daughter cell to the new slot.\item nCells++\item Rebuild global arrays.\item Rebuild the list of the upcoming cell division events. \end{itemize}
+\index{CellCollection@{CellCollection}!getSumPropensitiesAllCellsMilieuReactions@{getSumPropensitiesAllCellsMilieuReactions}}
+\index{getSumPropensitiesAllCellsMilieuReactions@{getSumPropensitiesAllCellsMilieuReactions}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double CellCollection::getSumPropensitiesAllCellsMilieuReactions ()\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_a6478a45d64298b22ffbb93d48e6082e}
+
+
+Compute the sum of the propensities of the cell-milieu reactions of all cells. 
+
+\index{CellCollection@{CellCollection}!computePropensitiesCellMilieuAllCells@{computePropensitiesCellMilieuAllCells}}
+\index{computePropensitiesCellMilieuAllCells@{computePropensitiesCellMilieuAllCells}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::computePropensitiesCellMilieuAllCells ()\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_8566f6399e43c80c90f120e9e6883bbf}
+
+
+Compute the propensities of the cell-milieu reactions of all cells. 
+
+\index{CellCollection@{CellCollection}!computePropensitiesCellMilieuAllCells@{computePropensitiesCellMilieuAllCells}}
+\index{computePropensitiesCellMilieuAllCells@{computePropensitiesCellMilieuAllCells}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::computePropensitiesCellMilieuAllCells (const double {\em time})\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_9b1d8b45ea614cd77251c168fe374c6a}
+
+
+\index{CellCollection@{CellCollection}!applyNextDivisionEvent@{applyNextDivisionEvent}}
+\index{applyNextDivisionEvent@{applyNextDivisionEvent}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::applyNextDivisionEvent ()}\label{classCellCollection_bbe2af90b96ba11f1610c1563a006a29}
+
+
+Divide the cell(s) that are next in the division events list. 
+
+This method looks at the list of division events and divide the cell that is next in the list. In the case that several cells have exactly the same time of next division, we divide all these cells. \index{CellCollection@{CellCollection}!deleteCell@{deleteCell}}
+\index{deleteCell@{deleteCell}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::deleteCell (int {\em i}, \/  const double {\em time})}\label{classCellCollection_f419ee956df66b05cf1ef979a3de9667}
+
+
+Delete cell {\tt i}. 
+
+\begin{itemize}
+\item Add the volume of the cell to the volume of the milieu.\item Make a copy of cells array.\item Resize the cells array to nCells-1.\item Copy back the cells (0,...,i-1,i+1,...,nCells) into the cells array.\item nCells--\item Update the cell generation list.\item Rebuild global arrays.\item Rebuild the list of the upcoming cell division events. \end{itemize}
+\index{CellCollection@{CellCollection}!buildListDivisionEvents@{buildListDivisionEvents}}
+\index{buildListDivisionEvents@{buildListDivisionEvents}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::buildListDivisionEvents ()}\label{classCellCollection_6305f9a2d18d0dd277693b7154794b0d}
+
+
+Build the list of upcoming division events. 
+
+This functions is called from the \doxyref{deleteCell()}{p.}{classCellCollection_f419ee956df66b05cf1ef979a3de9667} method. It iterates over the cells to get the value of their timeNextDivision and their cell index and build the list. It is necessary to rebuild the list when deleting one cell because almost all the cell indices are changed after the deletion (by shifting). Thus, it is simpler to rebuild the entire list than changing the value of the cell index in each element. \index{CellCollection@{CellCollection}!applyReaction@{applyReaction}}
+\index{applyReaction@{applyReaction}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellCollection::applyReaction (int {\em mu})}\label{classCellCollection_14a8c92a2646731e6384d4f7ddcb49a9}
+
+
+Apply a reaction corresponding to reaction channel {\tt mu} (global index). 
+
+\begin{itemize}
+\item Find cell number {\tt k} and local channel number {\tt mu\_\-k}.\item If {\tt k} = -1\begin{itemize}
+\item Apply reaction {\tt mu\_\-k} in the milieu.\end{itemize}
+\item else\begin{itemize}
+\item Apply reaction {\tt mu\_\-k} in cell {\tt k}. \end{itemize}
+\end{itemize}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{CellCollection@{CellCollection}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em out}, \/  const {\bf CellCollection} \& {\em cellCollection})\hspace{0.3cm}{\tt  [friend]}}\label{classCellCollection_b0a78cc0f31cec81458f40ab27bc7beb}
+
+
+Operator that outputs the content of all cells. 
+
+Remark: it is declared as a friend operator, so that it has access to the private part of the class. 
+
+\subsection{Member Data Documentation}
+\index{CellCollection@{CellCollection}!nCells\_\-@{nCells\_\-}}
+\index{nCells\_\-@{nCells\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellCollection::nCells\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_3b8ca4eb69848b1b85747f034b6eaff8}
+
+
+Number of cells in the cell collection. 
+
+Remark that this does not include the milieu, which is considered as a special cell. \index{CellCollection@{CellCollection}!cells\_\-@{cells\_\-}}
+\index{cells\_\-@{cells\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<${\bf Cell},1$>$ {\bf CellCollection::cells\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_005fbe2668311462068fd7e9c25eeeb4}
+
+
+The collection of cell objects is contained in a Blitz++ array. 
+
+This will ensure a good performance for random access to the cells (by index). The drawback is that when deleting a cell, we have to perform complicated copying operations. We suppose that duplicating/deleting events are rare, so the lost in performance is negligable. \index{CellCollection@{CellCollection}!milieu\_\-@{milieu\_\-}}
+\index{milieu\_\-@{milieu\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Milieu} {\bf CellCollection::milieu\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_0ce684ae435a0e7d1eb8f9a5ef99d92c}
+
+
+\doxyref{Milieu}{p.}{classMilieu} cell object that represents the milieu / environment where the cells are living. 
+
+It functions as a normal cell in the sense that it can define some chemical species and reactions. \doxyref{Milieu}{p.}{classMilieu} can only have one instance. \index{CellCollection@{CellCollection}!globalArrayInterface\_\-@{globalArrayInterface\_\-}}
+\index{globalArrayInterface\_\-@{globalArrayInterface\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GlobalArrayInterface} {\bf CellCollection::globalArrayInterface\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_7f6649b805665de375fb68045cdc8289}
+
+
+The \doxyref{GlobalArrayInterface}{p.}{classGlobalArrayInterface} class defines the interface to the class that handle global arrays. 
+
+These are contiguous arrays that gather up the internal arrays of all cells in order to be able to keep all cell data in a unique place. This way, the global array can be passed easily to the integrator interface. Moreover, the local/internal arrays of the cells are referenced to a part of the global array, i.e. they are sharing the same data. We have a transparent manner of accessing the arrays, at the level of the cell collection (global array) or at the level of the cell (local array). Any changes made to the local array \doxyref{Cell::totalPropensities\_\-}{p.}{classCell_ebcb4b6db88c0674224bc878037c9253} when calling the \doxyref{Cell::computePropensities()}{p.}{classCell_d872f4f01c39feb953ee27a9d37963af} method in a cell will also be reflected in the global array, because they refer to the same data.
+
+Remark 1: When deleting or adding a cell, the global array need to be completely rebuild. \index{CellCollection@{CellCollection}!listDivisionEvents\_\-@{listDivisionEvents\_\-}}
+\index{listDivisionEvents\_\-@{listDivisionEvents\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}multimap$<$double,int$>$ {\bf CellCollection::listDivisionEvents\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_b3b59dae2c7644730b50923be7f52699}
+
+
+List of the upcoming cell division events. 
+
+This list is used to know what is the next cell divison event and when it will happen. It is implemented using the multimap container from the STL. Each element in the multimap has a key equal to the time of next division event with the cell index as mapped value. The multimap always stays in a sorted order following the $<$ comparison for the key values (times of division).
+
+Remark: The cell index refers to the cells array in the state when the list was built. When applying a division event, the array has one more element and its size is increased to nCells+1. However, the new daughter cell is inserted at the very end of the array, thus indices from 0,...,nCells-1 can still be used to refer to the cells and are consistent with the indices before the division. This is especially important when two or more cells have the same division event time and are divided at the same time. \index{CellCollection@{CellCollection}!cellLineage\_\-@{cellLineage\_\-}}
+\index{cellLineage\_\-@{cellLineage\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf CellLineageGeneration}$>$ {\bf CellCollection::cellLineage\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_6503b63a9d9234643216a59d629f9a13}
+
+
+List that contains information about the cell lineage. 
+
+\begin{Desc}
+\item[See also:]\doxyref{CellLineageGeneration}{p.}{classCellLineageGeneration}. \end{Desc}
+\index{CellCollection@{CellCollection}!lastReactionCellIndex\_\-@{lastReactionCellIndex\_\-}}
+\index{lastReactionCellIndex\_\-@{lastReactionCellIndex\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellCollection::lastReactionCellIndex\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_e5e5b72f8289729a05ad9a99261aae3c}
+
+
+Temporary variable: index of the cell in which the reaction of previous integration step happened. 
+
+This index is used to optimize the integration algorithm: \begin{Desc}
+\item[See also:]\doxyref{computeAndGetPropensities()}{p.}{classCellCollection_4882ea6a3f20a950723b21ec9e152b33} 
+
+computeSumPropensities()\end{Desc}
+Remark: if the reaction happened in the milieu, it is set to -1. \index{CellCollection@{CellCollection}!isLastReactionInternal\_\-@{isLastReactionInternal\_\-}}
+\index{isLastReactionInternal\_\-@{isLastReactionInternal\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CellCollection::isLastReactionInternal\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_8ba225f0f112418af5130c4950797b17}
+
+
+Temporary variable: indicates if the reaction that happened at the previous integration step was an internal (cell) reaction or an external (cell-milieu) reaction. 
+
+This index is used to optimize the integration algorithm: \begin{Desc}
+\item[See also:]\doxyref{computeAndGetPropensities()}{p.}{classCellCollection_4882ea6a3f20a950723b21ec9e152b33} 
+
+computeSumPropensities()\end{Desc}
+Remark: if the reaction happened in the milieu, then it cannot be external (by definition, the milieu object does not have any external reactions). \index{CellCollection@{CellCollection}!sumPropensities\_\-@{sumPropensities\_\-}}
+\index{sumPropensities\_\-@{sumPropensities\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf CellCollection::sumPropensities\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_a1e17afe9b58ca957c763a94db81f302}
+
+
+Temporary variable: true if the last reaction was an intracellular and false if it was a cell-milieu reaction. 
+
+Temporary variable: sum of the propensities. Used in the optimization of the computation of the sum of all the propensities. The idea of the optimization stands as follows:\begin{itemize}
+\item The next reaction to occur introduces a change in the state of the system, but only in the number of molecules of the species involved in the reaction. We assume that there is only a reduced set of reaction channels whose propensities depend on the species number that has changed during the reaction. Then, we only need to update the propensities of the reaction channels that are affected by the last reaction.\end{itemize}
+
+
+\begin{itemize}
+\item The propensities and the sum are initialized. Then, in the integration loop:\item Before applying the reaction:\begin{itemize}
+\item Propensities of reaction channels that are affected by the next reaction are substracted from the sum.\item Apply reaction.\end{itemize}
+\item Compute propensities:\begin{itemize}
+\item Compute propensities of the channels affected by the last reaction.\item Add the sum of the propensities of these channels to the sum.\end{itemize}
+\item The propensities and their sum have been updated.\end{itemize}
+
+
+In this code, we only use the connections of the reactions between cell-cell and cell-milieu. We do not analyse the internal chemical system in the cell and the connections between reactions. \index{CellCollection@{CellCollection}!constantCellDensity\_\-@{constantCellDensity\_\-}}
+\index{constantCellDensity\_\-@{constantCellDensity\_\-}!CellCollection@{CellCollection}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CellCollection::constantCellDensity\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classCellCollection_aa71cbc6d4145167722309e835901f8e}
+
+
+If true the cell density is kept constant by automatically killing the cells (at random) when cells duplicate. 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf CellCollection.h}\item 
+DATA/PROGS/COLONY/{\bf CellCollection.cpp}\end{CompactItemize}

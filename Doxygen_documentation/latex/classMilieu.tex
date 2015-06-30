@@ -1,0 +1,41 @@
+\section{Milieu Class Reference}
+\label{classMilieu}\index{Milieu@{Milieu}}
+A special cell that represents the environment in which the colony of cells live.  
+
+
+{\tt \#include $<$Milieu.h$>$}
+
+Inheritance diagram for Milieu::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classMilieu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+double {\bf getTimeDependentVolume} (const double time) const 
+\begin{CompactList}\small\item\em We reimplement the method in order to return a value of the milieu volume independent of time and dependent only on the number of cells (volume0). \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A special cell that represents the environment in which the colony of cells live. 
+
+It can contain chemical species and reactions, like a normal \doxyref{CellBase}{p.}{classCellBase} object and cannot divide. 
+
+\subsection{Member Function Documentation}
+\index{Milieu@{Milieu}!getTimeDependentVolume@{getTimeDependentVolume}}
+\index{getTimeDependentVolume@{getTimeDependentVolume}!Milieu@{Milieu}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Milieu::getTimeDependentVolume (const double {\em time}) const\hspace{0.3cm}{\tt  [virtual]}}\label{classMilieu_d48c676f6943018da4d7dcab5c04a450}
+
+
+We reimplement the method in order to return a value of the milieu volume independent of time and dependent only on the number of cells (volume0). 
+
+This is an approximation since we should take into account the volume of all the other cells in order to calculate the volume of the milieu. However, as the volume of the milieu is much larger than the volume of one cell, there is not much difference. 
+
+Implements {\bf CellBase} \doxyref{}{p.}{classCellBase_7b69eec41c172b719e7f2ea6cb277ce9}.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf Milieu.h}\item 
+DATA/PROGS/COLONY/{\bf Milieu.cpp}\end{CompactItemize}

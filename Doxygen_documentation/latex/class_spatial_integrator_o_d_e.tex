@@ -1,0 +1,200 @@
+\hypertarget{class_spatial_integrator_o_d_e}{\section{\-Spatial\-Integrator\-O\-D\-E \-Class \-Reference}
+\label{class_spatial_integrator_o_d_e}\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}}
+}
+
+
+{\ttfamily \#include $<$\-Spatial\-Integrator\-O\-D\-E.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_spatial_integrator_o_d_e_acbf19be7f7e57f3f4e7d40821c403435}{\-Spatial\-Integrator\-O\-D\-E} (\hyperlink{class_simulator}{\-Simulator} $\ast$simulator\-Ptr)
+\item 
+\hyperlink{class_spatial_integrator_o_d_e_aea72c2ef2450a678d8914cd9e826ebc2}{$\sim$\-Spatial\-Integrator\-O\-D\-E} ()
+\item 
+d\-World\-I\-D \hyperlink{class_spatial_integrator_o_d_e_a5aabe38f475e883e1ddce57a4fdd7bd9}{get\-World} () const 
+\item 
+d\-Space\-I\-D \hyperlink{class_spatial_integrator_o_d_e_a3be9bcc6f8b61ead5db72ce5f565195a}{get\-Space} () const 
+\item 
+\-Q\-List$<$ \hyperlink{class_graphics_cell_o_d_e}{\-Graphics\-Cell\-O\-D\-E} $\ast$ $>$ $\ast$ \hyperlink{class_spatial_integrator_o_d_e_a5acba09a24653a4a249552b2cefb9f9e}{get\-Cells\-List} ()
+\item 
+void \hyperlink{class_spatial_integrator_o_d_e_acdbf47a8d5e9fd7b9eba7c41fbda3abf}{init} ()
+\item 
+void \hyperlink{class_spatial_integrator_o_d_e_a09aca010b723441070e2d07e09f15bd5}{handle\-Collision\-Between} (d\-Geom\-I\-D o0, d\-Geom\-I\-D o1)
+\item 
+void \hyperlink{class_spatial_integrator_o_d_e_a719fbe66b4cdb1271e7ca807697613f9}{integrate} (double time\-Step)
+\item 
+void \hyperlink{class_spatial_integrator_o_d_e_a32b1a80ee42f27acbd58806ca165f026}{set\-Is\-Equilibration\-Steps} (bool is\-Equilibration\-Steps)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_spatial_integrator_o_d_e_aed66f4007ba5dceaa492f74e60557ca8}{compute\-Forces} (bool low\-Friction)
+\item 
+\-Tiny\-Vector$<$ double, 4 $>$ \hyperlink{class_spatial_integrator_o_d_e_ae14b3a94369557bf92768aab7452f8f6}{compute\-Colony\-Center\-And\-Radius} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+d\-World\-I\-D \hyperlink{class_spatial_integrator_o_d_e_ae520b605f7c9733f5676297c28a2af3e}{world\-\_\-}
+\item 
+d\-Space\-I\-D \hyperlink{class_spatial_integrator_o_d_e_a35b4aa6b6bc3984401ec95b2c0430205}{space\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Open \-Dynamics \-Engin (\-O\-D\-E) for simulation of rigid body dynamics. 
+
+\-Definition at line 51 of file \-Spatial\-Integrator\-O\-D\-E.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_spatial_integrator_o_d_e_acbf19be7f7e57f3f4e7d40821c403435}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}}
+\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{\-Spatial\-Integrator\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Spatial\-Integrator\-O\-D\-E\-::\-Spatial\-Integrator\-O\-D\-E} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Simulator} $\ast$}]{simulator\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_acbf19be7f7e57f3f4e7d40821c403435}
+\-Initiate the \hyperlink{class_integrator_context}{\-Integrator\-Context} with the pointer to the \hyperlink{class_simulator}{\-Simulator} object as argument. 
+
+\-Definition at line 30 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_aea72c2ef2450a678d8914cd9e826ebc2}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!$\sim$\-Spatial\-Integrator\-O\-D\-E@{$\sim$\-Spatial\-Integrator\-O\-D\-E}}
+\index{$\sim$\-Spatial\-Integrator\-O\-D\-E@{$\sim$\-Spatial\-Integrator\-O\-D\-E}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{$\sim$\-Spatial\-Integrator\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Spatial\-Integrator\-O\-D\-E\-::$\sim$\-Spatial\-Integrator\-O\-D\-E} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_aea72c2ef2450a678d8914cd9e826ebc2}
+
+
+\-Definition at line 39 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_spatial_integrator_o_d_e_ae14b3a94369557bf92768aab7452f8f6}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!compute\-Colony\-Center\-And\-Radius@{compute\-Colony\-Center\-And\-Radius}}
+\index{compute\-Colony\-Center\-And\-Radius@{compute\-Colony\-Center\-And\-Radius}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{compute\-Colony\-Center\-And\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}\-Tiny\-Vector$<$ double, 4 $>$ {\bf \-Spatial\-Integrator\-O\-D\-E\-::compute\-Colony\-Center\-And\-Radius} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_spatial_integrator_o_d_e_ae14b3a94369557bf92768aab7452f8f6}
+
+
+\-Definition at line 332 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_aed66f4007ba5dceaa492f74e60557ca8}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!compute\-Forces@{compute\-Forces}}
+\index{compute\-Forces@{compute\-Forces}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{compute\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spatial\-Integrator\-O\-D\-E\-::compute\-Forces} (
+\begin{DoxyParamCaption}
+\item[{bool}]{low\-Friction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_spatial_integrator_o_d_e_aed66f4007ba5dceaa492f74e60557ca8}
+
+
+\-Definition at line 231 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_a5acba09a24653a4a249552b2cefb9f9e}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!get\-Cells\-List@{get\-Cells\-List}}
+\index{get\-Cells\-List@{get\-Cells\-List}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{get\-Cells\-List}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-List$<$ {\bf \-Graphics\-Cell\-O\-D\-E} $\ast$ $>$ $\ast$ {\bf \-Spatial\-Integrator\-O\-D\-E\-::get\-Cells\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_a5acba09a24653a4a249552b2cefb9f9e}
+
+
+\-Definition at line 106 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_a3be9bcc6f8b61ead5db72ce5f565195a}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!get\-Space@{get\-Space}}
+\index{get\-Space@{get\-Space}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{get\-Space}]{\setlength{\rightskip}{0pt plus 5cm}d\-Space\-I\-D {\bf \-Spatial\-Integrator\-O\-D\-E\-::get\-Space} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_spatial_integrator_o_d_e_a3be9bcc6f8b61ead5db72ce5f565195a}
+
+
+\-Definition at line 99 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_a5aabe38f475e883e1ddce57a4fdd7bd9}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!get\-World@{get\-World}}
+\index{get\-World@{get\-World}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{get\-World}]{\setlength{\rightskip}{0pt plus 5cm}d\-World\-I\-D {\bf \-Spatial\-Integrator\-O\-D\-E\-::get\-World} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_spatial_integrator_o_d_e_a5aabe38f475e883e1ddce57a4fdd7bd9}
+
+
+\-Definition at line 92 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_a09aca010b723441070e2d07e09f15bd5}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!handle\-Collision\-Between@{handle\-Collision\-Between}}
+\index{handle\-Collision\-Between@{handle\-Collision\-Between}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{handle\-Collision\-Between}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spatial\-Integrator\-O\-D\-E\-::handle\-Collision\-Between} (
+\begin{DoxyParamCaption}
+\item[{d\-Geom\-I\-D}]{o0, }
+\item[{d\-Geom\-I\-D}]{o1}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_a09aca010b723441070e2d07e09f15bd5}
+
+
+\-Definition at line 183 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_acdbf47a8d5e9fd7b9eba7c41fbda3abf}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!init@{init}}
+\index{init@{init}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spatial\-Integrator\-O\-D\-E\-::init} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_acdbf47a8d5e9fd7b9eba7c41fbda3abf}
+
+
+\-Definition at line 48 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_a719fbe66b4cdb1271e7ca807697613f9}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!integrate@{integrate}}
+\index{integrate@{integrate}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{integrate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spatial\-Integrator\-O\-D\-E\-::integrate} (
+\begin{DoxyParamCaption}
+\item[{double}]{time\-Step}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_a719fbe66b4cdb1271e7ca807697613f9}
+
+
+\-Definition at line 120 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+\hypertarget{class_spatial_integrator_o_d_e_a32b1a80ee42f27acbd58806ca165f026}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!set\-Is\-Equilibration\-Steps@{set\-Is\-Equilibration\-Steps}}
+\index{set\-Is\-Equilibration\-Steps@{set\-Is\-Equilibration\-Steps}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{set\-Is\-Equilibration\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Spatial\-Integrator\-O\-D\-E\-::set\-Is\-Equilibration\-Steps} (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Equilibration\-Steps}
+\end{DoxyParamCaption}
+)}}\label{class_spatial_integrator_o_d_e_a32b1a80ee42f27acbd58806ca165f026}
+
+
+\-Definition at line 113 of file \-Spatial\-Integrator\-O\-D\-E.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_spatial_integrator_o_d_e_a35b4aa6b6bc3984401ec95b2c0430205}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!space\-\_\-@{space\-\_\-}}
+\index{space\-\_\-@{space\-\_\-}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{space\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}d\-Space\-I\-D {\bf \-Spatial\-Integrator\-O\-D\-E\-::space\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_spatial_integrator_o_d_e_a35b4aa6b6bc3984401ec95b2c0430205}
+
+
+\-Definition at line 74 of file \-Spatial\-Integrator\-O\-D\-E.\-h.
+
+\hypertarget{class_spatial_integrator_o_d_e_ae520b605f7c9733f5676297c28a2af3e}{\index{\-Spatial\-Integrator\-O\-D\-E@{\-Spatial\-Integrator\-O\-D\-E}!world\-\_\-@{world\-\_\-}}
+\index{world\-\_\-@{world\-\_\-}!SpatialIntegratorODE@{\-Spatial\-Integrator\-O\-D\-E}}
+\subsubsection[{world\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}d\-World\-I\-D {\bf \-Spatial\-Integrator\-O\-D\-E\-::world\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_spatial_integrator_o_d_e_ae520b605f7c9733f5676297c28a2af3e}
+
+
+\-Definition at line 73 of file \-Spatial\-Integrator\-O\-D\-E.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_spatial_integrator_o_d_e_8h}{\-Spatial\-Integrator\-O\-D\-E.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_spatial_integrator_o_d_e_8cpp}{\-Spatial\-Integrator\-O\-D\-E.\-cpp}\end{DoxyCompactItemize}

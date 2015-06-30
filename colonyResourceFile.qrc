@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>icons/PlayGreenButton.png</file>
+        <file>icons/StopRedButton.png</file>
+        <file>icons/realistik_player_pause_16.png</file>
+        <file>icons/realistik_player_pause_22.png</file>
+        <file>icons/realistik_player_pause_32.png</file>
+        <file>icons/realistik_player_pause_48.png</file>
+        <file>icons/realistik_player_pause_64.png</file>
+        <file>icons/realistik_player_pause_128.png</file>
+        <file>icons/realistik_player_play_16.png</file>
+        <file>icons/realistik_player_play_22.png</file>
+        <file>icons/realistik_player_play_32.png</file>
+        <file>icons/realistik_player_play_48.png</file>
+        <file>icons/realistik_player_play_64.png</file>
+        <file>icons/realistik_player_play_128.png</file>
+    </qresource>
+</RCC>

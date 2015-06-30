@@ -1,0 +1,165 @@
+\section{GlobalArray$<$ T $>$ Class Template Reference}
+\label{classGlobalArray}\index{GlobalArray@{GlobalArray}}
+This class defines a global array of type T which stores consecutively a series of local arrays, called nodes.  
+
+
+{\tt \#include $<$GlobalArray.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf GlobalArray} ()
+\item 
+{\bf $\sim$GlobalArray} ()
+\item 
+void {\bf build} (list$<$ {\bf LocalArrayTarget}$<$ T $>$ $>$ \&localArrayList)
+\begin{CompactList}\small\item\em Construct/Reconstruct the global array based on the local arrays information. \item\end{CompactList}\item 
+list$<$ Array$<$ T, 1 $>$ $>$ {\bf buildGlobalArrayRangesList} (list$<$ {\bf LocalArrayTarget}$<$ T $>$ $>$ \&localArrayList)
+\begin{CompactList}\small\item\em Construct/Reconstruct the global array based on the local arrays information, let the responsability of local array referencing to the interface. \item\end{CompactList}\item 
+Array$<$ T, 1 $>$ \& {\bf getGlobalArray} ()
+\begin{CompactList}\small\item\em Get the global array (by reference). \item\end{CompactList}\item 
+Array$<$ T, 1 $>$ {\bf getNode} (int k)
+\begin{CompactList}\small\item\em Returns the array corresponding to node {\tt k}. \item\end{CompactList}\item 
+pair$<$ int, int $>$ {\bf getLocalIndicesFromGlobal} (int i) const 
+\begin{CompactList}\small\item\em Get the local indices (node number {\tt k}, position inside the node {\tt j}) from the global index {\tt i}. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf size\_\-}
+\begin{CompactList}\small\item\em Total size (number of elements of type T) of the global array. \item\end{CompactList}\item 
+int {\bf nNodes\_\-}
+\begin{CompactList}\small\item\em Number of nodes in the global array. \item\end{CompactList}\item 
+Array$<$ T, 1 $>$ {\bf globalArray\_\-}
+\begin{CompactList}\small\item\em Stores consecutively all the local arrays (which are referenced to a part of the global array). \item\end{CompactList}\item 
+set$<$ int $>$ {\bf nodesTable\_\-}
+\begin{CompactList}\small\item\em A table of the indices of the first element of each node. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class GlobalArray$<$ T $>$}
+
+This class defines a global array of type T which stores consecutively a series of local arrays, called nodes. 
+
+Each node is itself a smaller array of type T, and can have an arbitrary size. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GlobalArray@{GlobalArray}!GlobalArray@{GlobalArray}}
+\index{GlobalArray@{GlobalArray}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf GlobalArray}$<$ T $>$::{\bf GlobalArray} ()\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_96570937786aa847350cadcf2a2deb6e}
+
+
+\index{GlobalArray@{GlobalArray}!$\sim$GlobalArray@{$\sim$GlobalArray}}
+\index{$\sim$GlobalArray@{$\sim$GlobalArray}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf GlobalArray}$<$ T $>$::$\sim${\bf GlobalArray} ()\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_41c47e855bdaa6ebd2b00541f1b9e5fe}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{GlobalArray@{GlobalArray}!build@{build}}
+\index{build@{build}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf GlobalArray}$<$ T $>$::build (list$<$ {\bf LocalArrayTarget}$<$ T $>$ $>$ \& {\em localArrayList})\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_785072abe434f74ea777044b5d16d4bd}
+
+
+Construct/Reconstruct the global array based on the local arrays information. 
+
+The method goes like this:\begin{itemize}
+\item Set nNodes.\item Loop over local array list:\begin{itemize}
+\item Calculate the node table and the total size of the global array.\end{itemize}
+\item Resize global array.\item Loop over local array list:\begin{itemize}
+\item Make a copy of local array.\item Reference local array to corresponding part of the global array.\item Copy back values into local array.\end{itemize}
+\end{itemize}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[\mbox{$\leftrightarrow$} {\em localArraysList}]list of the local arrays. Each element of the list is a LocalArrayTarget$<$T$>$ containing a {\bf pointer} to the array and its size. \end{description}
+\end{Desc}
+\index{GlobalArray@{GlobalArray}!buildGlobalArrayRangesList@{buildGlobalArrayRangesList}}
+\index{buildGlobalArrayRangesList@{buildGlobalArrayRangesList}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ list$<$ Array$<$ T, 1 $>$ $>$ {\bf GlobalArray}$<$ T $>$::buildGlobalArrayRangesList (list$<$ {\bf LocalArrayTarget}$<$ T $>$ $>$ \& {\em localArrayList})\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_c81fd0b504d70fc51ab9df89707b523a}
+
+
+Construct/Reconstruct the global array based on the local arrays information, let the responsability of local array referencing to the interface. 
+
+The method goes like this:\begin{itemize}
+\item Set nNodes.\item Loop over local array list:\begin{itemize}
+\item Calculate the node table and the total size of the global array.\end{itemize}
+\item Resize global array.\item Return a list a global array parts corresponding to the local arrays. This list can be used as a reference targets list for referencing the local arrays.\end{itemize}
+
+
+Remark 1: The advantage of letting the responsability of the referencing to the interface class is that the referencing method called in the concerned objects (e.g. \doxyref{Cell}{p.}{classCell} objects) can control the referencing. If the local array is depending on other members, if it is itself sharing reference to other arrays, then the method in the object can resolve the local references and dependences. In the \doxyref{build()}{p.}{classGlobalArray_785072abe434f74ea777044b5d16d4bd} method, we change the reference directly by dereferencing the pointer to the local array. This is dangerous since we are changing directly the local array in an object.
+
+Remark 2: This method only needs to know the size of the local arrays, because the referencing method is let to the \doxyref{GlobalArrayInterface}{p.}{classGlobalArrayInterface} class. However, it takes as input a \doxyref{LocalArrayTarget}{p.}{classLocalArrayTarget} list containing the pointers to the local arrays. This is just for sake of generality: this way, we only need to define one method to get the list of local arrays in the interface class.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[\mbox{$\leftrightarrow$} {\em localArraysList}]list of the local arrays. Each element of the list is a LocalArrayTarget$<$T$>$ containing a {\bf pointer} to the array and its size. \end{description}
+\end{Desc}
+\index{GlobalArray@{GlobalArray}!getGlobalArray@{getGlobalArray}}
+\index{getGlobalArray@{getGlobalArray}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ Array$<$T,1$>$\& {\bf GlobalArray}$<$ T $>$::getGlobalArray ()\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_78ce4aa9d6bbd062f92dc233c368b1a7}
+
+
+Get the global array (by reference). 
+
+\index{GlobalArray@{GlobalArray}!getNode@{getNode}}
+\index{getNode@{getNode}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ Array$<$ T, 1 $>$ {\bf GlobalArray}$<$ T $>$::getNode (int {\em k})\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_63db21859b40c12c5c9e4221d3db66b5}
+
+
+Returns the array corresponding to node {\tt k}. 
+
+Remark: the size of the returned array can vary.\par
+ Remark: 
+
+\begin{Code}\begin{verbatim} 0 <= k <= nNodes_ - 1 
+\end{verbatim}
+\end{Code}
+
+ \index{GlobalArray@{GlobalArray}!getLocalIndicesFromGlobal@{getLocalIndicesFromGlobal}}
+\index{getLocalIndicesFromGlobal@{getLocalIndicesFromGlobal}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ pair$<$ int, int $>$ {\bf GlobalArray}$<$ T $>$::getLocalIndicesFromGlobal (int {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArray_d8f1ca4e0051ed951708caeb9adb4463}
+
+
+Get the local indices (node number {\tt k}, position inside the node {\tt j}) from the global index {\tt i}. 
+
+
+
+\subsection{Member Data Documentation}
+\index{GlobalArray@{GlobalArray}!size\_\-@{size\_\-}}
+\index{size\_\-@{size\_\-}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf GlobalArray}$<$ T $>$::{\bf size\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArray_004fd0e2ee376b3d396ca209505863b3}
+
+
+Total size (number of elements of type T) of the global array. 
+
+\index{GlobalArray@{GlobalArray}!nNodes\_\-@{nNodes\_\-}}
+\index{nNodes\_\-@{nNodes\_\-}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf GlobalArray}$<$ T $>$::{\bf nNodes\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArray_ff5f661d6ca45fc7790f8445ea9c8ff9}
+
+
+Number of nodes in the global array. 
+
+\index{GlobalArray@{GlobalArray}!globalArray\_\-@{globalArray\_\-}}
+\index{globalArray\_\-@{globalArray\_\-}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ Array$<$T,1$>$ {\bf GlobalArray}$<$ T $>$::{\bf globalArray\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArray_6ed84b13602ec62b8ff289b7d529b51a}
+
+
+Stores consecutively all the local arrays (which are referenced to a part of the global array). 
+
+\index{GlobalArray@{GlobalArray}!nodesTable\_\-@{nodesTable\_\-}}
+\index{nodesTable\_\-@{nodesTable\_\-}!GlobalArray@{GlobalArray}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ set$<$int$>$ {\bf GlobalArray}$<$ T $>$::{\bf nodesTable\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArray_346fe4d8c3154bffe23c9179489912a7}
+
+
+A table of the indices of the first element of each node. 
+
+Nodes can have a different size and this table allows for a direct access to a node in the global array. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf GlobalArray.h}\item 
+DATA/PROGS/COLONY/{\bf GlobalArray.cpp}\end{CompactItemize}

@@ -1,0 +1,204 @@
+\section{GlobalArrayInterface Class Reference}
+\label{classGlobalArrayInterface}\index{GlobalArrayInterface@{GlobalArrayInterface}}
+Interface between the class \doxyref{CellCollection}{p.}{classCellCollection} and the class \doxyref{GlobalArray}{p.}{classGlobalArray}.  
+
+
+{\tt \#include $<$GlobalArrayInterface.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf GlobalArrayInterface} ()
+\item 
+{\bf $\sim$GlobalArrayInterface} ()
+\item 
+Array$<$ double, 1 $>$ \& {\bf getGlobalPropensities} ()
+\begin{CompactList}\small\item\em Get the global array of propensities (by reference). \item\end{CompactList}\item 
+Array$<$ int, 1 $>$ \& {\bf getGlobalX} ()
+\begin{CompactList}\small\item\em Get the global array of states (by reference). \item\end{CompactList}\item 
+pair$<$ int, int $>$ {\bf getLocalChannelAndCellIndices} (int i) const 
+\begin{CompactList}\small\item\em Get the cell index {\tt k} and local channel index {\tt j} from the global channel index {\tt i}. \item\end{CompactList}\item 
+void {\bf buildArrays} ({\bf CellCollection} $\ast$cellCollectionPtr)
+\begin{CompactList}\small\item\em Construct the global arrays from the local ones. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Private Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf getLocalArrayList} ({\bf CellCollection} $\ast$cellCollectionPtr)
+\begin{CompactList}\small\item\em Get a list of all the local arrays in the cell collection that need to be register in the global arrays. \item\end{CompactList}\item 
+void {\bf getLocalArrayListPropensities} ({\bf CellCollection} $\ast$cellCollectionPtr)
+\item 
+void {\bf getLocalArrayListX} ({\bf CellCollection} $\ast$cellCollectionPtr)
+\item 
+void {\bf setLocalArraysReference} ({\bf CellCollection} $\ast$cellCollectionPtr, list$<$ Array$<$ double, 1 $>$ $>$ \&globalArrayPartsListPropensities, list$<$ Array$<$ int, 1 $>$ $>$ \&globalArrayPartsListX)
+\begin{CompactList}\small\item\em Set the reference of local arrays by calling the setReferencePropensities method in the \doxyref{Cell}{p.}{classCell} objects. \item\end{CompactList}\item 
+void {\bf setLocalArraysReferencePropensities} ({\bf CellCollection} $\ast$cellCollectionPtr, list$<$ Array$<$ double, 1 $>$ $>$ \&globalArrayPartsListPropensities)
+\item 
+void {\bf setLocalArraysReferenceX} ({\bf CellCollection} $\ast$cellCollectionPtr, list$<$ Array$<$ int, 1 $>$ $>$ \&globalArrayPartsListX)
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+{\bf GlobalArray}$<$ double $>$ {\bf globalPropensities\_\-}
+\begin{CompactList}\small\item\em Global array of the propensities. \item\end{CompactList}\item 
+{\bf GlobalArray}$<$ int $>$ {\bf globalX\_\-}
+\begin{CompactList}\small\item\em Global array of the states x. \item\end{CompactList}\item 
+list$<$ {\bf LocalArrayTarget}$<$ double $>$ $>$ {\bf localArrayListPropensities\_\-}
+\begin{CompactList}\small\item\em List of the local array targets (pointer+size). \item\end{CompactList}\item 
+list$<$ {\bf LocalArrayTarget}$<$ int $>$ $>$ {\bf localArrayListX\_\-}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Interface between the class \doxyref{CellCollection}{p.}{classCellCollection} and the class \doxyref{GlobalArray}{p.}{classGlobalArray}. 
+
+This class allows the use of the \doxyref{GlobalArray}{p.}{classGlobalArray} class from the \doxyref{CellCollection}{p.}{classCellCollection} class. It provides with the methods needed to collect the local arrays in each cell of the colony and to build a global array that regroup all the local arrays. The local arrays are made to reference to a part of the global array. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!GlobalArrayInterface@{GlobalArrayInterface}}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GlobalArrayInterface::GlobalArrayInterface ()}\label{classGlobalArrayInterface_589a4cc7bdab6ea93f2cccfd14852e83}
+
+
+\index{GlobalArrayInterface@{GlobalArrayInterface}!$\sim$GlobalArrayInterface@{$\sim$GlobalArrayInterface}}
+\index{$\sim$GlobalArrayInterface@{$\sim$GlobalArrayInterface}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GlobalArrayInterface::$\sim$GlobalArrayInterface ()}\label{classGlobalArrayInterface_629b79ec48909de9e09aab2280984150}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!getGlobalPropensities@{getGlobalPropensities}}
+\index{getGlobalPropensities@{getGlobalPropensities}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ double, 1 $>$ \& GlobalArrayInterface::getGlobalPropensities ()\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArrayInterface_9cd167cba6c9e01d30894733df307ce7}
+
+
+Get the global array of propensities (by reference). 
+
+\index{GlobalArrayInterface@{GlobalArrayInterface}!getGlobalX@{getGlobalX}}
+\index{getGlobalX@{getGlobalX}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$ int, 1 $>$ \& GlobalArrayInterface::getGlobalX ()\hspace{0.3cm}{\tt  [inline]}}\label{classGlobalArrayInterface_09be0527620a90ae720ae5cdc3d95571}
+
+
+Get the global array of states (by reference). 
+
+\index{GlobalArrayInterface@{GlobalArrayInterface}!getLocalChannelAndCellIndices@{getLocalChannelAndCellIndices}}
+\index{getLocalChannelAndCellIndices@{getLocalChannelAndCellIndices}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ GlobalArrayInterface::getLocalChannelAndCellIndices (int {\em i}) const}\label{classGlobalArrayInterface_f769d2c1204896ce4e232bcdd803c56f}
+
+
+Get the cell index {\tt k} and local channel index {\tt j} from the global channel index {\tt i}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em i}][in] global channel index. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]indexPair [out] pair (cell index, local channel index). The cell index {\tt k} ranges from -1 to nCells-1. The index -1 refers to the milieu and the index range 0,...,nCells-1 refers to the cells. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{CellCollection::applyReaction()}{p.}{classCellCollection_14a8c92a2646731e6384d4f7ddcb49a9} \end{Desc}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!buildArrays@{buildArrays}}
+\index{buildArrays@{buildArrays}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::buildArrays ({\bf CellCollection} $\ast$ {\em cellCollectionPtr})}\label{classGlobalArrayInterface_5a20916202b280d821c5dfcec9ec59a4}
+
+
+Construct the global arrays from the local ones. 
+
+Pass the list of local arrays to the \doxyref{GlobalArray}{p.}{classGlobalArray} member to build it. \begin{Desc}
+\item[See also:]\doxyref{GlobalArray}{p.}{classGlobalArray} Construct the global arrays from the local ones. 
+
+\doxyref{GlobalArray}{p.}{classGlobalArray} \end{Desc}
+
+
+\begin{itemize}
+\item Get the list of local arrays.\end{itemize}
+
+
+\begin{itemize}
+\item Build the global array and get the list of global array ranges.\end{itemize}
+
+
+\begin{itemize}
+\item Call the setReferencePropensities in each cell of the cell collection with reference targets given in the previous list of global array ranges. \end{itemize}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!getLocalArrayList@{getLocalArrayList}}
+\index{getLocalArrayList@{getLocalArrayList}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::getLocalArrayList ({\bf CellCollection} $\ast$ {\em cellCollectionPtr})\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_a561c4acecd4a2f5ec4a01e93f978587}
+
+
+Get a list of all the local arrays in the cell collection that need to be register in the global arrays. 
+
+Writes the list in localArrayList\_\-. \index{GlobalArrayInterface@{GlobalArrayInterface}!getLocalArrayListPropensities@{getLocalArrayListPropensities}}
+\index{getLocalArrayListPropensities@{getLocalArrayListPropensities}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::getLocalArrayListPropensities ({\bf CellCollection} $\ast$ {\em cellCollectionPtr})\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_2fba279734232877614917a1168bf3ef}
+
+
+\index{GlobalArrayInterface@{GlobalArrayInterface}!getLocalArrayListX@{getLocalArrayListX}}
+\index{getLocalArrayListX@{getLocalArrayListX}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::getLocalArrayListX ({\bf CellCollection} $\ast$ {\em cellCollectionPtr})\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_cd478cdda4d0d0d15142d6a72d59c1f0}
+
+
+\index{GlobalArrayInterface@{GlobalArrayInterface}!setLocalArraysReference@{setLocalArraysReference}}
+\index{setLocalArraysReference@{setLocalArraysReference}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::setLocalArraysReference ({\bf CellCollection} $\ast$ {\em cellCollectionPtr}, \/  list$<$ Array$<$ double, 1 $>$ $>$ \& {\em globalArrayPartsListPropensities}, \/  list$<$ Array$<$ int, 1 $>$ $>$ \& {\em globalArrayPartsListX})\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_48053f5264a4225a4b46e748daeed233}
+
+
+Set the reference of local arrays by calling the setReferencePropensities method in the \doxyref{Cell}{p.}{classCell} objects. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[\mbox{$\leftrightarrow$} {\em cellCollectionPtr}]Pointer to the cell collection. \item[\mbox{$\leftarrow$} {\em globalArrayPartsList}]List of the partial arrays of the global array (globalArray(Range(a,b)) used as reference targets for referencing the local arrays. \end{description}
+\end{Desc}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!setLocalArraysReferencePropensities@{setLocalArraysReferencePropensities}}
+\index{setLocalArraysReferencePropensities@{setLocalArraysReferencePropensities}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::setLocalArraysReferencePropensities ({\bf CellCollection} $\ast$ {\em cellCollectionPtr}, \/  list$<$ Array$<$ double, 1 $>$ $>$ \& {\em globalArrayPartsListPropensities})\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_27d70761d4ffe2ef24757b68a6952b79}
+
+
+\index{GlobalArrayInterface@{GlobalArrayInterface}!setLocalArraysReferenceX@{setLocalArraysReferenceX}}
+\index{setLocalArraysReferenceX@{setLocalArraysReferenceX}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void GlobalArrayInterface::setLocalArraysReferenceX ({\bf CellCollection} $\ast$ {\em cellCollectionPtr}, \/  list$<$ Array$<$ int, 1 $>$ $>$ \& {\em globalArrayPartsListX})\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_5f7bb25954d24e2da505bc0adf9aeb54}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!globalPropensities\_\-@{globalPropensities\_\-}}
+\index{globalPropensities\_\-@{globalPropensities\_\-}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GlobalArray}$<$double$>$ {\bf GlobalArrayInterface::globalPropensities\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_fe8c27ca99fafa33e3ef18ebbc28f1d4}
+
+
+Global array of the propensities. 
+
+It contains consecutively:\begin{itemize}
+\item propensities array of the milieu.\item propensities array of cells 0,...,nCells-1.\begin{itemize}
+\item each cell array contains the propensities of internal reactions and cell-milieu reactions. \end{itemize}
+\end{itemize}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!globalX\_\-@{globalX\_\-}}
+\index{globalX\_\-@{globalX\_\-}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GlobalArray}$<$int$>$ {\bf GlobalArrayInterface::globalX\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_789355e896a7c729b5c672aee925faa8}
+
+
+Global array of the states x. 
+
+It contains consecutively:\begin{itemize}
+\item state array of the milieu.\item state array of cells 0,...,nCells-1. \end{itemize}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!localArrayListPropensities\_\-@{localArrayListPropensities\_\-}}
+\index{localArrayListPropensities\_\-@{localArrayListPropensities\_\-}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf LocalArrayTarget}$<$double$>$ $>$ {\bf GlobalArrayInterface::localArrayListPropensities\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_ea98041bec483310371c84f55bcbd0b7}
+
+
+List of the local array targets (pointer+size). 
+
+This list is used to build the global array. The list form is just to keep a general way of communication with the \doxyref{GlobalArray}{p.}{classGlobalArray} class. \begin{Desc}
+\item[See also:]\doxyref{LocalArrayTarget}{p.}{classLocalArrayTarget} \end{Desc}
+\index{GlobalArrayInterface@{GlobalArrayInterface}!localArrayListX\_\-@{localArrayListX\_\-}}
+\index{localArrayListX\_\-@{localArrayListX\_\-}!GlobalArrayInterface@{GlobalArrayInterface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf LocalArrayTarget}$<$int$>$ $>$ {\bf GlobalArrayInterface::localArrayListX\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classGlobalArrayInterface_3f84b09e3a63b137923d0c245fbbe1d5}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf GlobalArrayInterface.h}\item 
+DATA/PROGS/COLONY/{\bf GlobalArrayInterface.cpp}\end{CompactItemize}

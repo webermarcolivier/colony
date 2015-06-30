@@ -1,0 +1,110 @@
+\hypertarget{iotools_8h}{\section{/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/iotools.h \-File \-Reference}
+\label{iotools_8h}\index{/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/iotools.\-h@{/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/iotools.\-h}}
+}
+{\ttfamily \#include \char`\"{}debug.\-h\char`\"{}}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$iomanip$>$}\*
+{\ttfamily \#include $<$fstream$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$sstream$>$}\*
+{\ttfamily \#include $<$vector$>$}\*
+{\ttfamily \#include $<$limits$>$}\*
+{\ttfamily \#include $<$blitz/array.\-h$>$}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{iotools_8h_a9e8a4b0342ce04551cb6b0a25c803619}{read\-One\-Variable} (ifstream \&inputfile, \-T \&x)
+\item 
+void \hyperlink{iotools_8h_ad53af977d73141a44f494ef18fa7311e}{jump\-N\-Lines} (ifstream \&input\-Stream, int n)
+\item 
+void \hyperlink{iotools_8h_a8358ae05c12eed1cccd070533ea3271f}{read\-Words\-In\-One\-Line} (ifstream \&input\-Stream, vector$<$ string $>$ \&string\-Vector)
+\item 
+string \hyperlink{iotools_8h_a25c2b51fb2956daee8a67b597c86b0b5}{insert\-Number\-Suffix\-To\-File\-Name} (const string \&file\-Name, int i)
+\item 
+ostream \& \hyperlink{iotools_8h_a0392d081c89a69836d801f0394056006}{print\-Time\-Difference} (ostream \&out, double time\-Difference\-Seconds)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Project\-: \-Colony
+
+\begin{DoxyAuthor}{\-Author}
+\-Marc \-Weber\par
+ \-The \-Si\-M\-Bio\-Sys group (\-Cosmo\-Lab)\par
+ \-Parc \-Científic de \-Barcelona\par
+ \-Barcelona, \-Spain.\par
+ \href{http://www.thesimbiosys.com}{\tt http\-://www.\-thesimbiosys.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+11/2009
+\end{DoxyDate}
+\-Copyright 2009 by \-Marc \-Weber 
+
+\-Definition in file \hyperlink{iotools_8h_source}{iotools.\-h}.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{iotools_8h_a25c2b51fb2956daee8a67b597c86b0b5}{\index{iotools.\-h@{iotools.\-h}!insert\-Number\-Suffix\-To\-File\-Name@{insert\-Number\-Suffix\-To\-File\-Name}}
+\index{insert\-Number\-Suffix\-To\-File\-Name@{insert\-Number\-Suffix\-To\-File\-Name}!iotools.h@{iotools.\-h}}
+\subsubsection[{insert\-Number\-Suffix\-To\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf insert\-Number\-Suffix\-To\-File\-Name} (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{file\-Name, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{iotools_8h_a25c2b51fb2956daee8a67b597c86b0b5}
+
+
+\-Definition at line 77 of file iotools.\-cpp.
+
+\hypertarget{iotools_8h_ad53af977d73141a44f494ef18fa7311e}{\index{iotools.\-h@{iotools.\-h}!jump\-N\-Lines@{jump\-N\-Lines}}
+\index{jump\-N\-Lines@{jump\-N\-Lines}!iotools.h@{iotools.\-h}}
+\subsubsection[{jump\-N\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf jump\-N\-Lines} (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{input\-Stream, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{iotools_8h_ad53af977d73141a44f494ef18fa7311e}
+
+
+\-Definition at line 42 of file iotools.\-cpp.
+
+\hypertarget{iotools_8h_a0392d081c89a69836d801f0394056006}{\index{iotools.\-h@{iotools.\-h}!print\-Time\-Difference@{print\-Time\-Difference}}
+\index{print\-Time\-Difference@{print\-Time\-Difference}!iotools.h@{iotools.\-h}}
+\subsubsection[{print\-Time\-Difference}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf print\-Time\-Difference} (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{double}]{time\-Difference\-Seconds}
+\end{DoxyParamCaption}
+)}}\label{iotools_8h_a0392d081c89a69836d801f0394056006}
+\-Prints a time difference in seconds in the the format 00h00m00s. 
+
+\-Definition at line 93 of file iotools.\-cpp.
+
+\hypertarget{iotools_8h_a9e8a4b0342ce04551cb6b0a25c803619}{\index{iotools.\-h@{iotools.\-h}!read\-One\-Variable@{read\-One\-Variable}}
+\index{read\-One\-Variable@{read\-One\-Variable}!iotools.h@{iotools.\-h}}
+\subsubsection[{read\-One\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf read\-One\-Variable} (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{inputfile, }
+\item[{\-T \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{iotools_8h_a9e8a4b0342ce04551cb6b0a25c803619}
+
+
+\-Definition at line 21 of file iotools.\-cpp.
+
+\hypertarget{iotools_8h_a8358ae05c12eed1cccd070533ea3271f}{\index{iotools.\-h@{iotools.\-h}!read\-Words\-In\-One\-Line@{read\-Words\-In\-One\-Line}}
+\index{read\-Words\-In\-One\-Line@{read\-Words\-In\-One\-Line}!iotools.h@{iotools.\-h}}
+\subsubsection[{read\-Words\-In\-One\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf read\-Words\-In\-One\-Line} (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{input\-Stream, }
+\item[{vector$<$ string $>$ \&}]{string\-Vector}
+\end{DoxyParamCaption}
+)}}\label{iotools_8h_a8358ae05c12eed1cccd070533ea3271f}
+
+
+\-Definition at line 53 of file iotools.\-cpp.
+

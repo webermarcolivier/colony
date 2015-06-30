@@ -1,0 +1,150 @@
+\section{ODESimulation Class Reference}
+\label{classODESimulation}\index{ODESimulation@{ODESimulation}}
+Open Dynamics Engine (ODE) simulation.  
+
+
+{\tt \#include $<$ODESimulation.h$>$}
+
+Inheritance diagram for ODESimulation::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classODESimulation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf ODESimulation} ()
+\item 
+{\bf $\sim$ODESimulation} ()
+\item 
+dWorldID {\bf getWorld} () const 
+\item 
+void {\bf init} ()
+\item 
+void {\bf handleCollisionBetween} (dGeomID o0, dGeomID o1)
+\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+virtual void {\bf computeStep} (float timeStep, QList$<$ {\bf GraphicsCell} $\ast$ $>$ $\ast$cellsList\_\-, double colonySize)
+\item 
+void {\bf computeForces} (QList$<$ {\bf GraphicsCell} $\ast$ $>$ $\ast$cellsList, double colonySize)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+dWorldID {\bf world\_\-}
+\item 
+dSpaceID {\bf space\_\-}
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+dJointGroupID {\bf contactgroup\_\-}
+\item 
+QVector$<$ dGeomID $>$ {\bf planes\_\-}
+\item 
+QTime {\bf time\_\-}
+\item 
+float {\bf interactionForce\_\-}
+\item 
+float {\bf centralForce\_\-}
+\item 
+float {\bf viscousCoefficient\_\-}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Open Dynamics Engine (ODE) simulation. 
+
+Contains and defines the ODE world and the basics and the ODE simulation: simulation step method, computes forces between objects, handle collision method. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ODESimulation@{ODESimulation}!ODESimulation@{ODESimulation}}
+\index{ODESimulation@{ODESimulation}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ODESimulation::ODESimulation ()}\label{classODESimulation_e594151b85a5528b8c9cc44e268c7256}
+
+
+\index{ODESimulation@{ODESimulation}!$\sim$ODESimulation@{$\sim$ODESimulation}}
+\index{$\sim$ODESimulation@{$\sim$ODESimulation}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ODESimulation::$\sim$ODESimulation ()}\label{classODESimulation_baa90d10deb102d150497ca5db7f1af4}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{ODESimulation@{ODESimulation}!getWorld@{getWorld}}
+\index{getWorld@{getWorld}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dWorldID ODESimulation::getWorld () const}\label{classODESimulation_9320cdf91a7e002119eb0cb0bba9c7b0}
+
+
+\index{ODESimulation@{ODESimulation}!init@{init}}
+\index{init@{init}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ODESimulation::init ()}\label{classODESimulation_83fbf3e98bab325948da3e4d1b3f3848}
+
+
+\index{ODESimulation@{ODESimulation}!handleCollisionBetween@{handleCollisionBetween}}
+\index{handleCollisionBetween@{handleCollisionBetween}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ODESimulation::handleCollisionBetween (dGeomID {\em o0}, \/  dGeomID {\em o1})}\label{classODESimulation_5a72dab563d6c80d6643c1f940bb3349}
+
+
+\index{ODESimulation@{ODESimulation}!computeStep@{computeStep}}
+\index{computeStep@{computeStep}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ODESimulation::computeStep (float {\em timeStep}, \/  QList$<$ {\bf GraphicsCell} $\ast$ $>$ $\ast$ {\em cellsList\_\-}, \/  double {\em colonySize})\hspace{0.3cm}{\tt  [protected, virtual]}}\label{classODESimulation_0ad30fc1a7f5f74ef836780f7b5b8eb0}
+
+
+\index{ODESimulation@{ODESimulation}!computeForces@{computeForces}}
+\index{computeForces@{computeForces}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ODESimulation::computeForces (QList$<$ {\bf GraphicsCell} $\ast$ $>$ $\ast$ {\em cellsList}, \/  double {\em colonySize})\hspace{0.3cm}{\tt  [protected]}}\label{classODESimulation_001f1932d1d2e44237ef209d69666dc5}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{ODESimulation@{ODESimulation}!world\_\-@{world\_\-}}
+\index{world\_\-@{world\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dWorldID {\bf ODESimulation::world\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classODESimulation_b01265ac8b2ec870b00c35e017d9cd48}
+
+
+\index{ODESimulation@{ODESimulation}!space\_\-@{space\_\-}}
+\index{space\_\-@{space\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dSpaceID {\bf ODESimulation::space\_\-}\hspace{0.3cm}{\tt  [protected]}}\label{classODESimulation_fe195e9dc824b0311b2959e8bd058c19}
+
+
+\index{ODESimulation@{ODESimulation}!contactgroup\_\-@{contactgroup\_\-}}
+\index{contactgroup\_\-@{contactgroup\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dJointGroupID {\bf ODESimulation::contactgroup\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classODESimulation_96a7b31012e74122a698daf88dc30eea}
+
+
+\index{ODESimulation@{ODESimulation}!planes\_\-@{planes\_\-}}
+\index{planes\_\-@{planes\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}QVector$<$dGeomID$>$ {\bf ODESimulation::planes\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classODESimulation_f031c78fc6cce00d0b282c166984441b}
+
+
+\index{ODESimulation@{ODESimulation}!time\_\-@{time\_\-}}
+\index{time\_\-@{time\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}QTime {\bf ODESimulation::time\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classODESimulation_ab58e2c4238250e04a42448c8f9cc470}
+
+
+\index{ODESimulation@{ODESimulation}!interactionForce\_\-@{interactionForce\_\-}}
+\index{interactionForce\_\-@{interactionForce\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf ODESimulation::interactionForce\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classODESimulation_d34d25415e06ef21c4a8150d63b5a1df}
+
+
+\index{ODESimulation@{ODESimulation}!centralForce\_\-@{centralForce\_\-}}
+\index{centralForce\_\-@{centralForce\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf ODESimulation::centralForce\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classODESimulation_56cf02737b0b518f2291022e7bae0d7c}
+
+
+\index{ODESimulation@{ODESimulation}!viscousCoefficient\_\-@{viscousCoefficient\_\-}}
+\index{viscousCoefficient\_\-@{viscousCoefficient\_\-}!ODESimulation@{ODESimulation}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf ODESimulation::viscousCoefficient\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classODESimulation_10add1a26d4df68d0bd3749243d9321a}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf ODESimulation.h}\item 
+DATA/PROGS/COLONY/{\bf ODESimulation.cpp}\end{CompactItemize}

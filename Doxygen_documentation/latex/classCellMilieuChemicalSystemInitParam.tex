@@ -1,0 +1,75 @@
+\section{CellMilieuChemicalSystemInitParam Class Reference}
+\label{classCellMilieuChemicalSystemInitParam}\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+Initialize parameters structure for \doxyref{CellMilieuChemicalSystem}{p.}{classCellMilieuChemicalSystem} class.  
+
+
+{\tt \#include $<$CellMilieuChemicalSystem.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Milieu} $\ast$ {\bf milieuPtr\_\-}
+\item 
+{\bf Cell} $\ast$ {\bf cellPtr\_\-}
+\item 
+int {\bf nChannelsCellMilieu\_\-}
+\begin{CompactList}\small\item\em Number of cell-milieu reaction channels. \item\end{CompactList}\item 
+Array$<$ int, 2 $>$ {\bf stoichMatrixCellMilieu\_\-}
+\begin{CompactList}\small\item\em Stoichiometrix matrix defining the cell-milieu reactions. \item\end{CompactList}\item 
+void($\ast$ {\bf computePropensitiesInterCellularPtr\_\-} )(const Array$<$ int, 1 $>$ \&, const Array$<$ int, 1 $>$ \&, const double, const double, Array$<$ double, 1 $>$ \&)
+\begin{CompactList}\small\item\em Pointer to the function that computes the propensities of the cell-milieu reaction channels. \item\end{CompactList}\item 
+void($\ast$ {\bf computeTimeDependentPropensitiesInterCellularPtr\_\-} )(const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double V0, const double Vext, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)
+\begin{CompactList}\small\item\em Pointer to the function that computes the time-dependent propensities of the cell-milieu reaction channels. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Initialize parameters structure for \doxyref{CellMilieuChemicalSystem}{p.}{classCellMilieuChemicalSystem} class. 
+
+\subsection{Member Data Documentation}
+\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}!milieuPtr\_\-@{milieuPtr\_\-}}
+\index{milieuPtr\_\-@{milieuPtr\_\-}!CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Milieu}$\ast$ {\bf CellMilieuChemicalSystemInitParam::milieuPtr\_\-}}\label{classCellMilieuChemicalSystemInitParam_37e6d3ee0cbe600ae15b6570ded71d4f}
+
+
+\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}!cellPtr\_\-@{cellPtr\_\-}}
+\index{cellPtr\_\-@{cellPtr\_\-}!CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell}$\ast$ {\bf CellMilieuChemicalSystemInitParam::cellPtr\_\-}}\label{classCellMilieuChemicalSystemInitParam_aeed0f8acbcf875a57f25d42fa34942c}
+
+
+\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}!nChannelsCellMilieu\_\-@{nChannelsCellMilieu\_\-}}
+\index{nChannelsCellMilieu\_\-@{nChannelsCellMilieu\_\-}!CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellMilieuChemicalSystemInitParam::nChannelsCellMilieu\_\-}}\label{classCellMilieuChemicalSystemInitParam_d7a3c3887ba02e139b24177c10a0622c}
+
+
+Number of cell-milieu reaction channels. 
+
+\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}!stoichMatrixCellMilieu\_\-@{stoichMatrixCellMilieu\_\-}}
+\index{stoichMatrixCellMilieu\_\-@{stoichMatrixCellMilieu\_\-}!CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$int,2$>$ {\bf CellMilieuChemicalSystemInitParam::stoichMatrixCellMilieu\_\-}}\label{classCellMilieuChemicalSystemInitParam_87781764078bcb6429e5a1600fd4dc96}
+
+
+Stoichiometrix matrix defining the cell-milieu reactions. 
+
+\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}!computePropensitiesInterCellularPtr\_\-@{computePropensitiesInterCellularPtr\_\-}}
+\index{computePropensitiesInterCellularPtr\_\-@{computePropensitiesInterCellularPtr\_\-}!CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf CellMilieuChemicalSystemInitParam::computePropensitiesInterCellularPtr\_\-})(const Array$<$ int, 1 $>$ \&, const Array$<$ int, 1 $>$ \&, const double, const double, Array$<$ double, 1 $>$ \&)}\label{classCellMilieuChemicalSystemInitParam_b605be7444a8d2bccb53539f513d239d}
+
+
+Pointer to the function that computes the propensities of the cell-milieu reaction channels. 
+
+\begin{Desc}
+\item[See also:]\doxyref{CellMilieuChemicalSystem::computePropensitiesInterCellularPtr\_\-}{p.}{classCellMilieuChemicalSystem_589689034ed9381d0a43ba5a4c0c6e7d} \end{Desc}
+\index{CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}!computeTimeDependentPropensitiesInterCellularPtr\_\-@{computeTimeDependentPropensitiesInterCellularPtr\_\-}}
+\index{computeTimeDependentPropensitiesInterCellularPtr\_\-@{computeTimeDependentPropensitiesInterCellularPtr\_\-}!CellMilieuChemicalSystemInitParam@{CellMilieuChemicalSystemInitParam}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf CellMilieuChemicalSystemInitParam::computeTimeDependentPropensitiesInterCellularPtr\_\-})(const Array$<$ int, 1 $>$ \&x1, const Array$<$ int, 1 $>$ \&x2, const double V0, const double Vext, const double t, const double t0, const double tc, Array$<$ double, 1 $>$ \&a)}\label{classCellMilieuChemicalSystemInitParam_99f92cabfeee044c788e04afedd5a1fe}
+
+
+Pointer to the function that computes the time-dependent propensities of the cell-milieu reaction channels. 
+
+\begin{Desc}
+\item[See also:]\doxyref{CellMilieuChemicalSystem::computeTimeDependentPropensitiesInterCellularPtr\_\-}{p.}{classCellMilieuChemicalSystem_00924ac180598a4dff114bdfd100765a} \end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf CellMilieuChemicalSystem.h}\end{CompactItemize}

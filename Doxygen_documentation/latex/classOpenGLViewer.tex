@@ -1,0 +1,101 @@
+\section{OpenGLViewer Class Reference}
+\label{classOpenGLViewer}\index{OpenGLViewer@{OpenGLViewer}}
+A small openGL viewer of the \doxyref{GraphicsCellODE}{p.}{classGraphicsCellODE} objects.  
+
+
+{\tt \#include $<$OpenGLViewer.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf OpenGLViewer} (double colonySize, double cellHeight0, QWidget $\ast$parent=NULL)
+\item 
+{\bf $\sim$OpenGLViewer} ()
+\item 
+void {\bf setSceneODE} ({\bf GraphicsCellSceneODE} $\ast$graphicsCellSceneODE)
+\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+virtual void {\bf init} (double colonySize, double cellHeight0)
+\item 
+virtual void {\bf draw} ()
+\end{CompactItemize}
+\subsection*{Private Attributes}
+\begin{CompactItemize}
+\item 
+dReal {\bf \_\-aabb} [6]
+\item 
+double {\bf colonySize\_\-}
+\item 
+double {\bf cellHeight0\_\-}
+\item 
+{\bf GraphicsCellSceneODE} $\ast$ {\bf graphicsCellSceneODE\_\-}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A small openGL viewer of the \doxyref{GraphicsCellODE}{p.}{classGraphicsCellODE} objects. 
+
+\begin{Desc}
+\item[See also:]QGLViewer \end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{OpenGLViewer@{OpenGLViewer}!OpenGLViewer@{OpenGLViewer}}
+\index{OpenGLViewer@{OpenGLViewer}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}OpenGLViewer::OpenGLViewer (double {\em colonySize}, \/  double {\em cellHeight0}, \/  QWidget $\ast$ {\em parent} = {\tt NULL})}\label{classOpenGLViewer_920550b1f5d3e10a741e561684c7c247}
+
+
+\index{OpenGLViewer@{OpenGLViewer}!$\sim$OpenGLViewer@{$\sim$OpenGLViewer}}
+\index{$\sim$OpenGLViewer@{$\sim$OpenGLViewer}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}OpenGLViewer::$\sim$OpenGLViewer ()}\label{classOpenGLViewer_0e1e5c0ac39a650b8000bff3274b21b7}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{OpenGLViewer@{OpenGLViewer}!setSceneODE@{setSceneODE}}
+\index{setSceneODE@{setSceneODE}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void OpenGLViewer::setSceneODE ({\bf GraphicsCellSceneODE} $\ast$ {\em graphicsCellSceneODE})}\label{classOpenGLViewer_28d3e18a02ab860e56f6ed38ccfe9bf1}
+
+
+\index{OpenGLViewer@{OpenGLViewer}!init@{init}}
+\index{init@{init}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void OpenGLViewer::init (double {\em colonySize}, \/  double {\em cellHeight0})\hspace{0.3cm}{\tt  [protected, virtual]}}\label{classOpenGLViewer_252986944a339daa9a3c5faedb960a1f}
+
+
+\index{OpenGLViewer@{OpenGLViewer}!draw@{draw}}
+\index{draw@{draw}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void OpenGLViewer::draw ()\hspace{0.3cm}{\tt  [protected, virtual]}}\label{classOpenGLViewer_5c99fe8e40db930b342d99cf2428a9a7}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{OpenGLViewer@{OpenGLViewer}!\_\-aabb@{\_\-aabb}}
+\index{\_\-aabb@{\_\-aabb}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dReal {\bf OpenGLViewer::\_\-aabb}[6]\hspace{0.3cm}{\tt  [private]}}\label{classOpenGLViewer_f1f70199e861bf3253ec33b99a25c7de}
+
+
+\index{OpenGLViewer@{OpenGLViewer}!colonySize\_\-@{colonySize\_\-}}
+\index{colonySize\_\-@{colonySize\_\-}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf OpenGLViewer::colonySize\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classOpenGLViewer_59776d7791648e5d4b839faee4dc4aa9}
+
+
+\index{OpenGLViewer@{OpenGLViewer}!cellHeight0\_\-@{cellHeight0\_\-}}
+\index{cellHeight0\_\-@{cellHeight0\_\-}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf OpenGLViewer::cellHeight0\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classOpenGLViewer_89a53a15c835fa791505cbe7683a895a}
+
+
+\index{OpenGLViewer@{OpenGLViewer}!graphicsCellSceneODE\_\-@{graphicsCellSceneODE\_\-}}
+\index{graphicsCellSceneODE\_\-@{graphicsCellSceneODE\_\-}!OpenGLViewer@{OpenGLViewer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GraphicsCellSceneODE}$\ast$ {\bf OpenGLViewer::graphicsCellSceneODE\_\-}\hspace{0.3cm}{\tt  [private]}}\label{classOpenGLViewer_97aaa6bc2716736394bd0ba01fa99524}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf OpenGLViewer.h}\item 
+DATA/PROGS/COLONY/{\bf OpenGLViewer.cpp}\end{CompactItemize}

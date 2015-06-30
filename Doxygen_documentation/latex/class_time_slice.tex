@@ -1,0 +1,191 @@
+\hypertarget{class_time_slice}{\section{\-Time\-Slice \-Class \-Reference}
+\label{class_time_slice}\index{\-Time\-Slice@{\-Time\-Slice}}
+}
+
+
+{\ttfamily \#include $<$\-Time\-Slice.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_time_slice_a789cab1f5cdcd4dcdc909ed89de1a4f8}{\-Time\-Slice} ()
+\item 
+\hyperlink{class_time_slice_a5934f3fe05382a5e076b9f26980061ab}{$\sim$\-Time\-Slice} ()
+\item 
+\hyperlink{class_time_slice_a71623f8af5738803fe94f8c48edc14bd}{\-Time\-Slice} (const \hyperlink{class_time_slice}{\-Time\-Slice} \&t)
+\item 
+void \hyperlink{class_time_slice_a6f65d18565812f9fdf502135f9b454f1}{initialize} (int n\-Cells, double time, \-Array$<$ double, 1 $>$ volume\-Array, \-Array$<$ int, 1 $>$ \&x0\-Copy, \-Array$<$ double, 1 $>$ x\-Conc, \-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$ position\-Array, \-Array$<$ double, 1 $>$ angle\-Array)
+\item 
+void \hyperlink{class_time_slice_a09c45cad277a33b7f659d2c126de44dc}{set\-Position} (\-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$ \&new\-Position)
+\item 
+void \hyperlink{class_time_slice_ab256ede2e9260f00482ec22f5d239f0e}{set\-Angle} (\-Array$<$ double, 1 $>$ \&new\-Angle)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_time_slice_a8c39fe1d753d9af20ea7792cf727ca95}{n\-Cells\-\_\-}
+\item 
+double \hyperlink{class_time_slice_a7fc9adf157f4c97694591625165de7b7}{time\-\_\-}
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_time_slice_a32272ea6281a78747200569d5c05cfd4}{volume\-Array\-\_\-}
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_time_slice_a493d0742a92ed123079680e6c8954ba4}{state\-Avg\-\_\-}
+\item 
+\-Array$<$ int, 1 $>$ \hyperlink{class_time_slice_a7c34fff41b24089478a09572a8f0a926}{t0\-State\-\_\-}
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_time_slice_af4eaf5651a1f181d32d75e0df878a527}{x\-Conc\-\_\-}
+\item 
+\-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$ \hyperlink{class_time_slice_a42601d72900c7a65b25fe383bedfb9c3}{position\-Array\-\_\-}
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_time_slice_ad2b7c4bafaf47db7bfe3b4d922fc9c85}{angle\-Array\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Output values for one time slice. 
+
+\-Definition at line 41 of file \-Time\-Slice.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_time_slice_a789cab1f5cdcd4dcdc909ed89de1a4f8}{\index{\-Time\-Slice@{\-Time\-Slice}!\-Time\-Slice@{\-Time\-Slice}}
+\index{\-Time\-Slice@{\-Time\-Slice}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Slice\-::\-Time\-Slice} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_time_slice_a789cab1f5cdcd4dcdc909ed89de1a4f8}
+
+
+\-Definition at line 20 of file \-Time\-Slice.\-cpp.
+
+\hypertarget{class_time_slice_a5934f3fe05382a5e076b9f26980061ab}{\index{\-Time\-Slice@{\-Time\-Slice}!$\sim$\-Time\-Slice@{$\sim$\-Time\-Slice}}
+\index{$\sim$\-Time\-Slice@{$\sim$\-Time\-Slice}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{$\sim$\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Slice\-::$\sim$\-Time\-Slice} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_time_slice_a5934f3fe05382a5e076b9f26980061ab}
+
+
+\-Definition at line 25 of file \-Time\-Slice.\-cpp.
+
+\hypertarget{class_time_slice_a71623f8af5738803fe94f8c48edc14bd}{\index{\-Time\-Slice@{\-Time\-Slice}!\-Time\-Slice@{\-Time\-Slice}}
+\index{\-Time\-Slice@{\-Time\-Slice}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Slice\-::\-Time\-Slice} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Slice} \&}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_time_slice_a71623f8af5738803fe94f8c48edc14bd}
+
+
+\-Definition at line 30 of file \-Time\-Slice.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_time_slice_a6f65d18565812f9fdf502135f9b454f1}{\index{\-Time\-Slice@{\-Time\-Slice}!initialize@{initialize}}
+\index{initialize@{initialize}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Slice\-::initialize} (
+\begin{DoxyParamCaption}
+\item[{int}]{n\-Cells, }
+\item[{double}]{time, }
+\item[{\-Array$<$ double, 1 $>$}]{volume\-Array, }
+\item[{\-Array$<$ int, 1 $>$ \&}]{x0\-Copy, }
+\item[{\-Array$<$ double, 1 $>$}]{x\-Conc, }
+\item[{\-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$}]{position\-Array, }
+\item[{\-Array$<$ double, 1 $>$}]{angle\-Array}
+\end{DoxyParamCaption}
+)}}\label{class_time_slice_a6f65d18565812f9fdf502135f9b454f1}
+
+
+\-Definition at line 44 of file \-Time\-Slice.\-cpp.
+
+\hypertarget{class_time_slice_ab256ede2e9260f00482ec22f5d239f0e}{\index{\-Time\-Slice@{\-Time\-Slice}!set\-Angle@{set\-Angle}}
+\index{set\-Angle@{set\-Angle}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{set\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Slice\-::set\-Angle} (
+\begin{DoxyParamCaption}
+\item[{\-Array$<$ double, 1 $>$ \&}]{new\-Angle}
+\end{DoxyParamCaption}
+)}}\label{class_time_slice_ab256ede2e9260f00482ec22f5d239f0e}
+
+
+\-Definition at line 80 of file \-Time\-Slice.\-cpp.
+
+\hypertarget{class_time_slice_a09c45cad277a33b7f659d2c126de44dc}{\index{\-Time\-Slice@{\-Time\-Slice}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Time\-Slice\-::set\-Position} (
+\begin{DoxyParamCaption}
+\item[{\-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$ \&}]{new\-Position}
+\end{DoxyParamCaption}
+)}}\label{class_time_slice_a09c45cad277a33b7f659d2c126de44dc}
+
+
+\-Definition at line 72 of file \-Time\-Slice.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_time_slice_ad2b7c4bafaf47db7bfe3b4d922fc9c85}{\index{\-Time\-Slice@{\-Time\-Slice}!angle\-Array\-\_\-@{angle\-Array\-\_\-}}
+\index{angle\-Array\-\_\-@{angle\-Array\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{angle\-Array\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$double,1$>$ {\bf \-Time\-Slice\-::angle\-Array\-\_\-}}}\label{class_time_slice_ad2b7c4bafaf47db7bfe3b4d922fc9c85}
+
+
+\-Definition at line 70 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_a8c39fe1d753d9af20ea7792cf727ca95}{\index{\-Time\-Slice@{\-Time\-Slice}!n\-Cells\-\_\-@{n\-Cells\-\_\-}}
+\index{n\-Cells\-\_\-@{n\-Cells\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{n\-Cells\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Time\-Slice\-::n\-Cells\-\_\-}}}\label{class_time_slice_a8c39fe1d753d9af20ea7792cf727ca95}
+
+
+\-Definition at line 63 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_a42601d72900c7a65b25fe383bedfb9c3}{\index{\-Time\-Slice@{\-Time\-Slice}!position\-Array\-\_\-@{position\-Array\-\_\-}}
+\index{position\-Array\-\_\-@{position\-Array\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{position\-Array\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$\-Tiny\-Vector$<$double,3$>$,1$>$ {\bf \-Time\-Slice\-::position\-Array\-\_\-}}}\label{class_time_slice_a42601d72900c7a65b25fe383bedfb9c3}
+
+
+\-Definition at line 69 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_a493d0742a92ed123079680e6c8954ba4}{\index{\-Time\-Slice@{\-Time\-Slice}!state\-Avg\-\_\-@{state\-Avg\-\_\-}}
+\index{state\-Avg\-\_\-@{state\-Avg\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{state\-Avg\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$double,1$>$ {\bf \-Time\-Slice\-::state\-Avg\-\_\-}}}\label{class_time_slice_a493d0742a92ed123079680e6c8954ba4}
+
+
+\-Definition at line 66 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_a7c34fff41b24089478a09572a8f0a926}{\index{\-Time\-Slice@{\-Time\-Slice}!t0\-State\-\_\-@{t0\-State\-\_\-}}
+\index{t0\-State\-\_\-@{t0\-State\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{t0\-State\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$int,1$>$ {\bf \-Time\-Slice\-::t0\-State\-\_\-}}}\label{class_time_slice_a7c34fff41b24089478a09572a8f0a926}
+
+
+\-Definition at line 67 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_a7fc9adf157f4c97694591625165de7b7}{\index{\-Time\-Slice@{\-Time\-Slice}!time\-\_\-@{time\-\_\-}}
+\index{time\-\_\-@{time\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Time\-Slice\-::time\-\_\-}}}\label{class_time_slice_a7fc9adf157f4c97694591625165de7b7}
+
+
+\-Definition at line 64 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_a32272ea6281a78747200569d5c05cfd4}{\index{\-Time\-Slice@{\-Time\-Slice}!volume\-Array\-\_\-@{volume\-Array\-\_\-}}
+\index{volume\-Array\-\_\-@{volume\-Array\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{volume\-Array\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$double,1$>$ {\bf \-Time\-Slice\-::volume\-Array\-\_\-}}}\label{class_time_slice_a32272ea6281a78747200569d5c05cfd4}
+
+
+\-Definition at line 65 of file \-Time\-Slice.\-h.
+
+\hypertarget{class_time_slice_af4eaf5651a1f181d32d75e0df878a527}{\index{\-Time\-Slice@{\-Time\-Slice}!x\-Conc\-\_\-@{x\-Conc\-\_\-}}
+\index{x\-Conc\-\_\-@{x\-Conc\-\_\-}!TimeSlice@{\-Time\-Slice}}
+\subsubsection[{x\-Conc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$double,1$>$ {\bf \-Time\-Slice\-::x\-Conc\-\_\-}}}\label{class_time_slice_af4eaf5651a1f181d32d75e0df878a527}
+
+
+\-Definition at line 68 of file \-Time\-Slice.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_time_slice_8h}{\-Time\-Slice.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_time_slice_8cpp}{\-Time\-Slice.\-cpp}\end{DoxyCompactItemize}

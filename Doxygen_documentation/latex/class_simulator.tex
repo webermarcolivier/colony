@@ -1,0 +1,545 @@
+\hypertarget{class_simulator}{\section{\-Simulator \-Class \-Reference}
+\label{class_simulator}\index{\-Simulator@{\-Simulator}}
+}
+
+
+{\ttfamily \#include $<$\-Simulator.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_simulator_a630ca1f9cba087798058d6b0d5c8564d}{init} ()
+\item 
+\hyperlink{class_simulator_a87d9ec0595c4f4953e3e59a1bdbd650a}{\-Simulator} (string input\-File)
+\item 
+\hyperlink{class_simulator_a7bc3104a9e0a2ea81f49f5dd2be6d7a7}{\-Simulator} (string input\-File, \-Graphics\-Cell\-Composite\-Param \&graphics\-Cell\-Param)
+\item 
+\hyperlink{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{$\sim$\-Simulator} ()
+\item 
+void \hyperlink{class_simulator_a086254d2ac4f05260295cf6d39b39118}{init\-Main\-Window\-Param} (\-Graphics\-Cell\-Composite\-Param \&graphics\-Cell\-Param)
+\item 
+void \hyperlink{class_simulator_a050a8284ace34c39f271302d3fee80d3}{init\-Graphics\-Cell\-O\-D\-E\-Param} ()
+\item 
+double \hyperlink{class_simulator_a52361b7628b32d91da4ba369306f40e9}{get\-Time} () const 
+\item 
+double \hyperlink{class_simulator_a1d8fc1bc934ee5f41895d5ba4037002d}{get\-Simulation\-Time} () const 
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_simulator_ab26592212e1d456bd976f544e714fd13}{get\-Time\-Mesh} () const 
+\item 
+int \hyperlink{class_simulator_a3292a9420792a1267bd8ea6063931919}{get\-I\-Time\-Slice} () const 
+\item 
+int \hyperlink{class_simulator_a43e1b0569b932bf353b77f70daf95fbe}{get\-N\-Time\-Slice} () const 
+\item 
+int \hyperlink{class_simulator_a0ec57d427d83931c107009024fd09985}{get\-N\-Trajectory} () const 
+\item 
+int \hyperlink{class_simulator_ae9171c45b06669041e56a9278da1419f}{get\-I\-Trajectory} () const 
+\item 
+int \hyperlink{class_simulator_af9ed84ef1153ebcec61e0c629f07bc31}{get\-N\-Parameter\-Set} () const 
+\item 
+int \hyperlink{class_simulator_adbebc2a8b4fad6658b3c80ea37ba3fcc}{get\-I\-Parameter\-Set} () const 
+\item 
+int \hyperlink{class_simulator_af85b8999558e321b94d009f51ca23d63}{get\-N\-Global\-Parameter} () const 
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_simulator_acb6e9b058f821841e10dd4cf1a006a41}{get\-Global\-Parameter\-Array} () const 
+\item 
+vector$<$ string $>$ \hyperlink{class_simulator_a31fd30698c9596156e8e2388dde02d11}{getlist\-Global\-Parameters\-Name} () const 
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_simulator_a2c10cbe98ff0f710e6a15e4a40a8a0f7}{get\-Cells\-Angle} () const 
+\item 
+\-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$ \hyperlink{class_simulator_ac13cfded15101afabf0fd2a1d4a275ca}{get\-Cells\-Position} () const 
+\item 
+double \hyperlink{class_simulator_ac9d7febdac1bb6af0246230516084a85}{get\-Spatial\-Dynamics\-Equilibration\-Time} () const 
+\item 
+void \hyperlink{class_simulator_a68c747d0d0bf72ed3aae13f1fb256ff9}{initialize\-Cell\-Collection} ()
+\item 
+void \hyperlink{class_simulator_a46cc81d1c999a6b74dea75d0d3165e5f}{increase\-Time} (double t1)
+\item 
+void \hyperlink{class_simulator_ae425bfd3eb66830a3aed9e7d8ec2e04c}{set\-Time} (double t1)
+\item 
+void \hyperlink{class_simulator_a916ddb59f9208acb0dbe40ab2a653a46}{set\-Is\-Equilibration\-Steps} (bool is\-Equilibration\-Steps)
+\item 
+void \hyperlink{class_simulator_a8efa69757a4cd68534a15faae5a4ab26}{compute\-Spatial\-Integration} (double time\-Step)
+\item 
+void \hyperlink{class_simulator_a371f9eb358e6c1136e026158741b116e}{compute\-Trajectory\-Time\-Slice} (int i\-Slice)
+\item 
+bool \hyperlink{class_simulator_a84c7462b37d24779e2c5d08f19640f7d}{compute\-Simulation\-Step} ()
+\item 
+void \hyperlink{class_simulator_a57d8e3828b486b5be1ab8ff789fe76bb}{update\-Position\-Last\-Time\-Slice} ()
+\item 
+void \hyperlink{class_simulator_a0d47178b55e8ba22d06c67b0e63b5e86}{update\-Angle\-Last\-Time\-Slice} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cell_collection}{\-Cell\-Collection} \hyperlink{class_simulator_a71f84b5f9ea2fb7fcac1dd714518f194}{cell\-Collection\-\_\-}
+\item 
+double \hyperlink{class_simulator_a6ef401f07d2c71aa6b2dedfdc8598483}{proportion\-Negative\-Steps\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Core of the simulation\-: interaction between the integrator and the cell collection.
+
+\-This class controls the simulation loop over time. \-It has a cell collection and an interface to the integrator used for computing the dynamics. \-It outputs the trajectories and other data to the \hyperlink{class_output}{\-Output} object. 
+
+\-Definition at line 75 of file \-Simulator.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_simulator_a87d9ec0595c4f4953e3e59a1bdbd650a}{\index{\-Simulator@{\-Simulator}!\-Simulator@{\-Simulator}}
+\index{\-Simulator@{\-Simulator}!Simulator@{\-Simulator}}
+\subsubsection[{\-Simulator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Simulator\-::\-Simulator} (
+\begin{DoxyParamCaption}
+\item[{string}]{input\-File}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a87d9ec0595c4f4953e3e59a1bdbd650a}
+\-Default constructor initialize the cell collection with input object. \-Initializes the cell collection, the integrator context, the output object and the time variable. 
+
+\-Definition at line 99 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a7bc3104a9e0a2ea81f49f5dd2be6d7a7}{\index{\-Simulator@{\-Simulator}!\-Simulator@{\-Simulator}}
+\index{\-Simulator@{\-Simulator}!Simulator@{\-Simulator}}
+\subsubsection[{\-Simulator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Simulator\-::\-Simulator} (
+\begin{DoxyParamCaption}
+\item[{string}]{input\-File, }
+\item[{\-Graphics\-Cell\-Composite\-Param \&}]{graphics\-Cell\-Param}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a7bc3104a9e0a2ea81f49f5dd2be6d7a7}
+
+
+\-Definition at line 111 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{\index{\-Simulator@{\-Simulator}!$\sim$\-Simulator@{$\sim$\-Simulator}}
+\index{$\sim$\-Simulator@{$\sim$\-Simulator}!Simulator@{\-Simulator}}
+\subsubsection[{$\sim$\-Simulator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Simulator\-::$\sim$\-Simulator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a0f49aa04f42060a785adf77346b9de9f}
+
+
+\-Definition at line 124 of file \-Simulator.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_simulator_a84c7462b37d24779e2c5d08f19640f7d}{\index{\-Simulator@{\-Simulator}!compute\-Simulation\-Step@{compute\-Simulation\-Step}}
+\index{compute\-Simulation\-Step@{compute\-Simulation\-Step}!Simulator@{\-Simulator}}
+\subsubsection[{compute\-Simulation\-Step}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Simulator\-::compute\-Simulation\-Step} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a84c7462b37d24779e2c5d08f19640f7d}
+\-Compute a step of simulation, in general one time slice, in order to return the control to the \-G\-U\-I. 
+
+\-Definition at line 245 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a8efa69757a4cd68534a15faae5a4ab26}{\index{\-Simulator@{\-Simulator}!compute\-Spatial\-Integration@{compute\-Spatial\-Integration}}
+\index{compute\-Spatial\-Integration@{compute\-Spatial\-Integration}!Simulator@{\-Simulator}}
+\subsubsection[{compute\-Spatial\-Integration}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::compute\-Spatial\-Integration} (
+\begin{DoxyParamCaption}
+\item[{double}]{time\-Step}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a8efa69757a4cd68534a15faae5a4ab26}
+
+
+\-Definition at line 700 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a371f9eb358e6c1136e026158741b116e}{\index{\-Simulator@{\-Simulator}!compute\-Trajectory\-Time\-Slice@{compute\-Trajectory\-Time\-Slice}}
+\index{compute\-Trajectory\-Time\-Slice@{compute\-Trajectory\-Time\-Slice}!Simulator@{\-Simulator}}
+\subsubsection[{compute\-Trajectory\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::compute\-Trajectory\-Time\-Slice} (
+\begin{DoxyParamCaption}
+\item[{int}]{i\-Slice}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a371f9eb358e6c1136e026158741b116e}
+\-Compute the evolution over a time slice of length \#time\-Mesh\-Slice\-Length\-\_\-. \hyperlink{class_output}{\-Output} the state to the output object. 
+\begin{DoxyParams}{\-Parameters}
+{\em i\-Slice} & \mbox{[}in\mbox{]} \-Index of the time slice (defined in \#time\-Mesh\-\_\-), 0 $<$= i\-Slice $<$= n\-Time\-Slices-\/1. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item \-Integration loop over the time slice.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Initialize the time\-Slice\-Cells\-Avg\-\_\- object.
+\end{DoxyItemize}
+
+\-The division events define subslices (t0,t1) dividing the time slice. \-We initialize t0 = time\-Mesh\-\_\-(i\-Slice) and t1 = 0.
+
+
+\begin{DoxyItemize}
+\item \-Loop over the subslices.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item t1 = min( time\-End, time\-Next\-Division ). \-Note\-: if there is no cell growth/division, the time\-Next\-Division is equal to infinite.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Initialize the time\-Slice\-\_\- object.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Loop over time in the subslice.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Insert the time slice data to the trajectory list.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Compute the average over the cells of the time slice.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Accumulate the average number of cells.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Accumulate the state of the milieu.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Accumulate the average over the time slice for each cell in the time\-Slice\-Cells\-Avg\-\_\- object and increment the samples count by n\-Cells.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item t0 = t1.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Insert the time slice data to the cells average array. \-Uses the + operator of class \hyperlink{class_time_slice_cells_avg}{\-Time\-Slice\-Cells\-Avg}.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Insert the time slice data to the cells-\/trajectories average array. \-Uses the + operator of class \hyperlink{class_time_slice_cells_avg}{\-Time\-Slice\-Cells\-Avg}.
+\end{DoxyItemize}
+
+\-Compute all the propensities in order to reduce the errors generated by the optimization method. 
+
+\-Definition at line 321 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a2c10cbe98ff0f710e6a15e4a40a8a0f7}{\index{\-Simulator@{\-Simulator}!get\-Cells\-Angle@{get\-Cells\-Angle}}
+\index{get\-Cells\-Angle@{get\-Cells\-Angle}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Cells\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ double, 1 $>$ {\bf \-Simulator\-::get\-Cells\-Angle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_a2c10cbe98ff0f710e6a15e4a40a8a0f7}
+
+
+\-Definition at line 708 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_ac13cfded15101afabf0fd2a1d4a275ca}{\index{\-Simulator@{\-Simulator}!get\-Cells\-Position@{get\-Cells\-Position}}
+\index{get\-Cells\-Position@{get\-Cells\-Position}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Cells\-Position}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ \-Tiny\-Vector$<$ double, 3 $>$, 1 $>$ {\bf \-Simulator\-::get\-Cells\-Position} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_ac13cfded15101afabf0fd2a1d4a275ca}
+
+
+\-Definition at line 716 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_acb6e9b058f821841e10dd4cf1a006a41}{\index{\-Simulator@{\-Simulator}!get\-Global\-Parameter\-Array@{get\-Global\-Parameter\-Array}}
+\index{get\-Global\-Parameter\-Array@{get\-Global\-Parameter\-Array}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Global\-Parameter\-Array}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ double, 1 $>$ {\bf \-Simulator\-::get\-Global\-Parameter\-Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_acb6e9b058f821841e10dd4cf1a006a41}
+
+
+\-Definition at line 656 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_adbebc2a8b4fad6658b3c80ea37ba3fcc}{\index{\-Simulator@{\-Simulator}!get\-I\-Parameter\-Set@{get\-I\-Parameter\-Set}}
+\index{get\-I\-Parameter\-Set@{get\-I\-Parameter\-Set}!Simulator@{\-Simulator}}
+\subsubsection[{get\-I\-Parameter\-Set}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-I\-Parameter\-Set} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_adbebc2a8b4fad6658b3c80ea37ba3fcc}
+
+
+\-Definition at line 361 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a3292a9420792a1267bd8ea6063931919}{\index{\-Simulator@{\-Simulator}!get\-I\-Time\-Slice@{get\-I\-Time\-Slice}}
+\index{get\-I\-Time\-Slice@{get\-I\-Time\-Slice}!Simulator@{\-Simulator}}
+\subsubsection[{get\-I\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-I\-Time\-Slice} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_a3292a9420792a1267bd8ea6063931919}
+
+
+\-Definition at line 349 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_ae9171c45b06669041e56a9278da1419f}{\index{\-Simulator@{\-Simulator}!get\-I\-Trajectory@{get\-I\-Trajectory}}
+\index{get\-I\-Trajectory@{get\-I\-Trajectory}!Simulator@{\-Simulator}}
+\subsubsection[{get\-I\-Trajectory}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-I\-Trajectory} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_ae9171c45b06669041e56a9278da1419f}
+
+
+\-Definition at line 356 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a31fd30698c9596156e8e2388dde02d11}{\index{\-Simulator@{\-Simulator}!getlist\-Global\-Parameters\-Name@{getlist\-Global\-Parameters\-Name}}
+\index{getlist\-Global\-Parameters\-Name@{getlist\-Global\-Parameters\-Name}!Simulator@{\-Simulator}}
+\subsubsection[{getlist\-Global\-Parameters\-Name}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ {\bf \-Simulator\-::getlist\-Global\-Parameters\-Name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_a31fd30698c9596156e8e2388dde02d11}
+
+
+\-Definition at line 663 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_af85b8999558e321b94d009f51ca23d63}{\index{\-Simulator@{\-Simulator}!get\-N\-Global\-Parameter@{get\-N\-Global\-Parameter}}
+\index{get\-N\-Global\-Parameter@{get\-N\-Global\-Parameter}!Simulator@{\-Simulator}}
+\subsubsection[{get\-N\-Global\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-N\-Global\-Parameter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_af85b8999558e321b94d009f51ca23d63}
+
+
+\-Definition at line 649 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_af9ed84ef1153ebcec61e0c629f07bc31}{\index{\-Simulator@{\-Simulator}!get\-N\-Parameter\-Set@{get\-N\-Parameter\-Set}}
+\index{get\-N\-Parameter\-Set@{get\-N\-Parameter\-Set}!Simulator@{\-Simulator}}
+\subsubsection[{get\-N\-Parameter\-Set}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-N\-Parameter\-Set} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_af9ed84ef1153ebcec61e0c629f07bc31}
+
+
+\-Definition at line 359 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a43e1b0569b932bf353b77f70daf95fbe}{\index{\-Simulator@{\-Simulator}!get\-N\-Time\-Slice@{get\-N\-Time\-Slice}}
+\index{get\-N\-Time\-Slice@{get\-N\-Time\-Slice}!Simulator@{\-Simulator}}
+\subsubsection[{get\-N\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-N\-Time\-Slice} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_a43e1b0569b932bf353b77f70daf95fbe}
+
+
+\-Definition at line 351 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a0ec57d427d83931c107009024fd09985}{\index{\-Simulator@{\-Simulator}!get\-N\-Trajectory@{get\-N\-Trajectory}}
+\index{get\-N\-Trajectory@{get\-N\-Trajectory}!Simulator@{\-Simulator}}
+\subsubsection[{get\-N\-Trajectory}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Simulator\-::get\-N\-Trajectory} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_a0ec57d427d83931c107009024fd09985}
+
+
+\-Definition at line 354 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a1d8fc1bc934ee5f41895d5ba4037002d}{\index{\-Simulator@{\-Simulator}!get\-Simulation\-Time@{get\-Simulation\-Time}}
+\index{get\-Simulation\-Time@{get\-Simulation\-Time}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Simulation\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Simulator\-::get\-Simulation\-Time} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_a1d8fc1bc934ee5f41895d5ba4037002d}
+
+
+\-Definition at line 340 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_ac9d7febdac1bb6af0246230516084a85}{\index{\-Simulator@{\-Simulator}!get\-Spatial\-Dynamics\-Equilibration\-Time@{get\-Spatial\-Dynamics\-Equilibration\-Time}}
+\index{get\-Spatial\-Dynamics\-Equilibration\-Time@{get\-Spatial\-Dynamics\-Equilibration\-Time}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Spatial\-Dynamics\-Equilibration\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Simulator\-::get\-Spatial\-Dynamics\-Equilibration\-Time} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_ac9d7febdac1bb6af0246230516084a85}
+
+
+\-Definition at line 724 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a52361b7628b32d91da4ba369306f40e9}{\index{\-Simulator@{\-Simulator}!get\-Time@{get\-Time}}
+\index{get\-Time@{get\-Time}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Simulator\-::get\-Time} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_a52361b7628b32d91da4ba369306f40e9}
+
+
+\-Definition at line 337 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_ab26592212e1d456bd976f544e714fd13}{\index{\-Simulator@{\-Simulator}!get\-Time\-Mesh@{get\-Time\-Mesh}}
+\index{get\-Time\-Mesh@{get\-Time\-Mesh}!Simulator@{\-Simulator}}
+\subsubsection[{get\-Time\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$ double, 1 $>$ {\bf \-Simulator\-::get\-Time\-Mesh} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_simulator_ab26592212e1d456bd976f544e714fd13}
+
+
+\-Definition at line 641 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a46cc81d1c999a6b74dea75d0d3165e5f}{\index{\-Simulator@{\-Simulator}!increase\-Time@{increase\-Time}}
+\index{increase\-Time@{increase\-Time}!Simulator@{\-Simulator}}
+\subsubsection[{increase\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::increase\-Time} (
+\begin{DoxyParamCaption}
+\item[{double}]{t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_a46cc81d1c999a6b74dea75d0d3165e5f}
+
+
+\-Definition at line 343 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a630ca1f9cba087798058d6b0d5c8564d}{\index{\-Simulator@{\-Simulator}!init@{init}}
+\index{init@{init}!Simulator@{\-Simulator}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::init} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a630ca1f9cba087798058d6b0d5c8564d}
+
+\begin{DoxyItemize}
+\item \-Initialize parameters of simulation.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Initialize the time mesh.
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item \-Initialize the time\-Mesh\-Cells\-Avg\-\_\- and the time\-Mesh\-Cells\-Trajectories\-Avg\-\_\-. 
+\end{DoxyItemize}
+
+\-Definition at line 20 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a050a8284ace34c39f271302d3fee80d3}{\index{\-Simulator@{\-Simulator}!init\-Graphics\-Cell\-O\-D\-E\-Param@{init\-Graphics\-Cell\-O\-D\-E\-Param}}
+\index{init\-Graphics\-Cell\-O\-D\-E\-Param@{init\-Graphics\-Cell\-O\-D\-E\-Param}!Simulator@{\-Simulator}}
+\subsubsection[{init\-Graphics\-Cell\-O\-D\-E\-Param}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::init\-Graphics\-Cell\-O\-D\-E\-Param} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a050a8284ace34c39f271302d3fee80d3}
+
+\begin{DoxyItemize}
+\item \-Pass the \-O\-D\-E world and space references as parameters to initialize correctly the \hyperlink{class_graphics_cell_o_d_e}{\-Graphics\-Cell\-O\-D\-E} class, as well as a pointer to the spatial\-Integrator\-O\-D\-E. 
+\end{DoxyItemize}
+
+\-Definition at line 88 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a68c747d0d0bf72ed3aae13f1fb256ff9}{\index{\-Simulator@{\-Simulator}!initialize\-Cell\-Collection@{initialize\-Cell\-Collection}}
+\index{initialize\-Cell\-Collection@{initialize\-Cell\-Collection}!Simulator@{\-Simulator}}
+\subsubsection[{initialize\-Cell\-Collection}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::initialize\-Cell\-Collection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a68c747d0d0bf72ed3aae13f1fb256ff9}
+
+\begin{DoxyItemize}
+\item \-Initialize the cell collection. 
+\end{DoxyItemize}
+
+\-Definition at line 129 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a086254d2ac4f05260295cf6d39b39118}{\index{\-Simulator@{\-Simulator}!init\-Main\-Window\-Param@{init\-Main\-Window\-Param}}
+\index{init\-Main\-Window\-Param@{init\-Main\-Window\-Param}!Simulator@{\-Simulator}}
+\subsubsection[{init\-Main\-Window\-Param}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::init\-Main\-Window\-Param} (
+\begin{DoxyParamCaption}
+\item[{\-Graphics\-Cell\-Composite\-Param \&}]{graphics\-Cell\-Param}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a086254d2ac4f05260295cf6d39b39118}
+
+\begin{DoxyItemize}
+\item \-Pass the initialization parameters for \-Graphics\-Cell classes (pointer to the graphics scene, etc. 
+\end{DoxyItemize}
+
+\-Definition at line 80 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a916ddb59f9208acb0dbe40ab2a653a46}{\index{\-Simulator@{\-Simulator}!set\-Is\-Equilibration\-Steps@{set\-Is\-Equilibration\-Steps}}
+\index{set\-Is\-Equilibration\-Steps@{set\-Is\-Equilibration\-Steps}!Simulator@{\-Simulator}}
+\subsubsection[{set\-Is\-Equilibration\-Steps}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::set\-Is\-Equilibration\-Steps} (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Equilibration\-Steps}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a916ddb59f9208acb0dbe40ab2a653a46}
+
+
+\-Definition at line 670 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_ae425bfd3eb66830a3aed9e7d8ec2e04c}{\index{\-Simulator@{\-Simulator}!set\-Time@{set\-Time}}
+\index{set\-Time@{set\-Time}!Simulator@{\-Simulator}}
+\subsubsection[{set\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::set\-Time} (
+\begin{DoxyParamCaption}
+\item[{double}]{t1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_simulator_ae425bfd3eb66830a3aed9e7d8ec2e04c}
+
+
+\-Definition at line 346 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a0d47178b55e8ba22d06c67b0e63b5e86}{\index{\-Simulator@{\-Simulator}!update\-Angle\-Last\-Time\-Slice@{update\-Angle\-Last\-Time\-Slice}}
+\index{update\-Angle\-Last\-Time\-Slice@{update\-Angle\-Last\-Time\-Slice}!Simulator@{\-Simulator}}
+\subsubsection[{update\-Angle\-Last\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::update\-Angle\-Last\-Time\-Slice} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a0d47178b55e8ba22d06c67b0e63b5e86}
+\-Write the angle array into the last time slice. \-This method is used to update the angles of the cells in the time slice when the angles are updated from outside the simulator, for example if the dynamics of the cells are computed in the \-G\-U\-I module. 
+
+\-Definition at line 742 of file \-Simulator.\-cpp.
+
+\hypertarget{class_simulator_a57d8e3828b486b5be1ab8ff789fe76bb}{\index{\-Simulator@{\-Simulator}!update\-Position\-Last\-Time\-Slice@{update\-Position\-Last\-Time\-Slice}}
+\index{update\-Position\-Last\-Time\-Slice@{update\-Position\-Last\-Time\-Slice}!Simulator@{\-Simulator}}
+\subsubsection[{update\-Position\-Last\-Time\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulator\-::update\-Position\-Last\-Time\-Slice} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_simulator_a57d8e3828b486b5be1ab8ff789fe76bb}
+\-Write the position array into the last time slice. \-This method is used to update the position of the cells in the time slice when the positions are updated from outside the simulator, for example if the dynamics of the cells are computed in the \-G\-U\-I module. 
+
+\-Definition at line 731 of file \-Simulator.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_simulator_a71f84b5f9ea2fb7fcac1dd714518f194}{\index{\-Simulator@{\-Simulator}!cell\-Collection\-\_\-@{cell\-Collection\-\_\-}}
+\index{cell\-Collection\-\_\-@{cell\-Collection\-\_\-}!Simulator@{\-Simulator}}
+\subsubsection[{cell\-Collection\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell\-Collection} {\bf \-Simulator\-::cell\-Collection\-\_\-}}}\label{class_simulator_a71f84b5f9ea2fb7fcac1dd714518f194}
+
+
+\-Definition at line 176 of file \-Simulator.\-h.
+
+\hypertarget{class_simulator_a6ef401f07d2c71aa6b2dedfdc8598483}{\index{\-Simulator@{\-Simulator}!proportion\-Negative\-Steps\-\_\-@{proportion\-Negative\-Steps\-\_\-}}
+\index{proportion\-Negative\-Steps\-\_\-@{proportion\-Negative\-Steps\-\_\-}!Simulator@{\-Simulator}}
+\subsubsection[{proportion\-Negative\-Steps\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Simulator\-::proportion\-Negative\-Steps\-\_\-}}}\label{class_simulator_a6ef401f07d2c71aa6b2dedfdc8598483}
+
+
+\-Definition at line 178 of file \-Simulator.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_simulator_8h}{\-Simulator.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_simulator_8cpp}{\-Simulator.\-cpp}\end{DoxyCompactItemize}

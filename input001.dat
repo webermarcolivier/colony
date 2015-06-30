@@ -1,0 +1,103 @@
+#Integer seed for the random number generator:
+638499
+#Output directory path:
+/home/mweber/sonyz1/Research/Simulations/Output/Gene_expression_noise_example/Protein_large_bursts/Gillespie/Gillespie/Gillespie
+#First passage time experiment: GFP threshold:
+0
+#First passage time experiment: Stop trajectory when cell passes above (0) or under (1) GFP threshold:
+0
+#Stop simulation when reaching maximum volume available, for example for unlimited growth (boolean):
+stopWhenReachingMaximumVolume
+#Length of the time mesh slices (time interval) to average the trajectories:
+0.1
+#Time step used in the Chemical Langevin algorithm:
+0.001
+#Boolean value: compute cells spatial dynamics (ODE simulation):
+0
+#Equilibration time for the cells spatial dynamics (ODE simulation):
+50
+#Number of trajectories:
+1
+#Interval of time steps to display the ouput in the console:
+1000
+#Simulation time points table:
+1
+[ 10000 ]
+#Global parameters name list:
+Dx
+#Global parameters table. The first dimension correspond to the parameter sets (different simulation runs with different sets of parameter values). The second dimension correspond to the different values of the global parameters at defined time points in the simulation, so that global parameters can change as a step-like function with time at time points defined in the simulation time points table. The third dimension correspond to the global parameters themselves.
+1 x 1 x 1
+[
+0
+]
+#Number of cells in colony:
+1
+#Boolean value: keep the cell density constant:
+1
+#Total volume of the system (cells + milieu) in micrometers cubic:
+3.
+#Volume of a cell in micrometers cubic:
+1.5
+#Initial length of a cell in micrometers:
+2
+#Initial height of a cell in micrometers:
+1
+#Deterministic part of the cell cycle in minutes:
+1000000
+#Stochastic to deterministic weight parameter for the cell cycle distribution:
+0.8
+#List of the species name of the cells:
+r A M P
+#Number of species in the cells:
+4
+#Number of reaction channels in the cells:
+12
+#x0 Cell is changing with global parameters set (boolean value):
+0
+#Heterogenous (1 or True) or homogenous (0 or False) initial conditions:
+0
+#List of initial conditions x0Cell. If initial conditions are changing with the global parameters set, then this is a list of nGlobalPar initial conditions. If the initial conditions are homogenous, then each initial condition is a vector of size nSpecies containing the number of molecules of each species (the same for all the cells). If the initial condition is heterogenous, then the initial condition is composed as follows: an 2D array of size nCells x nSpecies containing the number of molecules of every species in every cell, a vector of size nCells containing the initial phase of every cell.
+4
+[ 0 1 0 0 ]
+#List of the species name of the milieu:
+Dummy
+#Number of species in the milieu:
+1
+#Number of reaction channels in the milieu:
+2
+#x0 Milieu is changing with global parameters set (boolean value):
+0
+#List of initial conditions x0Milieu. If initial conditions are changing with the global parameters set, then this is a list of nGlobalPar vectors of initial condition:
+2
+[ 0 0 ]
+#DNA species in the cells. Array defining which are the genetic species, DNA and protein-DNA complexes:
+4 x 4
+[ 0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0 ]
+#NV in cells. Stochiometric matrix of reactions in the cells:
+12 x 4
+[ -1 1  0  0
+0  0  1  0
+0  0  1  0
+0  0  0  1
+0  0  -1 0
+0  0  0  -1
+1  -1 0  0
+0  0  -1 0
+0  0  -1 0
+0  0  0  -1
+0  0  1  0
+0  0  0  1 ]
+#Number of cell-milieu reaction channels:
+2
+#NV cell-milieu. Stochiometric matrix of cell-milieu reactions:
+2 x 5
+[ 1  0 0 0 -1
+-1 0 0 0 1 ]
+#NV milieu. Stochiometric matrix of reactions in the milieu:
+2 x 1
+[ -1
+1 ]
+

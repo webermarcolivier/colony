@@ -1,0 +1,153 @@
+\hypertarget{class_random_number_generator}{\section{\-Random\-Number\-Generator \-Class \-Reference}
+\label{class_random_number_generator}\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}}
+}
+
+
+{\ttfamily \#include $<$\-Random\-Number\-Generator.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_random_number_generator_a8e7e711ea58f13f3ed95becbe33684e9}{\-Random\-Number\-Generator} ()
+\item 
+\hyperlink{class_random_number_generator_af4949b4234bd8d8283028162f8a8e7f5}{$\sim$\-Random\-Number\-Generator} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_random_number_generator_a7f9ac1a577f5f72fd07b5e769f232fbe}{initialize} ()
+\item 
+static void \hyperlink{class_random_number_generator_a16d763e85961dddeeebee1be0fc8a3a2}{initialize} (int seed)
+\item 
+static double \hyperlink{class_random_number_generator_a4f452a69c4f0fd0044979e3eea6ef358}{get\-Uniform} ()
+\item 
+static double \hyperlink{class_random_number_generator_adc771ab86d212e8d42fe4108d8a1a350}{get\-Normal} ()
+\item 
+static int \hyperlink{class_random_number_generator_afbb6020f2d5d13d08ce12256370d6408}{get\-Binomial} (double p, unsigned int n)
+\item 
+static double \hyperlink{class_random_number_generator_a4a8e5b43607e3d3d406bdc4f07ca3567}{get\-Cell\-Cycle} (double tdet, double gamma)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_random_number_generator_a7a5c2be0f01f6265dee7285bc511f956}{n\-Lux\-I\-Exp\-\_\-} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Random number generator from the \-G\-S\-L library. 
+
+\-Definition at line 52 of file \-Random\-Number\-Generator.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_random_number_generator_a8e7e711ea58f13f3ed95becbe33684e9}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!\-Random\-Number\-Generator@{\-Random\-Number\-Generator}}
+\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{\-Random\-Number\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Random\-Number\-Generator\-::\-Random\-Number\-Generator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_random_number_generator_a8e7e711ea58f13f3ed95becbe33684e9}
+
+
+\-Definition at line 26 of file \-Random\-Number\-Generator.\-cpp.
+
+\hypertarget{class_random_number_generator_af4949b4234bd8d8283028162f8a8e7f5}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!$\sim$\-Random\-Number\-Generator@{$\sim$\-Random\-Number\-Generator}}
+\index{$\sim$\-Random\-Number\-Generator@{$\sim$\-Random\-Number\-Generator}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{$\sim$\-Random\-Number\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Random\-Number\-Generator\-::$\sim$\-Random\-Number\-Generator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_random_number_generator_af4949b4234bd8d8283028162f8a8e7f5}
+
+
+\-Definition at line 31 of file \-Random\-Number\-Generator.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_random_number_generator_afbb6020f2d5d13d08ce12256370d6408}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!get\-Binomial@{get\-Binomial}}
+\index{get\-Binomial@{get\-Binomial}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{get\-Binomial}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Random\-Number\-Generator\-::get\-Binomial} (
+\begin{DoxyParamCaption}
+\item[{double}]{p, }
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{class_random_number_generator_afbb6020f2d5d13d08ce12256370d6408}
+\-Returns a random integer from the binomial distribution, the number of successes in {\ttfamily n} independent trials with probability {\ttfamily p}. 
+
+\-Definition at line 143 of file \-Random\-Number\-Generator.\-h.
+
+\hypertarget{class_random_number_generator_a4a8e5b43607e3d3d406bdc4f07ca3567}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!get\-Cell\-Cycle@{get\-Cell\-Cycle}}
+\index{get\-Cell\-Cycle@{get\-Cell\-Cycle}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{get\-Cell\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Random\-Number\-Generator\-::get\-Cell\-Cycle} (
+\begin{DoxyParamCaption}
+\item[{double}]{tdet, }
+\item[{double}]{gamma}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{class_random_number_generator_a4a8e5b43607e3d3d406bdc4f07ca3567}
+\-Returns a random value for the cell cycle $t_c$. \-It is given by\-: \[ t_c = \gamma t_{det} + (1-\gamma)t_{sto} \] where $t_{det}$ and $t_{sto}$ are the deterministic and stochastic components of the cell cycle respectively, and $\gamma\in [0,1]$ is a parameter that weight their relative importance. \-Note that we acknowledge the fact that, prior to division, cells must mature and grow and consequently the cell cycle has a minimum duration $\gamma t_{det}$. \-The stochastic part, $t_{sto}$, is supposed to be exponentially distributed and its probability density reads, \[ \rho(t_{sto}) = \frac{1}{t_{det}} e^{-\frac{t_{sto}}{t_{det}}} \] \-Note that\-: \[ <\tau> = t_{det} \] \[ \sigma_{\tau} = (1-\gamma) t_{det} \] 
+
+\-Definition at line 70 of file \-Random\-Number\-Generator.\-cpp.
+
+\hypertarget{class_random_number_generator_adc771ab86d212e8d42fe4108d8a1a350}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!get\-Normal@{get\-Normal}}
+\index{get\-Normal@{get\-Normal}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{get\-Normal}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Random\-Number\-Generator\-::get\-Normal} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{class_random_number_generator_adc771ab86d212e8d42fe4108d8a1a350}
+\-Returns a random number with normal distribution \-N(0,1). 
+
+\-Definition at line 140 of file \-Random\-Number\-Generator.\-h.
+
+\hypertarget{class_random_number_generator_a4f452a69c4f0fd0044979e3eea6ef358}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!get\-Uniform@{get\-Uniform}}
+\index{get\-Uniform@{get\-Uniform}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{get\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Random\-Number\-Generator\-::get\-Uniform} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{class_random_number_generator_a4f452a69c4f0fd0044979e3eea6ef358}
+\-Returns a double in \mbox{[}0,1) with uniform probability. 
+
+\-Definition at line 136 of file \-Random\-Number\-Generator.\-h.
+
+\hypertarget{class_random_number_generator_a7f9ac1a577f5f72fd07b5e769f232fbe}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!initialize@{initialize}}
+\index{initialize@{initialize}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Random\-Number\-Generator\-::initialize} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{class_random_number_generator_a7f9ac1a577f5f72fd07b5e769f232fbe}
+\-Initiate the random number generator with a clock-\/cycle based seed. 
+
+\-Definition at line 36 of file \-Random\-Number\-Generator.\-cpp.
+
+\hypertarget{class_random_number_generator_a16d763e85961dddeeebee1be0fc8a3a2}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!initialize@{initialize}}
+\index{initialize@{initialize}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Random\-Number\-Generator\-::initialize} (
+\begin{DoxyParamCaption}
+\item[{int}]{seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{class_random_number_generator_a16d763e85961dddeeebee1be0fc8a3a2}
+\-Initiate the random number generator with user defined seed. 
+
+\-Definition at line 51 of file \-Random\-Number\-Generator.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_random_number_generator_a7a5c2be0f01f6265dee7285bc511f956}{\index{\-Random\-Number\-Generator@{\-Random\-Number\-Generator}!n\-Lux\-I\-Exp\-\_\-@{n\-Lux\-I\-Exp\-\_\-}}
+\index{n\-Lux\-I\-Exp\-\_\-@{n\-Lux\-I\-Exp\-\_\-}!RandomNumberGenerator@{\-Random\-Number\-Generator}}
+\subsubsection[{n\-Lux\-I\-Exp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Random\-Number\-Generator\-::n\-Lux\-I\-Exp\-\_\-} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{class_random_number_generator_a7a5c2be0f01f6265dee7285bc511f956}
+
+
+\-Definition at line 131 of file \-Random\-Number\-Generator.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_random_number_generator_8h}{\-Random\-Number\-Generator.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_random_number_generator_8cpp}{\-Random\-Number\-Generator.\-cpp}\end{DoxyCompactItemize}

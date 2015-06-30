@@ -1,0 +1,320 @@
+\hypertarget{class_graphics_cell_base}{\section{\-Graphics\-Cell\-Base \-Class \-Reference}
+\label{class_graphics_cell_base}\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}}
+}
+
+
+{\ttfamily \#include $<$\-Graphics\-Cell\-Base.\-h$>$}
+
+\-Inheritance diagram for \-Graphics\-Cell\-Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_graphics_cell_base}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_graphics_cell_base_aaf51239fcc44325ad9cb828b96424033}{get\-Cell\-Index} () const 
+\item 
+float \hyperlink{class_graphics_cell_base_a0c638650a9cdbe65efdca7385d6f7454}{get\-Cell\-Length} () const 
+\item 
+float \hyperlink{class_graphics_cell_base_ab0a62023e5599c721fc4d6cad341785f}{get\-Cell\-Height} () const 
+\item 
+float \hyperlink{class_graphics_cell_base_ae9ce129f8462b6d05d9b52e504db27cf}{get\-Angle} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graphics_cell_base_ab21c2ad274f163b192f0fc90317e71ce}{\-Graphics\-Cell\-Base} ()
+\item 
+\hyperlink{class_graphics_cell_base_a26ae84e6182edb34d86f82a31b01bf5c}{\-Graphics\-Cell\-Base} (const \hyperlink{class_graphics_cell_base}{\-Graphics\-Cell\-Base} \&cell)
+\item 
+\hyperlink{class_graphics_cell_base_a8ed7c2070beab9a56286df8dd8b36f12}{$\sim$\-Graphics\-Cell\-Base} ()
+\item 
+void \hyperlink{class_graphics_cell_base_a5f252a083de2b8d9a6ab3e38cd187c15}{copy} (const \hyperlink{class_graphics_cell_base}{\-Graphics\-Cell\-Base} \&c)
+\item 
+void \hyperlink{class_graphics_cell_base_a3a7ec63edecc54916e2770f233f97bc8}{set\-Cell\-Length} (float length)
+\item 
+void \hyperlink{class_graphics_cell_base_a78cfe59851d680ee459449dbd8befef7}{set\-Cell\-Height} (float height)
+\item 
+void \hyperlink{class_graphics_cell_base_a1bd5925a454cd3926652de53ce584f68}{set\-Cell\-Index} (int cell\-Index)
+\item 
+void \hyperlink{class_graphics_cell_base_a1b73509c13e0021bc01f28b481b3c649}{set\-Pos} (float x, float y, float z)
+\item 
+void \hyperlink{class_graphics_cell_base_aa23fb4905505dbd30f7f1a770a3a4e56}{set\-Angle} (float angle)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_graphics_cell_base_abc8e8449329725e09994f29303133f1b}{cell\-Index\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_a4c4c5ffb768030b2cab10f28a1c62855}{angle\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_af802ab0cfb04f2ff82d1ae98e7c572ec}{cell\-Length\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_af4b0f90f9c14e984bf41f83e4733f214}{cell\-Height\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_a05f33e20efcbaf7be07c1267987c5dda}{cell\-Volume\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_a2159559ca4d11ec38456a52c8cb110ab}{pos\-X\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_a304771746db89eecb3f0c639cef8d412}{pos\-Y\-\_\-}
+\item 
+float \hyperlink{class_graphics_cell_base_af7b028e9b6a6950a95ab8b3355e05776}{pos\-Z\-\_\-}
+\item 
+bool \hyperlink{class_graphics_cell_base_ab8a1891eae9d2a1c0f24e1472f95b2c1}{has\-Focus\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Base class for the graphical representations of the cell. \-Define virtual functions as set position, update position, etc. 
+
+\-Definition at line 35 of file \-Graphics\-Cell\-Base.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_graphics_cell_base_ab21c2ad274f163b192f0fc90317e71ce}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}}
+\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{\-Graphics\-Cell\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Graphics\-Cell\-Base\-::\-Graphics\-Cell\-Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_ab21c2ad274f163b192f0fc90317e71ce}
+
+
+\-Definition at line 24 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a26ae84e6182edb34d86f82a31b01bf5c}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}}
+\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{\-Graphics\-Cell\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Graphics\-Cell\-Base\-::\-Graphics\-Cell\-Base} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Graphics\-Cell\-Base} \&}]{cell}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a26ae84e6182edb34d86f82a31b01bf5c}
+
+
+\-Definition at line 37 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a8ed7c2070beab9a56286df8dd8b36f12}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!$\sim$\-Graphics\-Cell\-Base@{$\sim$\-Graphics\-Cell\-Base}}
+\index{$\sim$\-Graphics\-Cell\-Base@{$\sim$\-Graphics\-Cell\-Base}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{$\sim$\-Graphics\-Cell\-Base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Graphics\-Cell\-Base\-::$\sim$\-Graphics\-Cell\-Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a8ed7c2070beab9a56286df8dd8b36f12}
+
+
+\-Definition at line 20 of file \-Graphics\-Cell\-Base.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_graphics_cell_base_a5f252a083de2b8d9a6ab3e38cd187c15}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!copy@{copy}}
+\index{copy@{copy}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graphics\-Cell\-Base\-::copy} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Graphics\-Cell\-Base} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a5f252a083de2b8d9a6ab3e38cd187c15}
+
+
+\-Definition at line 44 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_ae9ce129f8462b6d05d9b52e504db27cf}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!get\-Angle@{get\-Angle}}
+\index{get\-Angle@{get\-Angle}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{get\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::get\-Angle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_graphics_cell_base_ae9ce129f8462b6d05d9b52e504db27cf}
+
+
+\-Reimplemented in \hyperlink{class_cell_aaf492522ce24129fcac85bafb5dcc8f2}{\-Cell}, and \hyperlink{class_graphics_cell_o_d_e_a74aba3f28026f3ac58e19c92d26b170b}{\-Graphics\-Cell\-O\-D\-E}.
+
+
+
+\-Definition at line 116 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_ab0a62023e5599c721fc4d6cad341785f}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!get\-Cell\-Height@{get\-Cell\-Height}}
+\index{get\-Cell\-Height@{get\-Cell\-Height}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{get\-Cell\-Height}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::get\-Cell\-Height} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_graphics_cell_base_ab0a62023e5599c721fc4d6cad341785f}
+
+
+\-Definition at line 109 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_aaf51239fcc44325ad9cb828b96424033}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!get\-Cell\-Index@{get\-Cell\-Index}}
+\index{get\-Cell\-Index@{get\-Cell\-Index}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{get\-Cell\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Graphics\-Cell\-Base\-::get\-Cell\-Index} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_graphics_cell_base_aaf51239fcc44325ad9cb828b96424033}
+
+
+\-Definition at line 95 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a0c638650a9cdbe65efdca7385d6f7454}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!get\-Cell\-Length@{get\-Cell\-Length}}
+\index{get\-Cell\-Length@{get\-Cell\-Length}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{get\-Cell\-Length}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::get\-Cell\-Length} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_graphics_cell_base_a0c638650a9cdbe65efdca7385d6f7454}
+
+
+\-Definition at line 102 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_aa23fb4905505dbd30f7f1a770a3a4e56}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!set\-Angle@{set\-Angle}}
+\index{set\-Angle@{set\-Angle}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{set\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graphics\-Cell\-Base\-::set\-Angle} (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_aa23fb4905505dbd30f7f1a770a3a4e56}
+
+
+\-Reimplemented in \hyperlink{class_graphics_cell_o_d_e_aed881ba0ff5d4d14474e9dba8cde8045}{\-Graphics\-Cell\-O\-D\-E}, and \hyperlink{class_graphics_cell_composite_a28ceffaeac749a10742c70ce490b552c}{\-Graphics\-Cell\-Composite}.
+
+
+
+\-Definition at line 88 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a78cfe59851d680ee459449dbd8befef7}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!set\-Cell\-Height@{set\-Cell\-Height}}
+\index{set\-Cell\-Height@{set\-Cell\-Height}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{set\-Cell\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graphics\-Cell\-Base\-::set\-Cell\-Height} (
+\begin{DoxyParamCaption}
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a78cfe59851d680ee459449dbd8befef7}
+
+
+\-Reimplemented in \hyperlink{class_graphics_cell_o_d_e_af1a589ec827fcdbdb868a7abab7170d7}{\-Graphics\-Cell\-O\-D\-E}, and \hyperlink{class_graphics_cell_composite_a82373a1c4f0a6b53bd016da7d65313a3}{\-Graphics\-Cell\-Composite}.
+
+
+
+\-Definition at line 65 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a1bd5925a454cd3926652de53ce584f68}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!set\-Cell\-Index@{set\-Cell\-Index}}
+\index{set\-Cell\-Index@{set\-Cell\-Index}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{set\-Cell\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graphics\-Cell\-Base\-::set\-Cell\-Index} (
+\begin{DoxyParamCaption}
+\item[{int}]{cell\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a1bd5925a454cd3926652de53ce584f68}
+
+
+\-Reimplemented in \hyperlink{class_cell_a8fa3d31ea4774884a1dd0ce488f14123}{\-Cell}.
+
+
+
+\-Definition at line 72 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a3a7ec63edecc54916e2770f233f97bc8}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!set\-Cell\-Length@{set\-Cell\-Length}}
+\index{set\-Cell\-Length@{set\-Cell\-Length}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{set\-Cell\-Length}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graphics\-Cell\-Base\-::set\-Cell\-Length} (
+\begin{DoxyParamCaption}
+\item[{float}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a3a7ec63edecc54916e2770f233f97bc8}
+
+
+\-Reimplemented in \hyperlink{class_graphics_cell_o_d_e_a54402c3f0fd86ac188123913cc4cef37}{\-Graphics\-Cell\-O\-D\-E}, and \hyperlink{class_graphics_cell_composite_aafb153d72e30f23037c452547eb3c8fe}{\-Graphics\-Cell\-Composite}.
+
+
+
+\-Definition at line 58 of file \-Graphics\-Cell\-Base.\-cpp.
+
+\hypertarget{class_graphics_cell_base_a1b73509c13e0021bc01f28b481b3c649}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!set\-Pos@{set\-Pos}}
+\index{set\-Pos@{set\-Pos}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{set\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graphics\-Cell\-Base\-::set\-Pos} (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a1b73509c13e0021bc01f28b481b3c649}
+
+
+\-Reimplemented in \hyperlink{class_graphics_cell_o_d_e_a952ed1d614c183406028a4eecd871135}{\-Graphics\-Cell\-O\-D\-E}.
+
+
+
+\-Definition at line 79 of file \-Graphics\-Cell\-Base.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_graphics_cell_base_a4c4c5ffb768030b2cab10f28a1c62855}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!angle\-\_\-@{angle\-\_\-}}
+\index{angle\-\_\-@{angle\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{angle\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::angle\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a4c4c5ffb768030b2cab10f28a1c62855}
+
+
+\-Definition at line 61 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_af4b0f90f9c14e984bf41f83e4733f214}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!cell\-Height\-\_\-@{cell\-Height\-\_\-}}
+\index{cell\-Height\-\_\-@{cell\-Height\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{cell\-Height\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::cell\-Height\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_af4b0f90f9c14e984bf41f83e4733f214}
+\hyperlink{class_cell}{\-Cell} height in microns. 
+
+\-Definition at line 69 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_abc8e8449329725e09994f29303133f1b}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!cell\-Index\-\_\-@{cell\-Index\-\_\-}}
+\index{cell\-Index\-\_\-@{cell\-Index\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{cell\-Index\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Graphics\-Cell\-Base\-::cell\-Index\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_abc8e8449329725e09994f29303133f1b}
+
+
+\-Definition at line 60 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_af802ab0cfb04f2ff82d1ae98e7c572ec}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!cell\-Length\-\_\-@{cell\-Length\-\_\-}}
+\index{cell\-Length\-\_\-@{cell\-Length\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{cell\-Length\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::cell\-Length\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_af802ab0cfb04f2ff82d1ae98e7c572ec}
+\hyperlink{class_cell}{\-Cell} length in microns. 
+
+\-Definition at line 65 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_a05f33e20efcbaf7be07c1267987c5dda}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!cell\-Volume\-\_\-@{cell\-Volume\-\_\-}}
+\index{cell\-Volume\-\_\-@{cell\-Volume\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{cell\-Volume\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::cell\-Volume\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a05f33e20efcbaf7be07c1267987c5dda}
+
+
+\-Definition at line 70 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_ab8a1891eae9d2a1c0f24e1472f95b2c1}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!has\-Focus\-\_\-@{has\-Focus\-\_\-}}
+\index{has\-Focus\-\_\-@{has\-Focus\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{has\-Focus\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Graphics\-Cell\-Base\-::has\-Focus\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_ab8a1891eae9d2a1c0f24e1472f95b2c1}
+
+
+\-Definition at line 74 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_a2159559ca4d11ec38456a52c8cb110ab}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!pos\-X\-\_\-@{pos\-X\-\_\-}}
+\index{pos\-X\-\_\-@{pos\-X\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{pos\-X\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::pos\-X\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a2159559ca4d11ec38456a52c8cb110ab}
+
+
+\-Definition at line 71 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_a304771746db89eecb3f0c639cef8d412}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!pos\-Y\-\_\-@{pos\-Y\-\_\-}}
+\index{pos\-Y\-\_\-@{pos\-Y\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{pos\-Y\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::pos\-Y\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_a304771746db89eecb3f0c639cef8d412}
+
+
+\-Definition at line 72 of file \-Graphics\-Cell\-Base.\-h.
+
+\hypertarget{class_graphics_cell_base_af7b028e9b6a6950a95ab8b3355e05776}{\index{\-Graphics\-Cell\-Base@{\-Graphics\-Cell\-Base}!pos\-Z\-\_\-@{pos\-Z\-\_\-}}
+\index{pos\-Z\-\_\-@{pos\-Z\-\_\-}!GraphicsCellBase@{\-Graphics\-Cell\-Base}}
+\subsubsection[{pos\-Z\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Graphics\-Cell\-Base\-::pos\-Z\-\_\-}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{class_graphics_cell_base_af7b028e9b6a6950a95ab8b3355e05776}
+
+
+\-Definition at line 73 of file \-Graphics\-Cell\-Base.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_graphics_cell_base_8h}{\-Graphics\-Cell\-Base.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_graphics_cell_base_8cpp}{\-Graphics\-Cell\-Base.\-cpp}\end{DoxyCompactItemize}

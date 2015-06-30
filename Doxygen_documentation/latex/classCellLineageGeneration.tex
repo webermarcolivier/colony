@@ -1,0 +1,101 @@
+\section{CellLineageGeneration Class Reference}
+\label{classCellLineageGeneration}\index{CellLineageGeneration@{CellLineageGeneration}}
+Cell lineage event defining the genealogy of cells after a change in cell number.  
+
+
+{\tt \#include $<$CellLineageGeneration.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf CellLineageGeneration} ()
+\item 
+{\bf $\sim$CellLineageGeneration} ()
+\item 
+{\bf CellLineageGeneration} (const {\bf CellLineageGeneration} \&t)
+\item 
+void {\bf initialize} (double time, int nCells, int nCellsDelta, Array$<$ int, 1 $>$ motherCellsIndices)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+double {\bf time\_\-}
+\begin{CompactList}\small\item\em Time of the cell lineage event (division(s), cell deletion). \item\end{CompactList}\item 
+int {\bf nCellsDelta\_\-}
+\begin{CompactList}\small\item\em Change in the number of cells. \item\end{CompactList}\item 
+int {\bf nCells\_\-}
+\begin{CompactList}\small\item\em Number of cells $\ast$after$\ast$ the lineage event. \item\end{CompactList}\item 
+Array$<$ int, 1 $>$ {\bf motherCellsIndices\_\-}
+\begin{CompactList}\small\item\em Vector containing a list of the cells indices transformation. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Cell lineage event defining the genealogy of cells after a change in cell number. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CellLineageGeneration@{CellLineageGeneration}!CellLineageGeneration@{CellLineageGeneration}}
+\index{CellLineageGeneration@{CellLineageGeneration}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellLineageGeneration::CellLineageGeneration ()}\label{classCellLineageGeneration_fd1bcd2890e6c8241369db29126e767c}
+
+
+\index{CellLineageGeneration@{CellLineageGeneration}!$\sim$CellLineageGeneration@{$\sim$CellLineageGeneration}}
+\index{$\sim$CellLineageGeneration@{$\sim$CellLineageGeneration}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellLineageGeneration::$\sim$CellLineageGeneration ()}\label{classCellLineageGeneration_31940f9888f93979272680fdd782ed6a}
+
+
+\index{CellLineageGeneration@{CellLineageGeneration}!CellLineageGeneration@{CellLineageGeneration}}
+\index{CellLineageGeneration@{CellLineageGeneration}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}CellLineageGeneration::CellLineageGeneration (const {\bf CellLineageGeneration} \& {\em t})}\label{classCellLineageGeneration_c6da7f34945d8bed83593bdd115490fd}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{CellLineageGeneration@{CellLineageGeneration}!initialize@{initialize}}
+\index{initialize@{initialize}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void CellLineageGeneration::initialize (double {\em time}, \/  int {\em nCells}, \/  int {\em nCellsDelta}, \/  Array$<$ int, 1 $>$ {\em motherCellsIndices})}\label{classCellLineageGeneration_8ab621b6c89986fe9a9dced36322804e}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{CellLineageGeneration@{CellLineageGeneration}!time\_\-@{time\_\-}}
+\index{time\_\-@{time\_\-}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf CellLineageGeneration::time\_\-}}\label{classCellLineageGeneration_49b7013584bc82fd66cc1e3f9e768c71}
+
+
+Time of the cell lineage event (division(s), cell deletion). 
+
+\index{CellLineageGeneration@{CellLineageGeneration}!nCellsDelta\_\-@{nCellsDelta\_\-}}
+\index{nCellsDelta\_\-@{nCellsDelta\_\-}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellLineageGeneration::nCellsDelta\_\-}}\label{classCellLineageGeneration_046245349fd814cd7b5fc57d2a9d3fff}
+
+
+Change in the number of cells. 
+
+\index{CellLineageGeneration@{CellLineageGeneration}!nCells\_\-@{nCells\_\-}}
+\index{nCells\_\-@{nCells\_\-}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf CellLineageGeneration::nCells\_\-}}\label{classCellLineageGeneration_5ba370d3f6492d43ceeb2f73e7a2c47a}
+
+
+Number of cells $\ast$after$\ast$ the lineage event. 
+
+\index{CellLineageGeneration@{CellLineageGeneration}!motherCellsIndices\_\-@{motherCellsIndices\_\-}}
+\index{motherCellsIndices\_\-@{motherCellsIndices\_\-}!CellLineageGeneration@{CellLineageGeneration}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Array$<$int,1$>$ {\bf CellLineageGeneration::motherCellsIndices\_\-}}\label{classCellLineageGeneration_ea150bc5abc381a0a7df890ece98543f}
+
+
+Vector containing a list of the cells indices transformation. 
+
+Element i of the vector contains the index of the parent cell for cell i. For a division, the vector will contains two elements with index i0, where i0 is the index (in the array before the division) of the mother cell.
+
+Example: (0, 1, 2), division of cell 1 =$>$ (0, 1, 2, 1).
+
+For a deletion, the vector contains the indices of the rearranged cells in the new array with one element less.
+
+Example: (0, 1, 2, 3), deletion of cell 1 =$>$ (0, 2, 3). 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf CellLineageGeneration.h}\item 
+DATA/PROGS/COLONY/{\bf CellLineageGeneration.cpp}\end{CompactItemize}

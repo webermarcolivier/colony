@@ -1,0 +1,98 @@
+\section{DATA/PROGS/COLONY/RandomNumberGenerator.h File Reference}
+\label{RandomNumberGenerator_8h}\index{DATA/PROGS/COLONY/RandomNumberGenerator.h@{DATA/PROGS/COLONY/RandomNumberGenerator.h}}
+Project: Colony. 
+
+{\tt \#include \char`\"{}debug.h\char`\"{}}\par
+{\tt \#include $<$time.h$>$}\par
+{\tt \#include $<$gsl/gsl\_\-rng.h$>$}\par
+{\tt \#include $<$gsl/gsl\_\-randist.h$>$}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf RandomNumberGenerator}
+\begin{CompactList}\small\item\em Random number generator from the GSL library. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf MBIG}~1000000000
+\begin{CompactList}\small\item\em $<$ random number generator from the GSL library. \item\end{CompactList}\item 
+\#define {\bf MSEED}~161803398
+\item 
+\#define {\bf MZ}~0
+\item 
+\#define {\bf FAC}~(1.0/MBIG)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+float {\bf ran3} (long $\ast$idnum)
+\item 
+double {\bf unif\_\-rand\_\-dbl} (long $\ast$idum)
+\item 
+double {\bf box\_\-muller} (double m, double s, long $\ast$idnum)
+\item 
+double {\bf expdev} (double tau, long $\ast$idnum)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Project: Colony. 
+
+\begin{Desc}
+\item[Author:]Marc Weber\par
+ The Si.M.Bio.Sys. Group (CosmoLab)\par
+ Parc Científic de Barcelona\par
+ Barcelona, Spain.\par
+ {\tt http://thesimbiosys.isgreat.org} \end{Desc}
+\begin{Desc}
+\item[Version:]0.1 \end{Desc}
+\begin{Desc}
+\item[Date:]11/2009\end{Desc}
+Copyright 2009 by Marc Weber 
+
+\subsection{Define Documentation}
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!FAC@{FAC}}
+\index{FAC@{FAC}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FAC~(1.0/MBIG)}\label{RandomNumberGenerator_8h_8c3c7226e23b36189d1ec6b7d3504499}
+
+
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!MBIG@{MBIG}}
+\index{MBIG@{MBIG}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MBIG~1000000000}\label{RandomNumberGenerator_8h_31be5e3096afa10fc67bd629dd9332e7}
+
+
+$<$ random number generator from the GSL library. 
+
+random number distribution from the GSL library. \index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!MSEED@{MSEED}}
+\index{MSEED@{MSEED}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MSEED~161803398}\label{RandomNumberGenerator_8h_a0e8039431bb68581133ef4c1dbbe71d}
+
+
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!MZ@{MZ}}
+\index{MZ@{MZ}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MZ~0}\label{RandomNumberGenerator_8h_8dbc2223b1260b0fb5ab3d57bec0f74d}
+
+
+
+
+\subsection{Function Documentation}
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!box\_\-muller@{box\_\-muller}}
+\index{box\_\-muller@{box\_\-muller}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double box\_\-muller (double {\em m}, \/  double {\em s}, \/  long $\ast$ {\em idnum})}\label{RandomNumberGenerator_8h_e25015c1b80bfd8e8c8154a4f4a4d8c2}
+
+
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!expdev@{expdev}}
+\index{expdev@{expdev}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double expdev (double {\em tau}, \/  long $\ast$ {\em idnum})}\label{RandomNumberGenerator_8h_986ac6608d18ce24a21e4077e11be2ca}
+
+
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!ran3@{ran3}}
+\index{ran3@{ran3}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float ran3 (long $\ast$ {\em idnum})}\label{RandomNumberGenerator_8h_58f96c1273d8d774ccd7cb23c794a5dc}
+
+
+\index{RandomNumberGenerator.h@{RandomNumberGenerator.h}!unif\_\-rand\_\-dbl@{unif\_\-rand\_\-dbl}}
+\index{unif\_\-rand\_\-dbl@{unif\_\-rand\_\-dbl}!RandomNumberGenerator.h@{RandomNumberGenerator.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double unif\_\-rand\_\-dbl (long $\ast$ {\em idum})}\label{RandomNumberGenerator_8h_dcb6db6e65046ffb9bfc927517d9785e}
+
+

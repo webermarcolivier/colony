@@ -1,0 +1,119 @@
+\section{RandomNumberGenerator Class Reference}
+\label{classRandomNumberGenerator}\index{RandomNumberGenerator@{RandomNumberGenerator}}
+Random number generator from the GSL library.  
+
+
+{\tt \#include $<$RandomNumberGenerator.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf RandomNumberGenerator} ()
+\item 
+{\bf $\sim$RandomNumberGenerator} ()
+\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static void {\bf initialize} ()
+\begin{CompactList}\small\item\em Initiate the random number generator with a clock-cycle based seed. \item\end{CompactList}\item 
+static void {\bf initialize} (int seed)
+\begin{CompactList}\small\item\em Initiate the random number generator with user defined seed. \item\end{CompactList}\item 
+static double {\bf getUniform} ()
+\begin{CompactList}\small\item\em Returns a double in [0,1) with uniform probability. \item\end{CompactList}\item 
+static int {\bf getBinomial} (double p, unsigned int n)
+\begin{CompactList}\small\item\em Returns a random integer from the binomial distribution, the number of successes in {\tt n} independent trials with probability {\tt p}. \item\end{CompactList}\item 
+static double {\bf getCellCycle} (double tdet, double gamma)
+\begin{CompactList}\small\item\em Returns a random value for the cell cycle $t_c$. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Attributes}
+\begin{CompactItemize}
+\item 
+static int {\bf nLuxIExp\_\-} = 0
+\end{CompactItemize}
+\subsection*{Static Private Attributes}
+\begin{CompactItemize}
+\item 
+static gsl\_\-rng $\ast$ {\bf rngPtr\_\-} = 0
+\begin{CompactList}\small\item\em Pointer to the random number generator. \item\end{CompactList}\item 
+static long {\bf idnum\_\-} = -1
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Random number generator from the GSL library. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RandomNumberGenerator@{RandomNumberGenerator}!RandomNumberGenerator@{RandomNumberGenerator}}
+\index{RandomNumberGenerator@{RandomNumberGenerator}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}RandomNumberGenerator::RandomNumberGenerator ()}\label{classRandomNumberGenerator_8e7e711ea58f13f3ed95becbe33684e9}
+
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!$\sim$RandomNumberGenerator@{$\sim$RandomNumberGenerator}}
+\index{$\sim$RandomNumberGenerator@{$\sim$RandomNumberGenerator}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}RandomNumberGenerator::$\sim$RandomNumberGenerator ()}\label{classRandomNumberGenerator_f4949b4234bd8d8283028162f8a8e7f5}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{RandomNumberGenerator@{RandomNumberGenerator}!initialize@{initialize}}
+\index{initialize@{initialize}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void RandomNumberGenerator::initialize ()\hspace{0.3cm}{\tt  [static]}}\label{classRandomNumberGenerator_7f9ac1a577f5f72fd07b5e769f232fbe}
+
+
+Initiate the random number generator with a clock-cycle based seed. 
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!initialize@{initialize}}
+\index{initialize@{initialize}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void RandomNumberGenerator::initialize (int {\em seed})\hspace{0.3cm}{\tt  [static]}}\label{classRandomNumberGenerator_16d763e85961dddeeebee1be0fc8a3a2}
+
+
+Initiate the random number generator with user defined seed. 
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!getUniform@{getUniform}}
+\index{getUniform@{getUniform}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double RandomNumberGenerator::getUniform ()\hspace{0.3cm}{\tt  [inline, static]}}\label{classRandomNumberGenerator_4f452a69c4f0fd0044979e3eea6ef358}
+
+
+Returns a double in [0,1) with uniform probability. 
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!getBinomial@{getBinomial}}
+\index{getBinomial@{getBinomial}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int RandomNumberGenerator::getBinomial (double {\em p}, \/  unsigned int {\em n})\hspace{0.3cm}{\tt  [inline, static]}}\label{classRandomNumberGenerator_fbb6020f2d5d13d08ce12256370d6408}
+
+
+Returns a random integer from the binomial distribution, the number of successes in {\tt n} independent trials with probability {\tt p}. 
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!getCellCycle@{getCellCycle}}
+\index{getCellCycle@{getCellCycle}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double RandomNumberGenerator::getCellCycle (double {\em tdet}, \/  double {\em gamma})\hspace{0.3cm}{\tt  [static]}}\label{classRandomNumberGenerator_4a8e5b43607e3d3d406bdc4f07ca3567}
+
+
+Returns a random value for the cell cycle $t_c$. 
+
+It is given by: \[ t_c = \gamma t_{det} + (1-\gamma)t_{sto} \] where $t_{det}$ and $t_{sto}$ are the deterministic and stochastic components of the cell cycle respectively, and $\gamma\in [0,1]$ is a parameter that weight their relative importance. Note that we acknowledge the fact that, prior to division, cells must mature and grow and consequently the cell cycle has a minimum duration $\gamma t_{det}$. The stochastic part, $t_{sto}$, is supposed to be exponentially distributed and its probability density reads, \[ \rho(t_{sto}) = \frac{1}{t_{det}} e^{-\frac{t_{sto}}{t_{det}}} \] Note that: \[ <\tau> = t_{det} \] \[ \sigma_{\tau} = (1-\gamma) t_{det} \] 
+
+\subsection{Member Data Documentation}
+\index{RandomNumberGenerator@{RandomNumberGenerator}!rngPtr\_\-@{rngPtr\_\-}}
+\index{rngPtr\_\-@{rngPtr\_\-}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}gsl\_\-rng $\ast$ {\bf RandomNumberGenerator::rngPtr\_\-} = 0\hspace{0.3cm}{\tt  [static, private]}}\label{classRandomNumberGenerator_1f60eeed4ca919d3b009ec559d6d8c14}
+
+
+Pointer to the random number generator. 
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!idnum\_\-@{idnum\_\-}}
+\index{idnum\_\-@{idnum\_\-}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long {\bf RandomNumberGenerator::idnum\_\-} = -1\hspace{0.3cm}{\tt  [static, private]}}\label{classRandomNumberGenerator_fe34100153bf8f8fb51acd9f0bef1af5}
+
+
+\index{RandomNumberGenerator@{RandomNumberGenerator}!nLuxIExp\_\-@{nLuxIExp\_\-}}
+\index{nLuxIExp\_\-@{nLuxIExp\_\-}!RandomNumberGenerator@{RandomNumberGenerator}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf RandomNumberGenerator::nLuxIExp\_\-} = 0\hspace{0.3cm}{\tt  [static]}}\label{classRandomNumberGenerator_7a5c2be0f01f6265dee7285bc511f956}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+DATA/PROGS/COLONY/{\bf RandomNumberGenerator.h}\item 
+DATA/PROGS/COLONY/{\bf RandomNumberGenerator.cpp}\end{CompactItemize}

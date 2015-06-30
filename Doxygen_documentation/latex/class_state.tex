@@ -1,0 +1,256 @@
+\hypertarget{class_state}{\section{\-State \-Class \-Reference}
+\label{class_state}\index{\-State@{\-State}}
+}
+
+
+{\ttfamily \#include $<$\-State.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}{\-State} ()
+\item 
+\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\-State} ()
+\item 
+void \hyperlink{class_state_a1871bc0d9a775f3cb322293bd375708d}{initialize} (const \-State\-Init\-Param \&p)
+\item 
+\hyperlink{class_state}{\-State} \& \hyperlink{class_state_a5c60ecb4c9602877fb2336d931bd2220}{operator=} (const \hyperlink{class_state}{\-State} \&s2)
+\item 
+double \hyperlink{class_state_a1c4adb7d612f35c6bf289be5b90617ac}{get\-Time\-Dependent\-Volume} (const double time) const 
+\item 
+\-Tiny\-Vector$<$ double, 3 $>$ \hyperlink{class_state_a291e9c5c798ccb597a4bf17b187795e7}{get\-Time\-Dependent\-Cell\-Dimensions} (const double time)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-Array$<$ int, 1 $>$ \hyperlink{class_state_a283b1ba6e0c44e73351cfbc23c5f6208}{x\-\_\-}
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_state_ae9d97b07af3961c3dea57bc6d18fcaf1}{x\-Conc\-\_\-}
+\item 
+vector$<$ string $>$ \hyperlink{class_state_a4f25db3d6595db7531c406b3bab9b2ea}{list\-Species\-Name\-\_\-}
+\item 
+\-Array$<$ double, 1 $>$ \hyperlink{class_state_a5e1c561cb95ed83f9a91dd3faa19f7bb}{propensities\-\_\-}
+\item 
+\-Tiny\-Vector$<$ double, 3 $>$ \hyperlink{class_state_a488acdebb1d3312dd543ff106358b706}{position\-\_\-}
+\item 
+double \hyperlink{class_state_a5fed656957b2140ae358da6c835f66f2}{angle\-\_\-}
+\item 
+double \hyperlink{class_state_ad9506466f0cf4b294e606b8899fd6399}{cell\-Volume0\-\_\-}
+\item 
+double \hyperlink{class_state_aa7df5457c409b86df9a5be587726ba49}{cell\-Length\-\_\-}
+\item 
+double \hyperlink{class_state_a994d5634f7c1440f2db9b4c0df381584}{cell\-Length0\-\_\-}
+\item 
+double \hyperlink{class_state_a8ffa6fbc7b121992d5d7d5dbef3ffce4}{cell\-Height\-\_\-}
+\item 
+double \hyperlink{class_state_a23f54bcf077dfed8d98ce8325f47d07e}{cell\-Height0\-\_\-}
+\item 
+double \hyperlink{class_state_accaf47f10a98b8f358865c227cf7ee81}{time\-Previous\-Division\-\_\-}
+\item 
+double \hyperlink{class_state_ac8cc11c0aa1e35e7dcef4a8bd4582a2b}{cell\-Cycle\-Duration\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_state_a5f265ea7c747fb68c3551d8034c1ee17}{operator$<$$<$} (ostream \&out, const \hyperlink{class_state}{\-State} \&s)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-State of a cell.
+
+\-This class defines all the variables for the state of a cell.
+
+\-Remark 1\-: \-These variables will be accessed and updated frequently by the integrator algorithm.
+
+\-Remark 2\-: \-All the variable are public. \-Since this class is intended to be used as a data structure for another class, it is easier to make the attributes public. 
+
+\-Definition at line 60 of file \-State.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}{\index{\-State@{\-State}!\-State@{\-State}}
+\index{\-State@{\-State}!State@{\-State}}
+\subsubsection[{\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-State\-::\-State} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}
+
+
+\-Definition at line 20 of file \-State.\-cpp.
+
+\hypertarget{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{\index{\-State@{\-State}!$\sim$\-State@{$\sim$\-State}}
+\index{$\sim$\-State@{$\sim$\-State}!State@{\-State}}
+\subsubsection[{$\sim$\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-State\-::$\sim$\-State} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_state_afab438d92b90dc18d194dbd9c9c8bab3}
+
+
+\-Definition at line 37 of file \-State.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_state_a291e9c5c798ccb597a4bf17b187795e7}{\index{\-State@{\-State}!get\-Time\-Dependent\-Cell\-Dimensions@{get\-Time\-Dependent\-Cell\-Dimensions}}
+\index{get\-Time\-Dependent\-Cell\-Dimensions@{get\-Time\-Dependent\-Cell\-Dimensions}!State@{\-State}}
+\subsubsection[{get\-Time\-Dependent\-Cell\-Dimensions}]{\setlength{\rightskip}{0pt plus 5cm}\-Tiny\-Vector$<$ double, 3 $>$ {\bf \-State\-::get\-Time\-Dependent\-Cell\-Dimensions} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+)}}\label{class_state_a291e9c5c798ccb597a4bf17b187795e7}
+
+
+\-Definition at line 173 of file \-State.\-cpp.
+
+\hypertarget{class_state_a1c4adb7d612f35c6bf289be5b90617ac}{\index{\-State@{\-State}!get\-Time\-Dependent\-Volume@{get\-Time\-Dependent\-Volume}}
+\index{get\-Time\-Dependent\-Volume@{get\-Time\-Dependent\-Volume}!State@{\-State}}
+\subsubsection[{get\-Time\-Dependent\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::get\-Time\-Dependent\-Volume} (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+) const}}\label{class_state_a1c4adb7d612f35c6bf289be5b90617ac}
+
+
+\-Definition at line 162 of file \-State.\-cpp.
+
+\hypertarget{class_state_a1871bc0d9a775f3cb322293bd375708d}{\index{\-State@{\-State}!initialize@{initialize}}
+\index{initialize@{initialize}!State@{\-State}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-State\-::initialize} (
+\begin{DoxyParamCaption}
+\item[{const \-State\-Init\-Param \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_state_a1871bc0d9a775f3cb322293bd375708d}
+\-Remark\-: \-The time\-Previous\-Division\-\_\- and cell\-Cycle\-Duration\-\_\- variables are not initialized by this function. \-There initial values are set to -\/infinity and +infinity respectively, and can be changed when initializing an object of the \hyperlink{class_cell}{\-Cell} class (they cannot be changed from \hyperlink{class_cell_base}{\-Cell\-Base}). \-Note\-: \-Then these variables should be put in the \hyperlink{class_cell}{\-Cell} class, that would be the best way to do it... 
+
+\-Definition at line 46 of file \-State.\-cpp.
+
+\hypertarget{class_state_a5c60ecb4c9602877fb2336d931bd2220}{\index{\-State@{\-State}!operator=@{operator=}}
+\index{operator=@{operator=}!State@{\-State}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-State} \& \-State\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-State} \&}]{s2}
+\end{DoxyParamCaption}
+)}}\label{class_state_a5c60ecb4c9602877fb2336d931bd2220}
+\-Assignment operator. 
+
+\-Definition at line 116 of file \-State.\-cpp.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{class_state_a5f265ea7c747fb68c3551d8034c1ee17}{\index{\-State@{\-State}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!State@{\-State}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf \-State} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{class_state_a5f265ea7c747fb68c3551d8034c1ee17}
+\-Operator that outputs the content of a \hyperlink{class_cell}{\-Cell} state. \-Remark\-: it is declared as a friend operator, so that it has access to the private part of the \hyperlink{class_state}{\-State} class. 
+
+\-Definition at line 132 of file \-State.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_state_a5fed656957b2140ae358da6c835f66f2}{\index{\-State@{\-State}!angle\-\_\-@{angle\-\_\-}}
+\index{angle\-\_\-@{angle\-\_\-}!State@{\-State}}
+\subsubsection[{angle\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::angle\-\_\-}}}\label{class_state_a5fed656957b2140ae358da6c835f66f2}
+
+
+\-Definition at line 132 of file \-State.\-h.
+
+\hypertarget{class_state_ac8cc11c0aa1e35e7dcef4a8bd4582a2b}{\index{\-State@{\-State}!cell\-Cycle\-Duration\-\_\-@{cell\-Cycle\-Duration\-\_\-}}
+\index{cell\-Cycle\-Duration\-\_\-@{cell\-Cycle\-Duration\-\_\-}!State@{\-State}}
+\subsubsection[{cell\-Cycle\-Duration\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::cell\-Cycle\-Duration\-\_\-}}}\label{class_state_ac8cc11c0aa1e35e7dcef4a8bd4582a2b}
+\-Duration of the current cell cycle. \-The cell cycle can vary from on cycle to another, thus this variable is updated after the cell divison. 
+
+\-Definition at line 151 of file \-State.\-h.
+
+\hypertarget{class_state_a23f54bcf077dfed8d98ce8325f47d07e}{\index{\-State@{\-State}!cell\-Height0\-\_\-@{cell\-Height0\-\_\-}}
+\index{cell\-Height0\-\_\-@{cell\-Height0\-\_\-}!State@{\-State}}
+\subsubsection[{cell\-Height0\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::cell\-Height0\-\_\-}}}\label{class_state_a23f54bcf077dfed8d98ce8325f47d07e}
+
+
+\-Definition at line 140 of file \-State.\-h.
+
+\hypertarget{class_state_a8ffa6fbc7b121992d5d7d5dbef3ffce4}{\index{\-State@{\-State}!cell\-Height\-\_\-@{cell\-Height\-\_\-}}
+\index{cell\-Height\-\_\-@{cell\-Height\-\_\-}!State@{\-State}}
+\subsubsection[{cell\-Height\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::cell\-Height\-\_\-}}}\label{class_state_a8ffa6fbc7b121992d5d7d5dbef3ffce4}
+
+
+\-Definition at line 139 of file \-State.\-h.
+
+\hypertarget{class_state_a994d5634f7c1440f2db9b4c0df381584}{\index{\-State@{\-State}!cell\-Length0\-\_\-@{cell\-Length0\-\_\-}}
+\index{cell\-Length0\-\_\-@{cell\-Length0\-\_\-}!State@{\-State}}
+\subsubsection[{cell\-Length0\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::cell\-Length0\-\_\-}}}\label{class_state_a994d5634f7c1440f2db9b4c0df381584}
+
+
+\-Definition at line 138 of file \-State.\-h.
+
+\hypertarget{class_state_aa7df5457c409b86df9a5be587726ba49}{\index{\-State@{\-State}!cell\-Length\-\_\-@{cell\-Length\-\_\-}}
+\index{cell\-Length\-\_\-@{cell\-Length\-\_\-}!State@{\-State}}
+\subsubsection[{cell\-Length\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::cell\-Length\-\_\-}}}\label{class_state_aa7df5457c409b86df9a5be587726ba49}
+
+
+\-Definition at line 137 of file \-State.\-h.
+
+\hypertarget{class_state_ad9506466f0cf4b294e606b8899fd6399}{\index{\-State@{\-State}!cell\-Volume0\-\_\-@{cell\-Volume0\-\_\-}}
+\index{cell\-Volume0\-\_\-@{cell\-Volume0\-\_\-}!State@{\-State}}
+\subsubsection[{cell\-Volume0\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::cell\-Volume0\-\_\-}}}\label{class_state_ad9506466f0cf4b294e606b8899fd6399}
+\-Volume of the cell at the beginning of the cell cycle. 
+
+\-Definition at line 136 of file \-State.\-h.
+
+\hypertarget{class_state_a4f25db3d6595db7531c406b3bab9b2ea}{\index{\-State@{\-State}!list\-Species\-Name\-\_\-@{list\-Species\-Name\-\_\-}}
+\index{list\-Species\-Name\-\_\-@{list\-Species\-Name\-\_\-}!State@{\-State}}
+\subsubsection[{list\-Species\-Name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ {\bf \-State\-::list\-Species\-Name\-\_\-}}}\label{class_state_a4f25db3d6595db7531c406b3bab9b2ea}
+\-List of the species names. 
+
+\-Definition at line 123 of file \-State.\-h.
+
+\hypertarget{class_state_a488acdebb1d3312dd543ff106358b706}{\index{\-State@{\-State}!position\-\_\-@{position\-\_\-}}
+\index{position\-\_\-@{position\-\_\-}!State@{\-State}}
+\subsubsection[{position\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Tiny\-Vector$<$double,3$>$ {\bf \-State\-::position\-\_\-}}}\label{class_state_a488acdebb1d3312dd543ff106358b706}
+
+
+\-Definition at line 131 of file \-State.\-h.
+
+\hypertarget{class_state_a5e1c561cb95ed83f9a91dd3faa19f7bb}{\index{\-State@{\-State}!propensities\-\_\-@{propensities\-\_\-}}
+\index{propensities\-\_\-@{propensities\-\_\-}!State@{\-State}}
+\subsubsection[{propensities\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$double,1$>$ {\bf \-State\-::propensities\-\_\-}}}\label{class_state_a5e1c561cb95ed83f9a91dd3faa19f7bb}
+\-Vector containing the propensities of each reaction channels, depends on the chemical system. 
+
+\-Definition at line 129 of file \-State.\-h.
+
+\hypertarget{class_state_accaf47f10a98b8f358865c227cf7ee81}{\index{\-State@{\-State}!time\-Previous\-Division\-\_\-@{time\-Previous\-Division\-\_\-}}
+\index{time\-Previous\-Division\-\_\-@{time\-Previous\-Division\-\_\-}!State@{\-State}}
+\subsubsection[{time\-Previous\-Division\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-State\-::time\-Previous\-Division\-\_\-}}}\label{class_state_accaf47f10a98b8f358865c227cf7ee81}
+\-Absolute time of the previous division event (birth of the cell). 
+
+\-Definition at line 145 of file \-State.\-h.
+
+\hypertarget{class_state_a283b1ba6e0c44e73351cfbc23c5f6208}{\index{\-State@{\-State}!x\-\_\-@{x\-\_\-}}
+\index{x\-\_\-@{x\-\_\-}!State@{\-State}}
+\subsubsection[{x\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$int,1$>$ {\bf \-State\-::x\-\_\-}}}\label{class_state_a283b1ba6e0c44e73351cfbc23c5f6208}
+\-Vector containing the number of molecules of each chemical species. 
+
+\-Definition at line 113 of file \-State.\-h.
+
+\hypertarget{class_state_ae9d97b07af3961c3dea57bc6d18fcaf1}{\index{\-State@{\-State}!x\-Conc\-\_\-@{x\-Conc\-\_\-}}
+\index{x\-Conc\-\_\-@{x\-Conc\-\_\-}!State@{\-State}}
+\subsubsection[{x\-Conc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-Array$<$double,1$>$ {\bf \-State\-::x\-Conc\-\_\-}}}\label{class_state_ae9d97b07af3961c3dea57bc6d18fcaf1}
+\-Vector containing the concentration of each chemical species. 
+
+\-Definition at line 118 of file \-State.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_state_8h}{\-State.\-h}\item 
+/media/\-My\-Passport\-Blue/\-Data/\-Research/\-Simulations/\-Colony/\hyperlink{_state_8cpp}{\-State.\-cpp}\end{DoxyCompactItemize}
