@@ -6,3 +6,4 @@ obj/
 #build files
 *.o
 
+./Mathematica/colony_example.nb.backup
