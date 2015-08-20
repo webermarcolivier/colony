@@ -6919,7 +6919,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"Clear", "[", 
     RowBox[{"systemCell", ",", "systemMilieu", ",", "systemTotal"}], "]"}], 
-   ";"}], "\n"}], "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"NPCellMilieu", "=", "\[IndentingNewLine]", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", 
@@ -16574,30 +16574,31 @@ Cell["\<\
 Compile C++ project with QtCreator. The different libraries needed for \
 compilation are listed in COLONY.pro project file at the line beginning with \
 LIBS += and also some headers at line INCLUDEPATH +=. For compiling the code \
-without the GUI, i.e. without defining the GUI option in debug.h, one needs \
-the following libraries:\
-\>", "Text",
- CellChangeTimes->{{3.59644129369739*^9, 3.5964415647073097`*^9}, {
-  3.602400685363875*^9, 3.602400760424368*^9}, {3.6024010408641148`*^9, 
-  3.602401109746235*^9}, {3.602401316238937*^9, 3.602401353467821*^9}, {
-  3.602404875252759*^9, 3.602404931393256*^9}}],
+without the GUI, i.e. without defining the GUI option in debug.h, one still \
+needs to compile with QtCreator and one needs the following libraries:\
+\>", "Text"],
 
 Cell[CellGroupData[{
 
 Cell[TextData[{
- "Blitz++ version 0.9, a fast implementation of arrays in C++. ",
+ "Blitz++ version 0.10, a fast implementation of arrays in C++. ",
  ButtonBox["website",
   BaseStyle->"Hyperlink",
   ButtonData->{
     URL["http://blitz.sourceforge.net/"], None},
   ButtonNote->"http://blitz.sourceforge.net/"],
  ". This one is used throughout the code to define arrays."
-}], "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-  3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-  3.602402047173683*^9}, {3.6024022260017242`*^9, 3.602402230059451*^9}, {
-  3.602402379516677*^9, 3.6024023798039093`*^9}, {3.602402452154483*^9, 
-  3.602402452438595*^9}}],
+}], "Item"],
+
+Cell[CellGroupData[{
+
+Cell["libblitz0ldbl and libblitz0-dev (ubuntu packages)", "Subitem"],
+
+Cell["\<\
+Note that there is an important difference in the array reading method (as \
+reading from the input file) between version 0.9 and 0.10.\
+\>", "Subitem"]
+}, Open  ]],
 
 Cell[TextData[{
  "Boost system and Boost filesystem, version 1.48, for handling files for \
@@ -16606,23 +16607,23 @@ output. ",
   BaseStyle->"Hyperlink",
   ButtonData->{"www.boost.org", None}],
  ". Used in the Output class."
-}], "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-  3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-  3.6024020891268682`*^9}, {3.602402152892961*^9, 3.602402178588401*^9}, {
-  3.602402235429892*^9, 3.6024022536852083`*^9}, {3.602402368399065*^9, 
-  3.602402374235682*^9}, {3.6024025634746447`*^9, 3.60240256348256*^9}}],
+}], "Item"],
+
+Cell[CellGroupData[{
+
+Cell["libboost-system and libboost-system-dev (ubuntu packages)", "Subitem"],
+
+Cell["\<\
+libboost-filesystem and libboost-filesystem-dev (ubuntu packages)\
+\>", "Subitem"]
+}, Open  ]],
 
 Cell["\<\
 GSL library, version 1.15,the GNU scientific library, website. Used in the \
 random number generator, class RandomNumberGenerator.\
-\>", "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-   3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-   3.6024020891268682`*^9}, {3.602402152892961*^9, 3.6024021892335243`*^9}, {
-   3.602402517830937*^9, 3.602402541397573*^9}, {3.602402614979384*^9, 
-   3.6024026193981133`*^9}, {3.602402651092854*^9, 3.602402652074223*^9}, {
-   3.602402702989127*^9, 3.602402732766498*^9}, 3.60240282120922*^9}],
+\>", "Item"],
+
+Cell["libgsl0ldbl and libgsl0-dev (ubuntu packages)", "Subitem"],
 
 Cell["\<\
 ODE library, Open Dynamics Engine, version 0.11. website. Used in the \
@@ -16631,43 +16632,25 @@ if the GUI option is not set, the spatial dynamics of the cells can still be \
 computed. This can be chosen from an option in the input file, but I think \
 that even if desactivated in the input file, we still need the library to \
 compile the code.\
-\>", "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-  3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-  3.6024020891268682`*^9}, {3.602402152892961*^9, 3.6024021892335243`*^9}, {
-  3.602402517830937*^9, 3.602402541397573*^9}, {3.602402614979384*^9, 
-  3.6024026193981133`*^9}, {3.602402651092854*^9, 3.602402652074223*^9}, {
-  3.602402702989127*^9, 3.6024027404090776`*^9}, {3.602402802587824*^9, 
-  3.602402946831708*^9}, {3.602402982268085*^9, 3.602402983208632*^9}, {
-  3.6024030714348593`*^9, 3.602403071440715*^9}}],
+\>", "Item"],
+
+Cell["libode1 and libode-dev (ubuntu packages)", "Subitem"],
 
 Cell["\<\
 libstdc++, additional runtime library for C++ compiled with the GNU compiler. \
 version 4.6.3.\
-\>", "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-  3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-  3.6024020891268682`*^9}, {3.602402152892961*^9, 3.6024021892335243`*^9}, {
-  3.602402517830937*^9, 3.602402541397573*^9}, {3.602402614979384*^9, 
-  3.6024026193981133`*^9}, {3.602402651092854*^9, 3.602402652074223*^9}, {
-  3.602402702989127*^9, 3.6024027404090776`*^9}, {3.602402802587824*^9, 
-  3.602402946831708*^9}, {3.602402982268085*^9, 3.602402983208632*^9}, {
-  3.6024030714348593`*^9, 3.6024031233416767`*^9}, {3.602403290435977*^9, 
-  3.6024032904396677`*^9}}],
+\>", "Item"],
 
 Cell["\<\
-QT xml package. Add the option QT += xml in the project file COLONY.pro. Used \
-for ???.\
-\>", "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-  3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-  3.6024020891268682`*^9}, {3.602402152892961*^9, 3.6024021892335243`*^9}, {
-  3.602402517830937*^9, 3.602402541397573*^9}, {3.602402614979384*^9, 
-  3.6024026193981133`*^9}, {3.602402651092854*^9, 3.602402652074223*^9}, {
-  3.602402702989127*^9, 3.6024027404090776`*^9}, {3.602402802587824*^9, 
-  3.602402946831708*^9}, {3.602402982268085*^9, 3.602402983208632*^9}, {
-  3.6024030714348593`*^9, 3.6024031233416767`*^9}, {3.602403290435977*^9, 
-  3.602403331096717*^9}, {3.602403507206799*^9, 3.602403517392864*^9}}],
+libstdc++6:amd64 and libstdc++-4.9-dev:amd64 (ubuntu packages)\
+\>", "Subitem"],
+
+Cell["\<\
+QT xml package. Add the option QT += xml in the project file COLONY.pro. Not \
+sure if this is necessary in newer versions of Qt.\
+\>", "Item"],
+
+Cell[CellGroupData[{
 
 Cell["\<\
 ATLAS library, optimized BLAS library from ATLAS (Automatically Tuned Linear \
@@ -16676,27 +16659,38 @@ matrix-vector multiplication in the Langevin algorithm. Speed up 1000x this \
 computation step. This library has to be compiled for each \
 architecture/machine, and result in optimized ATLAS, CBLAS and LAPACK \
 libraries. GFORTRAN and f77BLAS seem to be needed also.\
-\>", "Item",
- CellChangeTimes->{{3.602401363374756*^9, 3.602401369442827*^9}, {
-  3.602401849412922*^9, 3.602401867773731*^9}, {3.6024019729102907`*^9, 
-  3.6024020891268682`*^9}, {3.602402152892961*^9, 3.6024021892335243`*^9}, {
-  3.602402517830937*^9, 3.602402541397573*^9}, {3.602402614979384*^9, 
-  3.6024026193981133`*^9}, {3.602402651092854*^9, 3.602402652074223*^9}, {
-  3.602402702989127*^9, 3.6024027404090776`*^9}, {3.602402802587824*^9, 
-  3.602402946831708*^9}, {3.602402982268085*^9, 3.602402983208632*^9}, {
-  3.6024030714348593`*^9, 3.6024031233416767`*^9}, {3.602403290435977*^9, 
-  3.602403331096717*^9}, {3.602403507206799*^9, 3.602403522683895*^9}, {
-  3.602403606685624*^9, 3.60240366081607*^9}, {3.602403698707963*^9, 
-  3.6024037783813868`*^9}, {3.602403928534733*^9, 3.6024039374700537`*^9}, {
-  3.602404005061524*^9, 3.602404064401655*^9}, {3.602404205591486*^9, 
-  3.602404280028921*^9}}]
+\>", "Subitem"],
+
+Cell[TextData[{
+ "OpenBLAS. Supposedely as fast as the ATLAS library but easier to install \
+(no need to compile for specific architecture). There is an ubuntu package \
+libopenblas-base and libopenblas-dev. See ",
+ ButtonBox["this article",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.stat.cmu.edu/~nmv/2013/07/09/for-faster-r-use-openblas-\
+instead-better-than-atlas-trivial-to-switch-to-on-ubuntu/"], None},
+  ButtonNote->
+   "http://www.stat.cmu.edu/~nmv/2013/07/09/for-faster-r-use-openblas-instead-\
+better-than-atlas-trivial-to-switch-to-on-ubuntu/"],
+ " about installation and performance. We can switch between different \
+alternatives for the BLAS library with the command"
+}], "Subitem"]
+}, Open  ]]
 }, Open  ]],
 
-Cell["\<\
-In addition to the libraries above, one also needs additional libraries when \
-compiling the GUI:\
-\>", "Text",
+Cell[TextData[{
+ "In addition to the libraries above, one also needs additional libraries \
+when compiling the ",
+ StyleBox["GUI",
+  FontWeight->"Bold"],
+ ":"
+}], "Text",
  CellChangeTimes->{{3.602404373318019*^9, 3.602404399642026*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Qt libraries", "Item"],
 
 Cell[TextData[{
  StyleBox["HAS BEEN DELETED.",
@@ -16709,27 +16703,29 @@ on a bunch of libraries, as GLU, GLUT, and the OPENGL and XML Qt packages. "
  CellChangeTimes->{
   3.602404410404954*^9, {3.60240451251926*^9, 3.6024045854540653`*^9}, {
    3.602404715958202*^9, 3.602404802299737*^9}, {3.6119037655307407`*^9, 
-   3.611903770752842*^9}}],
+   3.611903770752842*^9}}]
+}, Open  ]],
 
 Cell["For more information see the lab notebook page.", "Text",
  CellChangeTimes->{{3.602403456522344*^9, 3.60240347582738*^9}}],
 
 Cell[TextData[{
- "Important options can be set before compilation in the debug.h file. The \
-most important option is to choose between fixed cell volume simulation and \
-growing and dividing cell simulation, reflected in the option \
-\"TIME_DEPENDENT_PROPENSITIES\".\nCopy executable in the directory ",
+ "Important options can be set in the debug.h file that will result in \
+different code sections being compiled and thus in different executables. We \
+use this hard-coded options mainly for maintaining a high level of \
+computational performance, especially to avoid conditionals that would appear \
+in the most-inner loop of the simulation (like an if condition at each \
+Gillespie time step). The most important option is to choose between fixed \
+cell volume simulation and growing/dividing cell simulation, reflected in the \
+option \"TIME_DEPENDENT_PROPENSITIES\".\nOnce compiled, copy the executable \
+in the directory ",
  StyleBox["inputFilePath.\n", "Input"],
  "The executable can be run with an individual input file, or one can use the \
 multithreading script, which will run as many threads as input files in the \
 same directory.\nOutput will be written in the directory ",
  StyleBox["outputPath", "Input"],
  "."
-}], "Text",
- CellChangeTimes->{{3.59644129369739*^9, 3.5964415647073097`*^9}, {
-  3.602400685363875*^9, 3.602400760424368*^9}, {3.6024010408641148`*^9, 
-  3.602401109746235*^9}, {3.602401316238937*^9, 3.602401353467821*^9}, {
-  3.6024046113071127`*^9, 3.602404611842791*^9}}]
+}], "Text"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -19194,9 +19190,11 @@ Cell[BoxData[{
   RowBox[{"SetDirectory", "[", "outputPath", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"aTraj", "=", "1"}], ";", 
+  RowBox[{
+   RowBox[{"aTraj", "=", "1"}], ";"}], 
   RowBox[{"(*", 
-   RowBox[{"test", " ", "modification"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"test", " ", "modification"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"bTraj", "=", "1"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"MemoryConstrained", "[", 
   RowBox[{"(*", 
@@ -26871,7 +26869,7 @@ WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"FileOutlineCache"->False,
 "VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 TrackCellChangeTimes->False,
-FrontEndVersion->"9.0 for Linux x86 (64-bit) (November 20, 2012)",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
 StyleDefinitions->"Default.nb",
 $CellContext`TrackCellChangeTimes -> False
 ]
