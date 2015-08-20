@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue May 24 15:04:29 2011
-**      by: Qt User Interface Compiler version 4.6.2
+** Created by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -24,7 +23,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
 #include <QtGui/QProgressBar>
-#include <QtGui/QPushButton>
 #include <QtGui/QSlider>
 #include <QtGui/QStatusBar>
 #include <QtGui/QTableView>
@@ -45,7 +43,6 @@ public:
     QToolButton *playButton;
     QToolButton *pauseButton;
     QProgressBar *simulationProgressBar;
-    QPushButton *pushButton;
     QGridLayout *gridLayout;
     QLabel *NCells;
     QLabel *NCellsNum;
@@ -130,16 +127,6 @@ public:
 
 
         gridLayout_2->addLayout(horizontalLayout, 0, 0, 1, 1);
-
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy);
-        pushButton->setMinimumSize(QSize(50, 15));
-        pushButton->setMaximumSize(QSize(120, 30));
-        pushButton->setBaseSize(QSize(120, 31));
-
-        gridLayout_2->addWidget(pushButton, 0, 2, 1, 1);
 
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
@@ -447,7 +434,6 @@ public:
         QObject::connect(speciesBackgroundColorMaxValueSpinBox, SIGNAL(valueChanged(double)), MainWindow, SLOT(setSpeciesBackgroundColorMaxValue(double)));
         QObject::connect(speciesBackgroundColorComboBox, SIGNAL(activated(int)), MainWindow, SLOT(setSpeciesBackgroundColorIndex(int)));
         QObject::connect(pauseButton, SIGNAL(clicked()), MainWindow, SLOT(pauseSimulation()));
-        QObject::connect(pushButton, SIGNAL(clicked()), MainWindow, SLOT(openOpenGLViewer()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -457,7 +443,6 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Quorum Sensing Simulation", 0, QApplication::UnicodeUTF8));
         playButton->setText(QString());
         pauseButton->setText(QString());
-        pushButton->setText(QApplication::translate("MainWindow", "OpenGL Viewer", 0, QApplication::UnicodeUTF8));
         NCells->setText(QApplication::translate("MainWindow", "NCells", 0, QApplication::UnicodeUTF8));
         NCellsNum->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
         time->setText(QApplication::translate("MainWindow", "time", 0, QApplication::UnicodeUTF8));
