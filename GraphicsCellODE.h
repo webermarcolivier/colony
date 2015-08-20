@@ -22,7 +22,7 @@
 
 // libraries header files
 #include <ode/ode.h>
-#include <blitz/tinyvec.h>
+#include <blitz/tinyvec2.h>
 
 // user header files
 #include "GraphicsCellBase.h"

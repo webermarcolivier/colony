@@ -26,8 +26,8 @@
 #include "QList"
 #include "QVector"
 #include "blitz/array.h"
-#include "blitz/tinyvec.h"
-#include "blitz/tinyvec-et.h"
+#include "blitz/tinyvec2.h"
+//#include "blitz/tinyvec-et.h" // file does not exist in last version of Blitz++
 #include <ode/ode.h>
 
 // user header files
