@@ -4,7 +4,7 @@
 obj/
 
 #build files
-Build/
+Build*
 *.o
 
 #library files
