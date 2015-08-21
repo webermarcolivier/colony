@@ -22,7 +22,6 @@ echo "Number of input files found: " $COUNT
 IFILE=1
 for f in $INPUTFILES; do
 	IDLIST[$IFILE]=`expr match "$f" '.*\([0-9][0-9][0-9]\)'`
-	echo ${IDLIST[$IFILE]}
 	let IFILE=$IFILE+1
 done
 IDLISTSTRING=$( IFS=$'\n'; echo "${IDLIST[*]}" )
