@@ -77,6 +77,7 @@ Input::Input(string inputFile)
 
     jumpNLines(inputfile,1);
     inputfile >> simTimePoints_;
+
     jumpNLines(inputfile,1);
 
     // Set total simulation time to the last simulation time point.
@@ -85,6 +86,7 @@ Input::Input(string inputFile)
     // Global parameters
     jumpNLines(inputfile,1);
     readWordsInOneLine(inputfile,listGlobalParametersName);
+
     jumpNLines(inputfile,1);
     inputfile >> globalParameterTimePoints;
     jumpNLines(inputfile,1);
@@ -331,7 +333,7 @@ Input::Input(string inputFile)
           = computePropensitiesMilieuTimeDependent;
       #endif // TIME_DEPENDENT_PROPENSITIES
     #endif // USE_CHEMICAL_LANGEVIN
-
+cout << "finish reading input" << endl;
     inputfile.close();
 
   } else {

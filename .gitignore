@@ -4,6 +4,13 @@
 obj/
 
 #build files
+Build/
 *.o
+
+#library files
+lib/
+
+#QtCreator tmp files
+COLONY.pro.user.*
 
 ./Mathematica/colony_example.nb.backup
