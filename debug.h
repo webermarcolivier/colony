@@ -90,7 +90,7 @@
   #endif
 
   // Define the single or double precision version of the ODE library
-  #define dSINGLE
+  #define dDOUBLE
 
 
 
