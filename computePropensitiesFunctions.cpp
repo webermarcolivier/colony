@@ -42,8 +42,8 @@ void computePropensitiesCell
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = 0.9033209999999998*((0.5000000000000007 + Input::globalParameter(0)*(1.500000000000001 + 1.0000000000000013*Input::globalParameter(0)))/pow(1. + 1.*Input::globalParameter(0),2) + (0.125*(20.000000000000004 - 10.000000000000002/(1. + 1.*Input::globalParameter(0))))/(0.125 + 1.3566683085495015*pow(x(1),3)));
-  a(1) = 0.9033209999999998*((0.5000000000000007 + Input::globalParameter(0)*(1.500000000000001 + 1.0000000000000013*Input::globalParameter(0)))/pow(1. + 1.*Input::globalParameter(0),2) + (0.125*(20.000000000000004 - 10.000000000000002/(1. + 1.*Input::globalParameter(0))))/(0.125 + 1.3566683085495015*pow(x(0),3)));
+  a(0) = 0.9033209999999998*(0.749999999999998 + Input::globalParameter(0) + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(1),3)));
+  a(1) = 0.9033209999999998*(0.749999999999998 + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(0),3)));
 
   a(2) = 1.*x(0);
   a(3) = 1.*x(1);
@@ -145,8 +145,8 @@ void computePropensitiesCellTimeDependent
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = (0.9033209999999998*volume*((0.5000000000000007 + Input::globalParameter(0)*(1.500000000000001 + 1.0000000000000013*Input::globalParameter(0)))/pow(1. + 1.*Input::globalParameter(0),2) + (0.125*(20.000000000000004 - 10.000000000000002/(1. + 1.*Input::globalParameter(0))))/(0.125 + 1.3566683085495015*pow(x(1),3))))/volume0;
-  a(1) = (0.9033209999999998*volume*((0.5000000000000007 + Input::globalParameter(0)*(1.500000000000001 + 1.0000000000000013*Input::globalParameter(0)))/pow(1. + 1.*Input::globalParameter(0),2) + (0.125*(20.000000000000004 - 10.000000000000002/(1. + 1.*Input::globalParameter(0))))/(0.125 + 1.3566683085495015*pow(x(0),3))))/volume0;
+  a(0) = (0.9033209999999998*volume*(0.749999999999998 + Input::globalParameter(0) + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(1),3))))/volume0;
+  a(1) = (0.9033209999999998*volume*(0.749999999999998 + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(0),3))))/volume0;
 
   a(2) = x(0);
   a(3) = x(1);
@@ -258,11 +258,11 @@ void computePropensitiesCellMilieu
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = Input::globalParameter(0)*x1(0);
-  a(1) = Input::globalParameter(0)*x1(1);
+  a(0) = x1(0);
+  a(1) = x1(1);
 
-  a(2) = (volume1/volume2)*Input::globalParameter(0)*x2(0);
-  a(3) = (volume1/volume2)*Input::globalParameter(0)*x2(1);
+  a(2) = (volume1/volume2)*x2(0);
+  a(3) = (volume1/volume2)*x2(1);
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
@@ -352,11 +352,11 @@ void computePropensitiesTimeDependentDiffusion
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = (volume/(volume0/0.693147180559945))*Input::globalParameter(0)*x1(0);
-  a(1) = (volume/(volume0/0.693147180559945))*Input::globalParameter(0)*x1(1);
+  a(0) = (volume/(volume0/0.693147180559945))*x1(0);
+  a(1) = (volume/(volume0/0.693147180559945))*x1(1);
 
-  a(2) = (volume/volumeExt)*Input::globalParameter(0)*x2(0);
-  a(3) = (volume/volumeExt)*Input::globalParameter(0)*x2(1);
+  a(2) = (volume/volumeExt)*x2(0);
+  a(3) = (volume/volumeExt)*x2(1);
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK

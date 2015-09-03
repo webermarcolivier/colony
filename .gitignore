@@ -1,16 +1,22 @@
 #Define all the file types that we want git to ignore (i.e. not be synchronized with the central repository)
 
-#C++ object files folder
+# C++ object files folder
 obj/
 
-#build files
+# build files
 Build*
 *.o
 
-#library files
+# library files
 lib/
 
-#QtCreator tmp files
+# QtCreator tmp files
 COLONY.pro.user.*
 
-./Mathematica/colony_example.nb.backup
+# Mathematica notebook backup copies
+./Mathematica/colony_example.nb.backup*
+
+# C++ functions that are written by the Mathematica notebook and are user model dependent
+# Note: it would be nice to keep an old version of the file as an example
+# but there is no need to update it each time we modify the user model.
+
