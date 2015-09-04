@@ -11,7 +11,7 @@ Build*
 lib/
 
 # QtCreator tmp files
-COLONY.pro.user.*
+COLONY.pro.user*
 
 # Mathematica notebook backup copies
 ./Mathematica/colony_example.nb.backup*
