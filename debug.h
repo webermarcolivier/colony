@@ -30,7 +30,7 @@
    * This option enables the dependence in time of the propensities of the
    * reactions, modelizing the cell growth.
    */
-  #define TIME_DEPENDENT_PROPENSITIES
+  //#define TIME_DEPENDENT_PROPENSITIES
 
   /**
    * This option sets the initial cell cycle phases of the cells as a random
