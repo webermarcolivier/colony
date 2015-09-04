@@ -19,4 +19,5 @@ COLONY.pro.user.*
 # C++ functions that are written by the Mathematica notebook and are user model dependent
 # Note: it would be nice to keep an old version of the file as an example
 # but there is no need to update it each time we modify the user model.
-
+chemicalLangevinComputeIncrement.cpp
+computePropensitiesFunctions.cpp
