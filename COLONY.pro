@@ -92,6 +92,4 @@ LIBS += -L/usr/lib -lblitz -lboost_system -lboost_filesystem -lgsl -lode -lopenb
 #QMAKE_CFLAGS+=-pg
 #QMAKE_CXXFLAGS+=-pg
 #QMAKE_LFLAGS+=-pg
-QMAKE_CXXFLAGS+=-static-libstdc++ -static-libgcc -static
-QMAKE_CFLAGS+=-static-libgcc -static
 DISTFILES +=
