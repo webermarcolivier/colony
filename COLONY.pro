@@ -37,7 +37,6 @@ SOURCES += main.cpp \
     SpatialIntegratorODE.cpp \
     GraphicsCellODE.cpp \
     IntegratorChemicalLangevin.cpp \
-    computeChemicalLangevinIncrement.cpp \
     chemicalLangevinComputeIncrement.cpp
 HEADERS += mainwindow.h \
     Param/SimulatorParam.h \
