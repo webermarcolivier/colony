@@ -79,18 +79,50 @@ noise_example\>\""}], ";"}], "\[IndentingNewLine]",
     RowBox[{"files", "."}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-  "sourceDirectory", "=", 
-   "\"\</media/MyPassportBlue/Data/Research/Simulations/Colony\>\""}], 
-  ";"}]}], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.528459240281973*^9, 3.5284592849562197`*^9}, {
-   3.528461039380423*^9, 3.528461039999916*^9}, {3.528629925233717*^9, 
-   3.528629943849769*^9}, {3.528633500236148*^9, 3.528633501077683*^9}, 
-   3.576996459941351*^9, {3.578135348758853*^9, 3.578135349800415*^9}, {
-   3.578650622012307*^9, 3.578650736548106*^9}, {3.595832707641046*^9, 
-   3.595832727962305*^9}, {3.595832792629924*^9, 3.595832869278357*^9}, {
-   3.595838874548821*^9, 3.595838887818351*^9}, {3.602397561553793*^9, 
-   3.6023975807175007`*^9}, {3.602397682006797*^9, 3.602397739349375*^9}}]
+   RowBox[{
+   "sourceDirectory", "=", 
+    "\"\</media/MyPassportBlue/Data/Research/Simulations/Colony\>\""}], ";"}],
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Check", " ", "if", " ", "the", " ", "directories", " ", "exist"}],
+    "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"DirectoryQ", "[", "pathPrefix", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+     "Print", "[", "\"\<pathPrefix directory does not exist!\>\"", "]"}], 
+     ";"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"DirectoryQ", "[", "inputFileDirectory", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+     "Print", "[", "\"\<inputFileDirectory directory does not exist!\>\"", 
+      "]"}], ";"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"DirectoryQ", "[", "outputDirectory", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+     "Print", "[", "\"\<outputDirectory directory does not exist!\>\"", "]"}],
+      ";"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"DirectoryQ", "[", "sourceDirectory", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+     "Print", "[", "\"\<sourceDirectory directory does not exist!\>\"", "]"}],
+      ";"}]}], "]"}], ";"}], "\[IndentingNewLine]"}], "Input",
+ InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6898,7 +6930,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"Clear", "[", 
     RowBox[{"systemCell", ",", "systemMilieu", ",", "systemTotal"}], "]"}], 
-   ";"}], "\n"}], "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"NPCellMilieu", "=", "\[IndentingNewLine]", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", 
@@ -10953,7 +10985,10 @@ Cell[BoxData[
       RowBox[{"outputPath", "=", "path"}], ";", "\[IndentingNewLine]", 
       RowBox[{"inputFilePath", "=", "inputFilePath"}], ";"}]}], 
     "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{"CreateDirectory", "[", "outputPath", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"CreateDirectory", "[", "inputFilePath", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Print", "[", 
      RowBox[{
@@ -11424,6 +11459,7 @@ to the global parameters themselves.\\n\>\""}]}], ";", "\[IndentingNewLine]",
         RowBox[{"f1", "=", 
          RowBox[{
          "f1", "<>", 
+          
           "\"\<#Total volume of the system (cells + milieu) in micrometers \
 cubic:\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
@@ -24615,8 +24651,8 @@ Cell[BoxData[
     RowBox[{"(*", 
      RowBox[{
       RowBox[{"colorGradientBase", "=", 
-       RowBox[{"ColorData", "[", "\"\<AvocadoColors\>\"", "]"}]}], ";"}], 
-     "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"ColorData", "[", "\"\<AvocadoColors\>\"", "]"}]}], ";"}], "*)"}
+     ], "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"colorGradientBase", "[", "x_", "]"}], ":=", 
      RowBox[{"Blend", "[", 
