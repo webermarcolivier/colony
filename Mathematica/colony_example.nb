@@ -5937,7 +5937,7 @@ Example: pos[Ve,species] = ", 4],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -9735,7 +9735,7 @@ Cell[BoxData[
   StripOnInput->False,
   FontSize->18]], "Output"]
 }, Open  ]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16438,7 +16438,7 @@ Cell[BoxData[
   Out[138]]], "Output"]
 }, Open  ]]
 }, Open  ]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16726,6 +16726,8 @@ Cell[BoxData[{
   3.596367277571445*^9, 3.596367424458867*^9}, {3.596367466644422*^9, 
   3.5963674827544527`*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
@@ -16967,7 +16969,7 @@ Cell[BoxData[
            RowBox[{"#", "[", 
             RowBox[{"[", "1", "]"}], "]"}], "=!=", "Dx"}], "&"}]}], "]"}]}], 
       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"simulationTime", "=", "20000"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"simulationTime", "=", "1000"}], ";", "\[IndentingNewLine]", 
       RowBox[{"nTrajectories", "=", "10"}], ";", "\[IndentingNewLine]", 
       RowBox[{"simTimePoints", "=", 
        RowBox[{"{", "simulationTime", "}"}]}], ";", "\[IndentingNewLine]", 
@@ -17916,7 +17918,548 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Print", "[", 
      RowBox[{"\"\<Parameters = \\n\>\"", ",", "par"}], "]"}], 
-    ";"}]}]}]], "Input"]
+    ";"}]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"V1 = \"\>", "\[InvisibleSpace]", "V1"}],
+  SequenceForm["V1 = ", $CellContext`V1],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Vtot = \"\>", "\[InvisibleSpace]", "150.`"}],
+  SequenceForm["Vtot = ", 150.],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Vx = \"\>", "\[InvisibleSpace]", "50.`"}],
+  SequenceForm["Vx = ", 50.],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Vext = \"\>", "\[InvisibleSpace]", "75.`"}],
+  SequenceForm["Vext = ", 75.],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"iseed = \"\>", "\[InvisibleSpace]", "521064"}],
+  SequenceForm["iseed = ", 521064],
+  Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
+Colony/Build_Qt4.8.6/Release/Coupling/Gillespie\"\>"], "Output"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CreateDirectory", "::", "filex"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], \
+"\<\"\[NoBreak]\\!\\(\\\"/home/mweber/Copy_Linux/Copy/Research_Copy/\
+Simulations/Colony/Build_Qt4.8.6/Release/Coupling/Gillespie/\\\"\\)\[NoBreak] \
+already exists. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/CreateDirectory\\\", ButtonNote -> \
+\\\"CreateDirectory::filex\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
+Colony/Build_Qt4.8.6/Release/Coupling/Gillespie\"\>"], "Output"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"x0Cell initial condition (nb of molecules) = \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "13"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"13", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True], ",", 
+       InterpretationBox["\<\"0.5287663729448976\"\>",
+        CForm[0.5287663729448976],
+        AutoDelete->True,
+        Editable->True]}], "}"}]}], "}"}]}],
+  SequenceForm[
+  "x0Cell initial condition (nb of molecules) = ", {{{1, 13}, {1, 13}, {1, 
+    13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 
+    13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 
+    13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {13, 1}, {13, 
+    1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 
+    1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 
+    1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}}, {
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976], 
+     CForm[0.5287663729448976]}}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"x0Milieu initial condition (nb of molecules) = \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}],
+  SequenceForm["x0Milieu initial condition (nb of molecules) = ", {0, 0}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"globalParSet = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", "0", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       FractionBox["1", "1000"], "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       FractionBox["1", "100"], "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       FractionBox["1", "10"], "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "1", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "10", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "100", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "500", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "1000", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "10000", "}"}], "}"}]}], "}"}]}],
+  SequenceForm["globalParSet = ", {{{0}}, {{
+      Rational[1, 1000]}}, {{
+      Rational[1, 100]}}, {{
+      Rational[1, 10]}}, {{1}}, {{10}}, {{100}}, {{500}}, {{1000}}, {{
+    10000}}}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"# globalParSet = \"\>", "\[InvisibleSpace]", "10"}],
+  SequenceForm["# globalParSet = ", 10],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Output path = \\n\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.\
+8.6/Release/Coupling/Gillespie\"\>"}],
+  SequenceForm[
+  "Output path = \n", 
+   "/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.8.\
+6/Release/Coupling/Gillespie"],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Input file path = \\n\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.\
+8.6/Release/Coupling/Gillespie\"\>"}],
+  SequenceForm[
+  "Input file path = \n", 
+   "/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.8.\
+6/Release/Coupling/Gillespie"],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Parameters = \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Alpha]2", "\[Rule]", "\[Alpha]1"}], ",", 
+     RowBox[{"\[Beta]2", "\[Rule]", "\[Beta]1"}], ",", 
+     RowBox[{"\[Alpha]1", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Beta]1", "\[Rule]", "10"}], ",", 
+     RowBox[{"K1", "\[Rule]", "expressionLevel"}], ",", 
+     RowBox[{"K2", "\[Rule]", "K1"}], ",", 
+     RowBox[{"expressionLevel", "\[Rule]", "0.5`"}], ",", 
+     RowBox[{"nCells", "\[Rule]", "50"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["V0", 
+       RowBox[{
+        FractionBox["nCells", "nconc0"], "-", 
+        RowBox[{"nCells", " ", "V0"}]}]]}], ",", 
+     RowBox[{"nconc0", "\[Rule]", 
+      FractionBox["1", 
+       RowBox[{"2", " ", "V0"}]]}], ",", 
+     RowBox[{"V0", "\[Rule]", "1.5`"}], ",", 
+     RowBox[{"L0", "\[Rule]", "2.5`"}], ",", 
+     RowBox[{"r0", "\[Rule]", "0.44`"}], ",", 
+     RowBox[{"cellLength0", "\[Rule]", "2"}], ",", 
+     RowBox[{"cellHeight0", "\[Rule]", "1"}], ",", 
+     RowBox[{"tau", "\[Rule]", "50"}]}], "}"}]}],
+  SequenceForm[
+  "Parameters = \n", {$CellContext`\[Alpha]2 -> $CellContext`\[Alpha]1, \
+$CellContext`\[Beta]2 -> $CellContext`\[Beta]1, $CellContext`\[Alpha]1 -> 
+    1, $CellContext`\[Beta]1 -> 
+    10, $CellContext`K1 -> $CellContext`expressionLevel, $CellContext`K2 -> \
+$CellContext`K1, $CellContext`expressionLevel -> 0.5, $CellContext`nCells -> 
+    50, $CellContext`r -> \
+$CellContext`V0/($CellContext`nCells/$CellContext`nconc0 - \
+$CellContext`nCells $CellContext`V0), $CellContext`nconc0 -> 
+    Rational[1, 2]/$CellContext`V0, $CellContext`V0 -> 1.5, $CellContext`L0 -> 
+    2.5, $CellContext`r0 -> 0.44, $CellContext`cellLength0 -> 
+    2, $CellContext`cellHeight0 -> 1, $CellContext`tau -> 50}],
+  Editable->False]], "Print"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -17940,12 +18483,14 @@ of reactions\
 \>", "Subsubsection",
  CellChangeTimes->{{3.543918309774103*^9, 3.543918343181843*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"Module", "[", 
    RowBox[{
     RowBox[{"{", 
-     RowBox[{"write1DArray", ",", "write2DArray", ",", 
+     RowBox[{"write1DArray", ",", "write2DArray", ",", "write3DArray", ",", 
       RowBox[{"threadID", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{
@@ -17970,9 +18515,10 @@ from 1.\>\"", "]"}], ";"}], "\[IndentingNewLine]", ",", "\[IndentingNewLine]",
              RowBox[{"f1", "<>", 
               RowBox[{"ToString", "[", 
                RowBox[{"StringForm", "[", 
-                RowBox[{"\"\<``\>\"", ",", 
-                 RowBox[{"Length", "[", "array1D", "]"}]}], "]"}], "]"}], 
-              "<>", "\"\<\\n[ \>\"", "<>", 
+                RowBox[{"\"\<(0,``)\>\"", ",", 
+                 RowBox[{
+                  RowBox[{"Length", "[", "array1D", "]"}], "-", "1"}]}], 
+                "]"}], "]"}], "<>", "\"\<\\n[ \>\"", "<>", 
               RowBox[{"ToString", "[", 
                RowBox[{"StringForm", "[", 
                 RowBox[{"\"\<``\>\"", ",", 
@@ -18004,14 +18550,16 @@ from 2.\>\"", "]"}], ";"}], "\[IndentingNewLine]", ",", "\[IndentingNewLine]",
              RowBox[{"f1", "<>", 
               RowBox[{"ToString", "[", 
                RowBox[{"StringForm", "[", 
-                RowBox[{"\"\<`` x ``\>\"", ",", 
+                RowBox[{"\"\<(0,``) x (0,``)\>\"", ",", 
                  RowBox[{
-                  RowBox[{"Dimensions", "[", "array2D", "]"}], "[", 
-                  RowBox[{"[", "1", "]"}], "]"}], ",", 
+                  RowBox[{
+                   RowBox[{"Dimensions", "[", "array2D", "]"}], "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "-", "1"}], ",", 
                  RowBox[{
-                  RowBox[{"Dimensions", "[", "array2D", "]"}], "[", 
-                  RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], "<>", 
-              "\"\<\\n[ \>\"", "<>", 
+                  RowBox[{
+                   RowBox[{"Dimensions", "[", "array2D", "]"}], "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "-", "1"}]}], "]"}], "]"}],
+               "<>", "\"\<\\n[ \>\"", "<>", 
               RowBox[{"ToString", "[", 
                RowBox[{"TableForm", "[", 
                 RowBox[{"array2D", ",", 
@@ -18125,7 +18673,8 @@ example for unlimited growth (boolean):\\n\>\""}]}], ";",
          RowBox[{"f1", "<>", 
           RowBox[{"ToString", "[", 
            RowBox[{"StringForm", "[", 
-            RowBox[{"\"\<``\\n\>\"", ",", "stopWhenReachingMaximumVolume"}], 
+            RowBox[{"\"\<``\\n\>\"", ",", 
+             RowBox[{"Boole", "[", "stopWhenReachingMaximumVolume", "]"}]}], 
             "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
          RowBox[{
@@ -18234,19 +18783,25 @@ console:\\n\>\""}]}], ";", "\[IndentingNewLine]",
          RowBox[{"f1", "<>", "\"\<#Simulation time points table:\\n\>\""}]}], 
         ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{"StringForm", "[", 
-            RowBox[{"\"\<``\>\"", ",", 
-             RowBox[{"Length", "[", "simTimePoints", "]"}]}], "]"}], "]"}], 
-          "<>", "\"\<\\n[ \>\"", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{"StringForm", "[", 
-            RowBox[{"\"\<``\>\"", ",", 
-             RowBox[{"TableForm", "[", 
-              RowBox[{"simTimePoints", ",", 
-               RowBox[{"TableDirections", "\[Rule]", "Row"}]}], "]"}]}], 
-            "]"}], "]"}], "<>", "\"\< ]\\n\>\""}]}], ";", 
+         RowBox[{"write1DArray", "[", 
+          RowBox[{"f1", ",", "simTimePoints"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"StringForm", "[", 
+              RowBox[{"\"\<``\>\"", ",", 
+               RowBox[{"Length", "[", "simTimePoints", "]"}]}], "]"}], "]"}], 
+            "<>", "\"\<\\n[ \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"StringForm", "[", 
+              RowBox[{"\"\<``\>\"", ",", 
+               RowBox[{"TableForm", "[", 
+                RowBox[{"simTimePoints", ",", 
+                 RowBox[{"TableDirections", "\[Rule]", "Row"}]}], "]"}]}], 
+              "]"}], "]"}], "<>", "\"\< ]\\n\>\""}]}], ";"}], "*)"}], 
         "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
          RowBox[{"f1", "<>", "\"\<#Global parameters name list:\\n\>\""}]}], 
@@ -18275,33 +18830,37 @@ defined in the simulation time points table. The third dimension correspond \
 to the global parameters themselves.\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         
         RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", 
+         RowBox[{"f1", "<>", "\"\<(0,\>\"", "<>", 
           RowBox[{"ToString", "[", 
            RowBox[{
             RowBox[{
-            "Dimensions", "[", "multiThreadingGlobalParIndicesTable", "]"}], 
-            "[", 
-            RowBox[{"[", "2", "]"}], "]"}], " ", 
-           RowBox[{"(*", 
+             RowBox[{
+             "Dimensions", "[", "multiThreadingGlobalParIndicesTable", "]"}], 
+             "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", 
+            RowBox[{"(*", 
+             RowBox[{
+             "This", " ", "is", " ", "the", " ", "number", " ", "of", " ", 
+              "parameters", " ", "per", " ", "thread"}], "*)"}], " ", "-", 
+            "1"}], "]"}], "<>", "\"\<) x (0,\>\"", "<>", 
+          RowBox[{"ToString", "[", 
+           RowBox[{
             RowBox[{
-            "This", " ", "is", " ", "the", " ", "number", " ", "of", " ", 
-             "parameters", " ", "per", " ", "thread"}], "*)"}], " ", "]"}], 
-          "<>", "\"\< x \>\"", "<>", 
+             RowBox[{"Dimensions", "[", 
+              RowBox[{"globalParSet", "[", 
+               RowBox[{"[", " ", "iThreadIndicesTable", " ", "]"}], "]"}], 
+              " ", "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", "-", "1"}], "]"}], "<>", 
+          "\"\<) x (0,\>\"", "<>", 
           RowBox[{"ToString", "[", 
            RowBox[{
-            RowBox[{"Dimensions", "[", 
-             RowBox[{"globalParSet", "[", 
-              RowBox[{"[", " ", "iThreadIndicesTable", " ", "]"}], "]"}], " ",
-              "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}], " ", "]"}], "<>", "\"\< x \>\"", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", 
-             RowBox[{"globalParSet", "[", 
-              RowBox[{"[", " ", "iThreadIndicesTable", " ", "]"}], "]"}], " ",
-              "]"}], "[", 
-            RowBox[{"[", "3", "]"}], "]"}], " ", "]"}], "<>", 
-          "\"\<\\n[\\n\>\""}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Dimensions", "[", 
+              RowBox[{"globalParSet", "[", 
+               RowBox[{"[", " ", "iThreadIndicesTable", " ", "]"}], "]"}], 
+              " ", "]"}], "[", 
+             RowBox[{"[", "3", "]"}], "]"}], "-", "1"}], "]"}], "<>", 
+          "\"\<)\\n[\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"Do", "[", "\[IndentingNewLine]", 
          RowBox[{
           RowBox[{
@@ -18698,60 +19257,69 @@ nGlobalPar vectors of initial condition:\\n\>\""}]}], ";",
 genetic species, DNA and protein-DNA complexes:\\n\>\""}]}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "dnaCell", "]"}], "[", 
-            RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
-          
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "dnaCell", "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", "\"\<\\n[ \>\""}]}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"StringInsert", "[", 
-          RowBox[{"f1", ",", 
-           RowBox[{"ToString", "[", 
-            RowBox[{"TableForm", "[", 
-             RowBox[{"dnaCell", ",", 
-              RowBox[{"TableSpacing", "\[Rule]", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
-           RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", "\"\< ]\\n\>\""}]}], ";", "\[IndentingNewLine]", 
-        
+         RowBox[{"write2DArray", "[", 
+          RowBox[{"f1", ",", "dnaCell"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "dnaCell", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "dnaCell", "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", 
+            "\"\<\\n[ \>\""}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"StringInsert", "[", 
+            RowBox[{"f1", ",", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"TableForm", "[", 
+               RowBox[{"dnaCell", ",", 
+                RowBox[{"TableSpacing", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
+             RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", "\"\< ]\\n\>\""}]}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
          RowBox[{
          "f1", "<>", 
           "\"\<#NV in cells. Stochiometric matrix of reactions in the \
 cells:\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "NVCell", "]"}], "[", 
-            RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
-          
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "NVCell", "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", "\"\<\\n[ \>\""}]}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"StringInsert", "[", 
-          RowBox[{"f1", ",", 
-           RowBox[{"ToString", "[", 
-            RowBox[{"TableForm", "[", 
-             RowBox[{"NVCell", ",", 
-              RowBox[{"TableSpacing", "\[Rule]", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
-           RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", "\"\< ]\\n\>\""}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"write2DArray", "[", 
+          RowBox[{"f1", ",", "NVCell"}], "]"}]}], ";", "\[IndentingNewLine]", 
         
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "NVCell", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "NVCell", "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", 
+            "\"\<\\n[ \>\""}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"StringInsert", "[", 
+            RowBox[{"f1", ",", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"TableForm", "[", 
+               RowBox[{"NVCell", ",", 
+                RowBox[{"TableSpacing", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
+             RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", "\"\< ]\\n\>\""}]}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
          RowBox[{
          "f1", "<>", 
@@ -18770,59 +19338,70 @@ cells:\\n\>\""}]}], ";", "\[IndentingNewLine]",
           "\"\<#NV cell-milieu. Stochiometric matrix of cell-milieu \
 reactions:\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "NVCellMilieu", "]"}], "[", 
-            RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
-          
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "NVCellMilieu", "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", "\"\<\\n[ \>\""}]}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"StringInsert", "[", 
-          RowBox[{"f1", ",", 
-           RowBox[{"ToString", "[", 
-            RowBox[{"TableForm", "[", 
-             RowBox[{"NVCellMilieu", ",", 
-              RowBox[{"TableSpacing", "\[Rule]", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
-           RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", "\"\< ]\\n\>\""}]}], ";", "\[IndentingNewLine]", 
-        
+         RowBox[{"write2DArray", "[", 
+          RowBox[{"f1", ",", "NVCellMilieu"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "NVCellMilieu", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "NVCellMilieu", "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", 
+            "\"\<\\n[ \>\""}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"StringInsert", "[", 
+            RowBox[{"f1", ",", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"TableForm", "[", 
+               RowBox[{"NVCellMilieu", ",", 
+                RowBox[{"TableSpacing", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
+             RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", "\"\< ]\\n\>\""}]}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
          RowBox[{
          "f1", "<>", 
           "\"\<#NV milieu. Stochiometric matrix of reactions in the \
 milieu:\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", 
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "NVMilieu", "]"}], "[", 
-            RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
-          
-          RowBox[{"ToString", "[", 
-           RowBox[{
-            RowBox[{"Dimensions", "[", "NVMilieu", "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", "\"\<\\n[ \>\""}]}], 
+         RowBox[{
+          RowBox[{"write2DArray", "[", 
+           RowBox[{"f1", ",", "NVMilieu"}], "]"}], "<>", "\"\<\\n\>\""}]}], 
         ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"StringInsert", "[", 
-          RowBox[{"f1", ",", 
-           RowBox[{"ToString", "[", 
-            RowBox[{"TableForm", "[", 
-             RowBox[{"NVMilieu", ",", 
-              RowBox[{"TableSpacing", "\[Rule]", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
-           RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"f1", "=", 
-         RowBox[{"f1", "<>", "\"\< ]\\n\\n\>\""}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "NVMilieu", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "]"}], "<>", "\"\< x \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{
+              RowBox[{"Dimensions", "[", "NVMilieu", "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "<>", 
+            "\"\<\\n[ \>\""}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"StringInsert", "[", 
+            RowBox[{"f1", ",", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"TableForm", "[", 
+               RowBox[{"NVMilieu", ",", 
+                RowBox[{"TableSpacing", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}], "]"}], ",", 
+             RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"f1", "=", 
+           RowBox[{"f1", "<>", "\"\< ]\\n\\n\>\""}]}], ";"}], "*)"}], 
         "\[IndentingNewLine]", "\[IndentingNewLine]", 
         RowBox[{"Export", "[", 
          RowBox[{"fpath", ",", "f1", ",", "\"\<Text\>\""}], "]"}], ";"}], 
@@ -19176,11 +19755,64 @@ milieu:\\n\>\""}]}], ";", "\[IndentingNewLine]",
    3.576835831498897*^9, 3.57683588374763*^9}, {3.591013603683926*^9, 
    3.591013670068316*^9}, {3.591518156844922*^9, 3.591518161175465*^9}, {
    3.5915250811651087`*^9, 3.591525226727581*^9}, {3.591525330593008*^9, 
-   3.5915253608710003`*^9}},
+   3.5915253608710003`*^9}, {3.605512808105694*^9, 3.605512810795018*^9}, {
+   3.64907487182211*^9, 3.6490749156149282`*^9}, {3.649075048672044*^9, 
+   3.649075081577921*^9}, 3.649075151169734*^9, {3.649075200703174*^9, 
+   3.649075253534059*^9}, {3.6490752959617157`*^9, 3.649075301501256*^9}, {
+   3.649075384353236*^9, 3.64907540348752*^9}, {3.649075450484569*^9, 
+   3.649075591702837*^9}, {3.649075662816759*^9, 3.649075725565937*^9}, {
+   3.649075813633217*^9, 3.649075813751979*^9}, {3.6490758630881767`*^9, 
+   3.6490759646216507`*^9}},
  ImageSize->{668, 543},
  ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}}]
-}, Closed]],
+ ImageRegion->{{0, 1}, {0, 1}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"DeleteFile", "::", "nffil"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"File not found during \
+\[NoBreak]\\!\\(DeleteFile[\\\"input.dat\\\"]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nffil\\\", \
+ButtonNote -> \\\"DeleteFile::nffil\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"DeleteFile", "::", "nffil"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"File not found during \
+\[NoBreak]\\!\\(DeleteFile[\\\"input.dat\\\"]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nffil\\\", \
+ButtonNote -> \\\"DeleteFile::nffil\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"DeleteFile", "::", "nffil"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"File not found during \
+\[NoBreak]\\!\\(DeleteFile[\\\"input.dat\\\"]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nffil\\\", \
+ButtonNote -> \\\"DeleteFile::nffil\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[\\(DeleteFile :: nffil\\), \
+\\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -19830,6 +20462,7 @@ const double volume0,\n  Array<double,1>& a\n);\\n\\n\\n\>\""}]}], ";",
          RowBox[{"f", "=", 
           RowBox[{
           "f", "<>", "\"\<void \>\"", "<>", "funcName", "<>", 
+           
            "\"\<\n(\n  const Array<int,1>& x,\n  const double volume,\n  \
 const double volume0,\n  Array<double,1>& a\n)\n{\n\n\>\""}]}], ";", 
          "\[IndentingNewLine]", 
@@ -24990,8 +25623,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"imagesize", "=", "500"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"fontFamily", "=", "\"\<Arial\>\""}], 
-  ";"}], "\[IndentingNewLine]", 
+  RowBox[{"fontFamily", "=", "\"\<Arial\>\""}], ";"}], "\[IndentingNewLine]", 
+
  RowBox[{
   RowBox[{"simDataXConcPlot", "=", 
    RowBox[{"simDataXConc", "[", 
@@ -33085,7 +33718,7 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1595, 1083},
+WindowSize->{1328, 1083},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"FileOutlineCache"->False,
 "VersionedStylesheet"->{"Default.nb"[8.] -> False}},
