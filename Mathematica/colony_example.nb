@@ -6930,7 +6930,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"Clear", "[", 
     RowBox[{"systemCell", ",", "systemMilieu", ",", "systemTotal"}], "]"}], 
-   ";"}], "\[IndentingNewLine]"}], "\n", 
+   ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"NPCellMilieu", "=", "\[IndentingNewLine]", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", 
@@ -8467,17 +8467,11 @@ Langevin equation,\n",
         SubscriptBox["a", "j"], 
         RowBox[{"1", "/", "2"}]], "(", "x", ")"}]}],
      FontSize->16]}], TraditionalForm]}]],
- "\nSee this blog post for more details: \
-http://www.marcweber.net/labnotebook/?p=1505#Multivariate_Langevin_and_Fokker-\
-Planck_equations"
+ "\nSee this blog post for more details: ",
+ "http://www.marcweber.net/labnotebook/2015/11/06/multivariate-langevin-and-\
+fokker-planck-equations/"
 }], "Text",
- InitializationGroup->True,
- CellChangeTimes->{{3.596272632239143*^9, 3.596272666068865*^9}, {
-   3.596272702473378*^9, 3.596272739850849*^9}, {3.596272784894346*^9, 
-   3.596272828491947*^9}, {3.5962729434021597`*^9, 3.596273122689604*^9}, {
-   3.596273192527321*^9, 3.59627345195391*^9}, {3.596273589470784*^9, 
-   3.596273592580978*^9}, {3.596273681830201*^9, 3.596273697654396*^9}, 
-   3.5962737586095448`*^9}],
+ InitializationGroup->True],
 
 Cell["\<\
 We develop the terms aj for all the cells, from the definition of the \
@@ -8700,7 +8694,7 @@ Cell[BoxData[
 
 Cell[BoxData["aj"], "Input",
  InitializationGroup->True]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -9382,7 +9376,7 @@ Cell[BoxData["NVLangevin"], "Input",
  ImageSize->{668, 543},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}}]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -9539,8 +9533,8 @@ Cell[BoxData["Bnoise"], "Input",
  CellChangeTimes->{{3.547796138703693*^9, 3.5477961618548107`*^9}, 
    3.5478997962827463`*^9, {3.551527652738063*^9, 3.551527673165605*^9}, 
    3.596270460125897*^9}]
-}, Closed]]
-}, Closed]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -11459,7 +11453,6 @@ to the global parameters themselves.\\n\>\""}]}], ";", "\[IndentingNewLine]",
         RowBox[{"f1", "=", 
          RowBox[{
          "f1", "<>", 
-          
           "\"\<#Total volume of the system (cells + milieu) in micrometers \
 cubic:\\n\>\""}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"f1", "=", 
@@ -12927,6 +12920,7 @@ Resetting a to 0.0\\\" << endl;\n      a(i) = 0.0;\n    }\n  }\n  #endif \
          RowBox[{"f2", "=", 
           RowBox[{
           "f2", "<>", "\"\<void \>\"", "<>", "funcName", "<>", 
+           
            "\"\<\n(\n  const Array<int,1>& x,\n  const double volume,\n  \
 const double volume0,\n  Array<double,1>& a\n);\\n\\n\\n\>\""}]}], ";", 
          "\[IndentingNewLine]", 
@@ -18093,8 +18087,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"imagesize", "=", "500"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"fontFamily", "=", "\"\<Arial\>\""}], 
-  ";"}], "\[IndentingNewLine]", 
+  RowBox[{"fontFamily", "=", "\"\<Arial\>\""}], ";"}], "\[IndentingNewLine]", 
+
  RowBox[{
   RowBox[{"simDataXConcPlot", "=", 
    RowBox[{"simDataXConc", "[", 
@@ -24651,8 +24645,8 @@ Cell[BoxData[
     RowBox[{"(*", 
      RowBox[{
       RowBox[{"colorGradientBase", "=", 
-       RowBox[{"ColorData", "[", "\"\<AvocadoColors\>\"", "]"}]}], ";"}], "*)"}
-     ], "\[IndentingNewLine]", 
+       RowBox[{"ColorData", "[", "\"\<AvocadoColors\>\"", "]"}]}], ";"}], 
+     "*)"}], "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"colorGradientBase", "[", "x_", "]"}], ":=", 
      RowBox[{"Blend", "[", 
