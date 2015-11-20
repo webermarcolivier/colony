@@ -16,7 +16,7 @@
 #ifndef CHEMICALSYSTEM_H
 #define CHEMICALSYSTEM_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // libraries header files
 #include <blitz/array.h>

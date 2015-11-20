@@ -16,7 +16,7 @@
 #ifndef CELLLINEAGEGENERATION_H
 #define CELLLINEAGEGENERATION_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>

@@ -9,11 +9,9 @@ Cell["Colony Example", "Title",
 Cell["\<\
 In this notebook, we will show how to setup the executable and the input \
 files for the Colony software, and analyze the data. We implement a \
-simplified version of the Ising model.\
-\>", "Text",
- CellChangeTimes->{{3.5786504560084543`*^9, 3.5786504632986307`*^9}, {
-  3.578650566442237*^9, 3.578650608281907*^9}, {3.595833865206441*^9, 
-  3.59583387774575*^9}}],
+simplified version of the Ising model: a toggle switch regulatory network \
+interfaced by two quorum sensing pathways.\
+\>", "Text"],
 
 Cell[CellGroupData[{
 
@@ -39,8 +37,6 @@ Cell[TextData[{
 }], "Subsection",
  CellChangeTimes->{{3.528720788187031*^9, 3.52872079593016*^9}, {
   3.595837853209869*^9, 3.595837853487803*^9}}],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -83,8 +79,8 @@ Qt4.8.6/Release\>\""}], ";"}], "\[IndentingNewLine]",
   RowBox[{
    RowBox[{
    "sourceDirectory", "=", 
-    "\"\</media/MyPassportBlue/Data/Research/Simulations/Colony\>\""}], ";"}],
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "\"\</home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony\>\""}],
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"Check", " ", "if", " ", "the", " ", "directories", " ", "exist"}],
     "*)"}]}], "\[IndentingNewLine]", 
@@ -124,10 +120,7 @@ Qt4.8.6/Release\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{
      "Print", "[", "\"\<sourceDirectory directory does not exist!\>\"", "]"}],
       ";"}]}], "]"}], ";"}], "\[IndentingNewLine]"}], "Input",
- InitializationCell->True],
-
-Cell[BoxData["\<\"sourceDirectory directory does not exist!\"\>"], "Print"]
-}, Open  ]]
+ InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1056,9 +1049,10 @@ Cell[BoxData[
        3.5999999999999996`}, {5., 4.8}, {6., 6.}, {7., 7.199999999999999}, {
        8., 8.4}, {9., 9.6}, {10., 10.799999999999999`}, {11., 12.}}]}, 
      {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], AbsoluteThickness[
-      1.6], LineBox[{{1., 0.}, {2., 1.6}, {3., 3.2}, {4., 
-       4.800000000000001}, {5., 6.4}, {6., 8.}, {7., 9.600000000000001}, {8., 
-       11.200000000000001`}, {9., 12.8}, {10., 14.4}, {11., 16.}}]}}, {
+      1.6], 
+      LineBox[{{1., 0.}, {2., 1.6}, {3., 3.2}, {4., 4.800000000000001}, {5., 
+       6.4}, {6., 8.}, {7., 9.600000000000001}, {8., 11.200000000000001`}, {
+       9., 12.8}, {10., 14.4}, {11., 16.}}]}}, {
      {RGBColor[0, 0, 1], PointSize[0.019444444444444445`], AbsoluteThickness[
       1.6], GeometricTransformationBox[InsetBox[
         GraphicsBox[
@@ -2485,7 +2479,7 @@ Cell[BoxData[
     RowBox[{"(*", 
      RowBox[{"coefficient", " ", "of", " ", "diffusion"}], "*)"}], ",", 
     "\[IndentingNewLine]", 
-    RowBox[{"nCells", "\[Rule]", "50"}], 
+    RowBox[{"nCells", "\[Rule]", "100"}], 
     RowBox[{"(*", 
      RowBox[{
      "initial", " ", "number", " ", "of", " ", "cells", " ", "in", " ", "the",
@@ -2587,9 +2581,12 @@ Cell[BoxData[
    RowBox[{"expressionLevel", "\[Rule]", "0.5`"}], ",", 
    RowBox[{"Dx", "\[Rule]", 
     FractionBox["1", "100"]}], ",", 
-   RowBox[{"nCells", "\[Rule]", "50"}], ",", 
+   RowBox[{"nCells", "\[Rule]", "100"}], ",", 
    RowBox[{"r", "\[Rule]", 
-    FractionBox["V0", "Vext"]}], ",", 
+    FractionBox["V0", 
+     RowBox[{
+      FractionBox["nCells", "nconc0"], "-", 
+      RowBox[{"nCells", " ", "V0"}]}]]}], ",", 
    RowBox[{"nconc0", "\[Rule]", 
     FractionBox["1", 
      RowBox[{"2", " ", "V0"}]]}], ",", 
@@ -5519,7 +5516,7 @@ Cell[BoxData[{
  ImageSize->{668, 543},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}}]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -5937,7 +5934,7 @@ Example: pos[Ve,species] = ", 4],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -6678,6 +6675,8 @@ Cell[TextData[StyleBox["Example :",
  FontWeight->"Bold"]], "Text",
  CellChangeTimes->{{3.611902734240366*^9, 3.611902743179619*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"dnaCell", "=", 
@@ -6727,7 +6726,168 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Print", "[", 
   RowBox[{"\"\<dnaCell: \>\"", ",", 
-   RowBox[{"dnaCell", "//", "MatrixForm"}]}], "]"}]}], "Input"]
+   RowBox[{"dnaCell", "//", "MatrixForm"}]}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "pkspec1"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The expression \
+\[NoBreak]\\!\\(Extract[\\(\\(\\(\\({}\\)\\), \\(\\({1, 1}\\)\\)\\)\\)]\\)\
+\[NoBreak] cannot be used as a part specification. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Set\\\", ButtonNote -> \
+\\\"Set::pkspec1\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "pkspec1"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The expression \
+\[NoBreak]\\!\\(Extract[\\(\\(\\(\\({}\\)\\), \\(\\({1, 1}\\)\\)\\)\\)]\\)\
+\[NoBreak] cannot be used as a part specification. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Set\\\", ButtonNote -> \
+\\\"Set::pkspec1\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "pkspec1"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The expression \
+\[NoBreak]\\!\\(Extract[\\(\\(\\(\\({}\\)\\), \\(\\({1, 1}\\)\\)\\)\\)]\\)\
+\[NoBreak] cannot be used as a part specification. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Set\\\", ButtonNote -> \
+\\\"Set::pkspec1\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Extract", "::", "partw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Part \[NoBreak]\\!\\(1\\)\[NoBreak] of \
+\[NoBreak]\\!\\({}\\)\[NoBreak] does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Extract::partw\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "pkspec1"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The expression \
+\[NoBreak]\\!\\(Extract[\\(\\(\\(\\({}\\)\\), \\(\\({1, 1}\\)\\)\\)\\)]\\)\
+\[NoBreak] cannot be used as a part specification. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Set\\\", ButtonNote -> \
+\\\"Set::pkspec1\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"dnaCell: \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"0", "0"},
+       {"0", "0"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}],
+  SequenceForm["dnaCell: ", 
+   MatrixForm[{{0, 0}, {0, 0}}]],
+  Editable->False]], "Print"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8109,7 +8269,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"Clear", "[", 
     RowBox[{"systemCell", ",", "systemMilieu", ",", "systemTotal"}], "]"}], 
-   ";"}], "\[IndentingNewLine]"}], "\n", 
+   ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"NPCellMilieu", "=", "\[IndentingNewLine]", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", 
@@ -9735,7 +9895,7 @@ Cell[BoxData[
   StripOnInput->False,
   FontSize->18]], "Output"]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -12512,7 +12672,7 @@ Cell[BoxData[
            Appearance->None,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            Identity, 134, 26404261355949118895, 5/2],
+            Identity, 129, 26412131969803852262, 5/2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -12542,7 +12702,7 @@ Cell[BoxData[
            Appearance->None,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            Identity, 134, 26404261355949118895, 5 2],
+            Identity, 129, 26412131969803852262, 5 2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -12572,7 +12732,7 @@ Cell[BoxData[
            Appearance->None,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            Identity, 134, 26404261355949118895, Infinity],
+            Identity, 129, 26412131969803852262, Infinity],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -12639,7 +12799,7 @@ Cell[BoxData[
     StripOnInput->False],
    Deploy,
    DefaultBaseStyle->"Deploy"],
-  Out[134]]], "Output"]
+  Out[129]]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -13264,8 +13424,8 @@ Cell[BoxData[
     0, ($CellContext`Dx $CellContext`U[1][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`U[2][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`U[3][$CellContext`t])^Rational[1, 2], 
-    0, ($CellContext`Dx $CellContext`U[4][$CellContext`t])^Rational[1, 2], 
-    0, ($CellContext`Dx $CellContext`U[5][$CellContext`t])^Rational[1, 2], 
+    0, ($CellContext`Dx $CellContext`U[4][$CellContext`t])^Rational[1, 2], 0,
+     ($CellContext`Dx $CellContext`U[5][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`U[6][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`U[7][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`U[8][$CellContext`t])^Rational[1, 2], 
@@ -14975,8 +15135,8 @@ Cell[BoxData[
     0, ($CellContext`Dx $CellContext`V[5][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`V[6][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`V[7][$CellContext`t])^Rational[1, 2], 
-    0, ($CellContext`Dx $CellContext`V[8][$CellContext`t])^Rational[1, 2], 0, 
-    ($CellContext`Dx $CellContext`V[9][$CellContext`t])^Rational[1, 2], 
+    0, ($CellContext`Dx $CellContext`V[8][$CellContext`t])^Rational[1, 2], 
+    0, ($CellContext`Dx $CellContext`V[9][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`V[10][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`V[11][$CellContext`t])^Rational[1, 2], 
     0, ($CellContext`Dx $CellContext`V[12][$CellContext`t])^Rational[1, 2], 
@@ -16245,16 +16405,90 @@ Cell[BoxData[
        ItemBox[
         TagBox[
          RowBox[{"{", 
-          TemplateBox[{"1"},
-           "OutputSizeLimit`Skeleton",
-           DisplayFunction->(FrameBox[
-             RowBox[{"\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
-             Background -> GrayLevel[0.75], 
-             BaseStyle -> {
-              "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
-               ShowStringCharacters -> False}, BaselinePosition -> Baseline, 
-             ContentPadding -> False, FrameMargins -> 1, FrameStyle -> 
-             GrayLevel[0.75], RoundingRadius -> 7]& )], "}"}],
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             SqrtBox[
+              RowBox[{"\[Alpha]1", "+", 
+               FractionBox[
+                RowBox[{
+                 SuperscriptBox["K1", "3"], " ", "\[Beta]1"}], 
+                RowBox[{
+                 SuperscriptBox["K1", "3"], "+", 
+                 SuperscriptBox[
+                  RowBox[{
+                   RowBox[{"V", "[", "1", "]"}], "[", "t", "]"}], "3"]}]]}]], 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+             ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+             "0", ",", "0", ",", "0", ",", "0", ",", 
+             TemplateBox[{"200"},
+              "OutputSizeLimit`Skeleton",
+              DisplayFunction->(FrameBox[
+                
+                RowBox[{
+                 "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+                Background -> GrayLevel[0.75], 
+                BaseStyle -> {
+                 "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                  ShowStringCharacters -> False}, BaselinePosition -> 
+                Baseline, ContentPadding -> False, FrameMargins -> 1, 
+                FrameStyle -> GrayLevel[0.75], RoundingRadius -> 7]& )], ",", 
+             "0", ",", "0", ",", 
+             SqrtBox[
+              RowBox[{"Dx", " ", 
+               RowBox[{"Ue", "[", "t", "]"}]}]], ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+              "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+              ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+           
+           TemplateBox[{"100"},
+            "OutputSizeLimit`Skeleton",
+            DisplayFunction->(FrameBox[
+              RowBox[{"\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}],
+               Background -> GrayLevel[0.75], 
+              BaseStyle -> {
+               "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                ShowStringCharacters -> False}, BaselinePosition -> Baseline, 
+              ContentPadding -> False, FrameMargins -> 1, FrameStyle -> 
+              GrayLevel[0.75], RoundingRadius -> 7]& )], ",", 
+           RowBox[{"{", 
+            TemplateBox[{"1"},
+             "OutputSizeLimit`Skeleton",
+             DisplayFunction->(FrameBox[
+               
+               RowBox[{
+                "\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}], 
+               Background -> GrayLevel[0.75], 
+               BaseStyle -> {
+                "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                 ShowStringCharacters -> False}, BaselinePosition -> Baseline,
+                ContentPadding -> False, FrameMargins -> 1, FrameStyle -> 
+               GrayLevel[0.75], RoundingRadius -> 7]& )], "}"}]}], "}"}],
          Short[#, 5]& ],
         BaseStyle->{Deployed -> False},
         StripOnInput->False]},
@@ -16308,7 +16542,7 @@ Cell[BoxData[
            Appearance->None,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            Identity, 138, 26404261355949118895, 5/2],
+            Identity, 133, 26412131969803852262, 5/2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -16338,7 +16572,7 @@ Cell[BoxData[
            Appearance->None,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            Identity, 138, 26404261355949118895, 5 2],
+            Identity, 133, 26412131969803852262, 5 2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -16368,7 +16602,7 @@ Cell[BoxData[
            Appearance->None,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            Identity, 138, 26404261355949118895, Infinity],
+            Identity, 133, 26412131969803852262, Infinity],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -16435,10 +16669,10 @@ Cell[BoxData[
     StripOnInput->False],
    Deploy,
    DefaultBaseStyle->"Deploy"],
-  Out[138]]], "Output"]
+  Out[133]]], "Output"]
 }, Open  ]]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16555,6 +16789,8 @@ Cell[BoxData[{
    3.596366800251444*^9, {3.596366981399119*^9, 3.5963670141334867`*^9}, {
    3.5963672577815857`*^9, 3.596367262476224*^9}, {3.5963674424334717`*^9, 
    3.5963674477648*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"Plot", "[", "\[IndentingNewLine]", 
@@ -16726,6 +16962,185 @@ Cell[BoxData[{
   3.596367277571445*^9, 3.596367424458867*^9}, {3.596367466644422*^9, 
   3.5963674827544527`*^9}}],
 
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+    1.], LineBox[CompressedData["
+1:eJxFz3ssFAAcB/DzCIlbOFylwyGPyCOPK87dSWRy7IjzKs9OKOexHiglKVPc
+Ws8dd7sJC3OaZdm0ogetm9lNf7jlsZl3zeV1yNFj/H6/7bfvPn/8vtvPOiWH
+k65JIBDYf/dfUqvVdSLKK3/C/yEx49ZjE6Z5o4wdK+zKaZO8eXB9kcamViKB
+uWPDdrG0MVwPXBO0oeluuBcsSikdNwsmgemSqbQvNDK4r6pBqF1iAVacT35Y
+z7UC+zHGEpwircFi83P20jAquLUzpK70G7or3tMyOtEG/LHFcZghQX9VU4SO
+E+gfjcPyhp9oA06Nvu0K2mUjLkCyiWY37Cuk6Npum8wUrD+ZIZPRcjYp1sQR
+Ha0i0vRC0QrxbnN1NlrUYubzNNMOnNppE+OecQhcW5TNzIp1AIeZppTNFDiB
+ZU2P+oX8w+BQZi+Zne0Mnn5fGfVmCX2HFSGgXncBtySzLOli9OAtj9aYbvS0
+UfNymhz9W2JDzxtHa8+Ojq3OoYkeNWUlS2hyIddBR42m9pBk93cd2bYFk6+p
+mukOQb8LGNJVPUBznq1F9j93BS+sGAzIOW5gZ9P0wNrT7mBrsclkRbwH+O2v
+NekF7lEwqc27MSvTE/yhRz+ff8ULvF9kxsvI88b+iav3Skt9wBNLxvLqmzTw
+CjdQKb52DNzjIPOV3z0O9uqulKpu+4JTP0kiGI/9wLMHwz9XSOhgMsMzrVfo
+D9aQ5bjaNzPAfYJcI3oUE9w1cXmZN4Cu4tsrbWJY4PbRxRtDg+iOsixbq8QA
+sCFxKzHpO1rAGtGgxp4AK5syugrG0C9WiXu6zwbif8VJfNEUevGlmqG+eBKs
+3dVRd2YOvah1gMLID8J7N6EzdQFdp8OrL78UDJ43HvEsXkZXa+Vys/JPgSkK
+ZePrTnRrG1+1tYX+AwWjKuU=
+     "]]}, 
+   {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+    1.], LineBox[CompressedData["
+1:eJxFz2ksGwAUB/A6NmbI3N1VtDVlzLGiG9UyY2JKMOranKupTR3Zgc1mZhMb
+zbIzpU3TIUPUIpNJLBs7WCYijX3QzJFInVuYq5iyI7z3kpd/fh/eP3m2KdkR
+6doEAoHzd/8luUojE5Ne+RL+D5UdtxabMMkbYW1baVfGGOfNgmsLtTZ0Egns
+bRu1SuT1Yfrg6sB1bTejPWBxSsmYZZA5mCmdSPvCIIJ7KutEusUHwMrzyQ9r
+uTZgH9ZogmOkLVhidc5eHkoGN7cHy0q+oTvi6dbRiRTwxyaHIZYU/VVDEjmo
+0D/qhxR1P9GGEdUG1GW083qcv3QDzanbW0DSo26ZxhauPZkiEtEKjnmsmQM6
+Wm3M0A9BKyW7rDRZaHGTpdfTTDtwajslxi3jELimMIvNj6WBQy1SSqfyHcG9
+DY/6RILD4BB2N5GT5QSefF8R9WYRfccvXEi+7gxuSvazZkrQA7fcm2M60ZMm
+jUtpCvRvKYWZO4bWnR4ZXZlBG7tXlxYvookFXNpODZrcZd57f8eRLZPZAm31
+VGcw+p3/oJ76ATri2Wpk33MX8PyyYb8iwhXsZJEeUHPaDWwrMRsvj3cHv/21
+Kr/APQo2b/Gs52fSwR+6DPIEVzzA+8SWvIxcT+xXXb1XUuIFVi2aKqpuMsDL
+3IA5ybVj4C5ar7fi7nGwR2eFXH3bG5z6SRrOeuwDnj4Y9rlcygQTWfS0bpEv
+WKs328W+kQXuEeaYMKPY4A7V5SVeP7pSYD9HifEDt44s3BgcQLeV8qk2if5g
+I+PNxKTvaKHfsBY59gR4riGjI38U/WLFeHfn2QD8ryhJIJ5AL7zUsDQXT4J1
+O9pkZ2bQCzr7Say8QLx3FTmR59GynbzasktB4FnTYXrRErpKJ4fLzzsFJinn
+6l+3o5tbBOrNTfQf+L4uPw==
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Epilog->InsetBox[
+    BoxData[
+     FormBox[
+      PanelBox[
+       TagBox[
+        GridBox[{{
+           GraphicsBox[{
+             RGBColor[0.24720000000000014`, 0.24, 0.6], 
+             Thickness[0.1], 
+             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
+            AspectRatio -> 0.8333333333333334], 
+           StyleBox[
+           "p1", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
+            False]}, {
+           GraphicsBox[{
+             RGBColor[0.6, 0.24, 0.4428931686004542], 
+             Thickness[0.1], 
+             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
+            AspectRatio -> 0.8333333333333334], 
+           StyleBox[
+           "p2", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
+            False]}}, 
+         GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Center}}}, 
+         AutoDelete -> False, 
+         GridBoxItemSize -> {
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+         GridBoxSpacings -> {"Columns" -> {{0.5}}, "Rows" -> {{0.}}}], 
+        "Grid"], FrameMargins -> 5], TraditionalForm]], 
+    Scaled[{0.95, 0.9}], {Right, Top}],
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{"DefaultBoundaryStyle" -> Automatic, "ScalingFunctions" -> None},
+  PlotLabel->FormBox["\"Simulation run #1\"", TraditionalForm],
+  PlotRange->{{0., 49.99999897959184}, {0, 15}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+    1.], LineBox[CompressedData["
+1:eJxF0HssFAAcB/DzyCtu4XC9Doc8Io/Oozh3JDI5hjiv8uzklPNYD5S6pExx
+a7103O0mLAzNsmzXih60zOymP9zy2My75vI65Cgtv993++23zx+/3/b7WaZk
+R6SrEwgE1t/a7tRKVa2I8sqX8C86zLj12IRpzihjx3KbUq9Jzjy4rlBtUyOR
+wNyxQbu4tSFMB1wduKHuarAHLErhj5sGkcB0yVTaFy8yuLeiXqhZfAAsP5/8
+sI5tAfZhjCU4RFqCxWbnbFtDqeCWzuBa/je0NJ5mHp1oBf7YbD/MkKC/qihC
++wn0j4ZhWf1PtH5EtZ71CtppI85fsolm1e8toGhbM59XbUeXKVh/MkMmo2Us
+UqyxPTpaSfTSCUHLxbpmqiy0qNnU82mmDTi10yrGNeMQuKYwi8mNtQOHmqSU
+zOQ7gPsaH/ULeYfBIcweMivLETz9vjzqzRL6jl+4gHrdCdyc7GdOF6MHb7m1
+xHShpw2bltNk6N8SK3ruOFpzdnRsdQ5NdKsuKV5CkwvYdloqNLWb1Hd/15H/
+/9Rn8tSVM13B6Hf+Q9rKB+iIZ2uR/VXO4IUV/QFZhAvY0SQ9oOa0K9hSbDxZ
+Fu8GfvtrrfUC+yiY1ObRwM2kgT906+XxrriD94lMORm5Hrh/4uo9Pt8TPLFk
+JKu86QVeYQcoxNeOgbvt+rxld4+D3bvKW5W3vcGpnyThjMc+4NmDYZ/LJHQw
+mUFL6xH6gtX6sp1tmxjgXkGOIT2KCZZOXF7mDKAreLYKqxg/cPvo4o2hQXRH
+CdfaItEfbEDcSkz6jhb4jahRY0+AFY0Z0vwx9ItV4u6uswF4X1ESTzSFXnyp
+YqgungRrSjtqz8yhFzX2Uxh5gTjvInSkLqBrtTh1pZeCwPNGI7SiZXSlRg6b
+m3cKTJErGl53olvaeMqtLfQf+uduMQ==
+     "]]}, 
+   {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+    1.], LineBox[CompressedData["
+1:eJxFz3ssFAAcB/DzCAnL+yod7sgj8ug8inNHIpPHjrjDlWcnp5zHeqCUpExh
+reeOu93ELQzNsmxanR60bmY3/cHy2Ow8ay6vQ44e4/f7bb999/nj991+tqk5
+zAxNAoEQ+Xf/JblaXS8kvQog/B8bRsI6O2maO0bf8bB9ue8kdx7cUKSxqcUh
+MHZs2CFqk0TpgWtDNjQ9DPeChamlExahZmCaeCr9iy8R3FfVKNAusQIPn095
+2MCyAfvTx5OcY2zBIstzDm0RZHBrV1h96Td0dyLVOo5DAX9scRqhi9Ff1SSB
+kwL9QzIib/yJNmDW6tutoF03EoLEm+jIxn2FJF27bVsxatafzBCJaHmkGdvU
+CR2nMvLVC0cPi3ZbqrPRwhYLn6dZ9uC0Lkq8R+YhcF1RNoPHdgRHmKeWzRQ4
+g2VNj/oF/MPgcEYvMTLbBTz9vjL2zRL6TmB0Dfm6K7glJdCaJkIP3vJsjZei
+p42bl9Pl6N9iCi1vAq09Oza+Ooc28qwtK1lCEwtZjjpqNLnHTHZ/15FtExl8
+TdWMNAz9LmhIV/UAzXy2FtP/3A28sGIwIGe6g13MM4LrTnuAbUWmkxWJnuC3
+v9baLrCOgs3avSW8LCr4Q49+Pv+KF3i/0IKbmeeN/Yqr90pLfcCKJRN59U1f
+8AorWCm6dgzc4yjzk989DvaSVrapbvuB0z6Jo+mP/cGzB6M+V4hpYCKdmt4r
+CABryHLcHJrp4L6aXGNaLAPcrbi8zB1AV/EdlJT4QHDH2OKNoUF0ZxnPzoYT
+BDY02uIkf0fXBI5qkNknwMqmzO6CcfSLVaM90rPB+F9xMl84hV58qaarL54E
+a3d31p+ZQy9qHSDR80Pw3l3gQl5A1+twG8ovhYLnTUapxcvoaq1cFi//FJg0
+rJS87kK3tvNVW1voPwlPK30=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Epilog->InsetBox[
+    BoxData[
+     FormBox[
+      PanelBox[
+       TagBox[
+        GridBox[{{
+           GraphicsBox[{
+             RGBColor[0.24720000000000014`, 0.24, 0.6], 
+             Thickness[0.1], 
+             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
+            AspectRatio -> 0.8333333333333334], 
+           StyleBox[
+           "p1", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
+            False]}, {
+           GraphicsBox[{
+             RGBColor[0.6, 0.24, 0.4428931686004542], 
+             Thickness[0.1], 
+             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
+            AspectRatio -> 0.8333333333333334], 
+           StyleBox[
+           "p2", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
+            False]}}, 
+         GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Center}}}, 
+         AutoDelete -> False, 
+         GridBoxItemSize -> {
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+         GridBoxSpacings -> {"Columns" -> {{0.5}}, "Rows" -> {{0.}}}], 
+        "Grid"], FrameMargins -> 5], TraditionalForm]], 
+    Scaled[{0.95, 0.9}], {Right, Top}],
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{"DefaultBoundaryStyle" -> Automatic, "ScalingFunctions" -> None},
+  PlotLabel->FormBox["\"Simulation run #2\"", TraditionalForm],
+  PlotRange->{{0., 49.99999897959184}, {0, 15}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output"]
+}, Open  ]],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
@@ -16765,13 +17180,8 @@ Cell[BoxData[
      RowBox[{"colony", "."}]}], "*)"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"experiment", "=", "\"\<Coupling\>\""}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
-    "Varying", " ", "the", " ", "diffusion", " ", "coefficient", " ", "for", 
-     " ", "a", " ", "fixed", " ", "size", " ", 
-     RowBox[{"colony", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+    RowBox[{"experiment", "=", "\"\<ExponentialGrowth\>\""}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Print", "[", 
      RowBox[{"\"\<V1 = \>\"", ",", 
@@ -16805,75 +17215,68 @@ Cell[BoxData[
        RowBox[{"Log", "[", "2", "]"}]}], "]"}]}], ";"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"constantCellDensity", "=", "True"}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
-    "Keep", " ", "the", " ", "cell", " ", "density", " ", "constant", " ", 
+    RowBox[{"constantCellDensity", "=", "True"}], ";", 
+    RowBox[{"(*", 
      RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-       "number", " ", "of", " ", "cells", " ", "in", " ", "the", " ", 
-        "population"}], ")"}], "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+     "Keep", " ", "the", " ", "cell", " ", "density", " ", "constant", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+        "number", " ", "of", " ", "cells", " ", "in", " ", "the", " ", 
+         "population"}], ")"}], "."}]}], "*)"}], "\[IndentingNewLine]", 
     RowBox[{"cellCycleDeterministic", "=", 
      RowBox[{"tau", "//.", "par"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"cellCycleGamma", "=", "0.8"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"timeMeshSliceLength", "=", "1"}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
-    "Length", " ", "of", " ", "the", " ", "time", " ", "mesh", " ", 
-     "intervals", " ", "to", " ", "record", " ", 
-     RowBox[{"trajectories", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+    RowBox[{"timeMeshSliceLength", "=", "1"}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Length", " ", "of", " ", "the", " ", "time", " ", "mesh", " ", 
+      "intervals", " ", "to", " ", "record", " ", 
+      RowBox[{"trajectories", "."}]}], "*)"}], "\[IndentingNewLine]", 
     RowBox[{"chemicalLangevinTimeStep", "=", "1*^-4"}], ";"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"nTimeStepsIntervalDisplaySimulationProgress", "=", 
      RowBox[{"Round", "[", 
-      RowBox[{"10", "/", "timeMeshSliceLength"}], "]"}]}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
-    "Display", " ", "some", " ", "simulation", " ", "progress", " ", 
-     "information", " ", "in", " ", "the", " ", "standard", " ", "output", 
-     " ", "every", " ", "n", " ", "time", " ", 
-     RowBox[{"steps", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"spatialDynamicsEquilibrationTime", "=", "50"}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
+      RowBox[{"10", "/", "timeMeshSliceLength"}], "]"}]}], ";", 
+    RowBox[{"(*", 
      RowBox[{
-     "Presimulation", " ", "time", " ", "during", " ", "which", " ", "only", 
-      " ", "the", " ", "spatial", " ", "movement", " ", "of", " ", "cells", 
-      " ", "are", " ", "computed"}], ",", " ", 
+     "Display", " ", "some", " ", "simulation", " ", "progress", " ", 
+      "information", " ", "in", " ", "the", " ", "standard", " ", "output", 
+      " ", "every", " ", "n", " ", "time", " ", 
+      RowBox[{"steps", "."}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"spatialDynamicsEquilibrationTime", "=", "50"}], ";", 
+    RowBox[{"(*", 
      RowBox[{
-     "to", " ", "start", " ", "with", " ", "a", " ", "nicely", " ", "packed", 
+      RowBox[{
+      "Presimulation", " ", "time", " ", "during", " ", "which", " ", "only", 
+       " ", "the", " ", "spatial", " ", "movement", " ", "of", " ", "cells", 
+       " ", "are", " ", "computed"}], ",", " ", 
+      RowBox[{
+      "to", " ", "start", " ", "with", " ", "a", " ", "nicely", " ", "packed",
+        " ", 
+       RowBox[{"colony", ".", " ", "Only"}], " ", "useful", " ", "for", " ", 
+       RowBox[{"movies", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"firstPassageGFPThreshold", "=", "0"}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Threshold", " ", "in", " ", "concentration", " ", "for", " ", 
+      "computing", " ", "first", " ", "passage", " ", 
+      RowBox[{"time", "."}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"computeSpatialDynamics", "=", "False"}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Compute", " ", "spatial", " ", "dynamics", " ", "for", " ", "making", 
       " ", 
-      RowBox[{"colony", ".", " ", "Only"}], " ", "useful", " ", "for", " ", 
-      RowBox[{"movies", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"firstPassageGFPThreshold", "=", "0"}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
-    "Threshold", " ", "in", " ", "concentration", " ", "for", " ", 
-     "computing", " ", "first", " ", "passage", " ", 
-     RowBox[{"time", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"computeSpatialDynamics", "=", "False"}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{
-    "Compute", " ", "spatial", " ", "dynamics", " ", "for", " ", "making", 
-     " ", 
-     RowBox[{"movie", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+      RowBox[{"movie", "."}]}], "*)"}], "\[IndentingNewLine]", 
     RowBox[{"iseed", "=", 
      RowBox[{"Random", "[", 
-      RowBox[{"Integer", ",", "1000000"}], "]"}]}], ";"}], 
-   RowBox[{"(*", 
-    RowBox[{"Seed", " ", "for", " ", "random", " ", "number", " ", 
-     RowBox[{"generator", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+      RowBox[{"Integer", ",", "1000000"}], "]"}]}], ";", 
+    RowBox[{"(*", 
+     RowBox[{"Seed", " ", "for", " ", "random", " ", "number", " ", 
+      RowBox[{"generator", "."}]}], "*)"}], "\[IndentingNewLine]", 
     RowBox[{"Print", "[", 
      RowBox[{"\"\<iseed = \>\"", ",", "iseed"}], "]"}], ";"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -16969,8 +17372,9 @@ Cell[BoxData[
            RowBox[{"#", "[", 
             RowBox[{"[", "1", "]"}], "]"}], "=!=", "Dx"}], "&"}]}], "]"}]}], 
       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"cellgrowth", "=", "False"}], ";", "\[IndentingNewLine]", 
       RowBox[{"simulationTime", "=", "1000"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"nTrajectories", "=", "10"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"nTrajectories", "=", "1"}], ";", "\[IndentingNewLine]", 
       RowBox[{"simTimePoints", "=", 
        RowBox[{"{", "simulationTime", "}"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
@@ -17295,6 +17699,7 @@ Cell[BoxData[
              RowBox[{"1", ",", "1"}], "]"}], "]"}], ",", 
            RowBox[{"tau", "\[Rule]", "50"}]}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"cellgrowth", "=", "True"}], ";", "\[IndentingNewLine]", 
       RowBox[{"simulationTime", "=", 
        RowBox[{
         RowBox[{
@@ -17587,6 +17992,7 @@ Cell[BoxData[
            RowBox[{"Dx", "\[Rule]", "1.0"}], ",", 
            RowBox[{"nCells", "\[Rule]", "10"}]}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"cellgrowth", "=", "False"}], ";", "\[IndentingNewLine]", 
       RowBox[{"simulationTime", "=", "10000"}], ";", "\[IndentingNewLine]", 
       RowBox[{"timeMeshSliceLength", "=", "1"}], ";", "\[IndentingNewLine]", 
       RowBox[{"nTrajectories", "=", "1"}], ";", "\[IndentingNewLine]", 
@@ -17930,31 +18336,28 @@ Cell[BoxData[
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Vtot = \"\>", "\[InvisibleSpace]", "150.`"}],
-  SequenceForm["Vtot = ", 150.],
+  RowBox[{"\<\"Vtot = \"\>", "\[InvisibleSpace]", "601.5`"}],
+  SequenceForm["Vtot = ", 601.5],
   Editable->False]], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Vx = \"\>", "\[InvisibleSpace]", "50.`"}],
-  SequenceForm["Vx = ", 50.],
+  RowBox[{"\<\"Vx = \"\>", "\[InvisibleSpace]", "400.`"}],
+  SequenceForm["Vx = ", 400.],
   Editable->False]], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Vext = \"\>", "\[InvisibleSpace]", "75.`"}],
-  SequenceForm["Vext = ", 75.],
+  RowBox[{"\<\"Vext = \"\>", "\[InvisibleSpace]", "600.`"}],
+  SequenceForm["Vext = ", 600.],
   Editable->False]], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"iseed = \"\>", "\[InvisibleSpace]", "521064"}],
-  SequenceForm["iseed = ", 521064],
+  RowBox[{"\<\"iseed = \"\>", "\[InvisibleSpace]", "606321"}],
+  SequenceForm["iseed = ", 606321],
   Editable->False]], "Print"]
 }, Open  ]],
-
-Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
-Colony/Build_Qt4.8.6/Release/Coupling/Gillespie\"\>"], "Output"],
 
 Cell[BoxData[
  RowBox[{
@@ -17963,14 +18366,30 @@ Cell[BoxData[
   RowBox[{
   ":", " "}], \
 "\<\"\[NoBreak]\\!\\(\\\"/home/mweber/Copy_Linux/Copy/Research_Copy/\
-Simulations/Colony/Build_Qt4.8.6/Release/Coupling/Gillespie/\\\"\\)\[NoBreak] \
-already exists. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+Simulations/Colony/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie/\\\"\\)\
+\[NoBreak] already exists. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
 ButtonData:>\\\"paclet:ref/CreateDirectory\\\", ButtonNote -> \
 \\\"CreateDirectory::filex\\\"]\\)\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
-Colony/Build_Qt4.8.6/Release/Coupling/Gillespie\"\>"], "Output"],
+Colony/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie\"\>"], "Output"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CreateDirectory", "::", "filex"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], \
+"\<\"\[NoBreak]\\!\\(\\\"/home/mweber/Copy_Linux/Copy/Research_Copy/\
+Simulations/Colony/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie/\\\"\\)\
+\[NoBreak] already exists. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/CreateDirectory\\\", ButtonNote -> \
+\\\"CreateDirectory::filex\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
+Colony/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie\"\>"], "Output"],
 
 Cell[CellGroupData[{
 
@@ -17981,366 +18400,14 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1", ",", "13"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"13", ",", "1"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"13", ",", "1"}], "}"}], "}"}], ",", 
      RowBox[{"{", 
-      RowBox[{
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True], ",", 
-       InterpretationBox["\<\"0.5287663729448976\"\>",
-        CForm[0.5287663729448976],
-        AutoDelete->True,
-        Editable->True]}], "}"}]}], "}"}]}],
-  SequenceForm[
-  "x0Cell initial condition (nb of molecules) = ", {{{1, 13}, {1, 13}, {1, 
-    13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 
-    13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 
-    13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {1, 13}, {13, 1}, {13, 
-    1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 
-    1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 
-    1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}, {13, 1}}, {
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
-     CForm[0.5287663729448976], 
+      InterpretationBox["\<\"0.5287663729448976\"\>",
+       CForm[0.5287663729448976],
+       AutoDelete->True,
+       Editable->True], "}"}]}], "}"}]}],
+  SequenceForm["x0Cell initial condition (nb of molecules) = ", {{{13, 1}}, {
      CForm[0.5287663729448976]}}],
   Editable->False]], "Print"],
 
@@ -18357,41 +18424,15 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"globalParSet = \"\>", "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"{", "0", "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", 
-       FractionBox["1", "1000"], "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", 
-       FractionBox["1", "100"], "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", 
-       FractionBox["1", "10"], "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", "1", "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", "10", "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", "100", "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", "500", "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", "1000", "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"{", "10000", "}"}], "}"}]}], "}"}]}],
-  SequenceForm["globalParSet = ", {{{0}}, {{
-      Rational[1, 1000]}}, {{
-      Rational[1, 100]}}, {{
-      Rational[1, 10]}}, {{1}}, {{10}}, {{100}}, {{500}}, {{1000}}, {{
-    10000}}}],
+    RowBox[{"{", 
+     RowBox[{"{", "2", "}"}], "}"}], "}"}]}],
+  SequenceForm["globalParSet = ", {{{2}}}],
   Editable->False]], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"# globalParSet = \"\>", "\[InvisibleSpace]", "10"}],
-  SequenceForm["# globalParSet = ", 10],
+  RowBox[{"\<\"# globalParSet = \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["# globalParSet = ", 1],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -18399,11 +18440,11 @@ Cell[BoxData[
   RowBox[{"\<\"Output path = \\n\"\>", 
    "\[InvisibleSpace]", \
 "\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.\
-8.6/Release/Coupling/Gillespie\"\>"}],
+8.6/Release/ExponentialGrowth/Gillespie\"\>"}],
   SequenceForm[
   "Output path = \n", 
    "/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.8.\
-6/Release/Coupling/Gillespie"],
+6/Release/ExponentialGrowth/Gillespie"],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -18411,11 +18452,11 @@ Cell[BoxData[
   RowBox[{"\<\"Input file path = \\n\"\>", 
    "\[InvisibleSpace]", \
 "\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.\
-8.6/Release/Coupling/Gillespie\"\>"}],
+8.6/Release/ExponentialGrowth/Gillespie\"\>"}],
   SequenceForm[
   "Input file path = \n", 
    "/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony/Build_Qt4.8.\
-6/Release/Coupling/Gillespie"],
+6/Release/ExponentialGrowth/Gillespie"],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -18430,33 +18471,34 @@ Cell[BoxData[
      RowBox[{"K1", "\[Rule]", "expressionLevel"}], ",", 
      RowBox[{"K2", "\[Rule]", "K1"}], ",", 
      RowBox[{"expressionLevel", "\[Rule]", "0.5`"}], ",", 
-     RowBox[{"nCells", "\[Rule]", "50"}], ",", 
      RowBox[{"r", "\[Rule]", 
       FractionBox["V0", 
        RowBox[{
         FractionBox["nCells", "nconc0"], "-", 
         RowBox[{"nCells", " ", "V0"}]}]]}], ",", 
-     RowBox[{"nconc0", "\[Rule]", 
-      FractionBox["1", 
-       RowBox[{"2", " ", "V0"}]]}], ",", 
      RowBox[{"V0", "\[Rule]", "1.5`"}], ",", 
      RowBox[{"L0", "\[Rule]", "2.5`"}], ",", 
      RowBox[{"r0", "\[Rule]", "0.44`"}], ",", 
      RowBox[{"cellLength0", "\[Rule]", "2"}], ",", 
      RowBox[{"cellHeight0", "\[Rule]", "1"}], ",", 
+     RowBox[{"nCells", "\[Rule]", "1"}], ",", 
+     RowBox[{"nconc0", "\[Rule]", 
+      FractionBox["1", 
+       RowBox[{"401", " ", "V0"}]]}], ",", 
      RowBox[{"tau", "\[Rule]", "50"}]}], "}"}]}],
   SequenceForm[
   "Parameters = \n", {$CellContext`\[Alpha]2 -> $CellContext`\[Alpha]1, \
 $CellContext`\[Beta]2 -> $CellContext`\[Beta]1, $CellContext`\[Alpha]1 -> 
     1, $CellContext`\[Beta]1 -> 
     10, $CellContext`K1 -> $CellContext`expressionLevel, $CellContext`K2 -> \
-$CellContext`K1, $CellContext`expressionLevel -> 0.5, $CellContext`nCells -> 
-    50, $CellContext`r -> \
+$CellContext`K1, $CellContext`expressionLevel -> 
+    0.5, $CellContext`r -> \
 $CellContext`V0/($CellContext`nCells/$CellContext`nconc0 - \
-$CellContext`nCells $CellContext`V0), $CellContext`nconc0 -> 
-    Rational[1, 2]/$CellContext`V0, $CellContext`V0 -> 1.5, $CellContext`L0 -> 
+$CellContext`nCells $CellContext`V0), $CellContext`V0 -> 1.5, $CellContext`L0 -> 
     2.5, $CellContext`r0 -> 0.44, $CellContext`cellLength0 -> 
-    2, $CellContext`cellHeight0 -> 1, $CellContext`tau -> 50}],
+    2, $CellContext`cellHeight0 -> 1, $CellContext`nCells -> 
+    1, $CellContext`nconc0 -> 
+    Rational[1, 401]/$CellContext`V0, $CellContext`tau -> 50}],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]]
@@ -19812,15 +19854,115 @@ Cell[BoxData[
 ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
 ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["\<\
-Write the C++ method computePropensitiesFunctions (Gillespie)\
-\>", "Subsubsection",
- CellChangeTimes->{{3.543918357691966*^9, 3.543918376033655*^9}, 
-   3.543918414998227*^9, {3.6119033403564*^9, 3.6119033445702257`*^9}}],
+Cell["Write C++ compilation options", "Subsubsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "sourceDirectory", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fpath", "=", "\"\<compilation_options.h\>\""}], ";", 
+  RowBox[{"Deletefile", "[", "fpath", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "f", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{
+   "\"\</*********************************************************************\
+******//**\n * Project: Colony\n *\n * \\\\file    compilation_options.h\n * \
+\\\\author  Marc Weber\\\\n\n * \\\\version 1.0\n * \\\\date    11/2015\n *\n \
+*          Copyright 2009 by Marc Weber\n \
+******************************************************************************\
+/\n\n#ifndef COMPILATION_OPTIONS\n#define COMPILATION_OPTIONS\n\n  /** \
+SIMULATION OPTIONS */\n\n  /**\n   * If defined, the simulation will use the \
+Chemical Langevin Equation (CLE)\n   * to integrate the dynamics of the \
+system.\n   * If not defined, the simulation will use a modified Gillespie \
+algorithm.\n   */\n  //#define USE_CHEMICAL_LANGEVIN\n\n\n  /**\n   * This \
+option enables the dependence in time of the propensities of the\n   * \
+reactions, modelizing the cell growth.\n   */\n\>\"", "<>", 
+    RowBox[{"If", "[", 
+     RowBox[{
+     "cellgrowth", ",", "\"\<  #define TIME_DEPENDENT_PROPENSITIES\>\"", ",", 
+      "\"\<  //#define TIME_DEPENDENT_PROPENSITIES\>\""}], "]"}], "<>", 
+    "\"\<\n\n  /**\n   * This option sets the initial cell cycle phases of \
+the cells as a random\n   * variable in [0,2pi]. Otherwise they are all set \
+to zero.\n   */\n  #ifdef TIME_DEPENDENT_PROPENSITIES\n    //#define \
+RANDOM_INITIAL_PHASES\n  #endif\n\n  /**\n   * This option enables the \
+computation of the first passage-time for\n   * reaction network that have a \
+switch-like behavior. A certain threshold\n   * in the concentration of one \
+species (for example, GFP) is set in the\n   * simulator class. After each \
+simulation step, the concentration of the defined species\n   * is compared \
+to the threshold, and if above, the simulation stops and the\n   * simulation \
+time is recorded in an array. It is necessary to set the simulation step\n   \
+* to a small value in order to get sufficient precision in the time. The \
+threshold\n   * condition is not evaluated during the computation of a \
+simulation step, therefore,\n   * the precision of the first-passage time is \
+the simulation step.\n   * Usually, we use only one cell in order to speed up \
+the computation. The threshold\n   * is tested only in the cell with index 0.\
+\n   */\n   //#define FIRST_PASSAGE_TIME_COMPUTATION\n\n\n  /** OPTIMIZATION \
+OPTIONS */\n\n  /**\n   * This option enables an optimization for computing \
+the propensities.\n   * Instead of computing all the propensities at each \
+time step, it\n   * calculates the propensities in the cell where the last \
+reaction happened\n   * and the propensities of the cell-milieu (external) \
+reactions if necessary.\n   * In the case of time independent propensities, \
+this optimization is exact\n   * because the propensities of the cells in \
+which no reaction happened do not\n   * change.\n   * In the case of \
+time-dependent reactions, this optimization can induce an\n   * additional \
+error, because at each time step, all the time dependent\n   * propensities \
+change. We suppose that the time step is very small\n   * (total sum of \
+propensities >> 1), in such a way that in the time interval\n   * between two \
+reactions in one cell, the change in the time dependent\n   * propensities is \
+very small. The time dependence of the propensities depends\n   * on the cell \
+growth, which is assumed to be a slow process compared to the\n   * other \
+reactions (degradation, DNA binding, etc).\n   */\n  #ifndef \
+FIRST_PASSAGE_TIME_COMPUTATION\n  // In the first passage simulation, we only \
+use 1 cell and thus we switch off the\n  // optimize compute propensities \
+option.\n    #define OPTIMIZE_COMPUTE_PROPENSITIES\n  #endif\n\n  /**\n   * \
+This option recompute all the propensities at the end of each time slice,\n   \
+* in order to reduce the errors generated by the optimization method.\n   */\n\
+  #ifdef OPTIMIZE_COMPUTE_PROPENSITIES\n    #define \
+OPTIMIZE_COMPUTE_PROPENSITIES_UPDATE\n  #endif\n\n  // Define the single or \
+double precision version of the ODE library\n  #define dDOUBLE\n\n\n\n\n  /** \
+OUTPUT OPTIONS */\n\n  /**\n   * Compile the graphical user interface.\n   */\
+\n  #define GUI\n\n  /**\n   * If the cell density stays constant, apply a \
+different rule for choosing which cell to delete:\n   * delete the cells \
+farther away from the center. This makes a nicer movement\n   * of the cells \
+when you want to make a movie of the simulation.\n   */\n  #ifdef GUI\n    \
+#define RULE_DELETE_FARTHEST_CELL\n  #endif\n\n  /**\n   * Print to the \
+terminal the division events.\n   */\n  //#define PRINT_CELL_DIVISION_EVENT\n\
+\n  /**\n   * This option outputs all the trajectories. Otherwise, we output \
+only the\n   * first 5 trajectories.\n   */\n  #define WRITE_ALL_TRAJECTORIES\
+\n\n  /**\n   * Write the average over the cells for each trajectory.\n   */\n\
+  #define WRITE_CELLS_AVG\n\n  /**\n   * Write the average over the cells and \
+over all trajectories.\n   */\n  #define WRITE_CELLS_TRAJ_AVG\n\n  /**\n   * \
+Write the cell lineage for each trajectory.\n   */\n  #ifdef \
+TIME_DEPENDENT_PROPENSITIES\n    #define WRITE_CELL_LINEAGE\n  #endif\n\n  \
+/**\n   * Write the cell cycle phases of all the cells at the end \
+(t=tsimulation)\n   * of the last trajectory.\n   */\n  //#define \
+WRITE_CELL_CYCLE_PHASES_TIME_END\n\n\n\n  /** OPTIONS FOR THE DEBUGGING MODE \
+*/\n\n  // For activating the profiling with gprof, uncomment the lines with \
+the Q_MAKE flags\n  // in the project file (COLONY.pro)\n\n  //#define \
+BUILD_DEBUG\n//  #ifdef BUILD_DEBUG\n\n//    // Debugging options\n//    \
+#define COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK\n//    #define \
+COMPUTEPROPENSITIES_POSITIVITY_CHECK\n//    #define \
+COMPUTEPROPENSITIES_TIME_CYCLE_CHECK\n//    #define X_POSITIVITY_CHECK\n//    \
+#ifndef PRINT_CELL_DIVISION_EVENT\n//      #define PRINT_CELL_DIVISION_EVENT\n\
+//    #endif\n//    #define SUM_OF_PROPENSITIES_CHECK\n\n//  #endif // \
+BUILD_DEBUG\n\n#endif // COMPILATION_OPTIONS\n\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"fpath", ",", "f", ",", "\"\<Text\>\""}], "]"}], ";"}]}], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Write C++ method computePropensitiesFunctions (Gillespie)", \
+"Subsubsection"],
 
 Cell[BoxData[
  RowBox[{
@@ -20462,7 +20604,6 @@ const double volume0,\n  Array<double,1>& a\n);\\n\\n\\n\>\""}]}], ";",
          RowBox[{"f", "=", 
           RowBox[{
           "f", "<>", "\"\<void \>\"", "<>", "funcName", "<>", 
-           
            "\"\<\n(\n  const Array<int,1>& x,\n  const double volume,\n  \
 const double volume0,\n  Array<double,1>& a\n)\n{\n\n\>\""}]}], ";", 
          "\[IndentingNewLine]", 
@@ -22241,10 +22382,8 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["\<\
-Write the C++ method chemicalLangevinComputeIncrement with negative correction\
-\>", "Subsubsection",
- CellChangeTimes->{{3.543918357691966*^9, 3.543918408687559*^9}, {
-  3.570785318334059*^9, 3.570785326094974*^9}}],
+Write C++ method chemicalLangevinComputeIncrement with negative correction\
+\>", "Subsubsection"],
 
 Cell[BoxData[
  RowBox[{
@@ -25623,8 +25762,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"imagesize", "=", "500"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"fontFamily", "=", "\"\<Arial\>\""}], ";"}], "\[IndentingNewLine]", 
-
+  RowBox[{"fontFamily", "=", "\"\<Arial\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"simDataXConcPlot", "=", 
    RowBox[{"simDataXConc", "[", 

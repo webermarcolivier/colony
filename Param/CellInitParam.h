@@ -16,7 +16,7 @@
 #ifndef CELLINITPARAM_H
 #define CELLINITPARAM_H
 
-#include "../debug.h"
+#include "../compilation_options.h"
 #include "GraphicsCellCompositeParam.h"
 #include "CellBaseInitParam.h"
 #include "CellMilieuChemicalSystemInitParam.h"

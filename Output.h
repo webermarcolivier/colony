@@ -16,7 +16,7 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>   // input/output interface

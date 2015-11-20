@@ -16,7 +16,7 @@
 #ifndef GRAPHICSCELLODE_H
 #define GRAPHICSCELLODE_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 

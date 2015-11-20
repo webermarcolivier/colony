@@ -18,7 +18,7 @@
 
 #define PI 3.14159265
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // user header files
 #include "GraphicsCellBase.h"

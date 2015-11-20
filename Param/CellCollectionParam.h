@@ -16,7 +16,7 @@
 #ifndef CELLCOLLECTIONPARAM_H
 #define CELLCOLLECTIONPARAM_H
 
-#include "../debug.h"
+#include "../compilation_options.h"
 
 // standard C++ header files
 

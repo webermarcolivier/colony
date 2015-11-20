@@ -57,7 +57,6 @@ HEADERS += mainwindow.h \
     GlobalArrayInterface.h \
     GlobalArray.h \
     doxygen_documentation.h \
-    debug.h \
     ChemicalSystem.h \
     CellMilieuChemicalSystem.h \
     CellLineageGeneration.h \
@@ -81,7 +80,8 @@ HEADERS += mainwindow.h \
     Param/StateInitParam.h \
     Param/ChemicalSystemInitParam.h \
     Param/CellMilieuChemicalSystemInitParam.h \
-    IntegratorChemicalLangevin.h
+    IntegratorChemicalLangevin.h \
+    compilation_options.h
 FORMS += mainwindow.ui
 OTHER_FILES += icons/PlayGreenButton.png
 RESOURCES += colonyResourceFile.qrc

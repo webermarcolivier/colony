@@ -16,7 +16,7 @@
 #ifndef GRAPHICSCELLQT_H
 #define GRAPHICSCELLQT_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifdef GUI
 

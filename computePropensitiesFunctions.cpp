@@ -14,7 +14,7 @@
  *          Copyright 2009 by Marc Weber
  ******************************************************************************/
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifndef USE_CHEMICAL_LANGEVIN
 
@@ -42,8 +42,8 @@ void computePropensitiesCell
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = 0.9033209999999998*(0.749999999999998 + Input::globalParameter(0) + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(1),3)));
-  a(1) = 0.9033209999999998*(0.749999999999998 + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(0),3)));
+  a(0) = 0.9033209999999998*(0.7499999999999998 + Input::globalParameter(0) + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(1),3)));
+  a(1) = 0.9033209999999998*(0.7499999999999998 + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(0),3)));
 
   a(2) = 1.*x(0);
   a(3) = 1.*x(1);
@@ -145,8 +145,8 @@ void computePropensitiesCellTimeDependent
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = (0.9033209999999998*volume*(0.749999999999998 + Input::globalParameter(0) + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(1),3))))/volume0;
-  a(1) = (0.9033209999999998*volume*(0.749999999999998 + 1.8750000000000004/(0.125 + 1.3566683085495015*pow(x(0),3))))/volume0;
+  a(0) = (0.9033209999999998*volume*(0.7499999999999998 + Input::globalParameter(0) + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(1),3))))/volume0;
+  a(1) = (0.9033209999999998*volume*(0.7499999999999998 + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(0),3))))/volume0;
 
   a(2) = x(0);
   a(3) = x(1);
@@ -258,11 +258,11 @@ void computePropensitiesCellMilieu
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = x1(0);
-  a(1) = x1(1);
+  a(0) = 1.*x1(0);
+  a(1) = 1.*x1(1);
 
-  a(2) = (volume1/volume2)*x2(0);
-  a(3) = (volume1/volume2)*x2(1);
+  a(2) = (volume1/volume2)*1.*x2(0);
+  a(3) = (volume1/volume2)*1.*x2(1);
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
@@ -352,11 +352,11 @@ void computePropensitiesTimeDependentDiffusion
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = (volume/(volume0/0.693147180559945))*x1(0);
-  a(1) = (volume/(volume0/0.693147180559945))*x1(1);
+  a(0) = (volume/(volume0/0.693147180559945))*1.*x1(0);
+  a(1) = (volume/(volume0/0.693147180559945))*1.*x1(1);
 
-  a(2) = (volume/volumeExt)*x2(0);
-  a(3) = (volume/volumeExt)*x2(1);
+  a(2) = (volume/volumeExt)*1.*x2(0);
+  a(3) = (volume/volumeExt)*1.*x2(1);
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK

@@ -16,7 +16,7 @@
 #ifndef STRINGTABLEMODEL_H
 #define STRINGTABLEMODEL_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifdef GUI
 

@@ -16,7 +16,7 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <limits>

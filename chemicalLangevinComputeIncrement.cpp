@@ -13,7 +13,7 @@
  *          Copyright 2009 by Marc Weber
  ******************************************************************************/
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifdef USE_CHEMICAL_LANGEVIN
 

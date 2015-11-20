@@ -16,7 +16,7 @@
 #ifndef GRAPHICSCELLGROUP_H
 #define GRAPHICSCELLGROUP_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifdef GUI
 

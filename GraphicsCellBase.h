@@ -18,7 +18,7 @@
 
 #define PI 3.14159265
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 

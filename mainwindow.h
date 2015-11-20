@@ -16,7 +16,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifdef GUI
 
@@ -36,6 +36,7 @@
 #include <QGraphicsRectItem>
 #include <QStringListModel>
 #include <QRect>
+#include <QTimer>
 
 // user header files
 #include "Simulator.h"

@@ -1,7 +1,0 @@
-<area shape="rect" href="$classGlobalArrayInterface.html" title="Interface between the class CellCollection and the class GlobalArray." alt="" coords="748,110,887,134">
-<area shape="rect" href="$classGlobalArray.html" title="GlobalArray\&lt; int \&gt;" alt="" coords="365,158,493,182">
-<area shape="rect" href="$classGlobalArray.html" title="GlobalArray\&lt; double \&gt;" alt="" coords="353,14,505,38">
-<area shape="rect" href="$classState.html" title="State of a cell." alt="" coords="404,241,455,265">
-<area shape="rect" href="$classMilieu.html" title="A special cell that represents the environment in which the colony of cells live..." alt="" coords="1007,194,1063,218">
-<area shape="rect" href="$classCellBase.html" title="Base class for cell." alt="" coords="781,241,853,265">
-<area shape="rect" href="$classChemicalSystem.html" title="Chemical system of the cell (reactions)." alt="" coords="369,325,489,349">

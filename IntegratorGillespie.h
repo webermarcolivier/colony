@@ -16,7 +16,7 @@
 #ifndef INTEGRATORGILLESPIE_H
 #define INTEGRATORGILLESPIE_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>

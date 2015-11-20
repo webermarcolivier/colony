@@ -16,7 +16,7 @@
 #ifndef CELLMILIEUCHEMICALSYSTEM_H
 #define CELLMILIEUCHEMICALSYSTEM_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // libraries header files
 #include <blitz/array.h>

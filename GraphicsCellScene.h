@@ -16,7 +16,7 @@
 #ifndef GRAPHICSCELLSCENE_H
 #define GRAPHICSCELLSCENE_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 #ifdef GUI
 

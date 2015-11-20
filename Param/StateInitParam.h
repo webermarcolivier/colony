@@ -16,7 +16,7 @@
 #ifndef STATEINITPARAM_H
 #define STATEINITPARAM_H
 
-#include "../debug.h"
+#include "../compilation_options.h"
 #include <vector>
 #include <string>
 #include "blitz/array.h"

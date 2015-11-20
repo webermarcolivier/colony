@@ -16,7 +16,7 @@
 #ifndef CELLBASE_H
 #define CELLBASE_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>   // input/output interface

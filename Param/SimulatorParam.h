@@ -16,7 +16,7 @@
 #ifndef SIMULATORPARAM_H
 #define SIMULATORPARAM_H
 
-#include "../debug.h"
+#include "../compilation_options.h"
 
 // standard C++ header files
 

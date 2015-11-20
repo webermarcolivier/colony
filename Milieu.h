@@ -16,7 +16,7 @@
 #ifndef MILIEU_H
 #define MILIEU_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // libraries header files
 #include <blitz/array.h>

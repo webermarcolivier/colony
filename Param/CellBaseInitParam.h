@@ -16,7 +16,7 @@
 #ifndef CELLBASEINITPARAM_H
 #define CELLBASEINITPARAM_H
 
-#include "../debug.h"
+#include "../compilation_options.h"
 #include "StateInitParam.h"
 #include "ChemicalSystemInitParam.h"
 

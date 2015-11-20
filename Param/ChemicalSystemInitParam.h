@@ -16,7 +16,7 @@
 #ifndef CHEMICALSYSTEMINITPARAM_H
 #define CHEMICALSYSTEMINITPARAM_H
 
-#include "../debug.h"
+#include "../compilation_options.h"
 #include <blitz/array.h>
 using blitz::Array;
 

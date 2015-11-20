@@ -16,7 +16,7 @@
 #ifndef INTEGRATORCHEMICALLANGEVIN_H
 #define INTEGRATORCHEMICALLANGEVIN_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>

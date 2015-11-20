@@ -16,7 +16,7 @@
 #ifndef GLOBALARRAYINTERFACE_H
 #define GLOBALARRAYINTERFACE_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>

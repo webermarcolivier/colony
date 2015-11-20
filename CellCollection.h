@@ -16,7 +16,7 @@
 #ifndef CELLCOLLECTION_H
 #define CELLCOLLECTION_H
 
-#include "debug.h"
+#include "compilation_options.h"
 
 // standard C++ header files
 #include <iostream>
