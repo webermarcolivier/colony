@@ -66,9 +66,9 @@ void SpatialIntegratorODE::init()
   //centralForce0_ = 400.0f;
   centralForce0_ = 10.0;
   //viscousCoefficient_ = 200.0;
-  viscousCoefficient_ = 0.0;
+  viscousCoefficient_ = 50.0;
   //rotationalViscousCoefficient_ = 600.0;
-  rotationalViscousCoefficient_ = 0.0;
+  rotationalViscousCoefficient_ = 50.0;
   aligningAngle_ = 35.0;
   aligningTorqueCoeff_ = 5.0;
   aligningRotationalViscousCoeff_ = 50.0;

@@ -683,18 +683,24 @@ void Simulator::computeSpatialDynamicsEquilibration()
   cout << "ODE equilibration of colony... start" << endl;
 
   float refreshTime = 0.1;
-  for (float time = 0.0; time < getSpatialDynamicsEquilibrationTime();
-       time+=refreshTime)
-  {
-    setIsEquilibrationSteps(true);
-    computeSpatialIntegration(refreshTime);
-    if ( int(time / refreshTime) % 20 == 0)
-    {
-      cout << "ODE equilibration of colony... " << time << "/"
-           << getSpatialDynamicsEquilibrationTime() << endl;
-    }
+  float spatialEquilibrationTime = getSpatialDynamicsEquilibrationTime();
+  // When there is only 1 cell, the ODE integration somehow explodes, therefore
+  // we just skip the equilibration integration. Anyway, with 1 cell there is no
+  // need to move the cells prior to the simulation start.
+  if (cellCollection_.getNCells() > 1) {
+      for (float time = 0.0; time < getSpatialDynamicsEquilibrationTime();
+           time+=refreshTime)
+      {
+        setIsEquilibrationSteps(true);
+        computeSpatialIntegration(refreshTime);
+        if ( int(time / refreshTime) % 20 == 0)
+        {
+          cout << "ODE equilibration of colony... " << time << "/"
+               << getSpatialDynamicsEquilibrationTime() << endl;
+        }
+      }
+      cout << "ODE equilibration of colony... end" << endl;
   }
-  cout << "ODE equilibration of colony... end" << endl;
 
   setIsEquilibrationSteps(false);
 }
