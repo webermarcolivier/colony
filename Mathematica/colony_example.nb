@@ -5027,8 +5027,6 @@ Cell[BoxData[{
    3.5963672577815857`*^9, 3.596367262476224*^9}, {3.5963674424334717`*^9, 
    3.5963674477648*^9}}],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{"Plot", "[", "\[IndentingNewLine]", 
   RowBox[{
@@ -5199,188 +5197,7 @@ Cell[BoxData[{
   3.596367277571445*^9, 3.596367424458867*^9}, {3.596367466644422*^9, 
   3.5963674827544527`*^9}}],
 
-Cell[BoxData[
- GraphicsBox[{{}, {}, 
-   {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
-    1.], LineBox[CompressedData["
-1:eJxFz3ssFAAcB/DzCIlbOFylwyGPyCOPK87dSWRy7IjzKs9OKOexHiglKVPc
-Ws8dd7sJC3OaZdm0ogetm9lNf7jlsZl3zeV1yNFj/H6/7bfvPn/8vtvPOiWH
-k65JIBDYf/dfUqvVdSLKK3/C/yEx49ZjE6Z5o4wdK+zKaZO8eXB9kcamViKB
-uWPDdrG0MVwPXBO0oeluuBcsSikdNwsmgemSqbQvNDK4r6pBqF1iAVacT35Y
-z7UC+zHGEpwircFi83P20jAquLUzpK70G7or3tMyOtEG/LHFcZghQX9VU4SO
-E+gfjcPyhp9oA06Nvu0K2mUjLkCyiWY37Cuk6Npum8wUrD+ZIZPRcjYp1sQR
-Ha0i0vRC0QrxbnN1NlrUYubzNNMOnNppE+OecQhcW5TNzIp1AIeZppTNFDiB
-ZU2P+oX8w+BQZi+Zne0Mnn5fGfVmCX2HFSGgXncBtySzLOli9OAtj9aYbvS0
-UfNymhz9W2JDzxtHa8+Ojq3OoYkeNWUlS2hyIddBR42m9pBk93cd2bYFk6+p
-mukOQb8LGNJVPUBznq1F9j93BS+sGAzIOW5gZ9P0wNrT7mBrsclkRbwH+O2v
-NekF7lEwqc27MSvTE/yhRz+ff8ULvF9kxsvI88b+iav3Skt9wBNLxvLqmzTw
-CjdQKb52DNzjIPOV3z0O9uqulKpu+4JTP0kiGI/9wLMHwz9XSOhgMsMzrVfo
-D9aQ5bjaNzPAfYJcI3oUE9w1cXmZN4Cu4tsrbWJY4PbRxRtDg+iOsixbq8QA
-sCFxKzHpO1rAGtGgxp4AK5syugrG0C9WiXu6zwbif8VJfNEUevGlmqG+eBKs
-3dVRd2YOvah1gMLID8J7N6EzdQFdp8OrL78UDJ43HvEsXkZXa+Vys/JPgSkK
-ZePrTnRrG1+1tYX+AwWjKuU=
-     "]]}, 
-   {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
-    1.], LineBox[CompressedData["
-1:eJxFz2ksGwAUB/A6NmbI3N1VtDVlzLGiG9UyY2JKMOranKupTR3Zgc1mZhMb
-zbIzpU3TIUPUIpNJLBs7WCYijX3QzJFInVuYq5iyI7z3kpd/fh/eP3m2KdkR
-6doEAoHzd/8luUojE5Ne+RL+D5UdtxabMMkbYW1baVfGGOfNgmsLtTZ0Egns
-bRu1SuT1Yfrg6sB1bTejPWBxSsmYZZA5mCmdSPvCIIJ7KutEusUHwMrzyQ9r
-uTZgH9ZogmOkLVhidc5eHkoGN7cHy0q+oTvi6dbRiRTwxyaHIZYU/VVDEjmo
-0D/qhxR1P9GGEdUG1GW083qcv3QDzanbW0DSo26ZxhauPZkiEtEKjnmsmQM6
-Wm3M0A9BKyW7rDRZaHGTpdfTTDtwajslxi3jELimMIvNj6WBQy1SSqfyHcG9
-DY/6RILD4BB2N5GT5QSefF8R9WYRfccvXEi+7gxuSvazZkrQA7fcm2M60ZMm
-jUtpCvRvKYWZO4bWnR4ZXZlBG7tXlxYvookFXNpODZrcZd57f8eRLZPZAm31
-VGcw+p3/oJ76ATri2Wpk33MX8PyyYb8iwhXsZJEeUHPaDWwrMRsvj3cHv/21
-Kr/APQo2b/Gs52fSwR+6DPIEVzzA+8SWvIxcT+xXXb1XUuIFVi2aKqpuMsDL
-3IA5ybVj4C5ar7fi7nGwR2eFXH3bG5z6SRrOeuwDnj4Y9rlcygQTWfS0bpEv
-WKs328W+kQXuEeaYMKPY4A7V5SVeP7pSYD9HifEDt44s3BgcQLeV8qk2if5g
-I+PNxKTvaKHfsBY59gR4riGjI38U/WLFeHfn2QD8ryhJIJ5AL7zUsDQXT4J1
-O9pkZ2bQCzr7Say8QLx3FTmR59GynbzasktB4FnTYXrRErpKJ4fLzzsFJinn
-6l+3o5tbBOrNTfQf+L4uPw==
-     "]]}},
-  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->{True, True},
-  AxesLabel->{None, None},
-  AxesOrigin->{0, 0},
-  DisplayFunction->Identity,
-  Epilog->InsetBox[
-    BoxData[
-     FormBox[
-      PanelBox[
-       TagBox[
-        GridBox[{{
-           GraphicsBox[{
-             RGBColor[0.24720000000000014`, 0.24, 0.6], 
-             Thickness[0.1], 
-             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
-            AspectRatio -> 0.8333333333333334], 
-           StyleBox[
-           "p1", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
-            False]}, {
-           GraphicsBox[{
-             RGBColor[0.6, 0.24, 0.4428931686004542], 
-             Thickness[0.1], 
-             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
-            AspectRatio -> 0.8333333333333334], 
-           StyleBox[
-           "p2", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
-            False]}}, 
-         GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Center}}}, 
-         AutoDelete -> False, 
-         GridBoxItemSize -> {
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-         GridBoxSpacings -> {"Columns" -> {{0.5}}, "Rows" -> {{0.}}}], 
-        "Grid"], FrameMargins -> 5], TraditionalForm]], 
-    Scaled[{0.95, 0.9}], {Right, Top}],
-  Frame->{{False, False}, {False, False}},
-  FrameLabel->{{None, None}, {None, None}},
-  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
-  GridLines->{None, None},
-  GridLinesStyle->Directive[
-    GrayLevel[0.5, 0.4]],
-  Method->{"DefaultBoundaryStyle" -> Automatic, "ScalingFunctions" -> None},
-  PlotLabel->FormBox["\"Simulation run #1\"", TraditionalForm],
-  PlotRange->{{0., 49.99999897959184}, {0, 15}},
-  PlotRangeClipping->True,
-  PlotRangePadding->{{
-     Scaled[0.02], 
-     Scaled[0.02]}, {0, 0}},
-  Ticks->{Automatic, Automatic}]], "Output"],
-
-Cell[BoxData[
- GraphicsBox[{{}, {}, 
-   {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
-    1.], LineBox[CompressedData["
-1:eJxF0HssFAAcB/DzyCtu4XC9Doc8Io/Oozh3JDI5hjiv8uzklPNYD5S6pExx
-a7103O0mLAzNsmzXih60zOymP9zy2My75vI65Cgtv993++23zx+/3/b7WaZk
-R6SrEwgE1t/a7tRKVa2I8sqX8C86zLj12IRpzihjx3KbUq9Jzjy4rlBtUyOR
-wNyxQbu4tSFMB1wduKHuarAHLErhj5sGkcB0yVTaFy8yuLeiXqhZfAAsP5/8
-sI5tAfZhjCU4RFqCxWbnbFtDqeCWzuBa/je0NJ5mHp1oBf7YbD/MkKC/qihC
-+wn0j4ZhWf1PtH5EtZ71CtppI85fsolm1e8toGhbM59XbUeXKVh/MkMmo2Us
-UqyxPTpaSfTSCUHLxbpmqiy0qNnU82mmDTi10yrGNeMQuKYwi8mNtQOHmqSU
-zOQ7gPsaH/ULeYfBIcweMivLETz9vjzqzRL6jl+4gHrdCdyc7GdOF6MHb7m1
-xHShpw2bltNk6N8SK3ruOFpzdnRsdQ5NdKsuKV5CkwvYdloqNLWb1Hd/15H/
-/9Rn8tSVM13B6Hf+Q9rKB+iIZ2uR/VXO4IUV/QFZhAvY0SQ9oOa0K9hSbDxZ
-Fu8GfvtrrfUC+yiY1ObRwM2kgT906+XxrriD94lMORm5Hrh/4uo9Pt8TPLFk
-JKu86QVeYQcoxNeOgbvt+rxld4+D3bvKW5W3vcGpnyThjMc+4NmDYZ/LJHQw
-mUFL6xH6gtX6sp1tmxjgXkGOIT2KCZZOXF7mDKAreLYKqxg/cPvo4o2hQXRH
-CdfaItEfbEDcSkz6jhb4jahRY0+AFY0Z0vwx9ItV4u6uswF4X1ESTzSFXnyp
-YqgungRrSjtqz8yhFzX2Uxh5gTjvInSkLqBrtTh1pZeCwPNGI7SiZXSlRg6b
-m3cKTJErGl53olvaeMqtLfQf+uduMQ==
-     "]]}, 
-   {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
-    1.], LineBox[CompressedData["
-1:eJxFz3ssFAAcB/DzCAnL+yod7sgj8ug8inNHIpPHjrjDlWcnp5zHeqCUpExh
-reeOu93ELQzNsmxanR60bmY3/cHy2Ow8ay6vQ44e4/f7bb999/nj991+tqk5
-zAxNAoEQ+Xf/JblaXS8kvQog/B8bRsI6O2maO0bf8bB9ue8kdx7cUKSxqcUh
-MHZs2CFqk0TpgWtDNjQ9DPeChamlExahZmCaeCr9iy8R3FfVKNAusQIPn095
-2MCyAfvTx5OcY2zBIstzDm0RZHBrV1h96Td0dyLVOo5DAX9scRqhi9Ff1SSB
-kwL9QzIib/yJNmDW6tutoF03EoLEm+jIxn2FJF27bVsxatafzBCJaHmkGdvU
-CR2nMvLVC0cPi3ZbqrPRwhYLn6dZ9uC0Lkq8R+YhcF1RNoPHdgRHmKeWzRQ4
-g2VNj/oF/MPgcEYvMTLbBTz9vjL2zRL6TmB0Dfm6K7glJdCaJkIP3vJsjZei
-p42bl9Pl6N9iCi1vAq09Oza+Ooc28qwtK1lCEwtZjjpqNLnHTHZ/15FtExl8
-TdWMNAz9LmhIV/UAzXy2FtP/3A28sGIwIGe6g13MM4LrTnuAbUWmkxWJnuC3
-v9baLrCOgs3avSW8LCr4Q49+Pv+KF3i/0IKbmeeN/Yqr90pLfcCKJRN59U1f
-8AorWCm6dgzc4yjzk989DvaSVrapbvuB0z6Jo+mP/cGzB6M+V4hpYCKdmt4r
-CABryHLcHJrp4L6aXGNaLAPcrbi8zB1AV/EdlJT4QHDH2OKNoUF0ZxnPzoYT
-BDY02uIkf0fXBI5qkNknwMqmzO6CcfSLVaM90rPB+F9xMl84hV58qaarL54E
-a3d31p+ZQy9qHSDR80Pw3l3gQl5A1+twG8ovhYLnTUapxcvoaq1cFi//FJg0
-rJS87kK3tvNVW1voPwlPK30=
-     "]]}},
-  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->{True, True},
-  AxesLabel->{None, None},
-  AxesOrigin->{0, 0},
-  DisplayFunction->Identity,
-  Epilog->InsetBox[
-    BoxData[
-     FormBox[
-      PanelBox[
-       TagBox[
-        GridBox[{{
-           GraphicsBox[{
-             RGBColor[0.24720000000000014`, 0.24, 0.6], 
-             Thickness[0.1], 
-             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
-            AspectRatio -> 0.8333333333333334], 
-           StyleBox[
-           "p1", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
-            False]}, {
-           GraphicsBox[{
-             RGBColor[0.6, 0.24, 0.4428931686004542], 
-             Thickness[0.1], 
-             LineBox[{{-1, 0}, {1, 0}}]}, ImageSize -> {20, Automatic}, 
-            AspectRatio -> 0.8333333333333334], 
-           StyleBox[
-           "p2", FontSize -> 18, FontFamily -> "Arial", StripOnInput -> 
-            False]}}, 
-         GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Center}}}, 
-         AutoDelete -> False, 
-         GridBoxItemSize -> {
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-         GridBoxSpacings -> {"Columns" -> {{0.5}}, "Rows" -> {{0.}}}], 
-        "Grid"], FrameMargins -> 5], TraditionalForm]], 
-    Scaled[{0.95, 0.9}], {Right, Top}],
-  Frame->{{False, False}, {False, False}},
-  FrameLabel->{{None, None}, {None, None}},
-  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
-  GridLines->{None, None},
-  GridLinesStyle->Directive[
-    GrayLevel[0.5, 0.4]],
-  Method->{"DefaultBoundaryStyle" -> Automatic, "ScalingFunctions" -> None},
-  PlotLabel->FormBox["\"Simulation run #2\"", TraditionalForm],
-  PlotRange->{{0., 49.99999897959184}, {0, 15}},
-  PlotRangeClipping->True,
-  PlotRangePadding->{{
-     Scaled[0.02], 
-     Scaled[0.02]}, {0, 0}},
-  Ticks->{Automatic, Automatic}]], "Output"]
-}, Open  ]],
-
 Cell["End of example", "Text"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -5919,6 +5736,8 @@ Cell[BoxData[
            RowBox[{"tau", "\[Rule]", "50"}]}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"cellgrowth", "=", "True"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"constantCellDensity", "=", "False"}], ";", 
+      "\[IndentingNewLine]", 
       RowBox[{"simulationTime", "=", 
        RowBox[{
         RowBox[{
@@ -6543,159 +6362,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Print", "[", 
      RowBox[{"\"\<Parameters = \\n\>\"", ",", "par"}], "]"}], 
-    ";"}]}]}]], "Input"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"iseed = \"\>", "\[InvisibleSpace]", "531050"}],
-  SequenceForm["iseed = ", 531050],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"CreateDirectory", "::", "filex"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], \
-"\<\"\[NoBreak]\\!\\(\\\"/home/mweber/Copy_Linux/Copy/Research_Copy/\
-Simulations/Colony_build/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie/\\\
-\"\\)\[NoBreak] already exists. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/CreateDirectory\\\", ButtonNote -> \
-\\\"CreateDirectory::filex\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
-Colony_build/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie\"\>"], \
-"Output"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"CreateDirectory", "::", "filex"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], \
-"\<\"\[NoBreak]\\!\\(\\\"/home/mweber/Copy_Linux/Copy/Research_Copy/\
-Simulations/Colony_build/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie/\\\
-\"\\)\[NoBreak] already exists. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/CreateDirectory\\\", ButtonNote -> \
-\\\"CreateDirectory::filex\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData["\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/\
-Colony_build/Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie\"\>"], \
-"Output"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"x0Cell initial condition (nb of molecules) = \"\>", 
-   "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"{", 
-       RowBox[{"13", ",", "1"}], "}"}], "}"}], ",", 
-     RowBox[{"{", 
-      InterpretationBox["\<\"0.5287663729448976\"\>",
-       CForm[0.5287663729448976],
-       AutoDelete->True,
-       Editable->True], "}"}]}], "}"}]}],
-  SequenceForm["x0Cell initial condition (nb of molecules) = ", {{{13, 1}}, {
-     CForm[0.5287663729448976]}}],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"x0Milieu initial condition (nb of molecules) = \"\>", 
-   "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{"0", ",", "0"}], "}"}]}],
-  SequenceForm["x0Milieu initial condition (nb of molecules) = ", {0, 0}],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"globalParSet = \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{"{", 
-     RowBox[{"{", "2", "}"}], "}"}], "}"}]}],
-  SequenceForm["globalParSet = ", {{{2}}}],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"# globalParSet = \"\>", "\[InvisibleSpace]", "1"}],
-  SequenceForm["# globalParSet = ", 1],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Output path = \\n\"\>", 
-   "\[InvisibleSpace]", \
-"\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony_build/\
-Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie\"\>"}],
-  SequenceForm[
-  "Output path = \n", 
-   "/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony_build/Build_\
-Qt4.8.6/Release/ExponentialGrowth/Gillespie"],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Input file path = \\n\"\>", 
-   "\[InvisibleSpace]", \
-"\<\"/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony_build/\
-Build_Qt4.8.6/Release/ExponentialGrowth/Gillespie\"\>"}],
-  SequenceForm[
-  "Input file path = \n", 
-   "/home/mweber/Copy_Linux/Copy/Research_Copy/Simulations/Colony_build/Build_\
-Qt4.8.6/Release/ExponentialGrowth/Gillespie"],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"Parameters = \\n\"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"\[Alpha]2", "\[Rule]", "\[Alpha]1"}], ",", 
-     RowBox[{"\[Beta]2", "\[Rule]", "\[Beta]1"}], ",", 
-     RowBox[{"\[Alpha]1", "\[Rule]", "1"}], ",", 
-     RowBox[{"\[Beta]1", "\[Rule]", "10"}], ",", 
-     RowBox[{"K1", "\[Rule]", "expressionLevel"}], ",", 
-     RowBox[{"K2", "\[Rule]", "K1"}], ",", 
-     RowBox[{"expressionLevel", "\[Rule]", "0.5`"}], ",", 
-     RowBox[{"r", "\[Rule]", 
-      FractionBox["V0", 
-       RowBox[{
-        FractionBox["nCells", "nconc0"], "-", 
-        RowBox[{"nCells", " ", "V0"}]}]]}], ",", 
-     RowBox[{"V0", "\[Rule]", "1.5`"}], ",", 
-     RowBox[{"L0", "\[Rule]", "2.5`"}], ",", 
-     RowBox[{"r0", "\[Rule]", "0.44`"}], ",", 
-     RowBox[{"cellLength0", "\[Rule]", "2"}], ",", 
-     RowBox[{"cellHeight0", "\[Rule]", "1"}], ",", 
-     RowBox[{"nCells", "\[Rule]", "1"}], ",", 
-     RowBox[{"nconc0", "\[Rule]", 
-      FractionBox["1", 
-       RowBox[{"401", " ", "V0"}]]}], ",", 
-     RowBox[{"tau", "\[Rule]", "50"}]}], "}"}]}],
-  SequenceForm[
-  "Parameters = \n", {$CellContext`\[Alpha]2 -> $CellContext`\[Alpha]1, \
-$CellContext`\[Beta]2 -> $CellContext`\[Beta]1, $CellContext`\[Alpha]1 -> 
-    1, $CellContext`\[Beta]1 -> 
-    10, $CellContext`K1 -> $CellContext`expressionLevel, $CellContext`K2 -> \
-$CellContext`K1, $CellContext`expressionLevel -> 
-    0.5, $CellContext`r -> \
-$CellContext`V0/($CellContext`nCells/$CellContext`nconc0 - \
-$CellContext`nCells $CellContext`V0), $CellContext`V0 -> 1.5, $CellContext`L0 -> 
-    2.5, $CellContext`r0 -> 0.44, $CellContext`cellLength0 -> 
-    2, $CellContext`cellHeight0 -> 1, $CellContext`nCells -> 
-    1, $CellContext`nconc0 -> 
-    Rational[1, 401]/$CellContext`V0, $CellContext`tau -> 50}],
-  Editable->False]], "Print"]
-}, Open  ]]
-}, Open  ]]
+    ";"}]}]}]], "Input"]
 }, Open  ]]
 }, Open  ]],
 
@@ -10481,8 +10148,6 @@ of reactions\
 \>", "Subsubsection",
  CellChangeTimes->{{3.543918309774103*^9, 3.543918343181843*^9}}],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"Module", "[", 
@@ -11763,30 +11428,7 @@ milieu:\\n\>\""}]}], ";", "\[IndentingNewLine]",
    3.6490759646216507`*^9}},
  ImageSize->{668, 543},
  ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}}],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"DeleteFile", "::", "nffil"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"File not found during \
-\[NoBreak]\\!\\(DeleteFile[\\\"input.dat\\\"]\\)\[NoBreak]. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nffil\\\", \
-ButtonNote -> \\\"DeleteFile::nffil\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"DeleteFile", "::", "nffil"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"File not found during \
-\[NoBreak]\\!\\(DeleteFile[\\\"input001.dat\\\"]\\)\[NoBreak]. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nffil\\\", \
-ButtonNote -> \\\"DeleteFile::nffil\\\"]\\)\"\>"}]], "Message", "MSG"]
-}, Open  ]]
+ ImageRegion->{{0, 1}, {0, 1}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -12531,7 +12173,6 @@ Resetting a to 0.0\\\" << endl;\n      a(i) = 0.0;\n    }\n  }\n  #endif \
          RowBox[{"f2", "=", 
           RowBox[{
           "f2", "<>", "\"\<void \>\"", "<>", "funcName", "<>", 
-           
            "\"\<\n(\n  const Array<int,1>& x,\n  const double volume,\n  \
 const double volume0,\n  Array<double,1>& a\n);\\n\\n\\n\>\""}]}], ";", 
          "\[IndentingNewLine]", 
