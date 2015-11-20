@@ -5746,7 +5746,7 @@ Cell[BoxData[
            RowBox[{"2", ",", 
             RowBox[{"(", 
              RowBox[{
-              RowBox[{"360", "/", "nCells"}], "//.", "par"}], ")"}]}], "]"}], 
+              RowBox[{"400", "/", "nCells"}], "//.", "par"}], ")"}]}], "]"}], 
           "]"}], "*", "tau"}], "//.", "par"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"stopWhenReachingMaximumVolume", "=", "True"}], ";", 
       "\[IndentingNewLine]", 
@@ -6363,7 +6363,7 @@ Cell[BoxData[
     RowBox[{"Print", "[", 
      RowBox[{"\"\<Parameters = \\n\>\"", ",", "par"}], "]"}], 
     ";"}]}]}]], "Input"]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{
