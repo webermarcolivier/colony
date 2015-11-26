@@ -10,6 +10,32 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+
+// Qt 5.x
+#include <QWidget>
+#include <QGridLayout>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QComboBox>
+#include <QDoubleSpinBox>
+#include <QGraphicsView>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QLabel>
+#include <QMainWindow>
+#include <QProgressBar>
+#include <QSlider>
+#include <QStatusBar>
+#include <QTableView>
+#include <QToolBar>
+#include <QToolButton>
+#include <QVBoxLayout>
+
+// Qt 4.x
+/*
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
@@ -30,6 +56,7 @@
 #include <QtGui/QToolButton>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
+*/
 
 QT_BEGIN_NAMESPACE
 
@@ -440,25 +467,25 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Quorum Sensing Simulation", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Quorum Sensing Simulation", 0));
         playButton->setText(QString());
         pauseButton->setText(QString());
-        NCells->setText(QApplication::translate("MainWindow", "NCells", 0, QApplication::UnicodeUTF8));
-        NCellsNum->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
-        time->setText(QApplication::translate("MainWindow", "time", 0, QApplication::UnicodeUTF8));
-        timeNum->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
-        iTraj->setText(QApplication::translate("MainWindow", "trajectory #", 0, QApplication::UnicodeUTF8));
-        iTrajNum->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
-        iParameterSet->setText(QApplication::translate("MainWindow", "Parameter set #", 0, QApplication::UnicodeUTF8));
-        iParameterSetNum->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Cell Color Code", 0, QApplication::UnicodeUTF8));
-        groupBox_2->setTitle(QApplication::translate("MainWindow", "Background Color Code", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("MainWindow", "Global Parameters", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("MainWindow", "Cell State", 0, QApplication::UnicodeUTF8));
+        NCells->setText(QApplication::translate("MainWindow", "NCells", 0));
+        NCellsNum->setText(QApplication::translate("MainWindow", "0", 0));
+        time->setText(QApplication::translate("MainWindow", "time", 0));
+        timeNum->setText(QApplication::translate("MainWindow", "0", 0));
+        iTraj->setText(QApplication::translate("MainWindow", "trajectory #", 0));
+        iTrajNum->setText(QApplication::translate("MainWindow", "0", 0));
+        iParameterSet->setText(QApplication::translate("MainWindow", "Parameter set #", 0));
+        iParameterSetNum->setText(QApplication::translate("MainWindow", "0", 0));
+        groupBox->setTitle(QApplication::translate("MainWindow", "Cell Color Code", 0));
+        groupBox_2->setTitle(QApplication::translate("MainWindow", "Background Color Code", 0));
+        label_2->setText(QApplication::translate("MainWindow", "Global Parameters", 0));
+        label_3->setText(QApplication::translate("MainWindow", "Cell State", 0));
 #ifndef QT_NO_TOOLTIP
         colonyView->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
-        label->setText(QApplication::translate("MainWindow", "Zoom", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("MainWindow", "Zoom", 0));
     } // retranslateUi
 
 };
