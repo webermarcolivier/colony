@@ -10,6 +10,9 @@ Build*
 # library files
 lib/
 
+# Doxygen
+docs/Doxygen_documentation
+
 # QtCreator tmp files
 COLONY.pro.user.*
 COLONY.pro.user

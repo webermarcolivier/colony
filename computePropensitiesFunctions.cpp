@@ -27,14 +27,14 @@ void computePropensitiesCell
 )
 {
   #ifdef COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
-  if ( 4 != a.size()) {
+  if ( 10 != a.size()) {
   cout << "ERROR: function computePropensitiesCell(x, propensities),"
           " array \"propensities\" does not have "
           "the same size as the number of reactions";
   exit(1);
   }
 
-  if ( 2 != x.size()) {
+  if ( 6 != x.size()) {
   cout << "ERROR: function computePropensitiesCell(x, propensities),"
           " array \"x\" does not have "
           "the same size as the number of species";
@@ -42,16 +42,22 @@ void computePropensitiesCell
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = 0.9033209999999998*(0.7499999999999998 + Input::globalParameter(0) + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(1),3)));
-  a(1) = 0.9033209999999998*(0.7499999999999998 + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(0),3)));
+  a(0) = 0.9033209999999998*(1.013862943611199 + 120./(8. + 1.3566683085495015*pow(x(1),3)));
+  a(1) = 0.9033209999999998*(1.013862943611199 + 120./(8. + 1.3566683085495015*pow(x(0),3)));
+  a(2) = 0.9033209999999998;
+  a(3) = 0.11070261844903419*x(2)*x(4);
+  a(4) = 10*x(3);
 
-  a(2) = 1.*x(0);
-  a(3) = 1.*x(1);
+  a(5) = 1.*x(0);
+  a(6) = 1.*x(1);
+  a(7) = x(4);
+  a(8) = x(3);
+  a(9) = 0.;
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
   int i;
-  for (i=0; i<4; i++)
+  for (i=0; i<10; i++)
   {
     if ( a(i) < 0.0 )
     {
@@ -72,7 +78,7 @@ void computePropensitiesMilieu
 )
 {
   #ifdef COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
-  if ( 4 != a.size()) {
+  if ( 6 != a.size()) {
   cout << "ERROR: function computePropensitiesMilieu(x, propensities),"
           " array \"propensities\" does not have "
           "the same size as the number of reactions";
@@ -87,16 +93,18 @@ void computePropensitiesMilieu
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = 1.*x(0);
-  a(1) = 1.*x(1);
+  a(0) = 90.33209999999998*Input::globalParameter(0);
+  a(1) = 1.*x(0);
+  a(2) = 1.*x(1);
 
-  a(2) = 0.;
-  a(3) = 0.;
+  a(3) = 0;
+  a(4) = 0.;
+  a(5) = 0.;
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
   int i;
-  for (i=0; i<4; i++)
+  for (i=0; i<6; i++)
   {
     if ( a(i) < 0.0 )
     {
@@ -130,14 +138,14 @@ void computePropensitiesCellTimeDependent
   #endif //COMPUTEPROPENSITIES_TIME_CYCLE_CHECK
 
   #ifdef COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
-  if ( 4 != a.size()) {
+  if ( 10 != a.size()) {
   cout << "ERROR: function computePropensitiesCellTimeDependent(x, propensities),"
           " array \"propensities\" does not have "
           "the same size as the number of reactions";
   exit(1);
   }
 
-  if ( 2 != x.size()) {
+  if ( 6 != x.size()) {
   cout << "ERROR: function computePropensitiesCellTimeDependent(x, propensities),"
           " array \"x\" does not have "
           "the same size as the number of species";
@@ -145,16 +153,22 @@ void computePropensitiesCellTimeDependent
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = (0.9033209999999998*volume*(0.7499999999999998 + Input::globalParameter(0) + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(1),3))))/volume0;
-  a(1) = (0.9033209999999998*volume*(0.7499999999999998 + 1.8750000000000002/(0.125 + 1.3566683085495015*pow(x(0),3))))/volume0;
+  a(0) = (0.9033209999999998*volume*(1.013862943611199 + 120./(8. + 1.3566683085495015*pow(x(1),3))))/volume0;
+  a(1) = (0.9033209999999998*volume*(1.013862943611199 + 120./(8. + 1.3566683085495015*pow(x(0),3))))/volume0;
+  a(2) = (0.9033209999999998*volume)/volume0;
+  a(3) = (0.11070261844903419*volume0*x(2)*x(4))/volume;
+  a(4) = 10*x(3);
 
-  a(2) = x(0);
-  a(3) = x(1);
+  a(5) = x(0);
+  a(6) = x(1);
+  a(7) = x(4);
+  a(8) = x(3);
+  a(9) = 0.;
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
   int i;
-  for (i=0; i<4; i++)
+  for (i=0; i<10; i++)
   {
     if ( a(i) < 0.0 )
     {
@@ -188,7 +202,7 @@ void computePropensitiesMilieuTimeDependent
   #endif //COMPUTEPROPENSITIES_TIME_CYCLE_CHECK
 
   #ifdef COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
-  if ( 4 != a.size()) {
+  if ( 6 != a.size()) {
   cout << "ERROR: function computePropensitiesMilieuTimeDependent(x, propensities),"
           " array \"propensities\" does not have "
           "the same size as the number of reactions";
@@ -203,16 +217,18 @@ void computePropensitiesMilieuTimeDependent
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = x(0);
-  a(1) = x(1);
+  a(0) = (90.33209999999998*volume*Input::globalParameter(0))/volume0;
+  a(1) = x(0);
+  a(2) = x(1);
 
-  a(2) = 0.;
-  a(3) = 0.;
+  a(3) = 0;
+  a(4) = 0.;
+  a(5) = 0.;
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
   int i;
-  for (i=0; i<4; i++)
+  for (i=0; i<6; i++)
   {
     if ( a(i) < 0.0 )
     {
@@ -243,7 +259,7 @@ void computePropensitiesCellMilieu
   exit(1);
   }
 
-  if ( 2 != x1.size()) {
+  if ( 6 != x1.size()) {
   cout << "ERROR: function computePropensitiesCellMilieu(x1, x2, propensities),"
           " array \"x1\" does not have "
           "the same size as the number of species";
@@ -258,11 +274,11 @@ void computePropensitiesCellMilieu
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = 1.*x1(0);
-  a(1) = 1.*x1(1);
+  a(0) = 2*x1(0);
+  a(1) = 2*x1(1);
 
-  a(2) = (volume1/volume2)*1.*x2(0);
-  a(3) = (volume1/volume2)*1.*x2(1);
+  a(2) = (volume1/volume2)*2*x2(0);
+  a(3) = (volume1/volume2)*2*x2(1);
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
@@ -337,7 +353,7 @@ void computePropensitiesTimeDependentDiffusion
   exit(1);
   }
 
-  if ( 2 != x1.size()) {
+  if ( 6 != x1.size()) {
   cout << "ERROR: function computePropensitiesTimeDependentDiffusion(x1, x2, propensities),"
           " array \"x1\" does not have "
           "the same size as the number of species";
@@ -352,11 +368,11 @@ void computePropensitiesTimeDependentDiffusion
   }
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
-  a(0) = (volume/(volume0/0.693147180559945))*1.*x1(0);
-  a(1) = (volume/(volume0/0.693147180559945))*1.*x1(1);
+  a(0) = (volume/(volume0/0.693147180559945))*2*x1(0);
+  a(1) = (volume/(volume0/0.693147180559945))*2*x1(1);
 
-  a(2) = (volume/volumeExt)*1.*x2(0);
-  a(3) = (volume/volumeExt)*1.*x2(1);
+  a(2) = (volume/volumeExt)*2*x2(0);
+  a(3) = (volume/volumeExt)*2*x2(1);
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK

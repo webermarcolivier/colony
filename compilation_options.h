@@ -96,7 +96,7 @@
   /**
    * Compile the graphical user interface.
    */
-  #define GUI
+  //#define GUI
 
   /**
    * If the cell density stays constant, apply a different rule for choosing which cell to delete:
