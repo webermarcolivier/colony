@@ -59,9 +59,9 @@ void SpatialIntegratorODE::init()
   nbSecondsByStep_ = 0.002;
   //contactMode_ = dContactSoftCFM | dContactSoftERP;
   contactMode_ = dContactSoftERP;
-  erp_ = 0.2;
-  cfm_ = 0.0;
-  mu_ = 0.0;
+  erp_ = 0.1;//0.2
+  cfm_ = 0.02;//0.0
+  mu_ = 0;
   interactionForce_ = 0.0;
   //centralForce0_ = 400.0f;
   centralForce0_ = 10.0;
@@ -74,16 +74,14 @@ void SpatialIntegratorODE::init()
   aligningRotationalViscousCoeff_ = 50.0;
   brownianForce_ = 0.0;
   //maxVelocitySquared_ = 0.001*0.001;
-  maxVelocitySquared_ = 0.1*0.1;
   //maxRotVelocitySquared_ = 0.05*0.05;
-  maxRotVelocitySquared_ = 0.5*0.5;
 
   // Set the damping coefficients of the ODE library in the world
   //dWorldSetDamping ( world_, 0.1, 0.2);
   //dWorldSetLinearDampingThreshold ( world_, 0.001);
   //dWorldSetAngularDampingThreshold ( world_, 0.001);
-  //dWorldSetMaxAngularSpeed	(	world_, 2.0 );
-  //dWorldSetContactMaxCorrectingVel	(	world_, 4.0);
+  dWorldSetMaxAngularSpeed	(	world_, 1.0 );
+  dWorldSetContactMaxCorrectingVel	(	world_, 0.8);
 }
 
 //------------------------------------------------------------------------------
