@@ -4854,6 +4854,8 @@ Cell[BoxData[
        "experiment"}], ")"}], "."}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
+    RowBox[{"GUI", "=", "False"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{"x0CellDefault", "=", 
      RowBox[{"{", 
       RowBox[{
@@ -6471,7 +6473,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"Clear", "[", 
     RowBox[{"systemCell", ",", "systemMilieu", ",", "systemTotal"}], "]"}], 
-   ";"}], "\n"}], "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"NPCellMilieu", "=", "\[IndentingNewLine]", 
    RowBox[{"Table", "[", "\[IndentingNewLine]", 
@@ -10094,7 +10096,12 @@ This option recompute all the propensities at the end of each time slice,\n   \
 OPTIMIZE_COMPUTE_PROPENSITIES_UPDATE\n  #endif\n\n  // Define the single or \
 double precision version of the ODE library\n  #define dDOUBLE\n\n\n\n\n  /** \
 OUTPUT OPTIONS */\n\n  /**\n   * Compile the graphical user interface.\n   */\
-\n  //#define GUI\n\n  /**\n   * If the cell density stays constant, apply a \
+\n  \>\"", "<>", 
+    RowBox[{"If", "[", 
+     RowBox[{
+     "GUI", ",", "\"\<  #define GUI\>\"", ",", "\"\<  //#define GUI\>\""}], 
+     "]"}], "<>", 
+    "\"\<\n\n  /**\n   * If the cell density stays constant, apply a \
 different rule for choosing which cell to delete:\n   * delete the cells \
 farther away from the center. This makes a nicer movement\n   * of the cells \
 when you want to make a movie of the simulation.\n   */\n  #ifdef GUI\n    \
@@ -10123,7 +10130,7 @@ BUILD_DEBUG\n\n#endif // COMPILATION_OPTIONS\n\>\""}]}],
  RowBox[{
   RowBox[{"Export", "[", 
    RowBox[{"fpath", ",", "f", ",", "\"\<Text\>\""}], "]"}], ";"}]}], "Input"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -18950,12 +18957,15 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"speciesColor", "=", "LuxI"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"cmax", "=", "100"}], ";", 
+  RowBox[{
+   RowBox[{"cmax", "=", "100"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{
    "maximum", " ", "value", " ", "for", " ", "color", " ", "code", " ", "in", 
-    " ", "nM"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"cmin", "=", "0"}], ";", 
+    " ", "nM"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cmin", "=", "0"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{
    "minimum", " ", "value", " ", "for", " ", "color", " ", "code", " ", "in", 
@@ -19625,12 +19635,15 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"speciesColor", "=", "LuxI"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"cmax", "=", "100"}], ";", 
+  RowBox[{
+   RowBox[{"cmax", "=", "100"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{
    "maximum", " ", "value", " ", "for", " ", "color", " ", "code", " ", "in", 
-    " ", "nM"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"cmin", "=", "0"}], ";", 
+    " ", "nM"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cmin", "=", "0"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{
    "minimum", " ", "value", " ", "for", " ", "color", " ", "code", " ", "in", 
@@ -20545,12 +20558,15 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"speciesColor", "=", "LuxI"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"cmax", "=", "50"}], ";", 
+  RowBox[{
+   RowBox[{"cmax", "=", "50"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{
    "maximum", " ", "value", " ", "for", " ", "color", " ", "code", " ", "in", 
-    " ", "nM"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"cmin", "=", "0.01"}], ";", 
+    " ", "nM"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cmin", "=", "0.01"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{
    "minimum", " ", "value", " ", "for", " ", "color", " ", "code", " ", "in", 
@@ -21622,7 +21638,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{1328, 1083},
-WindowMargins->{{-4, Automatic}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"FileOutlineCache"->False,
 "VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 TrackCellChangeTimes->False,
