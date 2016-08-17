@@ -59,29 +59,28 @@ void SpatialIntegratorODE::init()
   nbSecondsByStep_ = 0.002;
   //contactMode_ = dContactSoftCFM | dContactSoftERP;
   contactMode_ = dContactSoftERP;
-  erp_ = 0.1;//0.2
+  erp_ = 0.2;//0.2
   cfm_ = 0.02;//0.0
   mu_ = 0;
   interactionForce_ = 0.0;
-  //centralForce0_ = 400.0f;
   centralForce0_ = 10.0;
   //viscousCoefficient_ = 200.0;
-  viscousCoefficient_ = 50.0;
+  viscousCoefficient_ = 20.0;
   //rotationalViscousCoefficient_ = 600.0;
-  rotationalViscousCoefficient_ = 50.0;
+  rotationalViscousCoefficient_ = 20.0;
   aligningAngle_ = 35.0;
   aligningTorqueCoeff_ = 5.0;
   aligningRotationalViscousCoeff_ = 50.0;
-  brownianForce_ = 0.0;
-  //maxVelocitySquared_ = 0.001*0.001;
-  //maxRotVelocitySquared_ = 0.05*0.05;
+  brownianForce_ = 50.0;
+  maxVelocitySquared_ = 0.5*0.5;
+  maxRotVelocitySquared_ = 1*1;
 
   // Set the damping coefficients of the ODE library in the world
   //dWorldSetDamping ( world_, 0.1, 0.2);
   //dWorldSetLinearDampingThreshold ( world_, 0.001);
   //dWorldSetAngularDampingThreshold ( world_, 0.001);
-  dWorldSetMaxAngularSpeed	(	world_, 1.0 );
-  dWorldSetContactMaxCorrectingVel	(	world_, 0.8);
+  dWorldSetMaxAngularSpeed	(	world_, 2.0 );
+  dWorldSetContactMaxCorrectingVel	(	world_, 0.2);
 }
 
 //------------------------------------------------------------------------------
@@ -130,6 +129,12 @@ void SpatialIntegratorODE::integrate(double timeStep)
     // Correct central force in function of colony radius
     centralForce_ = (centerAndRadius(3)/denseColonyRadius)*
                     (centerAndRadius(3)/denseColonyRadius)*centralForce0_;
+
+    // Amplify central force during equilibration
+    if (isEquilibrationSteps_)
+    {
+      centralForce_ = centralForce_ * 100.0;
+    }
   }
 
   int nbStepsToPerform = static_cast<int>(timeStep/nbSecondsByStep_);
@@ -156,7 +161,7 @@ void SpatialIntegratorODE::integrate(double timeStep)
       foreach (GraphicsCellODE *cell, cellsList_)
       {
         // Apply maximum velocity limit
-        //cell->limitVelocity(maxVelocitySquared_,maxRotVelocitySquared_);
+        cell->limitVelocity(maxVelocitySquared_,maxRotVelocitySquared_);
       }
     }
 
@@ -321,6 +326,19 @@ void SpatialIntegratorODE::computeForces(bool lowFriction)
       torque[2] = - rotationalViscousCoefficient* angularVelocity[2];
       dBodyAddTorque(cellsList_[i]->getBody(),  torque[0],  torque[1],  torque[2]);
     }
+
+    // Brownian force
+//    if (lowFriction)
+//    {
+//        {
+//          float force[3];
+//          for (int k=0; k<3; ++k)
+//          {
+//            force[k] = brownianForce_ * RandomNumberGenerator::getNormal();
+//          }
+//          dBodyAddForce(cellsList_[i]->getBody(),  force[0],  force[1],  0.0);
+//        }
+//    }
   }
 }
 

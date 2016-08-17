@@ -104,6 +104,7 @@ void MainWindow::runSimulation()
         ui->colonyView->update();
         qApp->processEvents();
       }
+      simulator_->setIsEquilibrationSteps(false);
       cout << "ODE equilibration of colony... end" << endl;
     }
 
@@ -378,14 +379,6 @@ void MainWindow::updateColonyView()
   /// - Update scene background color base on the species concentration of the simulator's milieu.
   r = simulator_->cellCollection_.getMilieu().getXconc(time)(speciesBackgroundColorIndex_) / speciesBackgroundColorMaxValue_;
   colonyScene_.setBackgroundBrush( gradientColorBackground(r) );
-
-  /*
-  #ifdef TIME_DEPENDENT_PROPENSITIES
-    /// - Compute the ODE simulation step (cells spatial dynamics).
-    double timeStep = simulator_->getTime() - lastUpdateTime_;
-    colonyScene_.computeODEStep(timeStep, false);
-  #endif
-  */
 
   /// - Update #lastUpdateTime_.
   lastUpdateTime_ =  simulator_->getTime();

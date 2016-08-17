@@ -43,9 +43,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     MainWindow w(inputFile);
-    #ifdef GUI
-      w.show();
-    #endif //GUI
+    w.show();
     return a.exec();
 
   #else

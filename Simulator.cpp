@@ -271,6 +271,11 @@ bool Simulator::computeSimulationStep()
       if (timeStep > 0)
       {
         computeSpatialIntegration(timeStep);
+        // Remark: I am not sure why but it is necessary to update the position and angle and cells after each step.
+        for(int i=0;i<cellCollection_.getNCells();++i)
+        {
+          cellCollection_[i].updateGraphicsCell(time_);
+        }
         updatePositionLastTimeSlice();
       }
     }
