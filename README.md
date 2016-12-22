@@ -1,4 +1,10 @@
+**DRAFT VERSION**
+
 # Colony Software
+
+## Authors
+
+## Licensing
 
 ## Remarks
 
