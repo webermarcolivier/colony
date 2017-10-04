@@ -6,6 +6,7 @@ obj/
 # build files
 Build*
 *.o
+moc_*
 
 # library files
 lib/

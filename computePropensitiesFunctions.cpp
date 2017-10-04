@@ -27,7 +27,7 @@ void computePropensitiesCell
 )
 {
   #ifdef COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
-  if ( 24 != a.size()) {
+  if ( 26 != a.size()) {
   cout << "ERROR: function computePropensitiesCell(x, propensities),"
           " array \"propensities\" does not have "
           "the same size as the number of reactions";
@@ -43,20 +43,20 @@ void computePropensitiesCell
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
   a(0) = 0.04*x(0);
-  a(1) = 0.9033209999999998;
-  a(2) = 0.11070261844903417*x(1)*x(2);
-  a(3) = 0.05535130922451709*(-1 + x(3))*x(3);
-  a(4) = 0.05535130922451709*x(4)*x(5);
-  a(5) = 0.1*x(5);
-  a(6) = 10*x(6);
-  a(7) = 0.002*x(2);
-  a(8) = 0.002*x(1);
-  a(9) = 0.002*x(0);
-  a(10) = 0.002*x(3);
-  a(11) = 0.002*x(4);
+  a(1) = 0.11070261844903417*x(1)*x(2);
+  a(2) = 0.05535130922451709*(-1 + x(3))*x(3);
+  a(3) = 0.05535130922451709*x(4)*x(5);
+  a(4) = 0.1*x(5);
+  a(5) = 10*x(6);
+  a(6) = 0.01*x(5);
+  a(7) = x(6);
+  a(8) = 0.002*x(2);
+  a(9) = 0.002*x(1);
+  a(10) = 0.002*x(0);
+  a(11) = 0.002*x(3);
+  a(12) = 0.002*x(4);
 
-  a(12) = 0.;
-  a(13) = 0;
+  a(13) = 0.;
   a(14) = 10*x(3);
   a(15) = x(4);
   a(16) = 10*x(6);
@@ -67,11 +67,13 @@ void computePropensitiesCell
   a(21) = 0.;
   a(22) = 0.;
   a(23) = 0.;
+  a(24) = 0.;
+  a(25) = 0.;
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
   int i;
-  for (i=0; i<24; i++)
+  for (i=0; i<26; i++)
   {
     if ( a(i) < 0.0 )
     {
@@ -108,7 +110,7 @@ void computePropensitiesMilieu
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
   a(0) = 0.002*x(0);
-  a(1) = 6013.106789999999*Input::globalParameter(0);
+  a(1) = 0.;
 
   a(2) = 0.;
   a(3) = 0;
@@ -150,7 +152,7 @@ void computePropensitiesCellTimeDependent
   #endif //COMPUTEPROPENSITIES_TIME_CYCLE_CHECK
 
   #ifdef COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
-  if ( 24 != a.size()) {
+  if ( 26 != a.size()) {
   cout << "ERROR: function computePropensitiesCellTimeDependent(x, propensities),"
           " array \"propensities\" does not have "
           "the same size as the number of reactions";
@@ -166,20 +168,20 @@ void computePropensitiesCellTimeDependent
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
   a(0) = 0.04*x(0);
-  a(1) = (0.9033209999999998*volume)/volume0;
-  a(2) = (0.11070261844903417*volume0*x(1)*x(2))/volume;
-  a(3) = (0.05535130922451709*volume0*(-1 + x(3))*x(3))/volume;
-  a(4) = (0.05535130922451709*volume0*x(4)*x(5))/volume;
-  a(5) = 0.1*x(5);
-  a(6) = 10*x(6);
-  a(7) = 0.002*x(2);
-  a(8) = 0.002*x(1);
-  a(9) = 0.002*x(0);
-  a(10) = 0.002*x(3);
-  a(11) = 0.002*x(4);
+  a(1) = (0.11070261844903417*volume0*x(1)*x(2))/volume;
+  a(2) = (0.05535130922451709*volume0*(-1 + x(3))*x(3))/volume;
+  a(3) = (0.05535130922451709*volume0*x(4)*x(5))/volume;
+  a(4) = 0.1*x(5);
+  a(5) = 10*x(6);
+  a(6) = 0.01*x(5);
+  a(7) = x(6);
+  a(8) = 0.002*x(2);
+  a(9) = 0.002*x(1);
+  a(10) = 0.002*x(0);
+  a(11) = 0.002*x(3);
+  a(12) = 0.002*x(4);
 
-  a(12) = 0.;
-  a(13) = 0;
+  a(13) = 0.;
   a(14) = 10*x(3);
   a(15) = x(4);
   a(16) = 10*x(6);
@@ -190,11 +192,13 @@ void computePropensitiesCellTimeDependent
   a(21) = 0.;
   a(22) = 0.;
   a(23) = 0.;
+  a(24) = 0.;
+  a(25) = 0.;
 
 
   #ifdef COMPUTEPROPENSITIES_POSITIVITY_CHECK
   int i;
-  for (i=0; i<24; i++)
+  for (i=0; i<26; i++)
   {
     if ( a(i) < 0.0 )
     {
@@ -244,7 +248,7 @@ void computePropensitiesMilieuTimeDependent
   #endif //COMPUTEPROPENSITIES_ARRAY_SIZE_CHECK
 
   a(0) = 0.002*x(0);
-  a(1) = (6013.106789999999*volume*Input::globalParameter(0))/volume0;
+  a(1) = 0.;
 
   a(2) = 0.;
   a(3) = 0;
