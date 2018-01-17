@@ -4,6 +4,8 @@
 
 ## Authors
 
+Marc Weber,  Areti Tsigkinopoulou and Javier Buceta.
+
 ## Build
 
 Compile C++ project with QtCreator. The different libraries needed for compilation are listed in COLONY.pro project file at the line beginning with `LIBS +=` and also some headers at line `INCLUDEPATH +=`. QtCreator is needed in order to compile, with the following libraries:
@@ -22,8 +24,6 @@ Compile C++ project with QtCreator. The different libraries needed for compilati
 Important options can be set in the `compilation_options.h` file that will result in different code sections being compiled and thus in different executables. We use this hard-coded options mainly for maintaining a high level of computational performance, especially to avoid conditionals that would appear in the most-inner loop of the simulation. The most important option is to choose between fixed cell volume simulation and growing/dividing cell simulation, reflected in the option `TIME_DEPENDENT_PROPENSITIES`. Note that the `compilation_options.h` file is written by the Mathematica notebook (see section "Write C++ compilation options") such that options should be set in the Mathematica notebook, otherwise changes to the header file will be overwritten when running the notebook.
 
 ------------------------
-
-## Licensing
 
 ## Remarks
 
