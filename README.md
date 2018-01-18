@@ -1,10 +1,14 @@
-**DRAFT VERSION**
+# Colony
 
-# Colony Software
+*A software for stochastic simulation of growing cell population communicating by diffusible signals*
 
 ## Authors
 
 Marc Weber,  Areti Tsigkinopoulou and Javier Buceta.
+
+## Documentation
+
+Detailed instructions can be found in the user manual located in the docs directory.
 
 ## Build
 
@@ -22,13 +26,3 @@ Compile C++ project with QtCreator. The different libraries needed for compilati
   + Alternatively, OpenBLAS. Easier to install (no need to compile for specific architecture). There is an ubuntu package libopenblas-base and libopenblas-dev.
 
 Important options can be set in the `compilation_options.h` file that will result in different code sections being compiled and thus in different executables. We use this hard-coded options mainly for maintaining a high level of computational performance, especially to avoid conditionals that would appear in the most-inner loop of the simulation. The most important option is to choose between fixed cell volume simulation and growing/dividing cell simulation, reflected in the option `TIME_DEPENDENT_PROPENSITIES`. Note that the `compilation_options.h` file is written by the Mathematica notebook (see section "Write C++ compilation options") such that options should be set in the Mathematica notebook, otherwise changes to the header file will be overwritten when running the notebook.
-
-------------------------
-
-## Remarks
-
-- A lot of documentation and comments are already included in the mathematica notebook.
-
-## List of future improvements
-
-- Implement XML input file support (much more flexible than hard-coded by line text file reading).
